@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Contact Unicorn Hospitality - call, email or send an enquiry about rooms, dining, meetings and events. Our team replies quickly.">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="Contact Us | Unicorn Hospitality">
+    <meta property="og:description" content="Questions about a stay, a table or an event? Reach the Unicorn Hospitality team.">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="icon" href="assets/images/unicorn/logos.jpeg" type="image/x-icon">
+    <title>Contact Us | Unicorn Hospitality</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body>
+    <!-- icon sprite (replaces the flaticon font, which was not supplied) -->
+    <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+        <defs>
+            <symbol id="i-phone" viewBox="0 0 24 24"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></symbol>
+            <symbol id="i-mail" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></symbol>
+            <symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 21s7-6.2 7-11a7 7 0 0 0-14 0c0 4.8 7 11 7 11z"/><circle cx="12" cy="10" r="2.5"/></symbol>
+            <symbol id="i-cal" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M8 3v4M16 3v4M3 10h18"/></symbol>
+            <symbol id="i-user" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></symbol>
+            <symbol id="i-people" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.5"/><path d="M2 20a7 7 0 0 1 14 0"/><circle cx="17" cy="9" r="2.5"/><path d="M18 14a5 5 0 0 1 4 6"/></symbol>
+            <symbol id="i-area" viewBox="0 0 24 24"><path d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5"/></symbol>
+            <symbol id="i-check" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="m8 12 3 3 5-6"/></symbol>
+            <symbol id="i-star" viewBox="0 0 24 24"><path d="m12 3 2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1L3.2 9.5l6.1-.9z"/></symbol>
+            <symbol id="i-play" viewBox="0 0 24 24"><path d="M8 5v14l11-7z" fill="currentColor"/></symbol>
+            <symbol id="i-bed" viewBox="0 0 24 24"><path d="M3 18V6M3 14h18v4M21 14v-2a3 3 0 0 0-3-3h-7v5"/><circle cx="7" cy="11" r="1.5"/></symbol>
+            <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 3 5 6v6c0 4.5 3 7.5 7 9 4-1.500 7-4.500 7-9V6z"/><path d="m9 12 2 2 4-4"/></symbol>
+            <symbol id="i-gym" viewBox="0 0 24 24"><path d="M6 8v8M18 8v8M3 10v4M21 10v4M6 12h12"/></symbol>
+            <symbol id="i-pool" viewBox="0 0 24 24"><path d="M3 17c2 0 2-1.500 4.500-1.500S10 17 12 17s2.500-1.500 4.500-1.500S19 17 21 17M3 21c2 0 2-1.500 4.500-1.500S10 21 12 21s2.500-1.500 4.500-1.500S19 21 21 21M8 14V6a2 2 0 0 1 4 0M14 14V6a2 2 0 0 1 4 0M8 9h6"/></symbol>
+            <symbol id="i-wifi" viewBox="0 0 24 24"><path d="M2 9a15 15 0 0 1 20 0M5 12.500a10 10 0 0 1 14 0M8.500 16a5 5 0 0 1 7 0"/><circle cx="12" cy="19" r="1" fill="currentColor"/></symbol>
+            <symbol id="i-cup" viewBox="0 0 24 24"><path d="M4 8h13v6a5 5 0 0 1-5 5H9a5 5 0 0 1-5-5zM17 10h2a2 2 0 0 1 0 4h-2M8 3v2M12 3v2"/></symbol>
+            <symbol id="i-car" viewBox="0 0 24 24"><path d="M4 16v-4l2-5h12l2 5v4zM4 16v2M20 16v2M4 12h16"/><circle cx="8" cy="14.500" r="1"/><circle cx="16" cy="14.500" r="1"/></symbol>
+            <symbol id="i-plane" viewBox="0 0 24 24"><path d="M21 3 3 10l7 3 3 7z"/><path d="m10 13 4-4"/></symbol>
+            <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></symbol>
+            <symbol id="i-arrow-l" viewBox="0 0 24 24"><path d="M19 12H5M11 6l-6 6 6 6"/></symbol>
+            <symbol id="i-arrow-r" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
+            <symbol id="i-insta" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.500" cy="6.500" r="1" fill="currentColor"/></symbol>
+        </defs>
+    </svg>
+
+    <!-- ============ TOP UTILITY BAR (Ramada-style) ============ -->
+    <div class="header__top um-utility">
+        <div class="container">
+            <div class="um-utility__in">
+                <ul class="um-utility__links">
+                    <li><a class="link__item" href="#book">Find My Reservation</a></li>
+                    <li><a class="link__item" href="#locations">Our Locations</a></li>
+                    <li><a class="link__item" href="#offers">All Offers</a></li>
+                    <li><a class="link__item" href="#meetings">Meetings &amp; Groups</a></li>
+                </ul>
+                <div class="um-utility__right">
+                    <a class="link__item" href="tel:+919920400267"><svg class="ico"><use href="#i-phone"/></svg> Reservations: +91 99204 00267</a>
+                    <label class="um-lang">
+                        <span class="visually-hidden">Language</span>
+                        <select aria-label="Language">
+                            <option>English</option>
+                            <option>हिन्दी</option>
+                            <option>मराठी</option>
+                        </select>
+                    </label>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ============ MAIN HEADER ============ -->
+    <header class="main__header header__function">
+        <div class="container">
+            <div class="row">
+                <div class="main__header__wrapper">
+                    <div class="main__nav">
+                        <div class="navigation d-none d-lg-block">
+                            <nav class="navigation__menu" id="main__menu">
+                                <ul class="list-unstyled">
+                                    <!-- Book (mega menu, like Ramada) -->
+                                    <li class="navigation__menu--item has-child has-arrow">
+                                        <a href="#book" class="navigation__menu--item__link">Book</a>
+                                        <div class="has__mega__menu um-mega">
+                                            <div class="um-mega__col">
+                                                <h6>Book</h6>
+                                                <a href="#book">Find My Reservation</a>
+                                                <a href="#locations">Our Locations</a>
+                                                <a href="#offers">All Offers</a>
+                                                <a href="#rooms">Rooms &amp; Suites</a>
+                                            </div>
+                                            <div class="um-mega__promo">
+                                                <span class="um-mega__tag">Save with bundles</span>
+                                                <p>Combine your room, meals and transfers in one seamless booking.</p>
+                                                <a href="#book" class="theme-btn btn-style sm-btn fill no-border"><span>Book Now</span></a>
+                                            </div>
+                                        </div>
+                                    </li>
+
+                                    <li class="navigation__menu--item has-child has-arrow">
+                                        <a href="#rooms" class="navigation__menu--item__link">Stay</a>
+                                        <ul class="submenu sub__style" role="menu">
+                                            <li role="menuitem"><a href="#rooms">Rooms &amp; Suites</a></li>
+                                            <li role="menuitem"><a href="#amenities">Amenities</a></li>
+                                            <li role="menuitem"><a href="#dining">Dining</a></li>
+                                            <li role="menuitem"><a href="#gallery">Gallery</a></li>
+                                        </ul>
+                                    </li>
+
+                                    <li class="navigation__menu--item">
+                                        <a href="#offers" class="navigation__menu--item__link">Offers</a>
+                                    </li>
+
+                                    <!-- <li class="navigation__menu--item has-child has-arrow">
+                                        <a href="#meetings" class="navigation__menu--item__link">Meetings &amp; Groups</a>
+                                        <ul class="submenu sub__style" role="menu">
+                                            <li role="menuitem"><a href="#meetings">Meetings</a></li>
+                                            <li role="menuitem"><a href="#meetings">Groups</a></li>
+                                            <li role="menuitem"><a href="#meetings">Weddings &amp; Events</a></li>
+                                        </ul>
+                                    </li> -->
+
+                                    <li class="navigation__menu--item">
+                                        <a href="#about" class="navigation__menu--item__link">About</a>
+                                    </li>
+
+                                    <li class="navigation__menu--item">
+                                        <a href="#contact" class="navigation__menu--item__link">Contact</a>
+                                    </li>
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
+                    <div class="main__logo">
+                        <a href="#top" class="um-logo" aria-label="Unicon Hospitality home">
+                            <img src="assets/images/unicon/logo.png" alt="">
+                        </a>
+                    </div>
+                    <div class="main__right">
+                        <a href="#" class="theme-btn btn-style sm-btn border d-none d-lg-block" aria-label="Sign In" data-bs-toggle="modal" data-bs-target="#loginModal"><span>Sign In</span></a>
+                        <a href="#" class="theme-btn btn-style sm-btn border d-none d-lg-block" aria-label="Join" data-bs-toggle="modal" data-bs-target="#signupModal"><span>Join Free</span></a>
+                        <a href="#book" class="theme-btn btn-style sm-btn fill"><span>Book Now</span></a>
+                        <button class="theme-btn btn-style sm-btn fill menu__btn d-lg-none" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight" aria-label="Open menu">
+                            <span class="um-burger"><i></i><i></i><i></i></span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- header area end -->
+
+
+    <main id="top" class="um-cpage">
+
+    <!-- ============ PAGE HERO ============ -->
+    <section class="um-phero">
+        <div class="container">
+            <nav class="um-crumb" aria-label="Breadcrumb"><a href="index.html">Home</a><span>/</span><span aria-current="page">Contact</span></nav>
+            <span class="h6 subtitle__icon__three">Contact</span>
+            <h1>We&rsquo;d Love to Hear From You</h1>
+            <p>Planning a stay, a family dinner or a company event? Call, write or drop by. A real person from our team will get back to you quickly.</p>
+        </div>
+    </section>
+
+    <!-- ============ QUICK CONTACT CARDS ============ -->
+    <section class="um-cc">
+        <div class="container">
+            <div class="um-cc__grid">
+                <a class="um-cc__card wow fadeInUp" href="tel:+919920400267">
+                    <span class="um-icon"><svg class="ico"><use href="#i-phone"/></svg></span>
+                    <h3>Reservations</h3>
+                    <p>+91 99204 00267</p>
+                    <small>Tap to call</small>
+                </a>
+                <a class="um-cc__card wow fadeInUp" data-wow-delay=".1s" href="mailto:stay@unicornhospitality.example">
+                    <span class="um-icon"><svg class="ico"><use href="#i-mail"/></svg></span>
+                    <h3>Email Us</h3>
+                    <p>stay@unicornhospitality.example</p>
+                    <small>We reply within one working day</small>
+                </a>
+                <a class="um-cc__card wow fadeInUp" data-wow-delay=".2s" href="https://www.google.com/maps/dir/?api=1&amp;destination=Unicorn+Hospitality" target="_blank" rel="noopener">
+                    <span class="um-icon"><svg class="ico"><use href="#i-pin"/></svg></span>
+                    <h3>Visit Us</h3>
+                    <p>Your street address, City, State</p>
+                    <small>Get directions</small>
+                </a>
+                <div class="um-cc__card wow fadeInUp" data-wow-delay=".3s">
+                    <span class="um-icon"><svg class="ico"><use href="#i-clock"/></svg></span>
+                    <h3>Front Desk</h3>
+                    <p>Open 24 hours, every day</p>
+                    <small>Check-in 2:00 PM &middot; Check-out 11:00 AM</small>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ ENQUIRY FORM + MAP ============ -->
+    <section class="um-contact" id="enquiry">
+        <div class="container">
+            <div class="um-contact__wrap">
+                <div class="um-form wow fadeInUp">
+                    <span class="h6 subtitle__icon__two d-block">Send an Enquiry</span>
+                    <h2>Tell Us How We Can Help</h2>
+                    <p class="um-form__lead">Fill in the form and we will reply by email or phone, whichever you prefer.</p>
+
+                    <form id="contactForm" novalidate>
+                        <div class="um-form__grid">
+                            <div class="um-field">
+                                <label for="cf-name">Full name *</label>
+                                <input type="text" id="cf-name" name="name" autocomplete="name" placeholder="Your name" required>
+                                <span class="um-field__err">Please enter your name.</span>
+                            </div>
+                            <div class="um-field">
+                                <label for="cf-email">Email *</label>
+                                <input type="email" id="cf-email" name="email" autocomplete="email" placeholder="you@example.com" required>
+                                <span class="um-field__err">Please enter a valid email address.</span>
+                            </div>
+                            <div class="um-field">
+                                <label for="cf-phone">Phone</label>
+                                <input type="tel" id="cf-phone" name="phone" autocomplete="tel" placeholder="+91 00000 00000">
+                                <span class="um-field__err">Please enter a valid phone number.</span>
+                            </div>
+                            <div class="um-field">
+                                <label for="cf-subject">Subject *</label>
+                                <select id="cf-subject" name="subject" required>
+                                    <option value="">Choose a topic</option>
+                                    <option>Room booking</option>
+                                    <option>Dining &amp; table reservation</option>
+                                    <option>Meetings, groups &amp; events</option>
+                                    <option>Unicorn Rewards</option>
+                                    <option>Feedback</option>
+                                    <option>Something else</option>
+                                </select>
+                                <span class="um-field__err">Please choose a topic.</span>
+                            </div>
+                            <div class="um-field um-field--full">
+                                <label for="cf-msg">Message *</label>
+                                <textarea id="cf-msg" name="message" placeholder="Dates, number of guests, anything we should know..." required></textarea>
+                                <span class="um-field__err">Please write a few words (at least 10 characters).</span>
+                            </div>
+                            <!-- spam trap: real people never see or fill this -->
+                            <div class="um-hp" aria-hidden="true"><label for="cf-web">Website</label><input type="text" id="cf-web" name="website" tabindex="-1" autocomplete="off"></div>
+                            <div class="um-field um-field--full">
+                                <label class="um-check"><input type="checkbox" id="cf-ok" name="consent" required> <span>I agree to be contacted about this enquiry.</span></label>
+                                <span class="um-field__err">Please tick the box so we can reply to you.</span>
+                            </div>
+                        </div>
+                        <button type="submit" class="theme-btn btn-style fill no-border um-form__btn"><span>Send Message</span></button>
+                        <p class="um-form-msg" id="contactMsg" role="status" aria-live="polite"></p>
+                    </form>
+                </div>
+
+                <aside class="um-map wow fadeInUp" data-wow-delay=".2s">
+                    <div class="um-map__frame">
+                        <!-- REPLACE the src below with your hotel's Google Maps embed link (Share > Embed a map) -->
+                        <iframe title="Unicorn Hospitality on the map" src="https://www.google.com/maps?q=Unicorn+Hospitality&amp;output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+                    </div>
+                    <div class="um-map__info">
+                        <h3>Find Us</h3>
+                        <p><svg class="ico"><use href="#i-pin"/></svg> Your street address, City, State</p>
+                        <p><svg class="ico"><use href="#i-plane"/></svg> Airport transfers arranged on request</p>
+                        <a href="https://www.google.com/maps/dir/?api=1&amp;destination=Unicorn+Hospitality" target="_blank" rel="noopener" class="theme-btn btn-style fill no-border sm-btn"><span>Get Directions</span></a>
+                    </div>
+                </aside>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ FAQ ============ -->
+    <section class="um-faq" id="faq">
+        <div class="container">
+            <div class="row justify-content-center text-center mb-40">
+                <div class="col-lg-6">
+                    <div class="section__topbar">
+                        <span class="h6 subtitle__icon__three mx-auto">FAQ</span>
+                        <h2 class="section__title">Quick Answers</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="um-faq__list">
+                <details class="um-faq__item" open>
+                    <summary>What are the check-in and check-out times?</summary>
+                    <p>Check-in starts at 2:00 PM and check-out is at 11:00 AM. Need to arrive early or stay later? Ask the front desk and we will do our best, subject to availability.</p>
+                </details>
+                <details class="um-faq__item">
+                    <summary>Is parking available?</summary>
+                    <p>Yes. Secure on-site parking is free for all in-house guests.</p>
+                </details>
+                <details class="um-faq__item">
+                    <summary>Can you arrange airport transfers?</summary>
+                    <p>Yes. Share your flight details when you book, or call the front desk, and we will arrange a pick-up or drop-off.</p>
+                </details>
+                <details class="um-faq__item">
+                    <summary>What is your cancellation policy?</summary>
+                    <p>Most direct bookings can be changed or cancelled free of charge up to 48 hours before arrival. Special offers may have their own terms, shown at the time of booking.</p>
+                </details>
+                <details class="um-faq__item">
+                    <summary>Do you host meetings, groups and events?</summary>
+                    <p>We do. Pick &ldquo;Meetings, groups &amp; events&rdquo; in the form above with your date and guest count, and our team will send a tailored quote.</p>
+                </details>
+                <details class="um-faq__item">
+                    <summary>Which payment methods do you accept?</summary>
+                    <p>Major credit and debit cards, UPI and cash at the front desk.</p>
+                </details>
+            </div>
+        </div>
+    </section>
+
+    </main>
+
+    <!-- ============ SIGN IN / JOIN MODALS ============ -->
+    <div class="modal similar__modal fade" id="loginModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="max-content similar__form form__padding">
+                    <div class="d-flex mb-3 align-items-center justify-content-between">
+                        <h6 class="mb-0">Sign In to Unicorn Rewards</h6>
+                        <button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <form action="#" class="d-flex flex-column gap-3 um-demo-form">
+                        <div class="form-group">
+                            <label for="email-popup" class="text-dark mb-3">Your Email</label>
+                            <div class="position-relative"><input type="email" name="email-popup" id="email-popup" placeholder="Enter your email" required></div>
+                        </div>
+                        <div class="form-group">
+                            <label for="password" class="text-dark mb-3">Password</label>
+                            <div class="position-relative"><input type="password" name="password" id="password" placeholder="Enter your password" required></div>
+                        </div>
+                        <div class="d-flex flex-wrap justify-content-between align-items-center">
+                            <div class="form-check d-flex align-items-center gap-2">
+                                <input class="form-check-input mt-0" type="checkbox" value="" id="flexCheckDefault">
+                                <label class="form-check-label mb-0" for="flexCheckDefault">Remember me</label>
+                            </div>
+                            <a href="#" class="forgot__password text-para" data-bs-toggle="modal" data-bs-target="#forgotModal">Forgot Password?</a>
+                        </div>
+                        <div class="form-group my-3">
+                            <button class="theme-btn btn-style sm-btn fill w-100"><span>Sign In</span></button>
+                        </div>
+                    </form>
+                    <span class="d-block text-center">Not a member? <a href="#" data-bs-target="#signupModal" data-bs-toggle="modal" class="text-primary">Join Free</a></span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal similar__modal fade" id="signupModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="max-content similar__form form__padding">
+                    <div class="d-flex mb-3 align-items-center justify-content-between">
+                        <h6 class="mb-0">Join Unicorn Rewards, Free</h6>
+                        <button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <form action="#" class="d-flex flex-column gap-3 um-demo-form">
+                        <div class="form-group">
+                            <label for="sname" class="text-dark mb-3">Your Name</label>
+                            <div class="position-relative"><input type="text" name="sname" id="sname" placeholder="Full name" required></div>
+                        </div>
+                        <div class="form-group">
+                            <label for="signemail" class="text-dark mb-3">Your Email</label>
+                            <div class="position-relative"><input type="email" name="signemail" id="signemail" placeholder="Enter your email" required></div>
+                        </div>
+                        <div class="form-group">
+                            <label for="spassword" class="text-dark mb-3">Password</label>
+                            <div class="position-relative"><input type="password" name="spassword" id="spassword" placeholder="Create a password" required></div>
+                        </div>
+                        <div class="form-group my-3">
+                            <button class="theme-btn btn-style sm-btn fill w-100"><span>Register</span></button>
+                        </div>
+                    </form>
+                    <span class="d-block text-center">Already a member? <a href="#" data-bs-target="#loginModal" data-bs-toggle="modal" class="text-primary">Sign In</a></span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal similar__modal fade" id="forgotModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="max-content similar__form form__padding">
+                    <div class="d-flex mb-3 align-items-center justify-content-between">
+                        <h6 class="mb-0">Forgot Password</h6>
+                        <button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <form action="#" class="d-flex flex-column gap-3 um-demo-form">
+                        <div class="form-group">
+                            <label for="fmail" class="text-dark mb-3">Your Email</label>
+                            <div class="position-relative"><input type="email" name="email" id="fmail" placeholder="Enter your email" required></div>
+                        </div>
+                        <div class="form-group my-3">
+                            <button class="theme-btn btn-style sm-btn fill w-100"><span>Reset Password</span></button>
+                        </div>
+                    </form>
+                    <span class="d-block text-center">Remember your password? <a href="#" data-bs-target="#loginModal" data-bs-toggle="modal" class="text-primary">Sign In</a></span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ============ MOBILE OFF-CANVAS MENU ============ -->
+    <div class="offcanvas offcanvas-start" id="offcanvasRight" tabindex="-1" aria-label="Mobile menu">
+        <div class="rts__btstrp__offcanvase">
+            <div class="offcanvase__wrapper">
+                <div class="left__side mobile__menu">
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                    <div class="offcanvase__top">
+                        <div class="offcanvase__logo">
+                            <a href="index.html" class="um-logo um-logo--light"><span class="um-logo__name">Unicorn</span><span class="um-logo__sub">Hospitality</span></a>
+                        </div>
+                    </div>
+                    <div class="offcanvase__mobile__menu">
+                        <nav class="um-mnav" aria-label="Mobile">
+                            <button class="um-mnav__btn" aria-expanded="false">Book <i></i></button>
+                            <div class="um-mnav__panel">
+                                <a href="index.html#book">Find My Reservation</a>
+                                <a href="index.html#locations">Our Locations</a>
+                                <a href="index.html#offers">All Offers</a>
+                                <a href="index.html#rooms">Rooms &amp; Suites</a>
+                            </div>
+                            <button class="um-mnav__btn" aria-expanded="false">Stay <i></i></button>
+                            <div class="um-mnav__panel">
+                                <a href="index.html#rooms">Rooms &amp; Suites</a>
+                                <a href="index.html#amenities">Amenities</a>
+                                <a href="index.html#dining">Dining</a>
+                                <a href="index.html#gallery">Gallery</a>
+                            </div>
+                            <a class="um-mnav__link" href="index.html#offers">Offers</a>
+                            <button class="um-mnav__btn" aria-expanded="false">Meetings &amp; Groups <i></i></button>
+                            <div class="um-mnav__panel">
+                                <a href="index.html#meetings">Meetings</a>
+                                <a href="index.html#meetings">Groups</a>
+                                <a href="index.html#meetings">Weddings &amp; Events</a>
+                            </div>
+                            <a class="um-mnav__link" href="index.html#about">About</a>
+                            <a class="um-mnav__link" href="contact.html">Contact</a>
+                            <a class="um-mnav__link" href="#" data-bs-toggle="modal" data-bs-target="#loginModal">Sign In / Join</a>
+                        </nav>
+                    </div>
+                    <div class="offcanvase__bottom">
+                        <div class="offcanvase__address">
+                            <div class="item">
+                                <span class="h6">Reservations</span>
+                                <a href="tel:+919920400267"><svg class="ico"><use href="#i-phone"/></svg> +91 99204 00267</a>
+                            </div>
+                            <div class="item">
+                                <span class="h6">Email</span>
+                                <a href="mailto:stay@unicornhospitality.example"><svg class="ico"><use href="#i-mail"/></svg> stay@unicornhospitality.example</a>
+                            </div>
+                            <div class="item">
+                                <span class="h6">Address</span>
+                                <a href="contact.html"><svg class="ico"><use href="#i-pin"/></svg> Your street address, City, State</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- offcanvas end -->
+
+    <!-- ============ FOOTER (Ramada-style columns) ============ -->
+    <footer class="rts__section rts__footer is__common__footer footer__background has__shape" id="contact">
+        <div class="container">
+            <div class="row">
+                <div class="footer__newsletter">
+                    <span class="h2">Join Our Newsletter</span>
+                    <div class="rts__form">
+                        <form action="#" method="post" id="newsForm" novalidate>
+                            <input type="email" name="email" id="subscription" placeholder="Enter your email" required aria-label="Email">
+                            <button type="submit">Subscribe</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <div class="um-fcols">
+                <div class="um-fcol">
+                    <button class="um-fcol__title" aria-expanded="false">Unicorn Hospitality <i></i></button>
+                    <ul>
+                        <li><a href="index.html#about">About</a></li>
+                        <li><a href="index.html#locations">Locations</a></li>
+                        <li><a href="index.html">Site Map</a></li>
+                        <li><a href="index.html#locations">Travel Guide</a></li>
+                    </ul>
+                </div>
+                <div class="um-fcol">
+                    <button class="um-fcol__title" aria-expanded="false">Contact <i></i></button>
+                    <ul>
+                        <li><a href="tel:+919920400267"><svg class="ico"><use href="#i-phone"/></svg> Reservations: +91 99204 00267</a></li>
+                        <li><a href="mailto:stay@unicornhospitality.example"><svg class="ico"><use href="#i-mail"/></svg> stay@unicornhospitality.example</a></li>
+                        <li><a href="contact.html"><svg class="ico"><use href="#i-pin"/></svg> Your street address, City, State</a></li>
+                        <li><a href="contact.html">Customer Care / Help</a></li>
+                    </ul>
+                </div>
+                <div class="um-fcol">
+                    <button class="um-fcol__title" aria-expanded="false">Hospitality Business <i></i></button>
+                    <ul>
+                        <li><a href="contact.html">Join Our Business Programme</a></li>
+                        <li><a href="index.html#meetings">Projects &amp; Groups</a></li>
+                        <li><a href="contact.html">Corporate Travel</a></li>
+                        <li><a href="contact.html">Travel Advisors</a></li>
+                    </ul>
+                </div>
+                <div class="um-fcol">
+                    <button class="um-fcol__title" aria-expanded="false">Terms &amp; Policies <i></i></button>
+                    <ul>
+                        <li><a href="#">Best Rate Guarantee</a></li>
+                        <li><a href="#">Privacy Notice</a></li>
+                        <li><a href="#">Terms of Use</a></li>
+                        <li><a href="#">Cookie Consent</a></li>
+                    </ul>
+                </div>
+                <div class="um-fcol">
+                    <button class="um-fcol__title" aria-expanded="false">Corporate Resources <i></i></button>
+                    <ul>
+                        <li><a href="#">Media Centre</a></li>
+                        <li><a href="#">Franchise Information</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Social Responsibility</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="copyright__text">
+            <div class="container">
+                <div class="row">
+                    <div class="copyright__wrapper">
+                        <p class="mb-0 ">Copyright &copy; <span id="year">2026</span> Unicorn Hospitality. All rights reserved. | Developed By <a href="https://hsdigitalmedia.com/" target="_blank">HS Digital Media®</a></p>
+                        <div class="footer__social__link">
+                            <a href="#" aria-label="Facebook" class="link__item">Facebook</a>
+                            <a href="#" aria-label="Instagram" class="link__item">Instagram</a>
+                            <a href="#" aria-label="LinkedIn" class="link__item">LinkedIn</a>
+                            <a href="#" aria-label="X" class="link__item">X</a>
+                            <a href="#" aria-label="YouTube" class="link__item">YouTube</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- footer end -->
+
+    <!-- sticky mobile booking bar -->
+    <div class="um-mbar" id="umMbar">
+        <a href="tel:+919920400267" class="um-mbar__call">Call</a>
+        <a href="index.html#book" class="theme-btn btn-style fill no-border um-mbar__book"><span>Book Now</span></a>
+    </div>
+
+    <!-- back to top -->
+    <button type="button" class="rts__back__top" id="rts-back-to-top" aria-label="Back to top">
+        <svg width="20" height="20" viewBox="0 0 13 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M7.30201 1.51317L7.29917 21.3422C7.29912 21.7057 6.97211 21.9993 6.5674 21.9993C6.16269 21.9992 5.83577 21.7055 5.83582 21.342L5.83844 3.10055L1.39753 7.08842C1.11169 7.34511 0.647535 7.34506 0.361762 7.0883C0.0759894 6.83155 0.0760493 6.41464 0.361896 6.15795L6.05367 1.04682C6.26405 0.857899 6.5773 0.802482 6.85167 0.905201C7.12374 1.00792 7.30205 1.24823 7.30201 1.51317Z" fill="#FFF" />
+            <path d="M12.9991 6.6318C12.9991 6.80021 12.9282 6.96861 12.7841 7.09592C12.4983 7.35261 12.0341 7.35256 11.7483 7.0958L6.05118 1.97719C5.76541 1.72043 5.76547 1.30352 6.05131 1.04684C6.33716 0.790152 6.80131 0.790206 7.08709 1.04696L12.7842 6.16557C12.9283 6.29498 12.9991 6.46339 12.9991 6.6318Z" fill="#FFF" />
+        </svg>
+    </button>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/wowjs@1.1.3/dist/wow.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jarallax@2/dist/jarallax.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr@4/dist/flatpickr.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr@4/dist/flatpickr.min.css">
+    <!-- shared site script -->
+    <script src="assets/js/2026-10-22-unicorn-hospitality-v2-main.js"></script>
+    <!-- contact page script -->
+    <script src="assets/js/contact.js"></script>
+</body>
+</html>

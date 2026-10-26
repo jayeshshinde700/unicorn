@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="description" content="Unicon Hospitality - comfortable rooms, memorable dining and warm service. Book direct for the best rates.">
+    <meta name="keywords" content="hotel, resort, rooms, dining, meetings, Unicon Hospitality">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="Unicon Hospitality">
+    <meta property="og:description" content="Comfortable rooms, memorable dining and warm service.">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Unicon Hospitality">
+    <meta name="twitter:description" content="Comfortable rooms, memorable dining and warm service.">
+    <link rel="icon" href="assets/images/unicon/logos.jpeg" type="image/x-icon">
+    <title>Unicon Hospitality | Stay Somewhere Magical</title>
+
+    <!-- google fonts (same as the Moonlit theme) -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+    <!-- plugins (loaded from CDN because plugins.min.css was not supplied) -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+    <!-- main stylesheet (Moonlit + Unicon changes in one file): save as assets/css/style.css -->
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body>
+    <!-- icon sprite (replaces the flaticon font, which was not supplied) -->
+    <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+        <defs>
+            <symbol id="i-phone" viewBox="0 0 24 24"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></symbol>
+            <symbol id="i-mail" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></symbol>
+            <symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 21s7-6.2 7-11a7 7 0 0 0-14 0c0 4.8 7 11 7 11z"/><circle cx="12" cy="10" r="2.5"/></symbol>
+            <symbol id="i-cal" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M8 3v4M16 3v4M3 10h18"/></symbol>
+            <symbol id="i-user" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></symbol>
+            <symbol id="i-people" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.5"/><path d="M2 20a7 7 0 0 1 14 0"/><circle cx="17" cy="9" r="2.5"/><path d="M18 14a5 5 0 0 1 4 6"/></symbol>
+            <symbol id="i-area" viewBox="0 0 24 24"><path d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5"/></symbol>
+            <symbol id="i-check" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="m8 12 3 3 5-6"/></symbol>
+            <symbol id="i-star" viewBox="0 0 24 24"><path d="m12 3 2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1L3.2 9.5l6.1-.9z"/></symbol>
+            <symbol id="i-play" viewBox="0 0 24 24"><path d="M8 5v14l11-7z" fill="currentColor"/></symbol>
+            <symbol id="i-bed" viewBox="0 0 24 24"><path d="M3 18V6M3 14h18v4M21 14v-2a3 3 0 0 0-3-3h-7v5"/><circle cx="7" cy="11" r="1.5"/></symbol>
+            <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 3 5 6v6c0 4.5 3 7.5 7 9 4-1.500 7-4.500 7-9V6z"/><path d="m9 12 2 2 4-4"/></symbol>
+            <symbol id="i-gym" viewBox="0 0 24 24"><path d="M6 8v8M18 8v8M3 10v4M21 10v4M6 12h12"/></symbol>
+            <symbol id="i-pool" viewBox="0 0 24 24"><path d="M3 17c2 0 2-1.500 4.500-1.500S10 17 12 17s2.500-1.500 4.500-1.500S19 17 21 17M3 21c2 0 2-1.500 4.500-1.500S10 21 12 21s2.500-1.500 4.500-1.500S19 21 21 21M8 14V6a2 2 0 0 1 4 0M14 14V6a2 2 0 0 1 4 0M8 9h6"/></symbol>
+            <symbol id="i-wifi" viewBox="0 0 24 24"><path d="M2 9a15 15 0 0 1 20 0M5 12.500a10 10 0 0 1 14 0M8.500 16a5 5 0 0 1 7 0"/><circle cx="12" cy="19" r="1" fill="currentColor"/></symbol>
+            <symbol id="i-cup" viewBox="0 0 24 24"><path d="M4 8h13v6a5 5 0 0 1-5 5H9a5 5 0 0 1-5-5zM17 10h2a2 2 0 0 1 0 4h-2M8 3v2M12 3v2"/></symbol>
+            <symbol id="i-car" viewBox="0 0 24 24"><path d="M4 16v-4l2-5h12l2 5v4zM4 16v2M20 16v2M4 12h16"/><circle cx="8" cy="14.500" r="1"/><circle cx="16" cy="14.500" r="1"/></symbol>
+            <symbol id="i-plane" viewBox="0 0 24 24"><path d="M21 3 3 10l7 3 3 7z"/><path d="m10 13 4-4"/></symbol>
+            <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></symbol>
+            <symbol id="i-arrow-l" viewBox="0 0 24 24"><path d="M19 12H5M11 6l-6 6 6 6"/></symbol>
+            <symbol id="i-arrow-r" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
+            <symbol id="i-insta" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.500" cy="6.500" r="1" fill="currentColor"/></symbol>
+        </defs>
+    </svg>
+
+    <!-- ============ TOP UTILITY BAR (Ramada-style) ============ -->
+    <div class="header__top um-utility">
+        <div class="container">
+            <div class="um-utility__in">
+                <ul class="um-utility__links">
+                    <li><a class="link__item" href="#book">Find My Reservation</a></li>
+                    <li><a class="link__item" href="#locations">Our Locations</a></li>
+                    <li><a class="link__item" href="#offers">All Offers</a></li>
+                    <li><a class="link__item" href="#meetings">Meetings &amp; Groups</a></li>
+                </ul>
+                <div class="um-utility__right">
+                    <a class="link__item" href="tel:+919920400267"><svg class="ico"><use href="#i-phone"/></svg> Reservations: +91 99204 00267</a>
+                    <label class="um-lang">
+                        <span class="visually-hidden">Language</span>
+                        <select aria-label="Language">
+                            <option>English</option>
+                            <option>हिन्दी</option>
+                            <option>मराठी</option>
+                        </select>
+                    </label>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ============ MAIN HEADER ============ -->
+    <header class="main__header header__function">
+        <div class="container">
+            <div class="row">
+                <div class="main__header__wrapper">
+                    <div class="main__nav">
+                        <div class="navigation d-none d-lg-block">
+                            <nav class="navigation__menu" id="main__menu">
+                                <ul class="list-unstyled">
+                                    <!-- Book (mega menu, like Ramada) -->
+                                    <li class="navigation__menu--item has-child has-arrow">
+                                        <a href="#book" class="navigation__menu--item__link">Book</a>
+                                        <div class="has__mega__menu um-mega">
+                                            <div class="um-mega__col">
+                                                <h6>Book</h6>
+                                                <a href="#book">Find My Reservation</a>
+                                                <a href="#locations">Our Locations</a>
+                                                <a href="#offers">All Offers</a>
+                                                <a href="#rooms">Rooms &amp; Suites</a>
+                                            </div>
+                                            <div class="um-mega__promo">
+                                                <span class="um-mega__tag">Save with bundles</span>
+                                                <p>Combine your room, meals and transfers in one seamless booking.</p>
+                                                <a href="#book" class="theme-btn btn-style sm-btn fill no-border"><span>Book Now</span></a>
+                                            </div>
+                                        </div>
+                                    </li>
+
+                                    <li class="navigation__menu--item has-child has-arrow">
+                                        <a href="#rooms" class="navigation__menu--item__link">Stay</a>
+                                        <ul class="submenu sub__style" role="menu">
+                                            <li role="menuitem"><a href="#rooms">Rooms &amp; Suites</a></li>
+                                            <li role="menuitem"><a href="#amenities">Amenities</a></li>
+                                            <li role="menuitem"><a href="#dining">Dining</a></li>
+                                            <li role="menuitem"><a href="#gallery">Gallery</a></li>
+                                        </ul>
+                                    </li>
+
+                                    <li class="navigation__menu--item">
+                                        <a href="#offers" class="navigation__menu--item__link">Offers</a>
+                                    </li>
+
+                                    <!-- <li class="navigation__menu--item has-child has-arrow">
+                                        <a href="#meetings" class="navigation__menu--item__link">Meetings &amp; Groups</a>
+                                        <ul class="submenu sub__style" role="menu">
+                                            <li role="menuitem"><a href="#meetings">Meetings</a></li>
+                                            <li role="menuitem"><a href="#meetings">Groups</a></li>
+                                            <li role="menuitem"><a href="#meetings">Weddings &amp; Events</a></li>
+                                        </ul>
+                                    </li> -->
+
+                                    <li class="navigation__menu--item">
+                                        <a href="#about" class="navigation__menu--item__link">About</a>
+                                    </li>
+
+                                    <li class="navigation__menu--item">
+                                        <a href="contact.html" class="navigation__menu--item__link">Contact</a>
+                                    </li>
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
+                    <div class="main__logo">
+                        <a href="#top" class="um-logo" aria-label="Unicon Hospitality home">
+                            <img src="assets/images/unicon/logo.png" alt="">
+                        </a>
+                    </div>
+                    <div class="main__right">
+                        <a href="#" class="theme-btn btn-style sm-btn border d-none d-lg-block" aria-label="Sign In" data-bs-toggle="modal" data-bs-target="#loginModal"><span>Sign In</span></a>
+                        <a href="#" class="theme-btn btn-style sm-btn border d-none d-lg-block" aria-label="Join" data-bs-toggle="modal" data-bs-target="#signupModal"><span>Join Free</span></a>
+                        <a href="#book" class="theme-btn btn-style sm-btn fill"><span>Book Now</span></a>
+                        <button class="theme-btn btn-style sm-btn fill menu__btn d-lg-none" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight" aria-label="Open menu">
+                            <span class="um-burger"><i></i><i></i><i></i></span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- header area end -->
+
+<main id="main">
+    <div class="rts__section page__hero__height page__hero__bg" style="background-image: url(/assets/images/room/comfortseaview/1.webp);">
+        <div class="container">
+            <div class="row align-items-center justify-content-center">
+                <div class="col-lg-12">
+                    <div class="page__hero__content">
+                        <h1 class="wow fadeInUp">About Us</h1>
+                        <p class="wow fadeInUp font-sm">Welcome to Heritage by Çimen Hotel, where luxury meets comfort in the heart of Alanya.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<div class="rts__section about is__home__four section__padding">
+    <div class="container">
+        <div class="row g-4 align-items-center  ">
+            <div class="col-lg-5">
+                <div class="about__images">
+                    <div class="image__left wow fadeInUp">
+                        <img height="474" width="450" src="/assets/images/about/aboutus-2.webp" alt="" loading="lazy" decoding="async">
+                    </div>
+                    <div class="image__right wow fadeInLeft">
+                        <img width="365" height="385" src="/assets/images/about/about-us1.webp" alt="" loading="lazy" decoding="async">
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-7">
+                <div class="about__content">
+                    <span class="h6 subtitle__icon__two d-block wow fadeInUp">About Us</span>
+                    <h2 class="font-xl wow fadeInUp">Welcome To Our Heritage By Çimen Hotel</h2>
+                    <p class="font-sm mt-30 wow fadeInUp" data-wow-delay=".3s">
+                        Welcome to Heritage by Çimen Hotel, a newly renovated 3-star hotel located in the heart of Alanya, just steps away from the sea and from city center. Our hotel offers a perfect blend of comfort and elegance, featuring 45 sea-view rooms and modern amenities designed for an exceptional stay. With a focus on quality and guest satisfaction, we provide a unique experience that caters to both leisure and business travelers. Discover the renewed charm of Heritage by Çimen Hotel, where unforgettable memories await                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="rts__section facility__area is__about has__background has__shape">
+    <div class="section__shape wow fadeInRight" data-wow-delay=".5s">
+        <img src="/assets/images/pages/about-shape.svg" alt="" loading="lazy" decoding="async">
+    </div>
+    <div class="container">
+        <div class="row g-5 align-items-center">
+            <div class="col-lg-6">
+                <div class="facility__content">
+                    <div class="section__content__left">
+                        <span class="h6 subtitle__icon__two d-block wow fadeInUp">Facilities</span>
+                        <h2 class="content__title h2 lh-1">Hotel Facilities</h2>
+                    </div>
+                    <div class="row mt-20 g-5 wow fadeInUp" data-wow-delay=".5s">
+                        <div class="col-lg-6 col-md-6">
+                            <div class="card rts__card no-border is__home__three">
+                                <div class="card-body">
+                                    <div class="icon"><img src="/assets/images/icon/bed.svg" alt="" loading="lazy" decoding="async"></div>
+                                    <a href="/en/rooms">
+                                        <h6 class="card-title h6 mb-15">Rooms and Suites</h6>
+                                    </a>
+                                    <p class="card-text">Varied types of rooms, from Standard to Luxury suites, equipped with essentials like beds, bathroom, Smart TV, Wi-Fi, safe, air conditioning.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-md-6">
+                            <div class="card rts__card no-border is__home__three">
+                                <div class="card-body">
+                                    <div class="icon"><img src="/assets/images/icon/security.svg" alt="" loading="lazy" decoding="async"></div>
+                                    <a href="/en/about-us">
+                                        <h6 class="card-title h6 mb-15">24-Hour Security</h6>
+                                    </a>
+                                    <p class="card-text">On-site security personnel and best surveillance. Secure storage and safe for valuables.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-md-6">
+                            <div class="card rts__card no-border is__home__three">
+                                <div class="card-body">
+                                    <div class="icon"><img src="/assets/images/icon/swimming-pool.svg" alt="" loading="lazy" decoding="async"></div>
+                                    <a href="/en/pool-beach">
+                                        <h6 class="card-title h6 mb-15">Beach</h6>
+                                    </a>
+                                    <p class="card-text">Experience the beauty of our fine sandy beach, where the gently sloping seabed invites you to relax and enjoy the tranquil waters.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-md-6">
+                            <div class="card rts__card no-border is__home__three">
+                                <div class="card-body">
+                                    <div class="icon"><img src="/assets/images/icon/swimming-pool.svg" alt="" loading="lazy" decoding="async"></div>
+                                    <a href="/en/pool-beach">
+                                        <h6 class="card-title h6 mb-15">Swimming Pool</h6>
+                                    </a>
+                                    <p class="card-text">Immerse yourself in the serene ambiance of our pool area, designed for ultimate relaxation and enjoyment.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="facility__image jara-mask-3 jarallax">
+                    <img height="765" width="605" class="jarallax-img" src="/assets/images/room/suit/1.jpg" alt="" srcset="/assets/images/room/suit/1-800w.webp 800w, /assets/images/room/suit/1.jpg 2000w" sizes="(max-width: 767px) 100vw, 2000px">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</main>
+
+<div class="offcanvas offcanvas-start" id="offcanvasRight">
+    <div class="rts__btstrp__offcanvase">
+        <div class="offcanvase__wrapper">
+            <div class="left__side mobile__menu">
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                <div class="offcanvase__top">
+                    <div class="offcanvase__logo">
+                        <a href="/en/">
+                            <img src="/assets/images/logo/heritage-white.png" alt="logo">
+                        </a>
+                    </div>
+                    <p class="description">
+                        Welcome to Heritage by Çimen Hotel, where luxury and comfort meet the unique sea view in the heart of Alanya.                        <div style="text-align: center; width: 100%; margin-top: 10px;">
+    <div style="display: inline-flex; align-items: center; gap: 10px;">
+        <a class="link__item" href="/hakkimizda" hreflang="tr" lang="tr">
+            <img src="/assets/images/icon/tr-icon.png" alt="Türkçe" style="width: 20px;">
+        </a>
+        <a class="link__item" href="/en/about-us" hreflang="en" lang="en">
+            <img src="/assets/images/icon/en-icon.png" alt="English" style="width: 20px;">
+        </a>
+    </div>
+</div>
+
+                    </p>
+                </div>
+                <div class="offcanvase__mobile__menu">
+                    <div class="mobile__menu__active"></div>
+                </div>
+                <div class="offcanvase__bottom">
+                    <div class="offcanvase__address">
+                        <div class="item">
+                            <span class="h6">Phone</span>
+                            <a href="tel:+905065031915"><i class="flaticon-phone-flip"></i> +90 506 503 19 15</a>
+                        </div>
+                        <div class="item">
+                            <span class="h6">Email</span>
+                            <a href="mailto:info@heritagebycimen.com"><i class="flaticon-envelope"></i>info@heritagebycimen.com</a>
+                        </div>
+                        <div class="item">
+                            <span class="h6">Address</span>
+                            <a href="https://www.google.com/maps/search/?api=1&query=Heritage+by+%C3%87imen+Hotel+Alanya" target="_blank" rel="noopener"><i class="flaticon-marker"></i> Güller Pınarı, Yenilmez St. No:2, 07400 Alanya/Antalya</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="right__side desktop__menu">
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                <div class="rts__desktop__menu">
+                    <nav class="desktop__menu offcanvas__menu">
+                        <ul class="list-unstyled">
+                            <li class="slide">
+                                <a class="slide__menu__item" href="/en/">Home</a>
+                            </li>
+                            <li class="slide">
+                                <a class="slide__menu__item" href="/en/rooms">Rooms</a>
+                            </li>
+                            <li class="slide">
+                                <a class="slide__menu__item" href="/en/pool-beach">Pool & Beach</a>
+                            </li>
+                         
+                            <li class="slide">
+                                <a class="slide__menu__item" href="/en/restaurant-bar">Restaurant & Bar</a>
+                            </li>
+                            <li class="slide">
+                                <a class="slide__menu__item" href="/en/about-us">About Us</a>
+                            </li>
+                            <li class="slide">
+                                <a class="slide__menu__item" href="/en/gallery">Gallery</a>
+                            </li>
+                            <li class="slide">
+                                <a class="slide__menu__item" href="/en/alanya-guide">Alanya Guide</a>
+                            </li>
+                            <li class="slide">
+                                <a class="slide__menu__item" href="https://heritage-by-cimen.rezervasyonal.com/">Reservation</a>
+                            </li>
+                            <li class="slide">
+                                <a class="slide__menu__item" href="/en/contact">Contact</a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- ============ FOOTER (Ramada-style columns) ============ -->
+    <footer class="rts__section rts__footer is__common__footer footer__background has__shape" id="contact">
+        <div class="container">
+            <div class="row">
+                <div class="footer__newsletter">
+                    <span class="h2">Join Our Newsletter</span>
+                    <div class="rts__form">
+                        <form action="#" method="post" id="newsForm" novalidate>
+                            <input type="email" name="email" id="subscription" placeholder="Enter your email" required aria-label="Email">
+                            <button type="submit">Subscribe</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <div class="um-fcols">
+                <div class="um-fcol">
+                    <button class="um-fcol__title" aria-expanded="false"><img src="assets/images/unicon/logoc.png" alt=""> <i></i></button>
+                    <ul>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#locations">Locations</a></li>
+                        <li><a href="#top">Site Map</a></li>
+                        <li><a href="#locations">Travel Guide</a></li>
+                    </ul>
+                </div>
+                <div class="um-fcol">
+                    <button class="um-fcol__title" aria-expanded="false">Contact <i></i></button>
+                    <ul>
+                        <li><a href="tel:+919920400267"><svg class="ico"><use href="#i-phone"/></svg> Reservations: +91 99204 00267</a></li>
+                        <li><a href="mailto:stay@uniconhospitality.example"><svg class="ico"><use href="#i-mail"/></svg> stay@uniconhospitality.example</a></li>
+                        <li><a href="contact.html"><svg class="ico"><use href="#i-pin"/></svg> Your street address, City, State</a></li>
+                        <li><a href="contact.html">Customer Care / Help</a></li>
+                    </ul>
+                </div>
+                <div class="um-fcol">
+                    <button class="um-fcol__title" aria-expanded="false">Hospitality Business <i></i></button>
+                    <ul>
+                        <li><a href="contact.html">Join Our Business Programme</a></li>
+                        <li><a href="#meetings">Projects &amp; Groups</a></li>
+                        <li><a href="#contact">Corporate Travel</a></li>
+                        <li><a href="#contact">Travel Advisors</a></li>
+                    </ul>
+                </div>
+                
+                <div class="um-fcol">
+                    <button class="um-fcol__title" aria-expanded="false">Corporate Resources <i></i></button>
+                    <ul>
+                        <li><a href="#">Media Centre</a></li>
+                        <li><a href="#">Franchise Information</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Social Responsibility</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="copyright__text">
+            <div class="container">
+                <div class="row">
+                    <div class="copyright__wrapper">
+                        <p class="mb-0 ">Copyright &copy; <span id="year">2026</span> Unicon Hospitality. All rights reserved. | Developed By <a href="https://hsdigitalmedia.com/" target="_blank">HS Digital Media®</a></p>
+                        <div class="footer__social__link">
+                            <a href="#" aria-label="Facebook" class="link__item">Facebook</a>
+                            <a href="#" aria-label="Instagram" class="link__item">Instagram</a>
+                            <a href="#" aria-label="LinkedIn" class="link__item">LinkedIn</a>
+                            <a href="#" aria-label="X" class="link__item">X</a>
+                            <a href="#" aria-label="YouTube" class="link__item">YouTube</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- footer end -->
+
+    <!-- sticky mobile booking bar -->
+    <div class="um-mbar" id="umMbar">
+        <a href="tel:+919920400267" class="um-mbar__call">Call</a>
+        <a href="#book" class="theme-btn btn-style fill no-border um-mbar__book"><span>Book Now</span></a>
+    </div>
+
+    <!-- back to top -->
+    <button type="button" class="rts__back__top" id="rts-back-to-top" aria-label="Back to top">
+        <svg width="20" height="20" viewBox="0 0 13 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M7.30201 1.51317L7.29917 21.3422C7.29912 21.7057 6.97211 21.9993 6.5674 21.9993C6.16269 21.9992 5.83577 21.7055 5.83582 21.342L5.83844 3.10055L1.39753 7.08842C1.11169 7.34511 0.647535 7.34506 0.361762 7.0883C0.0759894 6.83155 0.0760493 6.41464 0.361896 6.15795L6.05367 1.04682C6.26405 0.857899 6.5773 0.802482 6.85167 0.905201C7.12374 1.00792 7.30205 1.24823 7.30201 1.51317Z" fill="#FFF" />
+            <path d="M12.9991 6.6318C12.9991 6.80021 12.9282 6.96861 12.7841 7.09592C12.4983 7.35261 12.0341 7.35256 11.7483 7.0958L6.05118 1.97719C5.76541 1.72043 5.76547 1.30352 6.05131 1.04684C6.33716 0.790152 6.80131 0.790206 7.08709 1.04696L12.7842 6.16557C12.9283 6.29498 12.9991 6.46339 12.9991 6.6318Z" fill="#FFF" />
+        </svg>
+    </button>
+
+    <!-- preloader (hidden by the main script) -->
+    <!-- <div class="loader-wrapper">
+        <div class="loader"></div>
+        <div class="loader-section section-left"></div>
+        <div class="loader-section section-right"></div>
+    </div> -->
+
+    <!-- plugins from CDN (plugins.min.js was not supplied) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/wowjs@1.1.3/dist/wow.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jarallax@2/dist/jarallax.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr@4/dist/flatpickr.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr@4/dist/flatpickr.min.css">
+    <!-- custom js -->
+    <script src="assets/js/2026-10-22-unicorn-hospitality-v2-main.js"></script>
+    <script src="assets/js/gdpr.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/plugins.min.js"></script>
+
+</body>
+</html>

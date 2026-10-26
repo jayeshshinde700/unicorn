@@ -1,0 +1,231 @@
+/* ===== BRAND THEME (logo navy #303f61) - colours + fonts. Edit the values here to re-theme. ===== */
+:root{
+  --btn-1:#303f61;            /* main brand navy (buttons, links, icons, accents) */
+  --heading-color:#303f61;
+  --rts-heading:#222e49;      /* headings */
+  --rts-gray:#eef1f7;         /* light section backgrounds */
+  --brand-dark:#222e49;       /* hover / dark sections */
+  --glida:"Playfair Display",Georgia,serif;   /* headings (was Gilda Display) */
+  --jost:"Inter","Helvetica Neue",Arial,sans-serif; /* body + nav + buttons (was Jost) */
+}
+h1,.h1,h2,.h2,h3,.h3,h4,.h4,h5,.h5,h6,.h6{font-weight:600;letter-spacing:-.01em}
+body{font-weight:400}
+.header__function .main__nav a,.header__top a,.theme-btn{font-weight:500}
+.theme-btn.fill:hover,.theme-btn.btn-style.fill:hover{background:var(--brand-dark);border-color:var(--brand-dark)}
+.menu__btn,.main__right .theme-btn.fill{background:var(--btn-1)}
+.rts__section .subtitle,.subtitle{font-weight:500}
+/* ===== end brand theme ===== */
+/* Unicorn Hospitality - additions to the Moonlit stylesheet (2026-10-22)
+   Load this AFTER assets/css/style.css. It does not edit your style.css.
+   Colours use the theme variables (--btn-1 etc.), so changing them in style.css recolours this too. */
+
+/* ---------- icons (inline SVG replacing the flaticon font) ---------- */
+.ico{width:1.05em;height:1.05em;fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round;vertical-align:-.15em;flex:none}
+.um-icon{display:inline-flex;align-items:center;justify-content:center;width:64px;height:64px;border-radius:50%;background:rgba(48,63,97,.1);color:var(--btn-1);margin-bottom:18px}
+.um-icon .ico{width:30px;height:30px}
+.query__input__icon .ico{width:20px;height:20px;color:var(--btn-1)}
+.image__card .icon .ico{width:28px;height:28px;color:#fff}
+.room__content__meta .ico{width:16px;height:16px;color:var(--btn-1)}
+.offer__included .ico{color:var(--btn-1);margin-right:4px}
+.gallery__popup .ico{width:36px;height:36px;color:#fff}
+.rts__circle--icon .ico{width:50px;height:50px}
+.rts__circle--icon a,.rts__circle--icon .video-play{color:#fff}
+.rts__circle--icon .ico{fill:currentColor;stroke:none}
+.room__thumbnail img.jarallax-img{width:100%;height:100%;object-fit:cover}
+.rts__section>.row{margin-left:0;margin-right:0}
+.container-full>.row{margin-left:0;margin-right:0}
+.container-full>.row>*{padding-left:0;padding-right:0}
+.offer__area .g-30{--bs-gutter-x:24px;--bs-gutter-y:30px}
+
+/* section-label ornaments: the theme's shape images were not supplied, so draw them in CSS */
+.subtitle__icon::before,.subtitle__icon::after,
+.subtitle__icon__two::before,.subtitle__icon__three::before,.subtitle__icon__three::after,
+.subtitle__icon__four::before,.subtitle__icon__four::after,.subtitle__icon__five::before{
+  background-image:none!important;background-color:currentColor;height:1px!important;width:44px!important;opacity:.8}
+.subtitle__icon__two.d-block,.subtitle__icon__five.d-block{display:table!important;width:auto!important;max-width:calc(100% - 65px)}
+@media (max-width:576px){
+  .subtitle__icon__three::before,.subtitle__icon__three::after{width:26px!important}
+  .subtitle__icon__three::before{left:-34px!important}.subtitle__icon__three::after{right:-34px!important}
+}
+
+/* images that have no src yet get a visible placeholder (set by main.js) */
+img[data-ph]{background:#d9cfc2}
+
+/* ---------- top utility bar ---------- */
+.um-utility{padding:0}
+.um-utility__in{display:flex;justify-content:space-between;align-items:center;gap:20px;min-height:42px}
+.um-utility__links,.um-utility__right{display:flex;align-items:center;gap:24px;margin:0;padding:0;list-style:none}
+.um-utility .link__item{transition:color .3s}
+.um-utility .link__item:hover{color:var(--btn-1)}
+.um-utility .link__item .ico{top:0;position:relative;color:var(--btn-1)}
+.um-lang select{background:transparent;border:1px solid var(--rts-border);border-radius:4px;padding:3px 8px;font-size:14px;color:var(--rts-para)}
+.um-utility__signin{border:1px solid var(--btn-1);padding:4px 16px;border-radius:30px;color:var(--btn-1)!important}
+.um-utility__signin:hover{background:var(--btn-1);color:#fff!important}
+@media (max-width:991px){.um-utility__links{display:none}.um-utility__in{justify-content:center}}
+@media (max-width:576px){.header__top.um-utility{display:none}}
+
+/* ---------- logo ---------- */
+.um-logo{display:inline-flex;flex-direction:column;align-items:center;line-height:1;text-decoration:none}
+.um-logo__name{font-family:var(--jost);font-weight:700;font-size:27px;line-height:1;color:#303f61;letter-spacing:.16em;text-transform:uppercase}
+.um-logo__sub{font-family:var(--jost);font-size:10px;letter-spacing:.5em;text-transform:uppercase;color:#303f61;font-weight:600;margin-top:6px;padding-left:.42em}
+.um-logo--light .um-logo__name{color:#fff}
+@media (max-width:576px){.um-logo__name{font-size:26px}.um-logo__sub{font-size:8.5px}}
+
+/* header should sit above the banner and keep a white bar */
+.main__header{background:var(--rts-white);position:relative;z-index:20}
+/* three-part header: nav | logo | buttons, with the logo truly centred */
+.main__header__wrapper{gap:16px}
+.main__nav{flex:1 1 0;min-width:0}
+.main__right{flex:1 1 0;justify-content:flex-end;min-width:0}
+.main__logo{flex:0 0 auto}
+.navigation__menu--item__link{white-space:nowrap}
+.navigation__menu > ul{display:flex;gap:0}
+.navigation__menu--item{margin-right:26px}
+@media (max-width:1399px){.navigation__menu--item{margin-right:16px}.navigation__menu--item__link{font-size:15px}}
+@media (max-width:1199px){.main__right .theme-btn.border{display:none!important}}
+@media (max-width:991px){
+  .main__nav{display:none}
+  .main__logo{order:-1;flex:1 1 auto}
+  .main__right{flex:0 0 auto}
+}
+
+/* burger */
+.menu__btn .um-burger{display:block!important;position:relative!important;width:20px!important;height:14px!important;flex:0 0 20px}
+.menu__btn .um-burger i{display:block!important;position:absolute!important;left:0!important;right:0!important;width:auto!important;height:2px!important;background:#fff!important;border-radius:2px;opacity:1!important;transform:none!important;margin:0!important}
+.menu__btn .um-burger i:nth-child(1){top:0!important}.menu__btn .um-burger i:nth-child(2){top:6px!important}.menu__btn .um-burger i:nth-child(3){top:12px!important}
+.menu__btn{min-width:46px;min-height:42px;align-items:center;justify-content:center}
+.menu__btn span{display:flex;align-items:center}
+@media (max-width:991px){.menu__btn{display:inline-flex!important}}
+@media (min-width:992px){.menu__btn{display:none!important}}
+.main__right .theme-btn{white-space:nowrap;line-height:1.4}
+.main__right .theme-btn span{white-space:nowrap}
+
+/* all hero slides share one height so the fade never leaves a strip below the banner */
+.banner__slider .swiper-slide{display:flex;align-items:center;min-height:clamp(560px,82vh,760px)}
+.banner__slider .swiper-slide>.container{position:relative;z-index:2}
+.banner__slide__content{padding:110px 0 130px!important}
+@media (max-width:576px){.banner__slider .swiper-slide{min-height:620px}.banner__slide__content{padding:90px 0 110px!important}}
+body{overflow-x:hidden}
+
+/* ---------- mega menu (Ramada-style) ---------- */
+.navigation__menu--item.has-child .has__mega__menu.um-mega{width:780px;display:grid;grid-template-columns:1fr 1fr 1fr 1.25fr;gap:26px;padding:28px 30px}
+@media (max-width:1200px){.navigation__menu--item.has-child .has__mega__menu.um-mega{width:720px}}
+.um-mega__col h6{font-family:var(--jost);font-size:12px;line-height:1.4;letter-spacing:.18em;text-transform:uppercase;color:var(--btn-1);margin-bottom:12px}
+.um-mega__tag{display:block;line-height:1.4}
+.um-mega__col a{display:block;padding:7px 0;color:var(--rts-para);font-size:15px;transition:all .3s}
+.um-mega__col a:hover{color:var(--btn-1);padding-left:6px}
+.um-mega__promo{background:var(--rts-heading);color:#fff;border-radius:6px;padding:22px}
+.um-mega__tag{font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--btn-1)}
+.um-mega__promo p{color:#e6e0d8;margin:10px 0 16px;font-size:14px}
+
+/* ---------- booking form message ---------- */
+.um-form-msg{margin:14px 0 0;text-align:center;color:var(--btn-1);font-weight:500;min-height:1.4em}
+.advance__search{position:relative}
+
+/* ---------- dining overlay ---------- */
+.video__area{overflow:hidden}
+.um-dining-caption{position:absolute;z-index:3;color:#fff;left:7%;top:50%;transform:translateY(-50%);max-width:480px}
+.um-dining-caption h2{color:#fff;margin-bottom:14px}
+.um-dining-caption p{color:#f1ece6;margin-bottom:24px}
+.um-dining-caption .subtitle__icon{color:#fff}
+.video--spinner__wrapper{z-index:3}
+@media (min-width:992px){.video__area .video--spinner__wrapper{left:auto;right:10%;transform:translateY(-50%)}}
+@media (max-width:991px){
+  .um-dining-caption{left:20px;right:20px;top:auto;bottom:28px;transform:none;max-width:none;text-align:center}
+  .um-dining-caption p{display:none}
+  .video__area .video--spinner__wrapper{top:30%;transform:translate(-50%,-50%) scale(.7)}
+  .video__area__image{height:420px!important}
+}
+
+/* ---------- small helpers ---------- */
+.um-fine{text-align:center;color:var(--rts-para);font-size:13px;margin:28px 0 0}
+.section__padding.um-locations{background:var(--rts-gray)}
+.um-dest{position:relative;display:block;overflow:hidden;border-radius:8px;height:380px;color:#fff}
+.um-dest img{width:100%;height:100%;object-fit:cover;transition:transform .8s}
+.um-dest:hover img{transform:scale(1.08)}
+.um-dest::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 45%,rgba(27,27,27,.8))}
+.um-dest span{position:absolute;left:22px;bottom:20px;z-index:2;font-family:var(--glida);font-size:28px;display:flex;flex-direction:column;line-height:1.2}
+.um-dest small{font-family:var(--jost);font-size:14px;color:#d5dcec}
+@media (max-width:767px){.um-dest{height:260px}}
+
+.um-stats{display:flex;flex-wrap:wrap;gap:30px;margin:6px 0 30px}
+.um-stats strong{display:block;font-family:var(--glida);font-size:40px;line-height:1;color:var(--btn-1)}
+.um-stats span{font-size:14px;color:var(--rts-para)}
+.um-meetings .about__wrapper{align-items:center}
+@media (max-width:991px){.um-meetings .about__wrapper{flex-direction:column-reverse}}
+
+/* rewards band */
+.um-rewards{background:var(--rts-heading);color:#fff;padding:90px 0}
+.um-rewards h2{color:#fff;margin:12px 0 16px}
+.um-rewards p{color:#d6d1ca}
+.um-rewards .subtitle__icon__three{color:var(--btn-1)}
+.um-rewards__btns{display:flex;gap:14px;flex-wrap:wrap;margin-top:26px}
+.um-rewards .theme-btn.border{color:#fff;border-color:rgba(255,255,255,.6)}
+.um-perks li{background:rgba(255,255,255,.07);border-left:3px solid var(--btn-1);padding:16px 20px;margin-bottom:12px;border-radius:4px;color:#dde3f1}
+.um-perks strong{color:#fff}
+@media (max-width:767px){.um-rewards{padding:60px 0}}
+
+/* ---------- mobile off-canvas navigation ---------- */
+.um-mnav{display:block}
+.um-mnav__btn,.um-mnav__link{display:flex;width:100%;justify-content:space-between;align-items:center;background:none;border:0;border-bottom:1px solid rgba(255,255,255,.14);padding:16px 0;color:#fff;font-family:var(--glida);font-size:22px;text-align:left;cursor:pointer}
+.um-mnav__btn i{width:9px;height:9px;border-right:2px solid var(--btn-1);border-bottom:2px solid var(--btn-1);transform:rotate(45deg);transition:transform .3s;margin-right:6px}
+.um-mnav__btn[aria-expanded="true"] i{transform:rotate(225deg)}
+.um-mnav__panel{max-height:0;overflow:hidden;transition:max-height .35s ease}
+.um-mnav__panel a{display:block;padding:11px 0 11px 16px;color:#d5dcec;font-family:var(--jost);font-size:17px;border-left:2px solid var(--btn-1)}
+.um-mnav__link:hover,.um-mnav__btn:hover,.um-mnav__panel a:hover{color:var(--btn-1)}
+.offcanvase__address .item a .ico{color:var(--btn-1)}
+
+/* ---------- footer (Ramada-style columns; footer background is the theme's light grey) ---------- */
+.um-fcols{display:grid;grid-template-columns:repeat(5,1fr);gap:30px;margin-bottom:50px;position:relative;z-index:1}
+.um-fcol__title{display:block;width:100%;background:none;border:0;padding:0;margin-bottom:18px;text-align:left;font-family:var(--glida);font-size:22px;color:var(--rts-heading);cursor:default}
+.um-fcol__title i{display:none}
+.um-fcol ul{list-style:none;margin:0;padding:0}
+.um-fcol li a{display:block;padding:6px 0;color:var(--rts-para);font-size:15px;transition:all .3s}
+.um-fcol li a:hover{color:var(--btn-1);padding-left:5px}
+.um-fcol li .ico{color:var(--btn-1);margin-right:4px}
+.footer__social__link{display:flex;flex-wrap:wrap;gap:8px 22px}
+@media (max-width:991px){
+  .um-fcols{grid-template-columns:1fr;gap:0;margin-bottom:30px}
+  .um-fcol{border-bottom:1px solid var(--rts-border)}
+  .um-fcol__title{display:flex;justify-content:space-between;align-items:center;padding:18px 0;margin:0;cursor:pointer;font-size:20px}
+  .um-fcol__title i{display:block;width:9px;height:9px;border-right:2px solid var(--btn-1);border-bottom:2px solid var(--btn-1);transform:rotate(45deg);transition:transform .3s;margin-right:6px}
+  .um-fcol__title[aria-expanded="true"] i{transform:rotate(225deg)}
+  .um-fcol ul{max-height:0;overflow:hidden;transition:max-height .35s ease}
+  .um-fcol[data-open] ul{padding-bottom:12px}
+  .footer__newsletter{margin-bottom:40px}
+  .footer__newsletter form{min-width:0!important;width:100%}
+  .copyright__wrapper{flex-direction:column;gap:12px;text-align:center}
+}
+@media (min-width:992px) and (max-width:1199px){.um-fcols{grid-template-columns:repeat(3,1fr)}}
+
+/* ---------- sticky mobile booking bar ---------- */
+.um-mbar{position:fixed;left:0;right:0;bottom:0;z-index:998;display:none;gap:10px;padding:10px 14px calc(10px + env(safe-area-inset-bottom));background:#fff;box-shadow:0 -6px 20px rgba(0,0,0,.14);transform:translateY(110%);transition:transform .35s}
+.um-mbar.is-on{transform:none}
+.um-mbar__call{flex:0 0 28%;display:flex;align-items:center;justify-content:center;border:1px solid var(--btn-1);border-radius:4px;color:var(--btn-1);font-weight:500;min-height:46px}
+.um-mbar__book{flex:1;display:flex!important;align-items:center;justify-content:center;min-height:46px}
+@media (max-width:576px){.um-mbar{display:flex}.rts__back__top.show{bottom:84px}}
+@media (max-width:576px){.main__right .theme-btn.fill:not(.menu__btn){display:none}}
+
+/* ---------- misc fixes for the CDN Bootstrap / Swiper ---------- */
+.swiper{overflow:hidden}
+.banner__slider{position:relative}
+.rts__slider__nav .next,.rts__slider__nav .prev{cursor:pointer}
+html{scroll-behavior:smooth;scroll-padding-top:90px}
+.visually-hidden{position:absolute!important;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{animation-duration:.01ms!important;transition-duration:.01ms!important}}
+
+/* ===== brand fixes: logo size + dark mobile menu in navy ===== */
+.um-logo__name{font-size:22px;letter-spacing:.13em}
+.um-logo__sub{font-size:9px;letter-spacing:.46em;padding-left:.46em}
+@media (min-width:1200px) and (max-width:1399px){.main__nav a{margin-right:0}}
+.offcanvas,.offcanvase__area,#offcanvasRight{background:var(--brand-dark)!important}
+#offcanvasRight .um-logo__name,#offcanvasRight .um-logo__sub{color:#fff}
+#offcanvasRight .um-mnav__btn[aria-expanded="true"]{color:#aebbe0}
+#offcanvasRight .um-mnav__btn .ico,#offcanvasRight .btn-close,#offcanvasRight .close__icon{color:#aebbe0}
+#offcanvasRight .um-mnav__panel a{border-left-color:#aebbe0}
+.um-rewards,.um-perks{--btn-1:#aebbe0}
+.footer__area .um-fcol__title,.footer__area h6{color:var(--rts-heading)}
+@media (max-width:1599px){.navigation__menu--item{margin-right:18px}.navigation__menu--item__link{font-size:15px}}
+#offcanvasRight .um-mnav__btn i{border-color:#aebbe0}
+#offcanvasRight .um-mnav__link:hover,#offcanvasRight .um-mnav__btn:hover,#offcanvasRight .um-mnav__panel a:hover{color:#aebbe0}
+.insta__gallery__slider .swiper-slide,.insta__gallery__slider .swiper-slide a,.insta__gallery__slider .swiper-slide img{background:var(--rts-gray)}
