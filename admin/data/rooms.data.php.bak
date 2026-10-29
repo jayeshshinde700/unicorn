@@ -1,0 +1,422 @@
+<?php http_response_code(404); exit; ?>
+{
+    "version": 1,
+    "updated": 1793018008,
+    "rooms": [
+        {
+            "id": "deluxe",
+            "name": "Deluxe Room",
+            "category": "room",
+            "tags": [],
+            "badge": {
+                "text": "Most booked",
+                "style": "light"
+            },
+            "status": "published",
+            "featured": false,
+            "short": "Calm neutrals, a plush king bed and tall windows with soft drapes. Our easiest way to feel at home.",
+            "tagline": "Calm, classic comfort",
+            "description": "A quiet, softly lit room in warm neutrals. The king bed has plush bedding, quality linens and a choice of pillows, and tall windows with floor-length drapes let the morning in. Simple, restful and easy to love.",
+            "notes": "Check-in from 2:00 PM, check-out by 11:00 AM. Extra bed on request, subject to availability. Breakfast, Wi-Fi, parking and pool access are included.",
+            "size": 32,
+            "guests": 2,
+            "bed": "King bed",
+            "view": "City light",
+            "inventory": 12,
+            "extraBed": {
+                "available": false,
+                "price": 0
+            },
+            "price": 4500,
+            "seasonal": {
+                "festive": null,
+                "winter": null,
+                "summer": null,
+                "monsoon": null
+            },
+            "image": "assets/images/unicon/rooms/deluxe.jpg",
+            "imageAlt": "Deluxe Room at Unicorn Hospitality",
+            "gallery": [],
+            "amenities": [
+                {
+                    "icon": "wifi",
+                    "label": "Free Wi-Fi"
+                },
+                {
+                    "icon": "snow",
+                    "label": "Air-conditioning"
+                },
+                {
+                    "icon": "tv",
+                    "label": "Flat-screen TV"
+                },
+                {
+                    "icon": "cup",
+                    "label": "Tea & coffee maker"
+                },
+                {
+                    "icon": "lock",
+                    "label": "In-room safe"
+                },
+                {
+                    "icon": "bed",
+                    "label": "Choice of pillows"
+                },
+                {
+                    "icon": "bath",
+                    "label": "En-suite bathroom"
+                },
+                {
+                    "icon": "car",
+                    "label": "Free parking"
+                }
+            ],
+            "features": {
+                "desk": false,
+                "shower": false,
+                "lounge": false,
+                "dining": false,
+                "apart": false
+            },
+            "seoTitle": "",
+            "seoDescription": "",
+            "rank": 1,
+            "createdAt": 1793017963,
+            "updatedAt": 1793018005,
+            "updatedBy": "naman"
+        },
+        {
+            "id": "executive",
+            "name": "Executive Room",
+            "category": "room",
+            "tags": [],
+            "badge": {
+                "text": "City view",
+                "style": "light"
+            },
+            "status": "published",
+            "featured": false,
+            "short": "More space, more light and a window onto the city. Made for business trips that deserve a better night.",
+            "tagline": "Space to work, room to unwind",
+            "description": "More space and more light than our Deluxe, with a tall window onto the city. A work corner keeps the laptop close, the king bed keeps the night long. Made for business trips that deserve a better sleep.",
+            "notes": "Check-in from 2:00 PM, check-out by 11:00 AM. Extra bed on request, subject to availability. Breakfast, Wi-Fi, parking and pool access are included.",
+            "size": 38,
+            "guests": 2,
+            "bed": "King bed",
+            "view": "City view",
+            "inventory": 8,
+            "extraBed": {
+                "available": false,
+                "price": 0
+            },
+            "price": 5800,
+            "seasonal": {
+                "festive": null,
+                "winter": null,
+                "summer": null,
+                "monsoon": null
+            },
+            "image": "assets/images/unicon/rooms/executive.jpg",
+            "imageAlt": "Executive Room at Unicorn Hospitality",
+            "gallery": [],
+            "amenities": [
+                {
+                    "icon": "wifi",
+                    "label": "Free Wi-Fi"
+                },
+                {
+                    "icon": "desk",
+                    "label": "Work corner"
+                },
+                {
+                    "icon": "snow",
+                    "label": "Air-conditioning"
+                },
+                {
+                    "icon": "tv",
+                    "label": "Flat-screen TV"
+                },
+                {
+                    "icon": "cup",
+                    "label": "Tea & coffee maker"
+                },
+                {
+                    "icon": "lock",
+                    "label": "In-room safe"
+                },
+                {
+                    "icon": "sun",
+                    "label": "City-view window"
+                },
+                {
+                    "icon": "car",
+                    "label": "Free parking"
+                }
+            ],
+            "features": {
+                "desk": true,
+                "shower": false,
+                "lounge": false,
+                "dining": false,
+                "apart": false
+            },
+            "seoTitle": "",
+            "seoDescription": "",
+            "rank": 2,
+            "createdAt": 1793017963,
+            "updatedAt": 1793018004,
+            "updatedBy": "naman"
+        },
+        {
+            "id": "family",
+            "name": "Family Suite",
+            "category": "suite",
+            "tags": [
+                "family"
+            ],
+            "badge": {
+                "text": "Best for families",
+                "style": "light"
+            },
+            "status": "published",
+            "featured": false,
+            "short": "Room for everyone: twin beds, a separate sleeping area and space to spread out after a long day out.",
+            "tagline": "Everyone under one roof",
+            "description": "Twin beds, a separate sleeping area and plenty of space to spread out after a long day. Wooden wardrobes, a bright bathroom and a calm, airy feel make it easy for the whole family to settle in.",
+            "notes": "Check-in from 2:00 PM, check-out by 11:00 AM. Extra bed on request, subject to availability. Breakfast, Wi-Fi, parking and pool access are included.",
+            "size": 52,
+            "guests": 4,
+            "bed": "2 twin beds",
+            "view": "Garden side",
+            "inventory": 4,
+            "extraBed": {
+                "available": true,
+                "price": 1200
+            },
+            "price": 8200,
+            "seasonal": {
+                "festive": null,
+                "winter": null,
+                "summer": null,
+                "monsoon": null
+            },
+            "image": "assets/images/unicon/rooms/family.jpg",
+            "imageAlt": "Family Suite at Unicorn Hospitality",
+            "gallery": [],
+            "amenities": [
+                {
+                    "icon": "bed",
+                    "label": "Twin beds"
+                },
+                {
+                    "icon": "sofa",
+                    "label": "Extra sleeping space"
+                },
+                {
+                    "icon": "wifi",
+                    "label": "Free Wi-Fi"
+                },
+                {
+                    "icon": "snow",
+                    "label": "Air-conditioning"
+                },
+                {
+                    "icon": "tv",
+                    "label": "Flat-screen TV"
+                },
+                {
+                    "icon": "cup",
+                    "label": "Tea & coffee maker"
+                },
+                {
+                    "icon": "lock",
+                    "label": "In-room safe"
+                },
+                {
+                    "icon": "bath",
+                    "label": "Bathroom with shower"
+                }
+            ],
+            "features": {
+                "desk": false,
+                "shower": false,
+                "lounge": true,
+                "dining": false,
+                "apart": true
+            },
+            "seoTitle": "",
+            "seoDescription": "",
+            "rank": 3,
+            "createdAt": 1793017963,
+            "updatedAt": 1793018005,
+            "updatedBy": "naman"
+        },
+        {
+            "id": "premium",
+            "name": "Premium Suite",
+            "category": "suite",
+            "tags": [],
+            "badge": {
+                "text": "Warm & glowing",
+                "style": "light"
+            },
+            "status": "published",
+            "featured": false,
+            "short": "Layered lighting, a statement headboard wall and a table for a quiet dinner in. Rich, warm and private.",
+            "tagline": "Rich, warm and private",
+            "description": "Layered lighting, a statement headboard wall and a small table for a quiet dinner in. The Premium Suite is warm, glowing and generously sized, for guests who like their evenings unhurried.",
+            "notes": "Check-in from 2:00 PM, check-out by 11:00 AM. Extra bed on request, subject to availability. Breakfast, Wi-Fi, parking and pool access are included.",
+            "size": 60,
+            "guests": 3,
+            "bed": "King bed",
+            "view": "Courtyard",
+            "inventory": 3,
+            "extraBed": {
+                "available": false,
+                "price": 0
+            },
+            "price": 9800,
+            "seasonal": {
+                "festive": null,
+                "winter": null,
+                "summer": null,
+                "monsoon": null
+            },
+            "image": "assets/images/unicon/rooms/premium.jpg",
+            "imageAlt": "Premium Suite at Unicorn Hospitality",
+            "gallery": [],
+            "amenities": [
+                {
+                    "icon": "tv",
+                    "label": "Smart TV"
+                },
+                {
+                    "icon": "sofa",
+                    "label": "Dining nook"
+                },
+                {
+                    "icon": "drop",
+                    "label": "Rain shower"
+                },
+                {
+                    "icon": "wifi",
+                    "label": "Free Wi-Fi"
+                },
+                {
+                    "icon": "desk",
+                    "label": "Work desk"
+                },
+                {
+                    "icon": "snow",
+                    "label": "Air-conditioning"
+                },
+                {
+                    "icon": "lock",
+                    "label": "In-room safe"
+                },
+                {
+                    "icon": "cup",
+                    "label": "Tea & coffee maker"
+                }
+            ],
+            "features": {
+                "desk": true,
+                "shower": true,
+                "lounge": true,
+                "dining": true,
+                "apart": false
+            },
+            "seoTitle": "",
+            "seoDescription": "",
+            "rank": 4,
+            "createdAt": 1793017963,
+            "updatedAt": 1793018007,
+            "updatedBy": "naman"
+        },
+        {
+            "id": "unicon",
+            "name": "The Unicon Suite",
+            "category": "suite",
+            "tags": [
+                "family",
+                "signature"
+            ],
+            "badge": {
+                "text": "Signature",
+                "style": "gold"
+            },
+            "status": "published",
+            "featured": true,
+            "short": "Our most open, light-filled suite. Wide glass doors, natural timber and airy linen, made for slow mornings.",
+            "tagline": "Our signature suite",
+            "description": "Our most open, light-filled suite. Wide glass doors, natural timber and airy linen make mornings feel slow in the best way. A private lounge, a king bed and the most space we offer, all in one calm room.",
+            "notes": "Check-in from 2:00 PM, check-out by 11:00 AM. Extra bed on request, subject to availability. Breakfast, Wi-Fi, parking and pool access are included.",
+            "size": 85,
+            "guests": 4,
+            "bed": "King bed + lounge",
+            "view": "Open view",
+            "inventory": 1,
+            "extraBed": {
+                "available": false,
+                "price": 0
+            },
+            "price": 14500,
+            "seasonal": {
+                "festive": null,
+                "winter": null,
+                "summer": null,
+                "monsoon": null
+            },
+            "image": "assets/images/unicon/rooms/unicon.webp",
+            "imageAlt": "The Unicon Suite at Unicorn Hospitality",
+            "gallery": [],
+            "amenities": [
+                {
+                    "icon": "sun",
+                    "label": "Open view"
+                },
+                {
+                    "icon": "sofa",
+                    "label": "Private lounge"
+                },
+                {
+                    "icon": "drop",
+                    "label": "Rain shower"
+                },
+                {
+                    "icon": "wifi",
+                    "label": "Free Wi-Fi"
+                },
+                {
+                    "icon": "desk",
+                    "label": "Work desk"
+                },
+                {
+                    "icon": "tv",
+                    "label": "Smart TV"
+                },
+                {
+                    "icon": "snow",
+                    "label": "Air-conditioning"
+                },
+                {
+                    "icon": "lock",
+                    "label": "In-room safe"
+                }
+            ],
+            "features": {
+                "desk": true,
+                "shower": true,
+                "lounge": true,
+                "dining": true,
+                "apart": true
+            },
+            "seoTitle": "",
+            "seoDescription": "",
+            "rank": 5,
+            "createdAt": 1793017963,
+            "updatedAt": 1793018008,
+            "updatedBy": "naman"
+        }
+    ]
+}

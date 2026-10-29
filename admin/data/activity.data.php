@@ -1,0 +1,150 @@
+<?php http_response_code(404); exit; ?>
+[
+    {
+        "t": 1793078009,
+        "user": "naman",
+        "action": "login",
+        "detail": "Signed in",
+        "ip": "127.0.0.1"
+    },
+    {
+        "t": 1793018285,
+        "user": "naman",
+        "action": "room-updated",
+        "detail": "Deluxe Room (published)",
+        "ip": "127.0.0.1"
+    },
+    {
+        "t": 1793018008,
+        "user": "naman",
+        "action": "room-published",
+        "detail": "The Unicon Suite",
+        "ip": "127.0.0.1"
+    },
+    {
+        "t": 1793018007,
+        "user": "naman",
+        "action": "room-published",
+        "detail": "Premium Suite",
+        "ip": "127.0.0.1"
+    },
+    {
+        "t": 1793018005,
+        "user": "naman",
+        "action": "room-published",
+        "detail": "Family Suite",
+        "ip": "127.0.0.1"
+    },
+    {
+        "t": 1793018005,
+        "user": "naman",
+        "action": "room-published",
+        "detail": "Deluxe Room",
+        "ip": "127.0.0.1"
+    },
+    {
+        "t": 1793018004,
+        "user": "naman",
+        "action": "room-published",
+        "detail": "Executive Room",
+        "ip": "127.0.0.1"
+    },
+    {
+        "t": 1793017988,
+        "user": "naman",
+        "action": "room-unpublished",
+        "detail": "The Unicon Suite",
+        "ip": "127.0.0.1"
+    },
+    {
+        "t": 1793017979,
+        "user": "naman",
+        "action": "room-unpublished",
+        "detail": "Premium Suite",
+        "ip": "127.0.0.1"
+    },
+    {
+        "t": 1793017979,
+        "user": "naman",
+        "action": "room-unpublished",
+        "detail": "Family Suite",
+        "ip": "127.0.0.1"
+    },
+    {
+        "t": 1793017978,
+        "user": "naman",
+        "action": "room-unpublished",
+        "detail": "Executive Room",
+        "ip": "127.0.0.1"
+    },
+    {
+        "t": 1793017978,
+        "user": "naman",
+        "action": "room-unpublished",
+        "detail": "Deluxe Room",
+        "ip": "127.0.0.1"
+    },
+    {
+        "t": 1793017973,
+        "user": "naman",
+        "action": "room-published",
+        "detail": "Premium Suite",
+        "ip": "127.0.0.1"
+    },
+    {
+        "t": 1793017971,
+        "user": "naman",
+        "action": "room-unpublished",
+        "detail": "Premium Suite",
+        "ip": "127.0.0.1"
+    },
+    {
+        "t": 1793017971,
+        "user": "naman",
+        "action": "room-published",
+        "detail": "Premium Suite",
+        "ip": "127.0.0.1"
+    },
+    {
+        "t": 1793017970,
+        "user": "naman",
+        "action": "room-unpublished",
+        "detail": "Premium Suite",
+        "ip": "127.0.0.1"
+    },
+    {
+        "t": 1793017967,
+        "user": "naman",
+        "action": "room-published",
+        "detail": "Deluxe Room",
+        "ip": "127.0.0.1"
+    },
+    {
+        "t": 1793017966,
+        "user": "naman",
+        "action": "room-unpublished",
+        "detail": "Deluxe Room",
+        "ip": "127.0.0.1"
+    },
+    {
+        "t": 1793017965,
+        "user": "naman",
+        "action": "room-published",
+        "detail": "Deluxe Room",
+        "ip": "127.0.0.1"
+    },
+    {
+        "t": 1793017963,
+        "user": "naman",
+        "action": "room-unpublished",
+        "detail": "Deluxe Room",
+        "ip": "127.0.0.1"
+    },
+    {
+        "t": 1793017913,
+        "user": "naman",
+        "action": "setup",
+        "detail": "Admin account created",
+        "ip": "127.0.0.1"
+    }
+]

@@ -70,8 +70,8 @@
        The animation itself is CSS (style.css, block "HERO SLIDER"). This script only:
        splits the text into words, runs the autoplay timer, the counter + progress bars, and plays the visible video.
        (Own timer + own arrow handlers, so it works even when the OS has "reduce animations" turned on.) */
-    var HERO_DELAY = 5000;                       /* how long a slide rests after it has finished moving (ms) - change here */
-    var HERO_SPEED = 1500;                       /* how long the slide movement takes (ms) - change here */
+    var HERO_DELAY = 3000;                       /* how long a slide rests after it has finished moving (ms) - change here */
+    var HERO_SPEED = 1300;                       /* how long the slide movement takes (ms) - change here */
     function initHero() {
       var el = $('.banner__slider');
       if (!el) return;
@@ -200,8 +200,8 @@
 
       /* controls */
       var hn = $('.rts__slider__nav .next'), hp = $('.rts__slider__nav .prev');
-      if (hn) hn.addEventListener('click', function () { hero.slideNext(); });
-      if (hp) hp.addEventListener('click', function () { hero.slidePrev(); });
+      if (hn) hn.addEventListener('click', function () { hero.slidePrev(); });   /* the theme's .next icon points LEFT and sits on the left */
+      if (hp) hp.addEventListener('click', function () { hero.slideNext(); });   /* the .prev icon points RIGHT and sits on the right */
       barEls.forEach(function (b, k) { b.addEventListener('click', function () { if (k !== hero.realIndex) hero.slideToLoop(k); }); });
     }
     initHero();

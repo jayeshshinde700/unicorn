@@ -1,0 +1,948 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Rooms and suites at Unicorn Hospitality: five ways to stay, from the Deluxe Room to the signature Unicon Suite. Compare, save your favourites and book direct.">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="Rooms &amp; Suites | Unicorn Hospitality">
+    <meta property="og:description" content="Five rooms and suites with plush bedding, quiet spaces and a team that remembers the small things.">
+    <meta property="og:image" content="assets/images/unicon/banner/1.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="icon" href="assets/images/unicon/logos.jpeg" type="image/x-icon">
+    <title>Rooms &amp; Suites | Unicorn Hospitality</title>
+    <script>document.documentElement.classList.add("rm-js")</script>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <!-- rooms page only -->
+    <link rel="stylesheet" href="assets/css/rooms.css">
+</head>
+
+<body class="rm-page">
+    <!-- icon sprite (replaces the flaticon font, which was not supplied) -->
+    <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+        <defs>
+            <symbol id="i-phone" viewBox="0 0 24 24"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></symbol>
+            <symbol id="i-mail" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></symbol>
+            <symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 21s7-6.2 7-11a7 7 0 0 0-14 0c0 4.8 7 11 7 11z"/><circle cx="12" cy="10" r="2.5"/></symbol>
+            <symbol id="i-cal" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M8 3v4M16 3v4M3 10h18"/></symbol>
+            <symbol id="i-user" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></symbol>
+            <symbol id="i-people" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.5"/><path d="M2 20a7 7 0 0 1 14 0"/><circle cx="17" cy="9" r="2.5"/><path d="M18 14a5 5 0 0 1 4 6"/></symbol>
+            <symbol id="i-area" viewBox="0 0 24 24"><path d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5"/></symbol>
+            <symbol id="i-check" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="m8 12 3 3 5-6"/></symbol>
+            <symbol id="i-star" viewBox="0 0 24 24"><path d="m12 3 2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1L3.2 9.5l6.1-.9z"/></symbol>
+            <symbol id="i-play" viewBox="0 0 24 24"><path d="M8 5v14l11-7z" fill="currentColor"/></symbol>
+            <symbol id="i-bed" viewBox="0 0 24 24"><path d="M3 18V6M3 14h18v4M21 14v-2a3 3 0 0 0-3-3h-7v5"/><circle cx="7" cy="11" r="1.5"/></symbol>
+            <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 3 5 6v6c0 4.5 3 7.5 7 9 4-1.500 7-4.500 7-9V6z"/><path d="m9 12 2 2 4-4"/></symbol>
+            <symbol id="i-gym" viewBox="0 0 24 24"><path d="M6 8v8M18 8v8M3 10v4M21 10v4M6 12h12"/></symbol>
+            <symbol id="i-pool" viewBox="0 0 24 24"><path d="M3 17c2 0 2-1.500 4.500-1.500S10 17 12 17s2.500-1.500 4.500-1.500S19 17 21 17M3 21c2 0 2-1.500 4.500-1.500S10 21 12 21s2.500-1.500 4.500-1.500S19 21 21 21M8 14V6a2 2 0 0 1 4 0M14 14V6a2 2 0 0 1 4 0M8 9h6"/></symbol>
+            <symbol id="i-wifi" viewBox="0 0 24 24"><path d="M2 9a15 15 0 0 1 20 0M5 12.500a10 10 0 0 1 14 0M8.500 16a5 5 0 0 1 7 0"/><circle cx="12" cy="19" r="1" fill="currentColor"/></symbol>
+            <symbol id="i-cup" viewBox="0 0 24 24"><path d="M4 8h13v6a5 5 0 0 1-5 5H9a5 5 0 0 1-5-5zM17 10h2a2 2 0 0 1 0 4h-2M8 3v2M12 3v2"/></symbol>
+            <symbol id="i-car" viewBox="0 0 24 24"><path d="M4 16v-4l2-5h12l2 5v4zM4 16v2M20 16v2M4 12h16"/><circle cx="8" cy="14.500" r="1"/><circle cx="16" cy="14.500" r="1"/></symbol>
+            <symbol id="i-plane" viewBox="0 0 24 24"><path d="M21 3 3 10l7 3 3 7z"/><path d="m10 13 4-4"/></symbol>
+            <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></symbol>
+            <symbol id="i-arrow-l" viewBox="0 0 24 24"><path d="M19 12H5M11 6l-6 6 6 6"/></symbol>
+            <symbol id="i-arrow-r" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
+            <symbol id="i-insta" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.500" cy="6.500" r="1" fill="currentColor"/></symbol>
+          <!-- rooms page extras -->
+            <symbol id="rm-i-heart" viewBox="0 0 24 24"><path d="M12 20.5s-7.5-4.6-7.5-10.4A4.4 4.4 0 0 1 12 7.2a4.4 4.4 0 0 1 7.5 2.9c0 5.800-7.500 10.400-7.500 10.400z"/></symbol>
+            <symbol id="rm-i-grid" viewBox="0 0 24 24"><rect x="4" y="4" width="6.500" height="6.500" rx="1.500"/><rect x="13.500" y="4" width="6.500" height="6.500" rx="1.500"/><rect x="4" y="13.500" width="6.500" height="6.500" rx="1.500"/><rect x="13.500" y="13.500" width="6.500" height="6.500" rx="1.500"/></symbol>
+            <symbol id="rm-i-list" viewBox="0 0 24 24"><path d="M4 6.500h16M4 12h16M4 17.500h16"/></symbol>
+            <symbol id="rm-i-eye" viewBox="0 0 24 24"><path d="M2 12s3.600-7 10-7 10 7 10 7-3.600 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></symbol>
+            <symbol id="rm-i-x" viewBox="0 0 24 24"><path d="M5 5l14 14M19 5 5 19"/></symbol>
+            <symbol id="rm-i-snow" viewBox="0 0 24 24"><path d="M12 2.500v19M3.800 7.250l16.400 9.500M20.200 7.250l-16.400 9.500M9.500 4.500 12 6.800l2.500-2.300M9.500 19.500 12 17.200l2.500 2.300"/></symbol>
+            <symbol id="rm-i-tv" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="12" rx="2"/><path d="M8 21h8M12 17v4"/></symbol>
+            <symbol id="rm-i-lock" viewBox="0 0 24 24"><rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></symbol>
+            <symbol id="rm-i-drop" viewBox="0 0 24 24"><path d="M12 3s6 6.500 6 11a6 6 0 0 1-12 0c0-4.500 6-11 6-11z"/></symbol>
+            <symbol id="rm-i-desk" viewBox="0 0 24 24"><path d="M3 9h18M5 9v10M19 9v10M9 9v5h6V9"/></symbol>
+            <symbol id="rm-i-sofa" viewBox="0 0 24 24"><path d="M5 11V8a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v3M3 13a2 2 0 0 1 4 0v2h10v-2a2 2 0 0 1 4 0v5H3z"/></symbol>
+            <symbol id="rm-i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2.500v2.500M12 19v2.500M2.500 12H5M19 12h2.500M5.300 5.300l1.800 1.800M16.900 16.900l1.800 1.800M5.300 18.700l1.800-1.800M16.900 7.100l1.800-1.800"/></symbol>
+            <symbol id="rm-i-cmp" viewBox="0 0 24 24"><path d="M7 4v16M17 4v16M3 8l4-4 4 4M13 16l4 4 4-4"/></symbol>
+            <symbol id="rm-i-lamp" viewBox="0 0 24 24"><path d="M3 12.500h18c0 4.200-4 7.500-9 7.500s-9-3.300-9-7.500zM12 3.500c1.800 2.200 2.200 3.800 0 5.800-2.200-2-1.800-3.600 0-5.800z"/></symbol>
+            <symbol id="rm-i-flake" viewBox="0 0 24 24"><path d="M12 2v20M3.300 7l17.400 10M3.300 17 20.700 7"/></symbol>
+            <symbol id="rm-i-rain" viewBox="0 0 24 24"><path d="M7 15a4 4 0 1 1 .8-7.900A5 5 0 0 1 17.500 8 3.500 3.500 0 0 1 17 15zM8 18l-1 3M12 18l-1 3M16 18l-1 3"/></symbol>
+            <symbol id="rm-i-bath" viewBox="0 0 24 24"><path d="M4 12h16v3a4 4 0 0 1-4 4H8a4 4 0 0 1-4-4zM6 12V6a2 2 0 0 1 4 0M7 19l-1 2M17 19l1 2"/></symbol>
+            <symbol id="rm-i-iron" viewBox="0 0 24 24"><path d="M3 17h18a0 0 0 0 0 0 0 8 8 0 0 0-8-8H9a4 4 0 0 0-4 4zM8 13V9"/></symbol>
+        </defs>
+    </svg>
+
+    <!-- ============ TOP UTILITY BAR (Ramada-style) ============ -->
+    <div class="header__top um-utility">
+        <div class="container">
+            <div class="um-utility__in">
+                <ul class="um-utility__links">
+                    <li><a class="link__item" href="index.html#book">Find My Reservation</a></li>
+                    <li><a class="link__item" href="index.html#locations">Our Locations</a></li>
+                    <li><a class="link__item" href="index.html#offers">All Offers</a></li>
+                    <li><a class="link__item" href="index.html#meetings">Meetings &amp; Groups</a></li>
+                </ul>
+                <div class="um-utility__right">
+                    <a class="link__item" href="tel:+919920400267"><svg class="ico"><use href="#i-phone"/></svg> Reservations: +91 99204 00267</a>
+                    <label class="um-lang">
+                        <span class="visually-hidden">Language</span>
+                        <select aria-label="Language">
+                            <option>English</option>
+                            <option>हिन्दी</option>
+                            <option>मराठी</option>
+                        </select>
+                    </label>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ============ MAIN HEADER ============ -->
+    <header class="main__header header__function">
+        <div class="container">
+            <div class="row">
+                <div class="main__header__wrapper">
+                    <div class="main__nav">
+                        <div class="navigation d-none d-lg-block">
+                            <nav class="navigation__menu" id="main__menu">
+                                <ul class="list-unstyled">
+                                    <!-- Book (mega menu, like Ramada) -->
+                                    <li class="navigation__menu--item has-child has-arrow">
+                                        <a href="index.html#book" class="navigation__menu--item__link">Book</a>
+                                        <div class="has__mega__menu um-mega">
+                                            <div class="um-mega__col">
+                                                <h6>Book</h6>
+                                                <a href="index.html#book">Find My Reservation</a>
+                                                <a href="index.html#locations">Our Locations</a>
+                                                <a href="index.html#offers">All Offers</a>
+                                                <a href="rooms.html">Rooms &amp; Suites</a>
+                                            </div>
+                                            <div class="um-mega__promo">
+                                                <span class="um-mega__tag">Save with bundles</span>
+                                                <p>Combine your room, meals and transfers in one seamless booking.</p>
+                                                <a href="index.html#book" class="theme-btn btn-style sm-btn fill no-border"><span>Book Now</span></a>
+                                            </div>
+                                        </div>
+                                    </li>
+
+                                    <li class="navigation__menu--item has-child has-arrow">
+                                        <a href="rooms.html" class="navigation__menu--item__link">Stay</a>
+                                        <ul class="submenu sub__style" role="menu">
+                                            <li role="menuitem"><a href="rooms.html">Rooms &amp; Suites</a></li>
+                                            <li role="menuitem"><a href="index.html#amenities">Amenities</a></li>
+                                            <li role="menuitem"><a href="index.html#dining">Dining</a></li>
+                                            <li role="menuitem"><a href="index.html#gallery">Gallery</a></li>
+                                        </ul>
+                                    </li>
+
+                                    <li class="navigation__menu--item">
+                                        <a href="rooms.html" class="navigation__menu--item__link" aria-current="page">Rooms</a>
+                                    </li>
+
+                                    <li class="navigation__menu--item">
+                                        <a href="index.html#offers" class="navigation__menu--item__link">Offers</a>
+                                    </li>
+
+                                    <!-- <li class="navigation__menu--item has-child has-arrow">
+                                        <a href="index.html#meetings" class="navigation__menu--item__link">Meetings &amp; Groups</a>
+                                        <ul class="submenu sub__style" role="menu">
+                                            <li role="menuitem"><a href="index.html#meetings">Meetings</a></li>
+                                            <li role="menuitem"><a href="index.html#meetings">Groups</a></li>
+                                            <li role="menuitem"><a href="index.html#meetings">Weddings &amp; Events</a></li>
+                                        </ul>
+                                    </li> -->
+
+                                    <li class="navigation__menu--item">
+                                        <a href="index.html#about" class="navigation__menu--item__link">About</a>
+                                    </li>
+
+                                    <li class="navigation__menu--item">
+                                        <a href="contact.html" class="navigation__menu--item__link">Contact</a>
+                                    </li>
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
+                    <div class="main__logo">
+                        <a href="index.html" class="um-logo" aria-label="Unicon Hospitality home">
+                            <img src="assets/images/unicon/logo.png" alt="">
+                        </a>
+                    </div>
+                    <div class="main__right">
+                        <a href="#" class="theme-btn btn-style sm-btn border d-none d-lg-block" aria-label="Sign In" data-bs-toggle="modal" data-bs-target="#loginModal"><span>Sign In</span></a>
+                        <a href="#" class="theme-btn btn-style sm-btn border d-none d-lg-block" aria-label="Join" data-bs-toggle="modal" data-bs-target="#signupModal"><span>Join Free</span></a>
+                        <a href="index.html#book" class="theme-btn btn-style sm-btn fill"><span>Book Now</span></a>
+                        <button class="theme-btn btn-style sm-btn fill menu__btn d-lg-none" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight" aria-label="Open menu">
+                            <span class="um-burger"><i></i><i></i><i></i></span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="rm-progress" id="rmProgress" aria-hidden="true"></div>
+
+    <main id="top">
+
+    <!-- ============ PAGE HERO ============ -->
+    <section class="rm-hero" id="rmHero">
+        <div class="rm-hero__bg" id="rmHeroBg"><img src="assets/images/unicon/banner/1.jpg" alt="" width="1344" height="768" fetchpriority="high"></div>
+        <span class="rm-orb rm-orb--1" aria-hidden="true"></span>
+        <span class="rm-orb rm-orb--2" aria-hidden="true"></span>
+        <div class="container">
+            <nav class="um-crumb" aria-label="Breadcrumb"><a href="index.html">Home</a><span>/</span><span aria-current="page">Rooms &amp; Suites</span></nav>
+            <span class="rm-eyebrow">Stay with us</span>
+            <h1 data-split>Rooms &amp; Suites</h1>
+            <p class="rm-hero__lead" data-rm style="--d:.7s">Plush bedding, quiet spaces and little touches that make a room feel like yours. Five ways to stay, one warm welcome. Find the one that fits your trip.</p>
+            <div class="rm-hero__chips" data-rm style="--d:.9s" role="group" aria-label="Jump to stays">
+                <button type="button" class="rm-hchip rm-hchip--gold" data-filter-link="all"><span>Browse all stays</span><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-arrow-r"/></svg></button>
+                <button type="button" class="rm-hchip" data-filter-link="room">Rooms</button>
+                <button type="button" class="rm-hchip" data-filter-link="suite">Suites</button>
+                <button type="button" class="rm-hchip" data-filter-link="family">Family friendly</button>
+            </div>
+        </div>
+        <span class="rm-scroll" aria-hidden="true">Scroll</span>
+    </section>
+
+    <!-- ============ STAY HIGHLIGHTS (sits over the edge of the hero) ============ -->
+    <section class="rm-hl" aria-label="Stay highlights">
+        <div class="container">
+            <ul class="rm-hl__box" data-rm="scale">
+                <li class="rm-hl__it" style="--i:0"><span class="rm-hl__ico"><svg class="ico"><use href="#i-bed"/></svg></span><span class="rm-hl__t"><b>From &#8377;<span id="rmFrom">4,500</span></b><small>per room, per night</small></span></li>
+                <li class="rm-hl__it" style="--i:1"><span class="rm-hl__ico"><svg class="ico"><use href="#i-clock"/></svg></span><span class="rm-hl__t"><b>Check-in 2:00 PM</b><small>Check-out by 11:00 AM</small></span></li>
+                <li class="rm-hl__it" style="--i:2"><span class="rm-hl__ico"><svg class="ico"><use href="#i-cup"/></svg></span><span class="rm-hl__t"><b>Breakfast &amp; Wi-Fi</b><small>Plus free parking, all included</small></span></li>
+                <li class="rm-hl__it" style="--i:3"><span class="rm-hl__ico"><svg class="ico"><use href="#i-shield"/></svg></span><span class="rm-hl__t"><b>Best rate guarantee</b><small>When you book direct</small></span></li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- marks the end of the page top: the mobile Call / Book bar appears once you scroll past this -->
+    <span id="book" class="rm-anchor" aria-hidden="true"></span>
+
+    <!-- ============ SEASONS ============ -->
+    <section class="rm-sec rm-sec--tight" id="rm-seasons" aria-labelledby="rmSeasonH">
+        <div class="container">
+            <div class="rm-sec__head" data-rm>
+                <span class="h6 subtitle__icon__three">Plan by season</span>
+                <h2 id="rmSeasonH">The Right Room for the Right Season</h2>
+                <p>Every season has its own mood. See what is on this time of year, and which room we would pick for it.</p>
+            </div>
+
+            <div class="rm-season__box" id="rmSeason" data-rm="scale">
+                <div class="rm-tabs" role="tablist" aria-label="Seasons">
+                    <span class="rm-tabs__ind" aria-hidden="true"></span>
+                    <button class="rm-tab" role="tab" id="tab-festive" aria-controls="panel-festive" aria-selected="false" data-season="festive">
+                        <span class="rm-tab__ico"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#rm-i-lamp"/></svg></span><span><b>Festive Season</b><small>Oct &ndash; mid Nov &middot; Diwali</small></span><span class="rm-tab__now rm-hide">Now</span>
+                    </button>
+                    <button class="rm-tab" role="tab" id="tab-winter" aria-controls="panel-winter" aria-selected="false" data-season="winter">
+                        <span class="rm-tab__ico"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#rm-i-flake"/></svg></span><span><b>Winter &amp; New Year</b><small>Mid Nov &ndash; Feb &middot; Peak</small></span><span class="rm-tab__now rm-hide">Now</span>
+                    </button>
+                    <button class="rm-tab" role="tab" id="tab-summer" aria-controls="panel-summer" aria-selected="false" data-season="summer">
+                        <span class="rm-tab__ico"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#rm-i-sun"/></svg></span><span><b>Summer Staycation</b><small>Mar &ndash; May &middot; Pool days</small></span><span class="rm-tab__now rm-hide">Now</span>
+                    </button>
+                    <button class="rm-tab" role="tab" id="tab-monsoon" aria-controls="panel-monsoon" aria-selected="false" data-season="monsoon">
+                        <span class="rm-tab__ico"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#rm-i-rain"/></svg></span><span><b>Monsoon Escape</b><small>Jun &ndash; Sep &middot; Best value</small></span><span class="rm-tab__now rm-hide">Now</span>
+                    </button>
+                </div>
+
+                <div class="rm-panels">
+                    <!-- festive -->
+                    <div class="rm-panel is-on" role="tabpanel" id="panel-festive" aria-labelledby="tab-festive" data-season="festive" data-room="family">
+                        <div>
+                            <span class="rm-pill"><i></i><span data-pill>Festive season</span></span>
+                            <h3>Festival of Lights, Under One Roof</h3>
+                            <p>Diwali falls on Sunday, 8 November 2026. Festive weeks fill up early, so reserve your room before the lights go up and keep the whole family together.</p>
+                            <ul class="rm-perks">
+                                <li><svg class="ico"><use href="#i-check"/></svg> Welcome sweets and a festive greeting on arrival</li>
+                                <li><svg class="ico"><use href="#i-check"/></svg> Late check-out on request, subject to availability</li>
+                                <li><svg class="ico"><use href="#i-check"/></svg> Suites with space for the whole gathering</li>
+                            </ul>
+                            <div class="rm-panel__cta"><button type="button" class="theme-btn btn-style fill no-border" data-filter-link="all"><span>Browse the Rooms</span></button></div>
+                        </div>
+                        <div class="rm-panel__side">
+                            <div>
+                                <p class="rm-count__cap">Days to Diwali</p>
+                                <div class="rm-count" data-countdown="2026-11-08T00:00:00" aria-live="off">
+                                    <div><b data-u="d">00</b><small>Days</small></div><div><b data-u="h">00</b><small>Hours</small></div><div><b data-u="m">00</b><small>Mins</small></div><div><b data-u="s">00</b><small>Secs</small></div>
+                                </div>
+                            </div>
+                            <button type="button" class="rm-pick" data-room-link="family"><img src="assets/images/unicon/rooms/family.jpg" alt="" width="84" height="84" loading="lazy"><span><small>Our pick</small><b>Family Suite</b><span>Twin beds and room for everyone</span></span></button>
+                        </div>
+                        <div class="rm-art" aria-hidden="true"><svg viewBox="0 0 24 24"><use href="#rm-i-lamp"/></svg></div>
+                    </div>
+                    <!-- winter -->
+                    <div class="rm-panel" role="tabpanel" id="panel-winter" aria-labelledby="tab-winter" data-season="winter" data-room="premium">
+                        <div>
+                            <span class="rm-pill"><i></i><span data-pill>Winter &amp; New Year</span></span>
+                            <h3>Winter Getaway &amp; New Year</h3>
+                            <p>Cool, dry weather makes November to March the busiest stretch of the year across India, and Christmas and New Year dates go first. Book two to four months ahead for the best choice of rooms.</p>
+                            <ul class="rm-perks">
+                                <li><svg class="ico"><use href="#i-check"/></svg> Widest choice of rooms when you book early</li>
+                                <li><svg class="ico"><use href="#i-check"/></svg> Add a New Year&rsquo;s Eve dinner to any stay</li>
+                                <li><svg class="ico"><use href="#i-check"/></svg> Pool and fitness centre open to guests all day</li>
+                            </ul>
+                            <div class="rm-panel__cta"><button type="button" class="theme-btn btn-style fill no-border" data-filter-link="all"><span>Browse the Rooms</span></button></div>
+                        </div>
+                        <div class="rm-panel__side">
+                            <button type="button" class="rm-pick" data-room-link="premium"><img src="assets/images/unicon/rooms/premium.jpg" alt="" width="84" height="84" loading="lazy"><span><small>Our pick</small><b>Premium Suite</b><span>Warm, glowing and private</span></span></button>
+                            <button type="button" class="rm-btn-ghost" data-filter-link="suite">See all suites</button>
+                        </div>
+                        <div class="rm-art" aria-hidden="true"><svg viewBox="0 0 24 24"><use href="#rm-i-flake"/></svg></div>
+                    </div>
+                    <!-- summer -->
+                    <div class="rm-panel" role="tabpanel" id="panel-summer" aria-labelledby="tab-summer" data-season="summer" data-room="executive">
+                        <div>
+                            <span class="rm-pill"><i></i><span data-pill>Summer staycation</span></span>
+                            <h3>A Cool Room and a Long Breakfast</h3>
+                            <p>April to June is warm and quieter, so rates ease and the pool comes into its own. A cool room, a lazy morning and nowhere you need to be.</p>
+                            <ul class="rm-perks">
+                                <li><svg class="ico"><use href="#i-check"/></svg> Swimming pool and fitness centre included</li>
+                                <li><svg class="ico"><use href="#i-check"/></svg> Fresh daily breakfast</li>
+                                <li><svg class="ico"><use href="#i-check"/></svg> Flexible late check-out on request</li>
+                            </ul>
+                            <div class="rm-panel__cta"><button type="button" class="theme-btn btn-style fill no-border" data-filter-link="all"><span>Browse the Rooms</span></button></div>
+                        </div>
+                        <div class="rm-panel__side">
+                            <button type="button" class="rm-pick" data-room-link="executive"><img src="assets/images/unicon/rooms/executive.jpg" alt="" width="84" height="84" loading="lazy"><span><small>Our pick</small><b>Executive Room</b><span>Light, airy, with a city view</span></span></button>
+                            <button type="button" class="rm-btn-ghost" data-filter-link="room">See all rooms</button>
+                        </div>
+                        <div class="rm-art" aria-hidden="true"><svg viewBox="0 0 24 24"><use href="#rm-i-sun"/></svg></div>
+                    </div>
+                    <!-- monsoon -->
+                    <div class="rm-panel" role="tabpanel" id="panel-monsoon" aria-labelledby="tab-monsoon" data-season="monsoon" data-room="deluxe">
+                        <div>
+                            <span class="rm-pill"><i></i><span data-pill>Monsoon escape</span></span>
+                            <h3>Rain on the Window, Tea in the Room</h3>
+                            <p>June to September is the best-value season to stay: rain on the glass, a warm cup in your hands and fewer crowds. Stay a little longer and settle in.</p>
+                            <ul class="rm-perks">
+                                <li><svg class="ico"><use href="#i-check"/></svg> Our best-value season for rooms</li>
+                                <li><svg class="ico"><use href="#i-check"/></svg> Tea and coffee in every room</li>
+                                <li><svg class="ico"><use href="#i-check"/></svg> Ask about longer-stay rates</li>
+                            </ul>
+                            <div class="rm-panel__cta"><button type="button" class="theme-btn btn-style fill no-border" data-filter-link="all"><span>Browse the Rooms</span></button></div>
+                        </div>
+                        <div class="rm-panel__side">
+                            <button type="button" class="rm-pick" data-room-link="deluxe"><img src="assets/images/unicon/rooms/deluxe.jpg" alt="" width="84" height="84" loading="lazy"><span><small>Our pick</small><b>Deluxe Room</b><span>Calm neutrals and a plush king bed</span></span></button>
+                            <button type="button" class="rm-btn-ghost" data-filter-link="all">See all stays</button>
+                        </div>
+                        <div class="rm-art" aria-hidden="true"><svg viewBox="0 0 24 24"><use href="#rm-i-rain"/></svg></div>
+                    </div>
+                </div>
+            </div>
+            <p class="um-fine" data-rm>Inclusions are confirmed by our reservations team when you book.</p>
+        </div>
+    </section>
+
+    <!-- ============ FILTER BAR + LISTING (the bar sticks only while this block is on screen) ============ -->
+    <div class="rm-browse">
+    <div class="rm-bar" id="rmBar">
+        <div class="container rm-bar__in">
+            <div class="rm-chips" role="group" aria-label="Filter stays" id="rmChips">
+                <span class="rm-chips__ind" aria-hidden="true"></span>
+                <button type="button" class="rm-chip" data-filter="all" aria-pressed="true">All stays</button>
+                <button type="button" class="rm-chip" data-filter="room" aria-pressed="false">Rooms</button>
+                <button type="button" class="rm-chip" data-filter="suite" aria-pressed="false">Suites</button>
+                <button type="button" class="rm-chip" data-filter="family" aria-pressed="false">Family friendly</button>
+                <button type="button" class="rm-chip" data-filter="saved" aria-pressed="false">Saved <sup data-saved-n>0</sup></button>
+            </div>
+            <div class="rm-tools">
+                <label class="rm-sel"><span>Sort</span>
+                    <select id="rmSort" aria-label="Sort stays">
+                        <option value="rank">Recommended</option>
+                        <option value="price-asc">Price: low to high</option>
+                        <option value="price-desc">Price: high to low</option>
+                        <option value="size-desc">Largest first</option>
+                        <option value="guests-desc">Most guests</option>
+                    </select>
+                </label>
+                <div class="rm-view" role="group" aria-label="Layout">
+                    <button type="button" data-view="grid" aria-pressed="true" aria-label="Grid view"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#rm-i-grid"/></svg></button>
+                    <button type="button" data-view="list" aria-pressed="false" aria-label="List view"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#rm-i-list"/></svg></button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ============ LISTING ============ -->
+    <section class="rm-list" id="rm-list" aria-label="Rooms and suites">
+        <div class="container">
+            <div class="rm-result" aria-live="polite">
+                <span id="rmCount">Showing <b>5</b> of 5 stays</span>
+                <span><span class="rm-sort-note" id="rmNote">Prices are per room per night, taxes extra.</span> <button type="button" class="rm-reset rm-hide" id="rmReset">Clear filters</button></span>
+            </div>
+
+            <div class="rm-grid" id="rmGrid">
+                    <div class="rm-cell" data-rm style="--d:0.00s">
+                        <article class="rm-card" data-id="deluxe" data-tags="room" data-price="4500" data-size="32" data-guests="2" data-rank="1">
+                            <div class="rm-card__media">
+                                <img src="assets/images/unicon/rooms/deluxe.jpg" width="668" height="789" loading="lazy" alt="Deluxe Room at Unicorn Hospitality">
+                                <span class="rm-badge">Most booked</span>
+                                <span class="rm-badge rm-badge--pick rm-badge--gold">Our pick for you</span>
+                                <button class="rm-heart" type="button" aria-pressed="false" aria-label="Save Deluxe Room"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#rm-i-heart"/></svg></button>
+                                <span class="rm-full" data-full>Sleeps up to 2</span>
+                                <div class="rm-card__over">
+                                    <ul class="rm-amen"><li><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-wifi"/></svg>Free Wi-Fi</li><li><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#rm-i-snow"/></svg>Air-conditioned</li><li><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-cup"/></svg>Tea & coffee</li></ul>
+                                    <button class="rm-quick" type="button" data-open="deluxe"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#rm-i-eye"/></svg> Quick view</button>
+                                </div>
+                            </div>
+                            <div class="rm-card__body">
+                                <span class="rm-card__cat">Room &middot; King bed</span>
+                                <h3 class="rm-card__title"><a href="#deluxe" data-open="deluxe">Deluxe Room</a></h3>
+                                <p class="rm-card__txt">Calm neutrals, a plush king bed and tall windows with soft drapes. Our easiest way to feel at home.</p>
+                                <ul class="rm-meta">
+                                    <li><svg class="ico"><use href="#i-area"/></svg> 32 sqm</li>
+                                    <li><svg class="ico"><use href="#i-user"/></svg> 2 guests</li>
+                                    <li><svg class="ico"><use href="#i-bed"/></svg> King bed</li>
+                                </ul>
+                                <div class="rm-card__foot">
+                                    <div class="rm-price"><small>From</small><strong>&#8377;<span data-amt>4,500</span> <sub>/ night</sub></strong><em data-total></em></div>
+                                    <div class="rm-card__act">
+                                        <label class="rm-cmp"><input type="checkbox" data-cmp="deluxe"><i></i> Compare</label>
+                                        <a class="theme-btn btn-style sm-btn fill no-border" href="contact.html#enquiry" data-reserve="deluxe"><span>Reserve</span></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+                    <div class="rm-cell" data-rm style="--d:0.09s">
+                        <article class="rm-card" data-id="executive" data-tags="room" data-price="5800" data-size="38" data-guests="2" data-rank="2">
+                            <div class="rm-card__media">
+                                <img src="assets/images/unicon/rooms/executive.jpg" width="750" height="1000" loading="lazy" alt="Executive Room at Unicorn Hospitality">
+                                <span class="rm-badge">City view</span>
+                                <span class="rm-badge rm-badge--pick rm-badge--gold">Our pick for you</span>
+                                <button class="rm-heart" type="button" aria-pressed="false" aria-label="Save Executive Room"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#rm-i-heart"/></svg></button>
+                                <span class="rm-full" data-full>Sleeps up to 2</span>
+                                <div class="rm-card__over">
+                                    <ul class="rm-amen"><li><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-wifi"/></svg>Free Wi-Fi</li><li><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#rm-i-desk"/></svg>Work corner</li><li><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#rm-i-sun"/></svg>City view</li></ul>
+                                    <button class="rm-quick" type="button" data-open="executive"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#rm-i-eye"/></svg> Quick view</button>
+                                </div>
+                            </div>
+                            <div class="rm-card__body">
+                                <span class="rm-card__cat">Room &middot; King bed</span>
+                                <h3 class="rm-card__title"><a href="#executive" data-open="executive">Executive Room</a></h3>
+                                <p class="rm-card__txt">More space, more light and a window onto the city. Made for business trips that deserve a better night.</p>
+                                <ul class="rm-meta">
+                                    <li><svg class="ico"><use href="#i-area"/></svg> 38 sqm</li>
+                                    <li><svg class="ico"><use href="#i-user"/></svg> 2 guests</li>
+                                    <li><svg class="ico"><use href="#i-bed"/></svg> King bed</li>
+                                </ul>
+                                <div class="rm-card__foot">
+                                    <div class="rm-price"><small>From</small><strong>&#8377;<span data-amt>5,800</span> <sub>/ night</sub></strong><em data-total></em></div>
+                                    <div class="rm-card__act">
+                                        <label class="rm-cmp"><input type="checkbox" data-cmp="executive"><i></i> Compare</label>
+                                        <a class="theme-btn btn-style sm-btn fill no-border" href="contact.html#enquiry" data-reserve="executive"><span>Reserve</span></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+                    <div class="rm-cell" data-rm style="--d:0.18s">
+                        <article class="rm-card" data-id="family" data-tags="suite family" data-price="8200" data-size="52" data-guests="4" data-rank="3">
+                            <div class="rm-card__media">
+                                <img src="assets/images/unicon/rooms/family.jpg" width="1084" height="1210" loading="lazy" alt="Family Suite at Unicorn Hospitality">
+                                <span class="rm-badge">Best for families</span>
+                                <span class="rm-badge rm-badge--pick rm-badge--gold">Our pick for you</span>
+                                <button class="rm-heart" type="button" aria-pressed="false" aria-label="Save Family Suite"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#rm-i-heart"/></svg></button>
+                                <span class="rm-full" data-full>Sleeps up to 4</span>
+                                <div class="rm-card__over">
+                                    <ul class="rm-amen"><li><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-bed"/></svg>Twin beds</li><li><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#rm-i-sofa"/></svg>Extra space</li><li><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-wifi"/></svg>Free Wi-Fi</li></ul>
+                                    <button class="rm-quick" type="button" data-open="family"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#rm-i-eye"/></svg> Quick view</button>
+                                </div>
+                            </div>
+                            <div class="rm-card__body">
+                                <span class="rm-card__cat">Suite &middot; 2 twin beds</span>
+                                <h3 class="rm-card__title"><a href="#family" data-open="family">Family Suite</a></h3>
+                                <p class="rm-card__txt">Room for everyone: twin beds, a separate sleeping area and space to spread out after a long day out.</p>
+                                <ul class="rm-meta">
+                                    <li><svg class="ico"><use href="#i-area"/></svg> 52 sqm</li>
+                                    <li><svg class="ico"><use href="#i-user"/></svg> 4 guests</li>
+                                    <li><svg class="ico"><use href="#i-bed"/></svg> 2 twin beds</li>
+                                </ul>
+                                <div class="rm-card__foot">
+                                    <div class="rm-price"><small>From</small><strong>&#8377;<span data-amt>8,200</span> <sub>/ night</sub></strong><em data-total></em></div>
+                                    <div class="rm-card__act">
+                                        <label class="rm-cmp"><input type="checkbox" data-cmp="family"><i></i> Compare</label>
+                                        <a class="theme-btn btn-style sm-btn fill no-border" href="contact.html#enquiry" data-reserve="family"><span>Reserve</span></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+                    <div class="rm-cell" data-rm style="--d:0.27s">
+                        <article class="rm-card" data-id="premium" data-tags="suite" data-price="9800" data-size="60" data-guests="3" data-rank="4">
+                            <div class="rm-card__media">
+                                <img src="assets/images/unicon/rooms/premium.jpg" width="576" height="768" loading="lazy" alt="Premium Suite at Unicorn Hospitality">
+                                <span class="rm-badge">Warm & glowing</span>
+                                <span class="rm-badge rm-badge--pick rm-badge--gold">Our pick for you</span>
+                                <button class="rm-heart" type="button" aria-pressed="false" aria-label="Save Premium Suite"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#rm-i-heart"/></svg></button>
+                                <span class="rm-full" data-full>Sleeps up to 3</span>
+                                <div class="rm-card__over">
+                                    <ul class="rm-amen"><li><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#rm-i-tv"/></svg>Smart TV</li><li><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#rm-i-sofa"/></svg>Dining nook</li><li><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#rm-i-drop"/></svg>Rain shower</li></ul>
+                                    <button class="rm-quick" type="button" data-open="premium"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#rm-i-eye"/></svg> Quick view</button>
+                                </div>
+                            </div>
+                            <div class="rm-card__body">
+                                <span class="rm-card__cat">Suite &middot; King bed</span>
+                                <h3 class="rm-card__title"><a href="#premium" data-open="premium">Premium Suite</a></h3>
+                                <p class="rm-card__txt">Layered lighting, a statement headboard wall and a table for a quiet dinner in. Rich, warm and private.</p>
+                                <ul class="rm-meta">
+                                    <li><svg class="ico"><use href="#i-area"/></svg> 60 sqm</li>
+                                    <li><svg class="ico"><use href="#i-user"/></svg> 3 guests</li>
+                                    <li><svg class="ico"><use href="#i-bed"/></svg> King bed</li>
+                                </ul>
+                                <div class="rm-card__foot">
+                                    <div class="rm-price"><small>From</small><strong>&#8377;<span data-amt>9,800</span> <sub>/ night</sub></strong><em data-total></em></div>
+                                    <div class="rm-card__act">
+                                        <label class="rm-cmp"><input type="checkbox" data-cmp="premium"><i></i> Compare</label>
+                                        <a class="theme-btn btn-style sm-btn fill no-border" href="contact.html#enquiry" data-reserve="premium"><span>Reserve</span></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+                    <div class="rm-cell" data-rm style="--d:0.36s">
+                        <article class="rm-card" data-id="unicon" data-tags="suite family signature" data-price="14500" data-size="85" data-guests="4" data-rank="5">
+                            <div class="rm-card__media">
+                                <img src="assets/images/unicon/rooms/unicon.webp" width="480" height="853" loading="lazy" alt="The Unicon Suite at Unicorn Hospitality">
+                                <span class="rm-badge rm-badge--gold">Signature</span>
+                                <span class="rm-badge rm-badge--pick rm-badge--gold">Our pick for you</span>
+                                <button class="rm-heart" type="button" aria-pressed="false" aria-label="Save The Unicon Suite"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#rm-i-heart"/></svg></button>
+                                <span class="rm-full" data-full>Sleeps up to 4</span>
+                                <div class="rm-card__over">
+                                    <ul class="rm-amen"><li><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#rm-i-sun"/></svg>Open view</li><li><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#rm-i-sofa"/></svg>Private lounge</li><li><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#rm-i-drop"/></svg>Rain shower</li></ul>
+                                    <button class="rm-quick" type="button" data-open="unicon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#rm-i-eye"/></svg> Quick view</button>
+                                </div>
+                            </div>
+                            <div class="rm-card__body">
+                                <span class="rm-card__cat">Suite &middot; King bed + lounge</span>
+                                <h3 class="rm-card__title"><a href="#unicon" data-open="unicon">The Unicon Suite</a></h3>
+                                <p class="rm-card__txt">Our most open, light-filled suite. Wide glass doors, natural timber and airy linen, made for slow mornings.</p>
+                                <ul class="rm-meta">
+                                    <li><svg class="ico"><use href="#i-area"/></svg> 85 sqm</li>
+                                    <li><svg class="ico"><use href="#i-user"/></svg> 4 guests</li>
+                                    <li><svg class="ico"><use href="#i-bed"/></svg> King bed + lounge</li>
+                                </ul>
+                                <div class="rm-card__foot">
+                                    <div class="rm-price"><small>From</small><strong>&#8377;<span data-amt>14,500</span> <sub>/ night</sub></strong><em data-total></em></div>
+                                    <div class="rm-card__act">
+                                        <label class="rm-cmp"><input type="checkbox" data-cmp="unicon"><i></i> Compare</label>
+                                        <a class="theme-btn btn-style sm-btn fill no-border" href="contact.html#enquiry" data-reserve="unicon"><span>Reserve</span></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+                    <div class="rm-cell rm-cell--help" data-rm style="--d:.45s">
+                        <aside class="rm-help" id="rmHelp" aria-label="Room finder">
+                            <span class="rm-eyebrow">Not sure?</span>
+                            <h3>Let Us Pick Your Room</h3>
+                            <p>Tell us who is travelling and why. We will point you to the stay that fits.</p>
+                            <label for="rmWho">Who is travelling?</label>
+                            <span class="rm-sel"><select id="rmWho">
+                                <option value="solo">Just me</option>
+                                <option value="couple" selected>Two of us</option>
+                                <option value="family">Family with children</option>
+                                <option value="group">A small group (4)</option>
+                            </select></span>
+                            <label for="rmWhy">What is the trip for?</label>
+                            <span class="rm-sel"><select id="rmWhy">
+                                <option value="business">Business</option>
+                                <option value="leisure" selected>A relaxed break</option>
+                                <option value="celebrate">A celebration</option>
+                                <option value="long">A longer stay</option>
+                            </select></span>
+                            <button type="button" class="theme-btn btn-style fill no-border" id="rmSuggest"><span>Suggest a Room</span></button>
+                        </aside>
+                    </div>
+            </div>
+
+            <div class="rm-empty" id="rmEmpty">
+                <h3>No stays match yet</h3>
+                <p>Try another filter, or clear them to see all five rooms and suites.</p>
+                <button type="button" class="theme-btn btn-style fill no-border" id="rmEmptyReset"><span>Show all stays</span></button>
+            </div>
+        </div>
+    </section>
+    </div><!-- /rm-browse -->
+
+    <!-- ============ INCLUDED ============ -->
+    <section class="rm-sec rm-inc" aria-labelledby="rmIncH">
+        <div class="container">
+            <div class="rm-sec__head" data-rm>
+                <span class="h6 subtitle__icon__three">Every stay includes</span>
+                <h2 id="rmIncH">The Little Things, Already Taken Care Of</h2>
+                <p>No matter which room you choose, these come with it.</p>
+            </div>
+            <div class="rm-inc__grid">
+                <div class="rm-inc__item" data-rm style="--d:0s"><span class="rm-inc__ico"><svg class="ico"><use href="#i-wifi"/></svg></span><div><h3>Free Wi-Fi</h3><p>Fast, reliable internet throughout the property.</p></div></div>
+                <div class="rm-inc__item" data-rm style="--d:.08s"><span class="rm-inc__ico"><svg class="ico"><use href="#i-cup"/></svg></span><div><h3>Breakfast &amp; Dining</h3><p>A fresh daily breakfast and all-day dining with local and global favourites.</p></div></div>
+                <div class="rm-inc__item" data-rm style="--d:.16s"><span class="rm-inc__ico"><svg class="ico"><use href="#i-car"/></svg></span><div><h3>Free Parking</h3><p>Secure on-site parking for every guest.</p></div></div>
+                <div class="rm-inc__item" data-rm style="--d:.24s"><span class="rm-inc__ico"><svg class="ico"><use href="#i-pool"/></svg></span><div><h3>Pool &amp; Fitness Centre</h3><p>Swim, stretch or unwind. The gym is open around the clock.</p></div></div>
+                <div class="rm-inc__item" data-rm style="--d:.32s"><span class="rm-inc__ico"><svg class="ico"><use href="#i-shield"/></svg></span><div><h3>24-Hour Security</h3><p>On-site security, surveillance and secure storage for your valuables.</p></div></div>
+                <div class="rm-inc__item" data-rm style="--d:.4s"><span class="rm-inc__ico"><svg class="ico"><use href="#i-plane"/></svg></span><div><h3>Airport Transfers</h3><p>Easy pick-ups and drop-offs, arranged on request.</p></div></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ BOOK DIRECT ============ -->
+    <section class="rm-sec" aria-labelledby="rmDirH">
+        <div class="container">
+            <div class="rm-sec__head" data-rm>
+                <span class="h6 subtitle__icon__three">Book direct</span>
+                <h2 id="rmDirH">Why Book With Us</h2>
+                <p>Reserve straight with the hotel and talk to the people who will welcome you.</p>
+            </div>
+            <div class="rm-direct__grid">
+                <div class="rm-direct__card" data-rm style="--d:0s"><span class="rm-direct__no">01</span><span class="um-icon"><svg class="ico"><use href="#i-shield"/></svg></span><h3>Best Rate Guarantee</h3><p>Book direct and get our best available rate. No hidden extras at the end.</p></div>
+                <div class="rm-direct__card" data-rm style="--d:.1s"><span class="rm-direct__no">02</span><span class="um-icon"><svg class="ico"><use href="#i-star"/></svg></span><h3>Unicorn Rewards</h3><p>Join free and enjoy member perks on every stay. Sign up from the menu at the top of the page.</p></div>
+                <div class="rm-direct__card" data-rm style="--d:.2s"><span class="rm-direct__no">03</span><span class="um-icon"><svg class="ico"><use href="#i-clock"/></svg></span><h3>A Real Person, Always</h3><p>Our front desk is open 24 hours. Check-in 2:00 PM, check-out 11:00 AM, with flexibility on request.</p></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ FAQ ============ -->
+    <section class="rm-sec rm-faq" aria-labelledby="rmFaqH">
+        <div class="container">
+            <div class="rm-sec__head" data-rm>
+                <span class="h6 subtitle__icon__three">Good to know</span>
+                <h2 id="rmFaqH">Questions About Our Rooms</h2>
+            </div>
+            <div class="um-faq__list" data-rm>
+                <details class="um-faq__item">
+                    <summary>What are the check-in and check-out times?</summary>
+                    <p>Check-in is from 2:00 PM and check-out is by 11:00 AM. Early check-in and late check-out are available on request, subject to availability.</p>
+                </details>
+                <details class="um-faq__item">
+                    <summary>Can we add an extra bed for a child?</summary>
+                    <p>Extra beds can be arranged on request, subject to availability. For the most space with children, our Family Suite and The Unicon Suite are the best fit.</p>
+                </details>
+                <details class="um-faq__item">
+                    <summary>Are the prices shown per night?</summary>
+                    <p>Yes. Prices are per room, per night, and taxes are extra.</p>
+                </details>
+                <details class="um-faq__item">
+                    <summary>How do I book?</summary>
+                    <p>Pick a room and press Reserve, or call us on +91 99204 00267. Our reservations team confirms availability and your final rate.</p>
+                </details>
+                <details class="um-faq__item">
+                    <summary>Which payment methods do you accept?</summary>
+                    <p>Major credit and debit cards, UPI and cash at the front desk.</p>
+                </details>
+                <details class="um-faq__item">
+                    <summary>Can you arrange airport transfers?</summary>
+                    <p>Yes. Pick-ups and drop-offs are arranged on request. Tell us your flight details when you book.</p>
+                </details>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ FINAL CTA ============ -->
+    <section class="rm-cta">
+        <span class="rm-cta__ring rm-cta__ring--1" aria-hidden="true"></span>
+        <span class="rm-cta__ring rm-cta__ring--2" aria-hidden="true"></span>
+        <div class="container" data-rm>
+            <span class="rm-eyebrow">Ready when you are</span>
+            <h2>Your Room Is Waiting</h2>
+            <p>Choose your room and let us take care of the rest. Prefer to talk? Call and we will answer.</p>
+            <div class="rm-cta__btns">
+                <a href="contact.html#enquiry" class="theme-btn btn-style fill no-border"><span>Send an Enquiry</span></a>
+                <a href="tel:+919920400267" class="rm-btn-ghost">Call +91 99204 00267</a>
+            </div>
+        </div>
+    </section>
+
+    </main>
+
+    <!-- ============ COMPARE TRAY ============ -->
+    <div class="rm-tray" id="rmTray" role="region" aria-label="Compare stays">
+        <div class="rm-tray__thumbs" id="rmTrayThumbs"></div>
+        <div class="rm-tray__txt"><b id="rmTrayTitle">Compare stays</b><span id="rmTraySub">Pick up to 3</span></div>
+        <button type="button" class="theme-btn btn-style sm-btn fill no-border" id="rmTrayGo" disabled><span>Compare</span></button>
+        <button type="button" class="rm-tray__x" id="rmTrayClear" aria-label="Clear comparison"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#rm-i-x"/></svg></button>
+    </div>
+
+    <!-- ============ QUICK VIEW DIALOG ============ -->
+    <div class="rm-dlg" id="rmDlg" role="dialog" aria-modal="true" aria-labelledby="rmDlgTitle" aria-hidden="true">
+        <div class="rm-dlg__scrim" data-close></div>
+        <div class="rm-dlg__box">
+            <button type="button" class="rm-dlg__x" data-close aria-label="Close"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#rm-i-x"/></svg></button>
+            <div class="rm-dlg__media">
+                <img id="rmDlgImg" src="" alt="">
+                <div class="rm-dlg__nav">
+                    <button type="button" id="rmDlgPrev" aria-label="Previous room"><svg viewBox="0 0 24 24"><use href="#i-arrow-l"/></svg></button>
+                    <button type="button" id="rmDlgNext" aria-label="Next room"><svg viewBox="0 0 24 24"><use href="#i-arrow-r"/></svg></button>
+                </div>
+                <span class="rm-dlg__idx" id="rmDlgIdx"></span>
+            </div>
+            <div class="rm-dlg__body" id="rmDlgBody"></div>
+        </div>
+    </div>
+
+    <!-- ============ COMPARE DIALOG ============ -->
+    <div class="rm-dlg" id="rmCmpDlg" role="dialog" aria-modal="true" aria-labelledby="rmCmpTitle" aria-hidden="true">
+        <div class="rm-dlg__scrim" data-close></div>
+        <div class="rm-dlg__box rm-dlg__box--wide">
+            <button type="button" class="rm-dlg__x" data-close aria-label="Close"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#rm-i-x"/></svg></button>
+            <div class="rm-cmpt" id="rmCmpBody"></div>
+        </div>
+    </div>
+
+    <div class="rm-toast" id="rmToast" role="status" aria-live="polite"></div>
+
+
+    <!-- ============ SIGN IN / JOIN MODALS ============ -->
+    <div class="modal similar__modal fade" id="loginModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="max-content similar__form form__padding">
+                    <div class="d-flex mb-3 align-items-center justify-content-between">
+                        <h6 class="mb-0">Sign In to Unicorn Rewards</h6>
+                        <button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <form action="#" class="d-flex flex-column gap-3 um-demo-form">
+                        <div class="form-group">
+                            <label for="email-popup" class="text-dark mb-3">Your Email</label>
+                            <div class="position-relative"><input type="email" name="email-popup" id="email-popup" placeholder="Enter your email" required></div>
+                        </div>
+                        <div class="form-group">
+                            <label for="password" class="text-dark mb-3">Password</label>
+                            <div class="position-relative"><input type="password" name="password" id="password" placeholder="Enter your password" required></div>
+                        </div>
+                        <div class="d-flex flex-wrap justify-content-between align-items-center">
+                            <div class="form-check d-flex align-items-center gap-2">
+                                <input class="form-check-input mt-0" type="checkbox" value="" id="flexCheckDefault">
+                                <label class="form-check-label mb-0" for="flexCheckDefault">Remember me</label>
+                            </div>
+                            <a href="#" class="forgot__password text-para" data-bs-toggle="modal" data-bs-target="#forgotModal">Forgot Password?</a>
+                        </div>
+                        <div class="form-group my-3">
+                            <button class="theme-btn btn-style sm-btn fill w-100"><span>Sign In</span></button>
+                        </div>
+                    </form>
+                    <span class="d-block text-center">Not a member? <a href="#" data-bs-target="#signupModal" data-bs-toggle="modal" class="text-primary">Join Free</a></span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal similar__modal fade" id="signupModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="max-content similar__form form__padding">
+                    <div class="d-flex mb-3 align-items-center justify-content-between">
+                        <h6 class="mb-0">Join Unicorn Rewards, Free</h6>
+                        <button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <form action="#" class="d-flex flex-column gap-3 um-demo-form">
+                        <div class="form-group">
+                            <label for="sname" class="text-dark mb-3">Your Name</label>
+                            <div class="position-relative"><input type="text" name="sname" id="sname" placeholder="Full name" required></div>
+                        </div>
+                        <div class="form-group">
+                            <label for="signemail" class="text-dark mb-3">Your Email</label>
+                            <div class="position-relative"><input type="email" name="signemail" id="signemail" placeholder="Enter your email" required></div>
+                        </div>
+                        <div class="form-group">
+                            <label for="spassword" class="text-dark mb-3">Password</label>
+                            <div class="position-relative"><input type="password" name="spassword" id="spassword" placeholder="Create a password" required></div>
+                        </div>
+                        <div class="form-group my-3">
+                            <button class="theme-btn btn-style sm-btn fill w-100"><span>Register</span></button>
+                        </div>
+                    </form>
+                    <span class="d-block text-center">Already a member? <a href="#" data-bs-target="#loginModal" data-bs-toggle="modal" class="text-primary">Sign In</a></span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal similar__modal fade" id="forgotModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="max-content similar__form form__padding">
+                    <div class="d-flex mb-3 align-items-center justify-content-between">
+                        <h6 class="mb-0">Forgot Password</h6>
+                        <button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <form action="#" class="d-flex flex-column gap-3 um-demo-form">
+                        <div class="form-group">
+                            <label for="fmail" class="text-dark mb-3">Your Email</label>
+                            <div class="position-relative"><input type="email" name="email" id="fmail" placeholder="Enter your email" required></div>
+                        </div>
+                        <div class="form-group my-3">
+                            <button class="theme-btn btn-style sm-btn fill w-100"><span>Reset Password</span></button>
+                        </div>
+                    </form>
+                    <span class="d-block text-center">Remember your password? <a href="#" data-bs-target="#loginModal" data-bs-toggle="modal" class="text-primary">Sign In</a></span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ============ MOBILE OFF-CANVAS MENU ============ -->
+    <div class="offcanvas offcanvas-start" id="offcanvasRight" tabindex="-1" aria-label="Mobile menu">
+        <div class="rts__btstrp__offcanvase">
+            <div class="offcanvase__wrapper">
+                <div class="left__side mobile__menu">
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                    <div class="offcanvase__top">
+                        <div class="offcanvase__logo">
+                            <a href="index.html" class="um-logo um-logo--light"><span class="um-logo__name">Unicorn</span><span class="um-logo__sub">Hospitality</span></a>
+                        </div>
+                    </div>
+                    <div class="offcanvase__mobile__menu">
+                        <nav class="um-mnav" aria-label="Mobile">
+                            <button class="um-mnav__btn" aria-expanded="false">Book <i></i></button>
+                            <div class="um-mnav__panel">
+                                <a href="index.html#book">Find My Reservation</a>
+                                <a href="index.html#locations">Our Locations</a>
+                                <a href="index.html#offers">All Offers</a>
+                                <a href="rooms.html">Rooms &amp; Suites</a>
+                            </div>
+                            <button class="um-mnav__btn" aria-expanded="false">Stay <i></i></button>
+                            <div class="um-mnav__panel">
+                                <a href="rooms.html">Rooms &amp; Suites</a>
+                                <a href="index.html#amenities">Amenities</a>
+                                <a href="index.html#dining">Dining</a>
+                                <a href="index.html#gallery">Gallery</a>
+                            </div>
+                            <a class="um-mnav__link" href="rooms.html" aria-current="page">Rooms</a>
+                            <a class="um-mnav__link" href="index.html#offers">Offers</a>
+                            <button class="um-mnav__btn" aria-expanded="false">Meetings &amp; Groups <i></i></button>
+                            <div class="um-mnav__panel">
+                                <a href="index.html#meetings">Meetings</a>
+                                <a href="index.html#meetings">Groups</a>
+                                <a href="index.html#meetings">Weddings &amp; Events</a>
+                            </div>
+                            <a class="um-mnav__link" href="index.html#about">About</a>
+                            <a class="um-mnav__link" href="contact.html">Contact</a>
+                            <a class="um-mnav__link" href="#" data-bs-toggle="modal" data-bs-target="#loginModal">Sign In / Join</a>
+                        </nav>
+                    </div>
+                    <div class="offcanvase__bottom">
+                        <div class="offcanvase__address">
+                            <div class="item">
+                                <span class="h6">Reservations</span>
+                                <a href="tel:+919920400267"><svg class="ico"><use href="#i-phone"/></svg> +91 99204 00267</a>
+                            </div>
+                            <div class="item">
+                                <span class="h6">Email</span>
+                                <a href="mailto:stay@unicornhospitality.example"><svg class="ico"><use href="#i-mail"/></svg> stay@unicornhospitality.example</a>
+                            </div>
+                            <div class="item">
+                                <span class="h6">Address</span>
+                                <a href="contact.html"><svg class="ico"><use href="#i-pin"/></svg> Your street address, City, State</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- offcanvas end -->
+
+    <!-- ============ FOOTER (Ramada-style columns) ============ -->
+    <footer class="rts__section rts__footer is__common__footer footer__background has__shape" id="contact">
+        <div class="container">
+            <div class="row">
+                <div class="footer__newsletter">
+                    <span class="h2">Join Our Newsletter</span>
+                    <div class="rts__form">
+                        <form action="#" method="post" id="newsForm" novalidate>
+                            <input type="email" name="email" id="subscription" placeholder="Enter your email" required aria-label="Email">
+                            <button type="submit">Subscribe</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <div class="um-fcols">
+                <div class="um-fcol">
+                    <button class="um-fcol__title" aria-expanded="false">Unicorn Hospitality <i></i></button>
+                    <ul>
+                        <li><a href="index.html#about">About</a></li>
+                        <li><a href="index.html#locations">Locations</a></li>
+                        <li><a href="index.html">Site Map</a></li>
+                        <li><a href="index.html#locations">Travel Guide</a></li>
+                    </ul>
+                </div>
+                <div class="um-fcol">
+                    <button class="um-fcol__title" aria-expanded="false">Contact <i></i></button>
+                    <ul>
+                        <li><a href="tel:+919920400267"><svg class="ico"><use href="#i-phone"/></svg> Reservations: +91 99204 00267</a></li>
+                        <li><a href="mailto:stay@unicornhospitality.example"><svg class="ico"><use href="#i-mail"/></svg> stay@unicornhospitality.example</a></li>
+                        <li><a href="contact.html"><svg class="ico"><use href="#i-pin"/></svg> Your street address, City, State</a></li>
+                        <li><a href="contact.html">Customer Care / Help</a></li>
+                    </ul>
+                </div>
+                <div class="um-fcol">
+                    <button class="um-fcol__title" aria-expanded="false">Hospitality Business <i></i></button>
+                    <ul>
+                        <li><a href="contact.html">Join Our Business Programme</a></li>
+                        <li><a href="index.html#meetings">Projects &amp; Groups</a></li>
+                        <li><a href="contact.html">Corporate Travel</a></li>
+                        <li><a href="contact.html">Travel Advisors</a></li>
+                    </ul>
+                </div>
+                <div class="um-fcol">
+                    <button class="um-fcol__title" aria-expanded="false">Terms &amp; Policies <i></i></button>
+                    <ul>
+                        <li><a href="#">Best Rate Guarantee</a></li>
+                        <li><a href="#">Privacy Notice</a></li>
+                        <li><a href="#">Terms of Use</a></li>
+                        <li><a href="#">Cookie Consent</a></li>
+                    </ul>
+                </div>
+                <div class="um-fcol">
+                    <button class="um-fcol__title" aria-expanded="false">Corporate Resources <i></i></button>
+                    <ul>
+                        <li><a href="#">Media Centre</a></li>
+                        <li><a href="#">Franchise Information</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Social Responsibility</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="copyright__text">
+            <div class="container">
+                <div class="row">
+                    <div class="copyright__wrapper">
+                        <p class="mb-0 ">Copyright &copy; <span id="year">2026</span> Unicorn Hospitality. All rights reserved. | Developed By <a href="https://hsdigitalmedia.com/" target="_blank">HS Digital Media®</a></p>
+                        <div class="footer__social__link">
+                            <a href="#" aria-label="Facebook" class="link__item">Facebook</a>
+                            <a href="#" aria-label="Instagram" class="link__item">Instagram</a>
+                            <a href="#" aria-label="LinkedIn" class="link__item">LinkedIn</a>
+                            <a href="#" aria-label="X" class="link__item">X</a>
+                            <a href="#" aria-label="YouTube" class="link__item">YouTube</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- footer end -->
+
+    <!-- sticky mobile booking bar -->
+    <div class="um-mbar" id="umMbar">
+        <a href="tel:+919920400267" class="um-mbar__call">Call</a>
+        <a href="index.html#book" class="theme-btn btn-style fill no-border um-mbar__book"><span>Book Now</span></a>
+    </div>
+
+    <!-- back to top -->
+    <button type="button" class="rts__back__top" id="rts-back-to-top" aria-label="Back to top">
+        <svg width="20" height="20" viewBox="0 0 13 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M7.30201 1.51317L7.29917 21.3422C7.29912 21.7057 6.97211 21.9993 6.5674 21.9993C6.16269 21.9992 5.83577 21.7055 5.83582 21.342L5.83844 3.10055L1.39753 7.08842C1.11169 7.34511 0.647535 7.34506 0.361762 7.0883C0.0759894 6.83155 0.0760493 6.41464 0.361896 6.15795L6.05367 1.04682C6.26405 0.857899 6.5773 0.802482 6.85167 0.905201C7.12374 1.00792 7.30205 1.24823 7.30201 1.51317Z" fill="#FFF" />
+            <path d="M12.9991 6.6318C12.9991 6.80021 12.9282 6.96861 12.7841 7.09592C12.4983 7.35261 12.0341 7.35256 11.7483 7.0958L6.05118 1.97719C5.76541 1.72043 5.76547 1.30352 6.05131 1.04684C6.33716 0.790152 6.80131 0.790206 7.08709 1.04696L12.7842 6.16557C12.9283 6.29498 12.9991 6.46339 12.9991 6.6318Z" fill="#FFF" />
+        </svg>
+    </button>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/wowjs@1.1.3/dist/wow.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jarallax@2/dist/jarallax.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr@4/dist/flatpickr.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr@4/dist/flatpickr.min.css">
+    <!-- shared site script -->
+    <script src="assets/js/2026-10-22-unicorn-hospitality-v2-main.js"></script>
+    <!-- rooms page script -->
+    <script src="assets/js/rooms.js"></script>
+</body>
+</html>
