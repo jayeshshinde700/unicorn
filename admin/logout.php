@@ -1,6 +1,6 @@
 <?php
 /* Sign out (POST only, with the page's security token) */
-require __DIR__ . '/includes/bootstrap.php';
+require_once __DIR__ . '/includes/db.php';
 security_headers();
 start_admin_session();
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && csrf_ok($_POST['csrf'] ?? null)) {

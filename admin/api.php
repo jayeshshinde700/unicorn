@@ -1,6 +1,6 @@
 <?php
 /* Unicorn Hospitality - admin API (JSON). Everything here needs a signed-in session; every change needs the CSRF header. */
-require __DIR__ . '/includes/bootstrap.php';
+require_once __DIR__ . '/includes/db.php';
 security_headers(false);
 start_admin_session();
 

@@ -160,6 +160,15 @@
   });
   raf2(function () { if (hero) hero.classList.add('is-in'); });
 
+  /* ensure hero background video plays smoothly */
+  var heroVideo = $('#rmHero video');
+  if (heroVideo && !reduce) {
+    var vp = heroVideo.play();
+    if (vp !== undefined) {
+      vp.catch(function () {});
+    }
+  }
+
   /* scroll reveal */
   var io = null;
   function observeReveal(els) {

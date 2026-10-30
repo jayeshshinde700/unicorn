@@ -1,0 +1,788 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="The Bar &amp; Restaurant at Unicon: craft cocktails, curated dining, tandoor grills, sharing platters, weekly events and table reservations.">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="Dining | Unicorn Hospitality">
+    <meta property="og:description" content="Craft cocktails, curated dining and memorable evenings.">
+    <meta property="og:image" content="assets/images/unicon/dining/rooftop-bar.webp">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="icon" href="assets/images/unicon/logos.jpeg" type="image/x-icon">
+    <title>Dining | Unicorn Hospitality</title>
+    <script>document.documentElement.classList.add("dn-js")</script>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <!-- dining page only -->
+    <link rel="stylesheet" href="assets/css/dining.css">
+</head>
+
+<body class="dn-page">
+    <!-- icon sprite (replaces the flaticon font, which was not supplied) -->
+    <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+        <defs>
+            <symbol id="i-phone" viewBox="0 0 24 24"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></symbol>
+            <symbol id="i-mail" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></symbol>
+            <symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 21s7-6.2 7-11a7 7 0 0 0-14 0c0 4.8 7 11 7 11z"/><circle cx="12" cy="10" r="2.5"/></symbol>
+            <symbol id="i-cal" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M8 3v4M16 3v4M3 10h18"/></symbol>
+            <symbol id="i-user" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></symbol>
+            <symbol id="i-people" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.5"/><path d="M2 20a7 7 0 0 1 14 0"/><circle cx="17" cy="9" r="2.5"/><path d="M18 14a5 5 0 0 1 4 6"/></symbol>
+            <symbol id="i-area" viewBox="0 0 24 24"><path d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5"/></symbol>
+            <symbol id="i-check" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="m8 12 3 3 5-6"/></symbol>
+            <symbol id="i-star" viewBox="0 0 24 24"><path d="m12 3 2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1L3.2 9.5l6.1-.9z"/></symbol>
+            <symbol id="i-play" viewBox="0 0 24 24"><path d="M8 5v14l11-7z" fill="currentColor"/></symbol>
+            <symbol id="i-bed" viewBox="0 0 24 24"><path d="M3 18V6M3 14h18v4M21 14v-2a3 3 0 0 0-3-3h-7v5"/><circle cx="7" cy="11" r="1.5"/></symbol>
+            <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 3 5 6v6c0 4.5 3 7.5 7 9 4-1.500 7-4.500 7-9V6z"/><path d="m9 12 2 2 4-4"/></symbol>
+            <symbol id="i-gym" viewBox="0 0 24 24"><path d="M6 8v8M18 8v8M3 10v4M21 10v4M6 12h12"/></symbol>
+            <symbol id="i-pool" viewBox="0 0 24 24"><path d="M3 17c2 0 2-1.500 4.500-1.500S10 17 12 17s2.500-1.500 4.500-1.500S19 17 21 17M3 21c2 0 2-1.500 4.500-1.500S10 21 12 21s2.500-1.500 4.500-1.500S19 21 21 21M8 14V6a2 2 0 0 1 4 0M14 14V6a2 2 0 0 1 4 0M8 9h6"/></symbol>
+            <symbol id="i-wifi" viewBox="0 0 24 24"><path d="M2 9a15 15 0 0 1 20 0M5 12.500a10 10 0 0 1 14 0M8.500 16a5 5 0 0 1 7 0"/><circle cx="12" cy="19" r="1" fill="currentColor"/></symbol>
+            <symbol id="i-cup" viewBox="0 0 24 24"><path d="M4 8h13v6a5 5 0 0 1-5 5H9a5 5 0 0 1-5-5zM17 10h2a2 2 0 0 1 0 4h-2M8 3v2M12 3v2"/></symbol>
+            <symbol id="i-car" viewBox="0 0 24 24"><path d="M4 16v-4l2-5h12l2 5v4zM4 16v2M20 16v2M4 12h16"/><circle cx="8" cy="14.500" r="1"/><circle cx="16" cy="14.500" r="1"/></symbol>
+            <symbol id="i-plane" viewBox="0 0 24 24"><path d="M21 3 3 10l7 3 3 7z"/><path d="m10 13 4-4"/></symbol>
+            <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></symbol>
+            <symbol id="i-arrow-l" viewBox="0 0 24 24"><path d="M19 12H5M11 6l-6 6 6 6"/></symbol>
+            <symbol id="i-arrow-r" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
+            <symbol id="i-insta" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.500" cy="6.500" r="1" fill="currentColor"/></symbol>
+          <!-- rooms page extras -->
+            <symbol id="rm-i-heart" viewBox="0 0 24 24"><path d="M12 20.5s-7.5-4.6-7.5-10.4A4.4 4.4 0 0 1 12 7.2a4.4 4.4 0 0 1 7.5 2.9c0 5.800-7.500 10.400-7.500 10.400z"/></symbol>
+            <symbol id="rm-i-grid" viewBox="0 0 24 24"><rect x="4" y="4" width="6.500" height="6.500" rx="1.500"/><rect x="13.500" y="4" width="6.500" height="6.500" rx="1.500"/><rect x="4" y="13.500" width="6.500" height="6.500" rx="1.500"/><rect x="13.500" y="13.500" width="6.500" height="6.500" rx="1.500"/></symbol>
+            <symbol id="rm-i-list" viewBox="0 0 24 24"><path d="M4 6.500h16M4 12h16M4 17.500h16"/></symbol>
+            <symbol id="rm-i-eye" viewBox="0 0 24 24"><path d="M2 12s3.600-7 10-7 10 7 10 7-3.600 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></symbol>
+            <symbol id="rm-i-x" viewBox="0 0 24 24"><path d="M5 5l14 14M19 5 5 19"/></symbol>
+            <symbol id="rm-i-snow" viewBox="0 0 24 24"><path d="M12 2.500v19M3.800 7.250l16.400 9.500M20.200 7.250l-16.400 9.500M9.500 4.500 12 6.800l2.500-2.300M9.500 19.500 12 17.200l2.500 2.300"/></symbol>
+            <symbol id="rm-i-tv" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="12" rx="2"/><path d="M8 21h8M12 17v4"/></symbol>
+            <symbol id="rm-i-lock" viewBox="0 0 24 24"><rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></symbol>
+            <symbol id="rm-i-drop" viewBox="0 0 24 24"><path d="M12 3s6 6.500 6 11a6 6 0 0 1-12 0c0-4.500 6-11 6-11z"/></symbol>
+            <symbol id="rm-i-desk" viewBox="0 0 24 24"><path d="M3 9h18M5 9v10M19 9v10M9 9v5h6V9"/></symbol>
+            <symbol id="rm-i-sofa" viewBox="0 0 24 24"><path d="M5 11V8a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v3M3 13a2 2 0 0 1 4 0v2h10v-2a2 2 0 0 1 4 0v5H3z"/></symbol>
+            <symbol id="rm-i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2.500v2.500M12 19v2.500M2.500 12H5M19 12h2.500M5.300 5.300l1.800 1.800M16.900 16.900l1.800 1.800M5.300 18.700l1.800-1.800M16.900 7.100l1.800-1.800"/></symbol>
+            <symbol id="rm-i-cmp" viewBox="0 0 24 24"><path d="M7 4v16M17 4v16M3 8l4-4 4 4M13 16l4 4 4-4"/></symbol>
+            <symbol id="rm-i-lamp" viewBox="0 0 24 24"><path d="M3 12.500h18c0 4.200-4 7.500-9 7.500s-9-3.300-9-7.500zM12 3.500c1.800 2.200 2.200 3.800 0 5.800-2.200-2-1.800-3.600 0-5.800z"/></symbol>
+            <symbol id="rm-i-flake" viewBox="0 0 24 24"><path d="M12 2v20M3.300 7l17.400 10M3.300 17 20.700 7"/></symbol>
+            <symbol id="rm-i-rain" viewBox="0 0 24 24"><path d="M7 15a4 4 0 1 1 .8-7.900A5 5 0 0 1 17.500 8 3.500 3.500 0 0 1 17 15zM8 18l-1 3M12 18l-1 3M16 18l-1 3"/></symbol>
+            <symbol id="rm-i-bath" viewBox="0 0 24 24"><path d="M4 12h16v3a4 4 0 0 1-4 4H8a4 4 0 0 1-4-4zM6 12V6a2 2 0 0 1 4 0M7 19l-1 2M17 19l1 2"/></symbol>
+            <symbol id="rm-i-iron" viewBox="0 0 24 24"><path d="M3 17h18a0 0 0 0 0 0 0 8 8 0 0 0-8-8H9a4 4 0 0 0-4 4zM8 13V9"/></symbol>
+            <symbol id="dn-i-sunset" viewBox="0 0 24 24"><path d="M3 18h18M6 18a6 6 0 0 1 12 0M12 5v3M4.500 9.500 6.500 11.500M19.500 9.500l-2 2"/></symbol>
+            <symbol id="dn-i-moon" viewBox="0 0 24 24"><path d="M20 14.500A8 8 0 0 1 9.500 4a8 8 0 1 0 10.500 10.500z"/></symbol>
+            <symbol id="dn-i-cocktail" viewBox="0 0 24 24"><path d="M4 5h16l-8 9zM12 14v6M8 20h8M16 3l-2 4"/></symbol>
+            <symbol id="dn-i-bottle" viewBox="0 0 24 24"><path d="M10 3h4v4l2 3v10a1 1 0 0 1-1 1H9a1 1 0 0 1-1-1V10l2-3zM8 14h8"/></symbol>
+            <symbol id="dn-i-wine" viewBox="0 0 24 24"><path d="M7 3h10c0 5-1.500 8-5 8S7 8 7 3zM12 11v9M8 21h8M7.500 7h9"/></symbol>
+            <symbol id="dn-i-beer" viewBox="0 0 24 24"><path d="M6 8h10v12H6zM16 10h2.500a1.500 1.500 0 0 1 1.500 1.500v3a1.500 1.500 0 0 1-1.500 1.500H16M6 8a3 3 0 0 1 3-3 3 3 0 0 1 5 0 2 2 0 0 1 2 3M10 12v5M13 12v5"/></symbol>
+            <symbol id="dn-i-leaf" viewBox="0 0 24 24"><path d="M5 19c0-8 5-14 15-14 0 10-6 15-14 15M5 19l8-8"/></symbol>
+            <symbol id="dn-i-flame" viewBox="0 0 24 24"><path d="M12 3c1 4 5 5 5 10a5 5 0 0 1-10 0c0-2 1-3 2-4 .500 1.500 1 2 2 2 0-3-1-5 1-8z"/></symbol>
+            <symbol id="dn-i-mic" viewBox="0 0 24 24"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5 11a7 7 0 0 0 14 0M12 18v3M9 21h6"/></symbol>
+            <symbol id="dn-i-tag" viewBox="0 0 24 24"><path d="M3 12V4h8l10 10-8 8zM7.500 8h.01"/></symbol>
+            <symbol id="dn-i-crown" viewBox="0 0 24 24"><path d="M3 8l4.500 4L12 5l4.500 7L21 8l-2 11H5zM5 21h14"/></symbol>
+            <symbol id="dn-i-shirt" viewBox="0 0 24 24"><path d="M8 3 3 6l2 4 3-1v12h8V9l3 1 2-4-5-3a4 4 0 0 1-8 0z"/></symbol>
+            <symbol id="dn-i-id" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="11" r="2"/><path d="M6 16a3 3 0 0 1 6 0M14 10h4M14 13h3"/></symbol>
+            <symbol id="dn-i-access" viewBox="0 0 24 24"><circle cx="12" cy="4.500" r="1.500"/><path d="M12 8v6h4l2 5M12 11H8M9 14a4 4 0 1 0 5 5"/></symbol>
+        </defs>
+    </svg>
+
+
+    <!-- ============ TOP UTILITY BAR (Ramada-style) ============ -->
+    <div class="header__top um-utility">
+        <div class="container">
+            <div class="um-utility__in">
+                <ul class="um-utility__links">
+                    <li><a class="link__item" href="index.html#book">Find My Reservation</a></li>
+                    <li><a class="link__item" href="index.html#locations">Our Locations</a></li>
+                    <li><a class="link__item" href="index.html#offers">All Offers</a></li>
+                    <li><a class="link__item" href="index.html#meetings">Meetings &amp; Groups</a></li>
+                </ul>
+                <div class="um-utility__right">
+                    <a class="link__item" href="tel:+919920400267"><svg class="ico"><use href="#i-phone"/></svg> Reservations: +91 99204 00267</a>
+                    <label class="um-lang">
+                        <span class="visually-hidden">Language</span>
+                        <select aria-label="Language">
+                            <option>English</option>
+                            <option>हिन्दी</option>
+                            <option>मराठी</option>
+                        </select>
+                    </label>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ============ MAIN HEADER ============ -->
+    <header class="main__header header__function">
+        <div class="container">
+            <div class="row">
+                <div class="main__header__wrapper">
+                    <div class="main__nav">
+                        <div class="navigation d-none d-lg-block">
+                            <nav class="navigation__menu" id="main__menu">
+                                <ul class="list-unstyled">
+                                    <!-- Book (mega menu, like Ramada) -->
+                                    <li class="navigation__menu--item has-child has-arrow">
+                                        <a href="index.html#book" class="navigation__menu--item__link">Book</a>
+                                        <div class="has__mega__menu um-mega">
+                                            <div class="um-mega__col">
+                                                <h6>Book</h6>
+                                                <a href="index.html#book">Find My Reservation</a>
+                                                <a href="index.html#locations">Our Locations</a>
+                                                <a href="index.html#offers">All Offers</a>
+                                                <a href="rooms.html">Rooms &amp; Suites</a>
+                                            </div>
+                                            <div class="um-mega__promo">
+                                                <span class="um-mega__tag">Save with bundles</span>
+                                                <p>Combine your room, meals and transfers in one seamless booking.</p>
+                                                <a href="index.html#book" class="theme-btn btn-style sm-btn fill no-border"><span>Book Now</span></a>
+                                            </div>
+                                        </div>
+                                    </li>
+
+                                    <li class="navigation__menu--item has-child has-arrow">
+                                        <a href="rooms.html" class="navigation__menu--item__link">Stay</a>
+                                        <ul class="submenu sub__style" role="menu">
+                                            <li role="menuitem"><a href="rooms.html">Rooms &amp; Suites</a></li>
+                                            <li role="menuitem"><a href="amenities.html">Amenities</a></li>
+                                            <li role="menuitem"><a href="dining.html" aria-current="page">Dining</a></li>
+                                            <li role="menuitem"><a href="gallery.html">Gallery</a></li>
+                                        </ul>
+                                    </li>
+
+                                    <li class="navigation__menu--item">
+                                        <a href="rooms.html" class="navigation__menu--item__link">Rooms</a>
+                                    </li>
+
+                                    <li class="navigation__menu--item">
+                                        <a href="index.html#offers" class="navigation__menu--item__link">Offers</a>
+                                    </li>
+
+                                    <!-- <li class="navigation__menu--item has-child has-arrow">
+                                        <a href="index.html#meetings" class="navigation__menu--item__link">Meetings &amp; Groups</a>
+                                        <ul class="submenu sub__style" role="menu">
+                                            <li role="menuitem"><a href="index.html#meetings">Meetings</a></li>
+                                            <li role="menuitem"><a href="index.html#meetings">Groups</a></li>
+                                            <li role="menuitem"><a href="index.html#meetings">Weddings &amp; Events</a></li>
+                                        </ul>
+                                    </li> -->
+
+                                    <li class="navigation__menu--item">
+                                        <a href="index.html#about" class="navigation__menu--item__link">About</a>
+                                    </li>
+
+                                    <li class="navigation__menu--item">
+                                        <a href="contact.html" class="navigation__menu--item__link">Contact</a>
+                                    </li>
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
+                    <div class="main__logo">
+                        <a href="index.html" class="um-logo" aria-label="Unicon Hospitality home">
+                            <img src="assets/images/unicon/logo.png" alt="">
+                        </a>
+                    </div>
+                    <div class="main__right">
+                        <a href="#" class="theme-btn btn-style sm-btn border d-none d-lg-block" aria-label="Sign In" data-bs-toggle="modal" data-bs-target="#loginModal"><span>Sign In</span></a>
+                        <a href="#" class="theme-btn btn-style sm-btn border d-none d-lg-block" aria-label="Join" data-bs-toggle="modal" data-bs-target="#signupModal"><span>Join Free</span></a>
+                        <a href="index.html#book" class="theme-btn btn-style sm-btn fill"><span>Book Now</span></a>
+                        <button class="theme-btn btn-style sm-btn fill menu__btn d-lg-none" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight" aria-label="Open menu">
+                            <span class="um-burger"><i></i><i></i><i></i></span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="dn-progress" id="dnProgress" aria-hidden="true"></div>
+
+    <main id="top">
+
+    <!-- ============ 01 HERO ============ -->
+    <section class="dn-hero" id="dnHero">
+        <div class="dn-hero__bg" id="dnHeroBg"><img src="assets/images/unicon/dining/rooftop-bar.webp" alt="" width="2000" height="1333" fetchpriority="high"></div>
+        <span class="dn-hero__glow" aria-hidden="true"></span>
+        <span class="dn-orb dn-orb--1" aria-hidden="true"></span>
+        <span class="dn-orb dn-orb--2" aria-hidden="true"></span>
+        <div class="dn-bubbles" id="dnBubbles" aria-hidden="true"></div>
+        <div class="container">
+            <nav class="um-crumb" aria-label="Breadcrumb"><a href="index.html">Home</a><span>/</span><span aria-current="page">Dining</span></nav>
+            <span class="dn-eyebrow">Dining &amp; Bar</span>
+            <h1 data-split>The Bar &amp; Restaurant at Unicon</h1>
+            <p class="dn-hero__lead" data-dn style="--d:.7s">Craft cocktails, curated dining and memorable evenings.</p>
+            <div class="dn-hero__cta" data-dn style="--d:.9s">
+                <a href="#dn-reserve" class="theme-btn btn-style fill no-border" data-jump="#dn-reserve"><span>Reserve a Table</span></a>
+                <a href="#dn-menu" class="dn-hchip" data-jump="#dn-menu"><span>See the menu</span><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-arrow-r"/></svg></a>
+            </div>
+            <div class="dn-hero__open" id="dnOpen" data-dn style="--d:1.1s"><i></i><span>Open daily</span></div>
+        </div>
+        <span class="dn-scroll" aria-hidden="true">Scroll</span>
+    </section>
+
+    <!-- marks the end of the page top: the mobile Call / Book bar appears once you scroll past this -->
+    <span id="book" class="dn-anchor" aria-hidden="true"></span>
+
+    <!-- ============ 02 DAY TO NIGHT ============ -->
+    <section class="dn-dtn" id="dnDtn" data-stage="0" aria-labelledby="dnDtnH">
+        <div class="dn-dtn__bg" aria-hidden="true">
+            <img src="assets/images/unicon/dining/restaurant.webp" alt="" loading="lazy" class="is-on">
+            <img src="assets/images/unicon/dining/rooftop-bar.webp" alt="" loading="lazy">
+            <img src="assets/images/unicon/dining/bar.webp" alt="" loading="lazy">
+        </div>
+        <div class="dn-dtn__tint" aria-hidden="true"></div>
+        <span class="dn-sun" aria-hidden="true"></span>
+        <div class="container">
+            <div class="dn-sec__head" data-dn style="text-align:left;margin-left:0;max-width:640px;margin-bottom:clamp(26px,3vw,44px)">
+                <span class="h6 subtitle__icon__three">The concept</span>
+                <h2 id="dnDtnH">One Room, Three Moods</h2>
+            </div>
+            <div class="dn-dtn__grid">
+                <div class="dn-steps" role="tablist" aria-label="Time of day" data-dn="left">
+                    <span class="dn-steps__fill" aria-hidden="true"></span>
+                    <button type="button" class="dn-step is-on" role="tab" aria-selected="true"><small>12 PM &ndash; 5 PM</small><b>Daytime Dining</b></button>
+                    <button type="button" class="dn-step" role="tab" aria-selected="false"><small>5 PM &ndash; 8 PM</small><b>Sunset Drinks</b></button>
+                    <button type="button" class="dn-step" role="tab" aria-selected="false"><small>8 PM &ndash; Late</small><b>Evening Entertainment</b></button>
+                </div>
+                <div class="dn-stage" data-dn="right">
+                    <div class="dn-stage__p is-on" role="tabpanel">
+                        <div class="dn-stage__ico"><svg class="dn-ico" viewBox="0 0 24 24" aria-hidden="true"><use href="#rm-i-sun"/></svg></div>
+                        <h3>Light, Unhurried Lunches</h3>
+                        <p>Daylight pours in and the kitchen is in full swing. Settle in for a relaxed lunch, a working meal or a long catch-up over coffee and something fresh from the grill.</p>
+                        <ul class="dn-tags"><li>All-day dining</li><li>Business lunches</li><li>Coffee &amp; mocktails</li></ul>
+                    </div>
+                    <div class="dn-stage__p" role="tabpanel">
+                        <div class="dn-stage__ico"><svg class="dn-ico" viewBox="0 0 24 24" aria-hidden="true"><use href="#dn-i-sunset"/></svg></div>
+                        <h3>Golden Hour at the Bar</h3>
+                        <p>As the sky turns amber the lights drop and the cocktail shakers come out. This is the hour for a first drink, a sharing plate and the happy-hour pours.</p>
+                        <ul class="dn-tags"><li>Happy hours</li><li>Signature cocktails</li><li>Bar bites</li></ul>
+                    </div>
+                    <div class="dn-stage__p" role="tabpanel">
+                        <div class="dn-stage__ico"><svg class="dn-ico" viewBox="0 0 24 24" aria-hidden="true"><use href="#dn-i-moon"/></svg></div>
+                        <h3>Music, Matches &amp; Late Nights</h3>
+                        <p>After dark the room comes alive with acoustic nights, big-screen match days and late-night comfort food, with warm service until the last order.</p>
+                        <ul class="dn-tags"><li>Acoustic nights</li><li>Sports screenings</li><li>Late-night menu</li></ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ 03 THE BAR ============ -->
+    <section class="dn-sec dn-bar" id="dn-bar" aria-labelledby="dnBarH">
+        <div class="container">
+            <div class="dn-sec__head" data-dn>
+                <span class="h6 subtitle__icon__three">The bar experience</span>
+                <h2 id="dnBarH">Pour, Shake, Stir &amp; Sip</h2>
+                <p>Five ways to drink well, from house-made signatures to a thoughtful zero-proof list. Swipe or drag to explore.</p>
+            </div>
+        </div>
+        <div class="dn-rail" data-dn>
+            <div class="dn-track" id="dnTrack" tabindex="0" aria-label="Drink categories">
+                <article class="dn-bcard" style="--z:1.5;--o:50% 40%">
+                    <img src="assets/images/unicon/dining/bites.webp" alt="" loading="lazy" draggable="false">
+                    <span class="dn-bcard__no" aria-hidden="true">01</span>
+                    <div class="dn-bcard__in"><div class="dn-bcard__ico"><svg class="dn-ico" viewBox="0 0 24 24" aria-hidden="true"><use href="#dn-i-cocktail"/></svg></div>
+                        <h3>Signature Cocktails</h3><p>House creations and well-made classics, built to order with fresh citrus and quality ice.</p><ul><li>Old Fashioned</li><li>Negroni</li><li>Martini</li></ul></div>
+                </article>
+                <article class="dn-bcard" style="--z:1.25;--o:50% 70%">
+                    <img src="assets/images/unicon/dining/bar.webp" alt="" loading="lazy" draggable="false">
+                    <span class="dn-bcard__no" aria-hidden="true">02</span>
+                    <div class="dn-bcard__in"><div class="dn-bcard__ico"><svg class="dn-ico" viewBox="0 0 24 24" aria-hidden="true"><use href="#dn-i-bottle"/></svg></div>
+                        <h3>Premium Spirits</h3><p>A back bar of whisky, gin, rum, vodka and tequila, poured neat, on the rocks or in a flight.</p><ul><li>Single malts</li><li>Gin</li><li>Rum</li></ul></div>
+                </article>
+                <article class="dn-bcard" style="--z:1.35;--o:30% 50%">
+                    <img src="assets/images/unicon/dining/rooftop-bar.webp" alt="" loading="lazy" draggable="false">
+                    <span class="dn-bcard__no" aria-hidden="true">03</span>
+                    <div class="dn-bcard__in"><div class="dn-bcard__ico"><svg class="dn-ico" viewBox="0 0 24 24" aria-hidden="true"><use href="#dn-i-wine"/></svg></div>
+                        <h3>Wines</h3><p>Reds, whites, rosé and sparkling, by the glass or the bottle, picked to match the menu.</p><ul><li>By the glass</li><li>By the bottle</li></ul></div>
+                </article>
+                <article class="dn-bcard" style="--z:1.6;--o:80% 40%">
+                    <img src="assets/images/unicon/dining/restaurant.webp" alt="" loading="lazy" draggable="false">
+                    <span class="dn-bcard__no" aria-hidden="true">04</span>
+                    <div class="dn-bcard__in"><div class="dn-bcard__ico"><svg class="dn-ico" viewBox="0 0 24 24" aria-hidden="true"><use href="#dn-i-beer"/></svg></div>
+                        <h3>Beers</h3><p>Ice-cold lagers and wheat beers on tap and in bottle, perfect for match days and sharing platters.</p><ul><li>Draught</li><li>Bottled</li><li>Buckets</li></ul></div>
+                </article>
+                <article class="dn-bcard" style="--z:1.7;--o:75% 55%">
+                    <img src="assets/images/unicon/dining/bites.webp" alt="" loading="lazy" draggable="false">
+                    <span class="dn-bcard__no" aria-hidden="true">05</span>
+                    <div class="dn-bcard__in"><div class="dn-bcard__ico"><svg class="dn-ico" viewBox="0 0 24 24" aria-hidden="true"><use href="#dn-i-leaf"/></svg></div>
+                        <h3>Zero-Proof</h3><p>Alcohol-free mocktails, cold-pressed coolers and fresh sodas, made with the same care as the rest.</p><ul><li>Mocktails</li><li>Coolers</li><li>Fresh sodas</li></ul></div>
+                </article>
+            </div>
+            <div class="dn-rail__ctl">
+                <button type="button" class="dn-rail__btn" id="dnPrev" aria-label="Previous"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-arrow-l"/></svg></button>
+                <div class="dn-rail__bar" aria-hidden="true"><i></i></div>
+                <button type="button" class="dn-rail__btn" id="dnNext" aria-label="Next"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-arrow-r"/></svg></button>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ 04 THE KITCHEN ============ -->
+    <section class="dn-sec" id="dn-menu" aria-labelledby="dnMenuH">
+        <div class="container">
+            <div class="dn-sec__head" data-dn>
+                <span class="h6 subtitle__icon__three">The kitchen</span>
+                <h2 id="dnMenuH">From the Kitchen &amp; Tandoor</h2>
+                <p>Three menus for three moods: something small to share, something fired in the tandoor, or something warm and comforting late at night.</p>
+            </div>
+            <div class="dn-menu__grid">
+                <figure class="dn-menu__pic" data-dn="left">
+                    <img src="assets/images/unicon/dining/bites.webp" alt="Bar bites and cocktails" style="--z:1.5;--o:18% 62%" loading="lazy">
+                    <img src="assets/images/unicon/dining/restaurant.webp" alt="The restaurant" style="--z:1.4;--o:50% 80%" loading="lazy">
+                    <img src="assets/images/unicon/dining/bites.webp" alt="Late-night comforts" style="--z:1.6;--o:70% 50%" loading="lazy">
+                    <figcaption id="dnMenuCap"></figcaption>
+                </figure>
+                <div data-dn="right">
+                    <div class="dn-mtabs" role="tablist" aria-label="Menu categories">
+                        <button type="button" class="dn-mtab" role="tab" data-name="Bar Bites" data-sub="Small plates">Bar Bites</button>
+                        <button type="button" class="dn-mtab" role="tab" data-name="Tandoor &amp; Grills" data-sub="Fired to order">Tandoor &amp; Grills</button>
+                        <button type="button" class="dn-mtab" role="tab" data-name="Mains &amp; Late-Night Comforts" data-sub="After dark">Mains &amp; Late-Night</button>
+                    </div>
+
+                    <div class="dn-mpanel" role="tabpanel">
+                        <p class="dn-mpanel__lead">Small, shareable plates that pair with a drink and keep the conversation going.</p>
+                        <div class="dn-dish" style="--i:0"><span class="dn-veg"></span><h4>Crispy Corn &amp; Pepper <em>Popular</em></h4><p>Golden corn kernels tossed with onion, capsicum and cracked pepper.</p></div>
+                        <div class="dn-dish" style="--i:1"><span class="dn-veg"></span><h4>Loaded Nachos</h4><p>Crisp tortillas with cheese, jalape&ntilde;os, salsa and sour cream.</p></div>
+                        <div class="dn-dish" style="--i:2"><span class="dn-veg dn-veg--nv"></span><h4>Peri-Peri Chicken Wings</h4><p>Smoky, spicy wings with a cooling dip. Made for beer.</p></div>
+                        <div class="dn-dish" style="--i:3"><span class="dn-veg dn-veg--nv"></span><h4>Crumb-Fried Fish Fingers</h4><p>Crisp outside, flaky inside, served with tartare.</p></div>
+                        <div class="dn-dish" style="--i:4"><span class="dn-veg"></span><h4>Paneer Popcorn</h4><p>Bite-sized crunchy paneer with a tangy chilli dust.</p></div>
+                    </div>
+
+                    <div class="dn-mpanel" role="tabpanel">
+                        <p class="dn-mpanel__lead">Marinated overnight and cooked over a live flame for smoke, char and depth.</p>
+                        <div class="dn-dish" style="--i:0"><span class="dn-veg dn-veg--nv"></span><h4>Tandoori Chicken <em>Signature</em></h4><p>Yoghurt and spice marinade, charred in the clay oven.</p></div>
+                        <div class="dn-dish" style="--i:1"><span class="dn-veg dn-veg--nv"></span><h4>Malai Tikka</h4><p>Tender chicken in a creamy cheese and cardamom marinade.</p></div>
+                        <div class="dn-dish" style="--i:2"><span class="dn-veg dn-veg--nv"></span><h4>Seekh Kebab</h4><p>Hand-minced lamb with herbs, grilled on skewers.</p></div>
+                        <div class="dn-dish" style="--i:3"><span class="dn-veg"></span><h4>Paneer Tikka</h4><p>Cottage cheese with peppers and onion, smoky from the tandoor.</p></div>
+                        <div class="dn-dish" style="--i:4"><span class="dn-veg"></span><h4>Hariyali Mushroom</h4><p>Button mushrooms in a mint and coriander marinade.</p></div>
+                    </div>
+
+                    <div class="dn-mpanel" role="tabpanel">
+                        <p class="dn-mpanel__lead">Generous, warming plates for hungry evenings and the late shift.</p>
+                        <div class="dn-dish" style="--i:0"><span class="dn-veg dn-veg--nv"></span><h4>Butter Chicken with Naan <em>Favourite</em></h4><p>Slow-cooked tomato and butter gravy with fresh-baked bread.</p></div>
+                        <div class="dn-dish" style="--i:1"><span class="dn-veg"></span><h4>Dal Makhani</h4><p>Black lentils simmered overnight, finished with cream.</p></div>
+                        <div class="dn-dish" style="--i:2"><span class="dn-veg dn-veg--nv"></span><h4>Dum Biryani</h4><p>Fragrant basmati layered and slow-cooked, with raita.</p></div>
+                        <div class="dn-dish" style="--i:3"><span class="dn-veg"></span><h4>Wood-Fired Margherita</h4><p>Tomato, mozzarella and basil on a thin, blistered crust.</p></div>
+                        <div class="dn-dish" style="--i:4"><span class="dn-veg dn-veg--nv"></span><h4>Club Sandwich &amp; Fries</h4><p>The classic, toasted and stacked, served until late.</p></div>
+                    </div>
+
+                    <div class="dn-legend"><span><i class="dn-veg"></i> Vegetarian</span><span><i class="dn-veg dn-veg--nv"></i> Non-vegetarian</span></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ 05 PLATTERS ============ -->
+    <section class="dn-sec dn-plat" id="dn-platters" aria-labelledby="dnPlatH">
+        <div class="container">
+            <div class="dn-sec__head" data-dn>
+                <span class="h6 subtitle__icon__three">Made for sharing</span>
+                <h2 id="dnPlatH">Signature Sharing Platters</h2>
+                <p>Order one for the table and let everyone dig in. Platters are the easiest way to feed a group and the best way to start the night.</p>
+            </div>
+
+            <div class="dn-plat__row">
+                <div class="dn-plat__pic" data-dn="left"><img src="assets/images/unicon/dining/bites.webp" alt="Mezze board" style="--z:1.9;--o:20% 55%" loading="lazy"><span class="dn-plat__no" aria-hidden="true">01</span><span class="dn-plat__tag"><svg class="dn-ico" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-people"/></svg> Great for groups</span></div>
+                <div class="dn-plat__txt" data-dn="right">
+                    <span class="h6 subtitle__icon__three">Cold &amp; warm</span>
+                    <h3>The Mezze Board</h3>
+                    <p>A generous spread of dips, warm breads, crisp vegetables and olives, with something crunchy and something creamy for every taste.</p>
+                    <ul class="dn-plat__list"><li>Hummus</li><li>Baba ganoush</li><li>Pita &amp; crudit&eacute;s</li><li>Falafel</li></ul>
+                    <a class="dn-link" href="#dn-reserve" data-jump="#dn-reserve">Reserve for a group <svg class="dn-ico" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-arrow-r"/></svg></a>
+                </div>
+            </div>
+
+            <div class="dn-plat__row">
+                <div class="dn-plat__pic" data-dn="right"><img src="assets/images/unicon/dining/restaurant.webp" alt="Royal tandoori feast" style="--z:1.5;--o:50% 85%" loading="lazy"><span class="dn-plat__no" aria-hidden="true">02</span><span class="dn-plat__tag"><svg class="dn-ico" viewBox="0 0 24 24" aria-hidden="true"><use href="#dn-i-flame"/></svg> From the tandoor</span></div>
+                <div class="dn-plat__txt" data-dn="left">
+                    <span class="h6 subtitle__icon__three">The feast</span>
+                    <h3>Royal Tandoori Feast</h3>
+                    <p>A sizzling mixed grill of our best kebabs and tikkas, brought to the table with chutneys, salad and fresh naan. Built for a celebration.</p>
+                    <ul class="dn-plat__list"><li>Chicken tikka</li><li>Seekh kebab</li><li>Paneer tikka</li><li>Naan &amp; chutneys</li></ul>
+                    <a class="dn-link" href="#dn-reserve" data-jump="#dn-reserve">Reserve for a group <svg class="dn-ico" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-arrow-r"/></svg></a>
+                </div>
+            </div>
+
+            <div class="dn-plat__row">
+                <div class="dn-plat__pic" data-dn="left"><img src="assets/images/unicon/dining/bites.webp" alt="Beer and bites basket" style="--z:1.8;--o:75% 55%" loading="lazy"><span class="dn-plat__no" aria-hidden="true">03</span><span class="dn-plat__tag"><svg class="dn-ico" viewBox="0 0 24 24" aria-hidden="true"><use href="#dn-i-beer"/></svg> Match-day favourite</span></div>
+                <div class="dn-plat__txt" data-dn="right">
+                    <span class="h6 subtitle__icon__three">With a cold one</span>
+                    <h3>Beer &amp; Bites Basket</h3>
+                    <p>A basket of our crunchiest bar bites, made to go with a bucket of beer. The simple way to enjoy a match or a Friday evening with friends.</p>
+                    <ul class="dn-plat__list"><li>Chicken wings</li><li>Crispy corn</li><li>Fish fingers</li><li>Fries</li></ul>
+                    <a class="dn-link" href="#dn-reserve" data-jump="#dn-reserve">Reserve for a group <svg class="dn-ico" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-arrow-r"/></svg></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ 06 WEEKLY HIGHLIGHTS ============ -->
+    <section class="dn-sec dn-ev" id="dn-events" aria-labelledby="dnEvH">
+        <div class="container">
+            <div class="dn-sec__head" data-dn>
+                <span class="h6 subtitle__icon__three">This week</span>
+                <h2 id="dnEvH">Weekly Highlights &amp; Events</h2>
+                <p>Something is always on. Pick a day to see what is happening.</p>
+            </div>
+            <div class="dn-days" id="dnDays" data-dn role="group" aria-label="Filter by day"></div>
+            <div class="dn-evgrid" id="dnEvGrid"></div>
+            <p class="dn-evnote">Programme can change, so please check with us when you book.</p>
+        </div>
+    </section>
+
+    <!-- ============ 07 RESERVATIONS & VIP ============ -->
+    <section class="dn-sec dn-res" id="dn-reserve" aria-labelledby="dnResH">
+        <div class="container">
+            <div class="dn-sec__head" data-dn>
+                <span class="h6 subtitle__icon__three">Reservations</span>
+                <h2 id="dnResH">Book a Table</h2>
+            </div>
+            <div class="dn-res__grid">
+                <div class="dn-res__pic" data-dn="left">
+                    <img src="assets/images/unicon/dining/restaurant.webp" alt="Tables set in the restaurant" loading="lazy">
+                    <div class="dn-res__quote"><h3>&ldquo;Your Table Awaits&rdquo;</h3><p>Whether it is a special celebration or a casual meal, reserve your table and enjoy good food, great company and an evening worth sharing.</p></div>
+                </div>
+                <form class="dn-res__form" id="dnForm" data-dn="right" novalidate>
+                    <h3>Reserve Your Evening</h3>
+                    <p>Tell us when you would like to visit. We will confirm your table by phone or email.</p>
+                    <div class="dn-f">
+                        <div><label for="dnName">Name</label><input type="text" id="dnName" name="name" placeholder="Your name" autocomplete="name"></div>
+                        <div><label for="dnTel">Phone</label><input type="tel" id="dnTel" name="tel" placeholder="+91 98765 43210" autocomplete="tel"></div>
+                        <div><label for="dnDate">Date</label><input type="text" id="dnDate" name="date" placeholder="Choose a date" readonly></div>
+                        <div><label for="dnTime">Time</label><select id="dnTime" name="time"><option value="">Select a time</option></select></div>
+                        <div class="dn-f__full"><label id="dnPartyL">Party size</label>
+                            <div class="dn-step2" role="group" aria-labelledby="dnPartyL"><button type="button" id="dnMinus" aria-label="Fewer guests">&minus;</button><output id="dnCount" aria-live="polite">2 guests</output><button type="button" id="dnPlus" aria-label="More guests">+</button></div></div>
+                        <fieldset class="dn-f__full"><legend>Seating preference</legend>
+                            <div class="dn-seats">
+                                <label class="dn-seat"><input type="radio" name="seat" value="Restaurant" checked><span>Restaurant</span></label>
+                                <label class="dn-seat"><input type="radio" name="seat" value="Bar"><span>At the bar</span></label>
+                                <label class="dn-seat"><input type="radio" name="seat" value="Lounge"><span>Lounge</span></label>
+                                <label class="dn-seat"><input type="radio" name="seat" value="VIP lounge"><span>VIP lounge</span></label>
+                            </div></fieldset>
+                    </div>
+                    <button type="submit" class="dn-res__btn">Make Reservation</button>
+                    <p class="dn-res__msg" id="dnMsg" role="status" aria-live="polite"></p>
+                    <div class="dn-res__alt">
+                        <a href="tel:+919920400267"><svg class="dn-ico" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-phone"/></svg> Call +91 99204 00267</a>
+                        <a href="contact.html#enquiry"><svg class="dn-ico" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-mail"/></svg> Send an enquiry</a>
+                    </div>
+                </form>
+            </div>
+
+            <div class="dn-vip" data-dn="scale">
+                <div class="dn-vip__ico"><svg class="dn-ico" viewBox="0 0 24 24" aria-hidden="true"><use href="#dn-i-crown"/></svg></div>
+                <div><h3>The VIP Lounge &amp; Private Celebrations</h3><p>Birthdays, anniversaries, team dinners and small gatherings, with a private area, a tailored menu and a host looking after your group.</p></div>
+                <a href="contact.html#enquiry" class="theme-btn btn-style fill no-border"><span>Plan a Celebration</span></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ 08 GUEST INFORMATION ============ -->
+    <section class="dn-sec" id="dn-info" aria-labelledby="dnInfoH">
+        <div class="container">
+            <div class="dn-sec__head" data-dn>
+                <span class="h6 subtitle__icon__three">Before you visit</span>
+                <h2 id="dnInfoH">Essential Guest Information</h2>
+            </div>
+            <div class="dn-info__grid">
+                <div class="dn-icard" data-dn style="--d:0s"><div class="dn-icard__ico"><svg class="dn-ico" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-clock"/></svg></div><h3>Opening Hours</h3>
+                    <ul><li>Restaurant <b data-hours>12:00 PM &ndash; midnight</b></li><li>Bar <b data-hours>12:00 PM &ndash; midnight</b></li><li>In-room dining <b>24 hours</b></li></ul></div>
+                <div class="dn-icard" data-dn style="--d:.08s"><div class="dn-icard__ico"><svg class="dn-ico" viewBox="0 0 24 24" aria-hidden="true"><use href="#dn-i-shirt"/></svg></div><h3>Dress Code</h3><p>Smart casual. We ask that guests avoid beachwear, sleeveless vests and flip-flops in the evening.</p></div>
+                <div class="dn-icard" data-dn style="--d:.16s"><div class="dn-icard__ico"><svg class="dn-ico" viewBox="0 0 24 24" aria-hidden="true"><use href="#dn-i-id"/></svg></div><h3>Age Policy</h3><p>Families are welcome in the restaurant. Alcohol is served only to guests of legal drinking age, and valid photo ID may be requested.</p></div>
+                <div class="dn-icard" data-dn style="--d:0s"><div class="dn-icard__ico"><svg class="dn-ico" viewBox="0 0 24 24" aria-hidden="true"><use href="#dn-i-access"/></svg></div><h3>Accessibility</h3><p>Step-free access to the restaurant. Let us know of any mobility needs when you book and we will set aside a suitable table.</p></div>
+                <div class="dn-icard" data-dn style="--d:.08s"><div class="dn-icard__ico"><svg class="dn-ico" viewBox="0 0 24 24" aria-hidden="true"><use href="#dn-i-leaf"/></svg></div><h3>Dietary Needs</h3><p>Vegetarian dishes are marked on the menu. Please tell your server about allergies or special diets and the kitchen will advise.</p></div>
+                <div class="dn-icard" data-dn style="--d:.16s"><div class="dn-icard__ico"><svg class="dn-ico" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-phone"/></svg></div><h3>Need Help?</h3><p>Call <a href="tel:+919920400267" style="color:var(--um-gold);font-weight:600">+91 99204 00267</a> and our team will gladly help with bookings, groups and special requests.</p></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="dn-sec dn-faq" aria-labelledby="dnFaqH">
+        <div class="container">
+            <div class="dn-sec__head" data-dn>
+                <span class="h6 subtitle__icon__three">Good to know</span>
+                <h2 id="dnFaqH">Dining Questions</h2>
+            </div>
+            <div class="um-faq__list" data-dn>
+                <details class="um-faq__item"><summary>Do I need to reserve a table?</summary><p>Walk-ins are welcome, but we recommend booking for evenings, weekends, match days and groups. Use the form above or call <a href="tel:+919920400267">+91 99204 00267</a>.</p></details>
+                <details class="um-faq__item"><summary>Is the restaurant open to non-hotel guests?</summary><p>Yes. The bar and restaurant welcome everyone, whether you are staying with us or not.</p></details>
+                <details class="um-faq__item"><summary>Do you have vegetarian, vegan or gluten-free options?</summary><p>Yes. Vegetarian dishes are marked on the menu, and the kitchen can adapt many dishes for vegan and gluten-free diets. Please tell your server when you order.</p></details>
+                <details class="um-faq__item"><summary>Can you host a private party or celebration?</summary><p>Yes. Our VIP lounge is ideal for birthdays, anniversaries and small gatherings. <a href="contact.html#enquiry">Send us an enquiry</a> with your date and guest count.</p></details>
+                <details class="um-faq__item"><summary>Is breakfast served here?</summary><p>Hotel guests enjoy a daily buffet breakfast, and in-room dining runs around the clock. See <a href="amenities.html">our amenities</a> for timings.</p></details>
+                <details class="um-faq__item"><summary>Is there a minimum spend or entry fee for events?</summary><p>Please check with us when you book, as arrangements can change for special events and match days.</p></details>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ FINAL CTA ============ -->
+    <section class="dn-cta">
+        <span class="dn-cta__ring dn-cta__ring--1" aria-hidden="true"></span>
+        <span class="dn-cta__ring dn-cta__ring--2" aria-hidden="true"></span>
+        <div class="container" data-dn>
+            <span class="dn-eyebrow">Tonight at Unicon</span>
+            <h2>Save Your Table for Tonight</h2>
+            <p>Good food, great drinks and an evening worth sharing. We will keep a seat warm for you.</p>
+            <div class="dn-cta__btns">
+                <a href="#dn-reserve" class="theme-btn btn-style fill no-border" data-jump="#dn-reserve"><span>Reserve a Table</span></a>
+                <a href="tel:+919920400267" class="dn-btn-ghost">Call +91 99204 00267</a>
+            </div>
+        </div>
+    </section>
+
+    </main>
+
+    <!-- ============ SIGN IN / JOIN MODALS ============ -->
+    <div class="modal similar__modal fade" id="loginModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="max-content similar__form form__padding">
+                    <div class="d-flex mb-3 align-items-center justify-content-between">
+                        <h6 class="mb-0">Sign In to Unicorn Rewards</h6>
+                        <button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <form action="#" class="d-flex flex-column gap-3 um-demo-form">
+                        <div class="form-group">
+                            <label for="email-popup" class="text-dark mb-3">Your Email</label>
+                            <div class="position-relative"><input type="email" name="email-popup" id="email-popup" placeholder="Enter your email" required></div>
+                        </div>
+                        <div class="form-group">
+                            <label for="password" class="text-dark mb-3">Password</label>
+                            <div class="position-relative"><input type="password" name="password" id="password" placeholder="Enter your password" required></div>
+                        </div>
+                        <div class="d-flex flex-wrap justify-content-between align-items-center">
+                            <div class="form-check d-flex align-items-center gap-2">
+                                <input class="form-check-input mt-0" type="checkbox" value="" id="flexCheckDefault">
+                                <label class="form-check-label mb-0" for="flexCheckDefault">Remember me</label>
+                            </div>
+                            <a href="#" class="forgot__password text-para" data-bs-toggle="modal" data-bs-target="#forgotModal">Forgot Password?</a>
+                        </div>
+                        <div class="form-group my-3">
+                            <button class="theme-btn btn-style sm-btn fill w-100"><span>Sign In</span></button>
+                        </div>
+                    </form>
+                    <span class="d-block text-center">Not a member? <a href="#" data-bs-target="#signupModal" data-bs-toggle="modal" class="text-primary">Join Free</a></span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal similar__modal fade" id="signupModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="max-content similar__form form__padding">
+                    <div class="d-flex mb-3 align-items-center justify-content-between">
+                        <h6 class="mb-0">Join Unicorn Rewards, Free</h6>
+                        <button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <form action="#" class="d-flex flex-column gap-3 um-demo-form">
+                        <div class="form-group">
+                            <label for="sname" class="text-dark mb-3">Your Name</label>
+                            <div class="position-relative"><input type="text" name="sname" id="sname" placeholder="Full name" required></div>
+                        </div>
+                        <div class="form-group">
+                            <label for="signemail" class="text-dark mb-3">Your Email</label>
+                            <div class="position-relative"><input type="email" name="signemail" id="signemail" placeholder="Enter your email" required></div>
+                        </div>
+                        <div class="form-group">
+                            <label for="spassword" class="text-dark mb-3">Password</label>
+                            <div class="position-relative"><input type="password" name="spassword" id="spassword" placeholder="Create a password" required></div>
+                        </div>
+                        <div class="form-group my-3">
+                            <button class="theme-btn btn-style sm-btn fill w-100"><span>Register</span></button>
+                        </div>
+                    </form>
+                    <span class="d-block text-center">Already a member? <a href="#" data-bs-target="#loginModal" data-bs-toggle="modal" class="text-primary">Sign In</a></span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal similar__modal fade" id="forgotModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="max-content similar__form form__padding">
+                    <div class="d-flex mb-3 align-items-center justify-content-between">
+                        <h6 class="mb-0">Forgot Password</h6>
+                        <button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <form action="#" class="d-flex flex-column gap-3 um-demo-form">
+                        <div class="form-group">
+                            <label for="fmail" class="text-dark mb-3">Your Email</label>
+                            <div class="position-relative"><input type="email" name="email" id="fmail" placeholder="Enter your email" required></div>
+                        </div>
+                        <div class="form-group my-3">
+                            <button class="theme-btn btn-style sm-btn fill w-100"><span>Reset Password</span></button>
+                        </div>
+                    </form>
+                    <span class="d-block text-center">Remember your password? <a href="#" data-bs-target="#loginModal" data-bs-toggle="modal" class="text-primary">Sign In</a></span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ============ MOBILE OFF-CANVAS MENU ============ -->
+    <div class="offcanvas offcanvas-start" id="offcanvasRight" tabindex="-1" aria-label="Mobile menu">
+        <div class="rts__btstrp__offcanvase">
+            <div class="offcanvase__wrapper">
+                <div class="left__side mobile__menu">
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                    <div class="offcanvase__top">
+                        <div class="offcanvase__logo">
+                            <a href="index.html" class="um-logo um-logo--light"><span class="um-logo__name">Unicorn</span><span class="um-logo__sub">Hospitality</span></a>
+                        </div>
+                    </div>
+                    <div class="offcanvase__mobile__menu">
+                        <nav class="um-mnav" aria-label="Mobile">
+                            <button class="um-mnav__btn" aria-expanded="false">Book <i></i></button>
+                            <div class="um-mnav__panel">
+                                <a href="index.html#book">Find My Reservation</a>
+                                <a href="index.html#locations">Our Locations</a>
+                                <a href="index.html#offers">All Offers</a>
+                                <a href="rooms.html">Rooms &amp; Suites</a>
+                            </div>
+                            <button class="um-mnav__btn" aria-expanded="false">Stay <i></i></button>
+                            <div class="um-mnav__panel">
+                                <a href="rooms.html">Rooms &amp; Suites</a>
+                                <a href="amenities.html">Amenities</a>
+                                <a href="dining.html">Dining</a>
+                                <a href="gallery.html">Gallery</a>
+                            </div>
+                            <a class="um-mnav__link" href="rooms.html" aria-current="page">Rooms</a>
+                            <a class="um-mnav__link" href="index.html#offers">Offers</a>
+                            <button class="um-mnav__btn" aria-expanded="false">Meetings &amp; Groups <i></i></button>
+                            <div class="um-mnav__panel">
+                                <a href="index.html#meetings">Meetings</a>
+                                <a href="index.html#meetings">Groups</a>
+                                <a href="index.html#meetings">Weddings &amp; Events</a>
+                            </div>
+                            <a class="um-mnav__link" href="index.html#about">About</a>
+                            <a class="um-mnav__link" href="contact.html">Contact</a>
+                            <a class="um-mnav__link" href="#" data-bs-toggle="modal" data-bs-target="#loginModal">Sign In / Join</a>
+                        </nav>
+                    </div>
+                    <div class="offcanvase__bottom">
+                        <div class="offcanvase__address">
+                            <div class="item">
+                                <span class="h6">Reservations</span>
+                                <a href="tel:+919920400267"><svg class="ico"><use href="#i-phone"/></svg> +91 99204 00267</a>
+                            </div>
+                            <div class="item">
+                                <span class="h6">Email</span>
+                                <a href="mailto:stay@unicornhospitality.example"><svg class="ico"><use href="#i-mail"/></svg> stay@unicornhospitality.example</a>
+                            </div>
+                            <div class="item">
+                                <span class="h6">Address</span>
+                                <a href="contact.html"><svg class="ico"><use href="#i-pin"/></svg> Your street address, City, State</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- offcanvas end -->
+
+    <!-- ============ FOOTER (Ramada-style columns) ============ -->
+    <footer class="rts__section rts__footer is__common__footer footer__background has__shape" id="contact">
+        <div class="container">
+            <div class="row">
+                <div class="footer__newsletter">
+                    <span class="h2">Join Our Newsletter</span>
+                    <div class="rts__form">
+                        <form action="#" method="post" id="newsForm" novalidate>
+                            <input type="email" name="email" id="subscription" placeholder="Enter your email" required aria-label="Email">
+                            <button type="submit">Subscribe</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <div class="um-fcols">
+                <div class="um-fcol">
+                    <button class="um-fcol__title" aria-expanded="false">Unicorn Hospitality <i></i></button>
+                    <ul>
+                        <li><a href="index.html#about">About</a></li>
+                        <li><a href="index.html#locations">Locations</a></li>
+                        <li><a href="index.html">Site Map</a></li>
+                        <li><a href="index.html#locations">Travel Guide</a></li>
+                    </ul>
+                </div>
+                <div class="um-fcol">
+                    <button class="um-fcol__title" aria-expanded="false">Contact <i></i></button>
+                    <ul>
+                        <li><a href="tel:+919920400267"><svg class="ico"><use href="#i-phone"/></svg> Reservations: +91 99204 00267</a></li>
+                        <li><a href="mailto:stay@unicornhospitality.example"><svg class="ico"><use href="#i-mail"/></svg> stay@unicornhospitality.example</a></li>
+                        <li><a href="contact.html"><svg class="ico"><use href="#i-pin"/></svg> Your street address, City, State</a></li>
+                        <li><a href="contact.html">Customer Care / Help</a></li>
+                    </ul>
+                </div>
+                <div class="um-fcol">
+                    <button class="um-fcol__title" aria-expanded="false">Hospitality Business <i></i></button>
+                    <ul>
+                        <li><a href="contact.html">Join Our Business Programme</a></li>
+                        <li><a href="index.html#meetings">Projects &amp; Groups</a></li>
+                        <li><a href="contact.html">Corporate Travel</a></li>
+                        <li><a href="contact.html">Travel Advisors</a></li>
+                    </ul>
+                </div>
+                <div class="um-fcol">
+                    <button class="um-fcol__title" aria-expanded="false">Terms &amp; Policies <i></i></button>
+                    <ul>
+                        <li><a href="#">Best Rate Guarantee</a></li>
+                        <li><a href="#">Privacy Notice</a></li>
+                        <li><a href="#">Terms of Use</a></li>
+                        <li><a href="#">Cookie Consent</a></li>
+                    </ul>
+                </div>
+                <div class="um-fcol">
+                    <button class="um-fcol__title" aria-expanded="false">Corporate Resources <i></i></button>
+                    <ul>
+                        <li><a href="#">Media Centre</a></li>
+                        <li><a href="#">Franchise Information</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Social Responsibility</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="copyright__text">
+            <div class="container">
+                <div class="row">
+                    <div class="copyright__wrapper">
+                        <p class="mb-0 ">Copyright &copy; <span id="year">2026</span> Unicorn Hospitality. All rights reserved. | Developed By <a href="https://hsdigitalmedia.com/" target="_blank">HS Digital Media®</a></p>
+                        <div class="footer__social__link">
+                            <a href="#" aria-label="Facebook" class="link__item">Facebook</a>
+                            <a href="#" aria-label="Instagram" class="link__item">Instagram</a>
+                            <a href="#" aria-label="LinkedIn" class="link__item">LinkedIn</a>
+                            <a href="#" aria-label="X" class="link__item">X</a>
+                            <a href="#" aria-label="YouTube" class="link__item">YouTube</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- footer end -->
+
+    <!-- sticky mobile booking bar -->
+    <div class="um-mbar" id="umMbar">
+        <a href="tel:+919920400267" class="um-mbar__call">Call</a>
+        <a href="index.html#book" class="theme-btn btn-style fill no-border um-mbar__book"><span>Book Now</span></a>
+    </div>
+
+    <!-- back to top -->
+    <button type="button" class="rts__back__top" id="rts-back-to-top" aria-label="Back to top">
+        <svg width="20" height="20" viewBox="0 0 13 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M7.30201 1.51317L7.29917 21.3422C7.29912 21.7057 6.97211 21.9993 6.5674 21.9993C6.16269 21.9992 5.83577 21.7055 5.83582 21.342L5.83844 3.10055L1.39753 7.08842C1.11169 7.34511 0.647535 7.34506 0.361762 7.0883C0.0759894 6.83155 0.0760493 6.41464 0.361896 6.15795L6.05367 1.04682C6.26405 0.857899 6.5773 0.802482 6.85167 0.905201C7.12374 1.00792 7.30205 1.24823 7.30201 1.51317Z" fill="#FFF" />
+            <path d="M12.9991 6.6318C12.9991 6.80021 12.9282 6.96861 12.7841 7.09592C12.4983 7.35261 12.0341 7.35256 11.7483 7.0958L6.05118 1.97719C5.76541 1.72043 5.76547 1.30352 6.05131 1.04684C6.33716 0.790152 6.80131 0.790206 7.08709 1.04696L12.7842 6.16557C12.9283 6.29498 12.9991 6.46339 12.9991 6.6318Z" fill="#FFF" />
+        </svg>
+    </button>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/wowjs@1.1.3/dist/wow.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jarallax@2/dist/jarallax.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr@4/dist/flatpickr.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr@4/dist/flatpickr.min.css">
+    <!-- shared site script -->
+    <script src="assets/js/2026-10-22-unicorn-hospitality-v2-main.js"></script>
+    <!-- dining page script -->
+    <script src="assets/js/dining.js"></script>
+</body>
+</html>

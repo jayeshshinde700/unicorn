@@ -2,7 +2,7 @@
 /* Unicorn Hospitality - PUBLIC rooms feed (read only, no sign-in).
    Returns only published rooms, sorted as set in the admin, and only the fields the website needs.
    Use:  fetch('api/rooms.php').then(r => r.json()).then(d => d.rooms) */
-require dirname(__DIR__) . '/admin/includes/bootstrap.php';
+require_once dirname(__DIR__) . '/admin/includes/db.php';
 
 header('Content-Type: application/json; charset=utf-8');
 header('X-Content-Type-Options: nosniff');

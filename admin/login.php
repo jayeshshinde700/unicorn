@@ -1,6 +1,6 @@
 <?php
 /* Unicorn Hospitality - admin sign-in (and the one-time first account setup) */
-require __DIR__ . '/includes/bootstrap.php';
+require_once __DIR__ . '/includes/db.php';
 security_headers();
 start_admin_session();
 
@@ -20,9 +20,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     } elseif ($setup) {
         $name = trim((string)($_POST['name'] ?? ''));
         $pass2 = (string)($_POST['password2'] ?? '');
-        if (!ADMIN_REMOTE_SETUP && !is_local_request()) {
-            $error = 'The first account can only be created from the computer that runs this website.';
-        } elseif (mb_strlen($name) < 2 || mb_strlen($name) > 60) { $error = 'Please enter your name (2 to 60 characters).'; $field = 'name'; }
+        if (mb_strlen($name) < 2 || mb_strlen($name) > 60) { $error = 'Please enter your name (2 to 60 characters).'; $field = 'name'; }
         elseif (!preg_match('/^[A-Za-z0-9._-]{3,30}$/', $user)) { $error = 'The username needs 3 to 30 letters, numbers, dots, dashes or underscores.'; $field = 'username'; }
         elseif (mb_strlen($pass) < ADMIN_MIN_PASSWORD) { $error = 'Use a password with at least ' . ADMIN_MIN_PASSWORD . ' characters.'; $field = 'password'; }
         elseif (strcasecmp($pass, $user) === 0) { $error = 'The password should not be the same as the username.'; $field = 'password'; }

@@ -4,28 +4,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="description" content="Unicon Hospitality - comfortable rooms, memorable dining and warm service. Book direct for the best rates.">
-    <meta name="keywords" content="hotel, resort, rooms, dining, meetings, Unicon Hospitality">
+    <meta name="description" content="About Unicon Hospitality - comfortable stays, thoughtful service and memorable dining, built around a welcoming experience.">
+    <meta name="keywords" content="about, hotel, hospitality, rooms, dining, Unicon Hospitality">
     <meta name="robots" content="index, follow">
-    <meta property="og:title" content="Unicon Hospitality">
-    <meta property="og:description" content="Comfortable rooms, memorable dining and warm service.">
+    <meta property="og:title" content="About Us | Unicon Hospitality">
+    <meta property="og:description" content="Hospitality that feels like home: comfort, thoughtful service and memorable stays.">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Unicon Hospitality">
-    <meta name="twitter:description" content="Comfortable rooms, memorable dining and warm service.">
+    <meta name="twitter:title" content="About Us | Unicon Hospitality">
+    <meta name="twitter:description" content="Hospitality that feels like home: comfort, thoughtful service and memorable stays.">
     <link rel="icon" href="assets/images/unicon/logos.jpeg" type="image/x-icon">
-    <title>Unicon Hospitality | Stay Somewhere Magical</title>
+    <title>About Us | Unicon Hospitality</title>
+    <script>document.documentElement.classList.add("about-js")</script>
 
-    <!-- google fonts (same as the Moonlit theme) -->
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
-    <!-- plugins (loaded from CDN because plugins.min.css was not supplied) -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
-    <!-- main stylesheet (Moonlit + Unicon changes in one file): save as assets/css/style.css -->
     <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/about.css">
 </head>
 
 <body>
-    <!-- icon sprite (replaces the flaticon font, which was not supplied) -->
+    <!-- icon sprite -->
     <svg width="0" height="0" style="position:absolute" aria-hidden="true">
         <defs>
             <symbol id="i-phone" viewBox="0 0 24 24"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></symbol>
@@ -53,15 +52,15 @@
         </defs>
     </svg>
 
-    <!-- ============ TOP UTILITY BAR (Ramada-style) ============ -->
+    <!-- ============ TOP UTILITY BAR ============ -->
     <div class="header__top um-utility">
         <div class="container">
             <div class="um-utility__in">
                 <ul class="um-utility__links">
-                    <li><a class="link__item" href="#book">Find My Reservation</a></li>
-                    <li><a class="link__item" href="#locations">Our Locations</a></li>
-                    <li><a class="link__item" href="#offers">All Offers</a></li>
-                    <li><a class="link__item" href="#meetings">Meetings &amp; Groups</a></li>
+                    <li><a class="link__item" href="index.html#book">Find My Reservation</a></li>
+                    <li><a class="link__item" href="index.html#locations">Our Locations</a></li>
+                    <li><a class="link__item" href="index.html#offers">All Offers</a></li>
+                    <li><a class="link__item" href="index.html#meetings">Meetings &amp; Groups</a></li>
                 </ul>
                 <div class="um-utility__right">
                     <a class="link__item" href="tel:+919920400267"><svg class="ico"><use href="#i-phone"/></svg> Reservations: +91 99204 00267</a>
@@ -87,21 +86,20 @@
                         <div class="navigation d-none d-lg-block">
                             <nav class="navigation__menu" id="main__menu">
                                 <ul class="list-unstyled">
-                                    <!-- Book (mega menu, like Ramada) -->
                                     <li class="navigation__menu--item has-child has-arrow">
-                                        <a href="#book" class="navigation__menu--item__link">Book</a>
+                                        <a href="index.html#book" class="navigation__menu--item__link">Book</a>
                                         <div class="has__mega__menu um-mega">
                                             <div class="um-mega__col">
                                                 <h6>Book</h6>
-                                                <a href="#book">Find My Reservation</a>
-                                                <a href="#locations">Our Locations</a>
-                                                <a href="#offers">All Offers</a>
+                                                <a href="index.html#book">Find My Reservation</a>
+                                                <a href="index.html#locations">Our Locations</a>
+                                                <a href="index.html#offers">All Offers</a>
                                                 <a href="rooms.html">Rooms &amp; Suites</a>
                                             </div>
                                             <div class="um-mega__promo">
                                                 <span class="um-mega__tag">Save with bundles</span>
                                                 <p>Combine your room, meals and transfers in one seamless booking.</p>
-                                                <a href="#book" class="theme-btn btn-style sm-btn fill no-border"><span>Book Now</span></a>
+                                                <a href="index.html#book" class="theme-btn btn-style sm-btn fill no-border"><span>Book Now</span></a>
                                             </div>
                                         </div>
                                     </li>
@@ -110,9 +108,9 @@
                                         <a href="rooms.html" class="navigation__menu--item__link">Stay</a>
                                         <ul class="submenu sub__style" role="menu">
                                             <li role="menuitem"><a href="rooms.html">Rooms &amp; Suites</a></li>
-                                            <li role="menuitem"><a href="#amenities">Amenities</a></li>
-                                            <li role="menuitem"><a href="#dining">Dining</a></li>
-                                            <li role="menuitem"><a href="#gallery">Gallery</a></li>
+                                            <li role="menuitem"><a href="index.html#amenities">Amenities</a></li>
+                                            <li role="menuitem"><a href="index.html#dining">Dining</a></li>
+                                            <li role="menuitem"><a href="index.html#gallery">Gallery</a></li>
                                         </ul>
                                     </li>
 
@@ -121,20 +119,11 @@
                                     </li>
 
                                     <li class="navigation__menu--item">
-                                        <a href="#offers" class="navigation__menu--item__link">Offers</a>
+                                        <a href="index.html#offers" class="navigation__menu--item__link">Offers</a>
                                     </li>
 
-                                    <!-- <li class="navigation__menu--item has-child has-arrow">
-                                        <a href="#meetings" class="navigation__menu--item__link">Meetings &amp; Groups</a>
-                                        <ul class="submenu sub__style" role="menu">
-                                            <li role="menuitem"><a href="#meetings">Meetings</a></li>
-                                            <li role="menuitem"><a href="#meetings">Groups</a></li>
-                                            <li role="menuitem"><a href="#meetings">Weddings &amp; Events</a></li>
-                                        </ul>
-                                    </li> -->
-
                                     <li class="navigation__menu--item">
-                                        <a href="#about" class="navigation__menu--item__link">About</a>
+                                        <a href="about.html" class="navigation__menu--item__link" aria-current="page">About</a>
                                     </li>
 
                                     <li class="navigation__menu--item">
@@ -145,14 +134,14 @@
                         </div>
                     </div>
                     <div class="main__logo">
-                        <a href="#top" class="um-logo" aria-label="Unicon Hospitality home">
-                            <img src="assets/images/unicon/logo.png" alt="">
+                        <a href="index.html" class="um-logo" aria-label="Unicon Hospitality home">
+                            <img src="assets/images/unicon/logo.png" alt="Unicon Hospitality">
                         </a>
                     </div>
                     <div class="main__right">
                         <a href="#" class="theme-btn btn-style sm-btn border d-none d-lg-block" aria-label="Sign In" data-bs-toggle="modal" data-bs-target="#loginModal"><span>Sign In</span></a>
                         <a href="#" class="theme-btn btn-style sm-btn border d-none d-lg-block" aria-label="Join" data-bs-toggle="modal" data-bs-target="#signupModal"><span>Join Free</span></a>
-                        <a href="#book" class="theme-btn btn-style sm-btn fill"><span>Book Now</span></a>
+                        <a href="index.html#book" class="theme-btn btn-style sm-btn fill"><span>Book Now</span></a>
                         <button class="theme-btn btn-style sm-btn fill menu__btn d-lg-none" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight" aria-label="Open menu">
                             <span class="um-burger"><i></i><i></i><i></i></span>
                         </button>
@@ -163,202 +152,323 @@
     </header>
     <!-- header area end -->
 
-<main id="main">
-    <div class="rts__section page__hero__height page__hero__bg" style="background-image: url(/assets/images/room/comfortseaview/1.webp);">
+    <main id="top" class="about-page">
+
+    <!-- ============ HERO ============ -->
+    <section class="about-hero" aria-labelledby="about-hero-title">
+        <div class="about-hero__bg" role="img" aria-label="Unicon Hospitality entrance at dusk"></div>
+        <div class="container about-hero__in">
+            <nav class="um-crumb about-hero__crumb" aria-label="Breadcrumb"><a href="index.html">Home</a><span>/</span><span aria-current="page">About Us</span></nav>
+            <span class="h6 subtitle__icon__three about-hero__eyebrow">About Unicon Hospitality</span>
+            <h1 id="about-hero-title">Hospitality That Feels Like Home</h1>
+            <p>Discover a hospitality experience built around comfort, thoughtful service, and memorable stays.</p>
+        </div>
+    </section>
+
+    <!-- ============ OUR STORY ============ -->
+    <section class="about-story section__padding" id="our-story">
         <div class="container">
-            <div class="row align-items-center justify-content-center">
-                <div class="col-lg-12">
-                    <div class="page__hero__content">
-                        <h1 class="wow fadeInUp">About Us</h1>
-                        <p class="wow fadeInUp font-sm">Welcome to Heritage by Çimen Hotel, where luxury meets comfort in the heart of Alanya.</p>
+            <div class="row g-5 align-items-center">
+                <div class="col-lg-6">
+                    <div class="about-story__media about-reveal">
+                        <div class="about-story__main">
+                            <img src="assets/images/unicon/about/2.jpg" width="1200" height="667" alt="A bright, comfortable twin guest room at Unicon Hospitality" loading="lazy" decoding="async">
+                        </div>
+                        <div class="about-story__inset">
+                            <img src="assets/images/unicon/about/11.jpg" width="576" height="768" alt="Guest room with soft lighting and a window view" loading="lazy" decoding="async">
+                        </div>
                     </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="about-story__content">
+                        <span class="h6 subtitle__icon__two d-block about-reveal">Our Story</span>
+                        <h2 class="about-reveal" data-delay="1">A Stay Designed Around You</h2>
+                        <p class="about-reveal" data-delay="2">At Unicon Hospitality, we believe a great stay is made of small, considered things: a quiet room, a warm welcome, and a team that remembers what matters to you.</p>
+                        <p class="about-reveal" data-delay="3">Whether you are travelling for business or taking a well-earned break, our focus is on guest satisfaction. We pair comfortable spaces with attentive service, so every part of your visit feels easy and personal.</p>
+                        <p class="about-reveal" data-delay="3">From the moment you arrive to the moment you leave, we want your time with us to be one you remember and want to repeat.</p>
+                        <a href="contact.html" class="theme-btn btn-style fill no-border about-reveal" data-delay="4"><span>Plan Your Stay</span></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ PHILOSOPHY ============ -->
+    <section class="about-values section__padding" id="philosophy" aria-labelledby="about-values-title">
+        <div class="container">
+            <div class="about-head about-reveal">
+                <span class="h6 subtitle__icon__three d-block">Our Philosophy</span>
+                <h2 id="about-values-title">Three Ideas Behind Every Stay</h2>
+                <p>Our approach to hospitality is simple. Make guests comfortable, treat them as individuals, and care about the details.</p>
+            </div>
+            <div class="about-values__grid">
+                <article class="about-card about-reveal">
+                    <span class="about-card__icon"><svg class="ico"><use href="#i-bed"/></svg></span>
+                    <h3>Comfort</h3>
+                    <p>Thoughtfully designed spaces that help guests relax, rest well and feel at ease.</p>
+                </article>
+                <article class="about-card about-reveal" data-delay="1">
+                    <span class="about-card__icon"><svg class="ico"><use href="#i-people"/></svg></span>
+                    <h3>Personal Service</h3>
+                    <p>Warm, attentive service throughout the stay, from the first greeting to check-out.</p>
+                </article>
+                <article class="about-card about-reveal" data-delay="2">
+                    <span class="about-card__icon"><svg class="ico"><use href="#i-star"/></svg></span>
+                    <h3>Memorable Experiences</h3>
+                    <p>Details that make each visit special, because the little things are what guests remember.</p>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ WHY CHOOSE ============ -->
+    <section class="about-why section__padding" id="why-unicon" aria-labelledby="about-why-title">
+        <div class="container">
+            <div class="row g-5 align-items-center">
+                <div class="col-lg-5">
+                    <div class="about-why__intro about-reveal">
+                        <span class="h6 subtitle__icon__two d-block">Why Choose Us</span>
+                        <h2 id="about-why-title">Why Choose Unicon Hospitality</h2>
+                        <p>Everything is arranged to make your stay straightforward and enjoyable, so you can focus on the reason you came.</p>
+                        <div class="about-why__photo">
+                            <img src="assets/images/unicon/rooms/deluxe.jpg" width="668" height="789" alt="Deluxe room with a king bed and warm bedside lighting" loading="lazy" decoding="async">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-7">
+                    <ul class="about-why__grid list-unstyled">
+                        <li class="about-feature about-reveal">
+                            <span class="about-feature__icon"><svg class="ico"><use href="#i-bed"/></svg></span>
+                            <div><h3>Comfortable Accommodation</h3><p>Well-appointed rooms and suites made for restful nights.</p></div>
+                        </li>
+                        <li class="about-feature about-reveal" data-delay="1">
+                            <span class="about-feature__icon"><svg class="ico"><use href="#i-user"/></svg></span>
+                            <div><h3>Thoughtful Guest Service</h3><p>A friendly team that is glad to help at every step.</p></div>
+                        </li>
+                        <li class="about-feature about-reveal" data-delay="2">
+                            <span class="about-feature__icon"><svg class="ico"><use href="#i-cup"/></svg></span>
+                            <div><h3>Dining Experiences</h3><p>Good food served from breakfast through a late supper.</p></div>
+                        </li>
+                        <li class="about-feature about-reveal" data-delay="3">
+                            <span class="about-feature__icon"><svg class="ico"><use href="#i-wifi"/></svg></span>
+                            <div><h3>Convenient Amenities</h3><p>The essentials you need for work or leisure, close at hand.</p></div>
+                        </li>
+                        <li class="about-feature about-reveal" data-delay="4">
+                            <span class="about-feature__icon"><svg class="ico"><use href="#i-check"/></svg></span>
+                            <div><h3>Attention to Detail</h3><p>Small touches that make a room feel like yours.</p></div>
+                        </li>
+                        <li class="about-feature about-reveal" data-delay="5">
+                            <span class="about-feature__icon"><svg class="ico"><use href="#i-shield"/></svg></span>
+                            <div><h3>A Welcoming Atmosphere</h3><p>A calm, friendly setting where guests feel at home.</p></div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ EXPERIENCE GALLERY ============ -->
+    <section class="about-gallery section__padding" id="experience" aria-labelledby="about-gallery-title">
+        <div class="container">
+            <div class="about-head about-reveal">
+                <span class="h6 subtitle__icon__three d-block">Our Hospitality Experience</span>
+                <h2 id="about-gallery-title">A Glimpse of Your Stay</h2>
+                <p>From the arrival to the dining table to a good night's sleep.</p>
+            </div>
+            <div class="about-gallery__grid">
+                <figure class="about-tile about-tile--tall about-reveal">
+                    <img src="assets/images/unicon/gallery/3.jpg" width="1200" height="860" alt="Hotel building at dusk beside an infinity pool" loading="lazy" decoding="async">
+                    <figcaption>The Property</figcaption>
+                </figure>
+                <figure class="about-tile about-reveal" data-delay="1">
+                    <img src="assets/images/unicon/dining.webp" width="800" height="600" alt="Dining at Unicon Hospitality" loading="lazy" decoding="async">
+                    <figcaption>Dining</figcaption>
+                </figure>
+                <figure class="about-tile about-reveal" data-delay="2">
+                    <img src="assets/images/unicon/rooms/executive.jpg" width="800" height="600" alt="Executive room at Unicon Hospitality" loading="lazy" decoding="async">
+                    <figcaption>Rooms</figcaption>
+                </figure>
+                <figure class="about-tile about-reveal" data-delay="3">
+                    <img src="assets/images/unicon/about/amenities.webp" width="800" height="600" alt="Guest amenities at Unicon Hospitality" loading="lazy" decoding="async">
+                    <figcaption>Amenities</figcaption>
+                </figure>
+                <figure class="about-tile about-reveal" data-delay="4">
+                    <img src="assets/images/unicon/gallery/4.jpg" width="1024" height="768" alt="Hotel tower lit up at twilight" loading="lazy" decoding="async">
+                    <figcaption>After Dark</figcaption>
+                </figure>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ CTA ============ -->
+    <section class="about-cta" aria-labelledby="about-cta-title">
+        <div class="about-cta__bg" aria-hidden="true"></div>
+        <div class="container about-cta__in about-reveal">
+            <span class="h6 subtitle__icon__three d-block">Welcome</span>
+            <h2 id="about-cta-title">Your Next Memorable Stay Starts Here.</h2>
+            <p>Browse our rooms or get in touch. We would be glad to help you plan your visit.</p>
+            <div class="about-cta__btns">
+                <a href="rooms.html" class="theme-btn btn-style fill no-border"><span>Explore Our Rooms</span></a>
+                <a href="contact.html" class="theme-btn btn-style border about-cta__ghost"><span>Contact Us</span></a>
+            </div>
+        </div>
+    </section>
+
+    </main>
+
+    <!-- ============ SIGN IN / JOIN MODALS ============ -->
+    <div class="modal similar__modal fade" id="loginModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="max-content similar__form form__padding">
+                    <div class="d-flex mb-3 align-items-center justify-content-between">
+                        <h6 class="mb-0">Sign In to Unicon Rewards</h6>
+                        <button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <form action="#" class="d-flex flex-column gap-3 um-demo-form">
+                        <div class="form-group">
+                            <label for="email-popup" class="text-dark mb-3">Your Email</label>
+                            <div class="position-relative"><input type="email" name="email-popup" id="email-popup" placeholder="Enter your email" required></div>
+                        </div>
+                        <div class="form-group">
+                            <label for="password" class="text-dark mb-3">Password</label>
+                            <div class="position-relative"><input type="password" name="password" id="password" placeholder="Enter your password" required></div>
+                        </div>
+                        <div class="d-flex flex-wrap justify-content-between align-items-center">
+                            <div class="form-check d-flex align-items-center gap-2">
+                                <input class="form-check-input mt-0" type="checkbox" value="" id="flexCheckDefault">
+                                <label class="form-check-label mb-0" for="flexCheckDefault">Remember me</label>
+                            </div>
+                            <a href="#" class="forgot__password text-para" data-bs-toggle="modal" data-bs-target="#forgotModal">Forgot Password?</a>
+                        </div>
+                        <div class="form-group my-3">
+                            <button class="theme-btn btn-style sm-btn fill w-100"><span>Sign In</span></button>
+                        </div>
+                    </form>
+                    <span class="d-block text-center">Not a member? <a href="#" data-bs-target="#signupModal" data-bs-toggle="modal" class="text-primary">Join Free</a></span>
                 </div>
             </div>
         </div>
     </div>
 
-<div class="rts__section about is__home__four section__padding">
-    <div class="container">
-        <div class="row g-4 align-items-center  ">
-            <div class="col-lg-5">
-                <div class="about__images">
-                    <div class="image__left wow fadeInUp">
-                        <img height="474" width="450" src="/assets/images/about/aboutus-2.webp" alt="" loading="lazy" decoding="async">
+    <div class="modal similar__modal fade" id="signupModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="max-content similar__form form__padding">
+                    <div class="d-flex mb-3 align-items-center justify-content-between">
+                        <h6 class="mb-0">Join Unicon Rewards, Free</h6>
+                        <button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
-                    <div class="image__right wow fadeInLeft">
-                        <img width="365" height="385" src="/assets/images/about/about-us1.webp" alt="" loading="lazy" decoding="async">
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-7">
-                <div class="about__content">
-                    <span class="h6 subtitle__icon__two d-block wow fadeInUp">About Us</span>
-                    <h2 class="font-xl wow fadeInUp">Welcome To Our Heritage By Çimen Hotel</h2>
-                    <p class="font-sm mt-30 wow fadeInUp" data-wow-delay=".3s">
-                        Welcome to Heritage by Çimen Hotel, a newly renovated 3-star hotel located in the heart of Alanya, just steps away from the sea and from city center. Our hotel offers a perfect blend of comfort and elegance, featuring 45 sea-view rooms and modern amenities designed for an exceptional stay. With a focus on quality and guest satisfaction, we provide a unique experience that caters to both leisure and business travelers. Discover the renewed charm of Heritage by Çimen Hotel, where unforgettable memories await                    </p>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-<div class="rts__section facility__area is__about has__background has__shape">
-    <div class="section__shape wow fadeInRight" data-wow-delay=".5s">
-        <img src="/assets/images/pages/about-shape.svg" alt="" loading="lazy" decoding="async">
-    </div>
-    <div class="container">
-        <div class="row g-5 align-items-center">
-            <div class="col-lg-6">
-                <div class="facility__content">
-                    <div class="section__content__left">
-                        <span class="h6 subtitle__icon__two d-block wow fadeInUp">Facilities</span>
-                        <h2 class="content__title h2 lh-1">Hotel Facilities</h2>
-                    </div>
-                    <div class="row mt-20 g-5 wow fadeInUp" data-wow-delay=".5s">
-                        <div class="col-lg-6 col-md-6">
-                            <div class="card rts__card no-border is__home__three">
-                                <div class="card-body">
-                                    <div class="icon"><img src="/assets/images/icon/bed.svg" alt="" loading="lazy" decoding="async"></div>
-                                    <a href="/en/rooms">
-                                        <h6 class="card-title h6 mb-15">Rooms and Suites</h6>
-                                    </a>
-                                    <p class="card-text">Varied types of rooms, from Standard to Luxury suites, equipped with essentials like beds, bathroom, Smart TV, Wi-Fi, safe, air conditioning.</p>
-                                </div>
-                            </div>
+                    <form action="#" class="d-flex flex-column gap-3 um-demo-form">
+                        <div class="form-group">
+                            <label for="sname" class="text-dark mb-3">Your Name</label>
+                            <div class="position-relative"><input type="text" name="sname" id="sname" placeholder="Full name" required></div>
                         </div>
-                        <div class="col-lg-6 col-md-6">
-                            <div class="card rts__card no-border is__home__three">
-                                <div class="card-body">
-                                    <div class="icon"><img src="/assets/images/icon/security.svg" alt="" loading="lazy" decoding="async"></div>
-                                    <a href="/en/about-us">
-                                        <h6 class="card-title h6 mb-15">24-Hour Security</h6>
-                                    </a>
-                                    <p class="card-text">On-site security personnel and best surveillance. Secure storage and safe for valuables.</p>
-                                </div>
-                            </div>
+                        <div class="form-group">
+                            <label for="signemail" class="text-dark mb-3">Your Email</label>
+                            <div class="position-relative"><input type="email" name="signemail" id="signemail" placeholder="Enter your email" required></div>
                         </div>
-                        <div class="col-lg-6 col-md-6">
-                            <div class="card rts__card no-border is__home__three">
-                                <div class="card-body">
-                                    <div class="icon"><img src="/assets/images/icon/swimming-pool.svg" alt="" loading="lazy" decoding="async"></div>
-                                    <a href="/en/pool-beach">
-                                        <h6 class="card-title h6 mb-15">Beach</h6>
-                                    </a>
-                                    <p class="card-text">Experience the beauty of our fine sandy beach, where the gently sloping seabed invites you to relax and enjoy the tranquil waters.</p>
-                                </div>
-                            </div>
+                        <div class="form-group">
+                            <label for="spassword" class="text-dark mb-3">Password</label>
+                            <div class="position-relative"><input type="password" name="spassword" id="spassword" placeholder="Create a password" required></div>
                         </div>
-                        <div class="col-lg-6 col-md-6">
-                            <div class="card rts__card no-border is__home__three">
-                                <div class="card-body">
-                                    <div class="icon"><img src="/assets/images/icon/swimming-pool.svg" alt="" loading="lazy" decoding="async"></div>
-                                    <a href="/en/pool-beach">
-                                        <h6 class="card-title h6 mb-15">Swimming Pool</h6>
-                                    </a>
-                                    <p class="card-text">Immerse yourself in the serene ambiance of our pool area, designed for ultimate relaxation and enjoyment.</p>
-                                </div>
-                            </div>
+                        <div class="form-group my-3">
+                            <button class="theme-btn btn-style sm-btn fill w-100"><span>Register</span></button>
                         </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-6">
-                <div class="facility__image jara-mask-3 jarallax">
-                    <img height="765" width="605" class="jarallax-img" src="/assets/images/room/suit/1.jpg" alt="" srcset="/assets/images/room/suit/1-800w.webp 800w, /assets/images/room/suit/1.jpg 2000w" sizes="(max-width: 767px) 100vw, 2000px">
+                    </form>
+                    <span class="d-block text-center">Already a member? <a href="#" data-bs-target="#loginModal" data-bs-toggle="modal" class="text-primary">Sign In</a></span>
                 </div>
             </div>
         </div>
     </div>
-</div>
-</main>
 
-<div class="offcanvas offcanvas-start" id="offcanvasRight">
-    <div class="rts__btstrp__offcanvase">
-        <div class="offcanvase__wrapper">
-            <div class="left__side mobile__menu">
-                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-                <div class="offcanvase__top">
-                    <div class="offcanvase__logo">
-                        <a href="/en/">
-                            <img src="/assets/images/logo/heritage-white.png" alt="logo">
-                        </a>
+    <div class="modal similar__modal fade" id="forgotModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="max-content similar__form form__padding">
+                    <div class="d-flex mb-3 align-items-center justify-content-between">
+                        <h6 class="mb-0">Forgot Password</h6>
+                        <button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
-                    <p class="description">
-                        Welcome to Heritage by Çimen Hotel, where luxury and comfort meet the unique sea view in the heart of Alanya.                        <div style="text-align: center; width: 100%; margin-top: 10px;">
-    <div style="display: inline-flex; align-items: center; gap: 10px;">
-        <a class="link__item" href="/hakkimizda" hreflang="tr" lang="tr">
-            <img src="/assets/images/icon/tr-icon.png" alt="Türkçe" style="width: 20px;">
-        </a>
-        <a class="link__item" href="/en/about-us" hreflang="en" lang="en">
-            <img src="/assets/images/icon/en-icon.png" alt="English" style="width: 20px;">
-        </a>
-    </div>
-</div>
-
-                    </p>
-                </div>
-                <div class="offcanvase__mobile__menu">
-                    <div class="mobile__menu__active"></div>
-                </div>
-                <div class="offcanvase__bottom">
-                    <div class="offcanvase__address">
-                        <div class="item">
-                            <span class="h6">Phone</span>
-                            <a href="tel:+905065031915"><i class="flaticon-phone-flip"></i> +90 506 503 19 15</a>
+                    <form action="#" class="d-flex flex-column gap-3 um-demo-form">
+                        <div class="form-group">
+                            <label for="fmail" class="text-dark mb-3">Your Email</label>
+                            <div class="position-relative"><input type="email" name="email" id="fmail" placeholder="Enter your email" required></div>
                         </div>
-                        <div class="item">
-                            <span class="h6">Email</span>
-                            <a href="mailto:info@heritagebycimen.com"><i class="flaticon-envelope"></i>info@heritagebycimen.com</a>
+                        <div class="form-group my-3">
+                            <button class="theme-btn btn-style sm-btn fill w-100"><span>Reset Password</span></button>
                         </div>
-                        <div class="item">
-                            <span class="h6">Address</span>
-                            <a href="https://www.google.com/maps/search/?api=1&query=Heritage+by+%C3%87imen+Hotel+Alanya" target="_blank" rel="noopener"><i class="flaticon-marker"></i> Güller Pınarı, Yenilmez St. No:2, 07400 Alanya/Antalya</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="right__side desktop__menu">
-                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-                <div class="rts__desktop__menu">
-                    <nav class="desktop__menu offcanvas__menu">
-                        <ul class="list-unstyled">
-                            <li class="slide">
-                                <a class="slide__menu__item" href="/en/">Home</a>
-                            </li>
-                            <li class="slide">
-                                <a class="slide__menu__item" href="rooms.html">Rooms</a>
-                            </li>
-                            <li class="slide">
-                                <a class="slide__menu__item" href="/en/pool-beach">Pool & Beach</a>
-                            </li>
-                         
-                            <li class="slide">
-                                <a class="slide__menu__item" href="/en/restaurant-bar">Restaurant & Bar</a>
-                            </li>
-                            <li class="slide">
-                                <a class="slide__menu__item" href="/en/about-us">About Us</a>
-                            </li>
-                            <li class="slide">
-                                <a class="slide__menu__item" href="/en/gallery">Gallery</a>
-                            </li>
-                            <li class="slide">
-                                <a class="slide__menu__item" href="/en/alanya-guide">Alanya Guide</a>
-                            </li>
-                            <li class="slide">
-                                <a class="slide__menu__item" href="https://heritage-by-cimen.rezervasyonal.com/">Reservation</a>
-                            </li>
-                            <li class="slide">
-                                <a class="slide__menu__item" href="/en/contact">Contact</a>
-                            </li>
-                        </ul>
-                    </nav>
+                    </form>
+                    <span class="d-block text-center">Remember your password? <a href="#" data-bs-target="#loginModal" data-bs-toggle="modal" class="text-primary">Sign In</a></span>
                 </div>
             </div>
         </div>
     </div>
-</div>
 
-<!-- ============ FOOTER (Ramada-style columns) ============ -->
+    <!-- ============ MOBILE OFF-CANVAS MENU ============ -->
+    <div class="offcanvas offcanvas-start" id="offcanvasRight" tabindex="-1" aria-label="Mobile menu">
+        <div class="rts__btstrp__offcanvase">
+            <div class="offcanvase__wrapper">
+                <div class="left__side mobile__menu">
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                    <div class="offcanvase__top">
+                        <div class="offcanvase__logo">
+                            <a href="index.html" class="um-logo um-logo--light"><span class="um-logo__name">Unicon</span><span class="um-logo__sub">Hospitality</span></a>
+                        </div>
+                    </div>
+                    <div class="offcanvase__mobile__menu">
+                        <nav class="um-mnav" aria-label="Mobile">
+                            <a class="um-mnav__link" href="index.html">Home</a>
+                            <button class="um-mnav__btn" aria-expanded="false">Book <i></i></button>
+                            <div class="um-mnav__panel">
+                                <a href="index.html#book">Find My Reservation</a>
+                                <a href="index.html#locations">Our Locations</a>
+                                <a href="index.html#offers">All Offers</a>
+                                <a href="rooms.html">Rooms &amp; Suites</a>
+                            </div>
+                            <button class="um-mnav__btn" aria-expanded="false">Stay <i></i></button>
+                            <div class="um-mnav__panel">
+                                <a href="rooms.html">Rooms &amp; Suites</a>
+                                <a href="index.html#amenities">Amenities</a>
+                                <a href="index.html#dining">Dining</a>
+                                <a href="index.html#gallery">Gallery</a>
+                            </div>
+                            <a class="um-mnav__link" href="rooms.html">Rooms</a>
+                            <a class="um-mnav__link" href="index.html#offers">Offers</a>
+                            <button class="um-mnav__btn" aria-expanded="false">Meetings &amp; Groups <i></i></button>
+                            <div class="um-mnav__panel">
+                                <a href="index.html#meetings">Meetings</a>
+                                <a href="index.html#meetings">Groups</a>
+                                <a href="index.html#meetings">Weddings &amp; Events</a>
+                            </div>
+                            <a class="um-mnav__link" href="about.html" aria-current="page">About</a>
+                            <a class="um-mnav__link" href="contact.html">Contact</a>
+                            <a class="um-mnav__link" href="#" data-bs-toggle="modal" data-bs-target="#loginModal">Sign In / Join</a>
+                        </nav>
+                    </div>
+                    <div class="offcanvase__bottom">
+                        <div class="offcanvase__address">
+                            <div class="item">
+                                <span class="h6">Reservations</span>
+                                <a href="tel:+919920400267"><svg class="ico"><use href="#i-phone"/></svg> +91 99204 00267</a>
+                            </div>
+                            <div class="item">
+                                <span class="h6">Email</span>
+                                <a href="mailto:stay@uniconhospitality.example"><svg class="ico"><use href="#i-mail"/></svg> stay@uniconhospitality.example</a>
+                            </div>
+                            <div class="item">
+                                <span class="h6">Address</span>
+                                <a href="contact.html"><svg class="ico"><use href="#i-pin"/></svg> Your street address, City, State</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- offcanvas end -->
+
+    <!-- ============ FOOTER ============ -->
     <footer class="rts__section rts__footer is__common__footer footer__background has__shape" id="contact">
         <div class="container">
             <div class="row">
@@ -375,12 +485,12 @@
 
             <div class="um-fcols">
                 <div class="um-fcol">
-                    <button class="um-fcol__title" aria-expanded="false"><img src="assets/images/unicon/logoc.png" alt=""> <i></i></button>
+                    <button class="um-fcol__title" aria-expanded="false"><img src="assets/images/unicon/logoc.png" alt="Unicon Hospitality"> <i></i></button>
                     <ul>
-                        <li><a href="#about">About</a></li>
-                        <li><a href="#locations">Locations</a></li>
-                        <li><a href="#top">Site Map</a></li>
-                        <li><a href="#locations">Travel Guide</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="index.html#locations">Locations</a></li>
+                        <li><a href="index.html">Site Map</a></li>
+                        <li><a href="index.html#locations">Travel Guide</a></li>
                     </ul>
                 </div>
                 <div class="um-fcol">
@@ -396,12 +506,11 @@
                     <button class="um-fcol__title" aria-expanded="false">Hospitality Business <i></i></button>
                     <ul>
                         <li><a href="contact.html">Join Our Business Programme</a></li>
-                        <li><a href="#meetings">Projects &amp; Groups</a></li>
-                        <li><a href="#contact">Corporate Travel</a></li>
-                        <li><a href="#contact">Travel Advisors</a></li>
+                        <li><a href="index.html#meetings">Projects &amp; Groups</a></li>
+                        <li><a href="contact.html">Corporate Travel</a></li>
+                        <li><a href="contact.html">Travel Advisors</a></li>
                     </ul>
                 </div>
-                
                 <div class="um-fcol">
                     <button class="um-fcol__title" aria-expanded="false">Corporate Resources <i></i></button>
                     <ul>
@@ -417,7 +526,7 @@
             <div class="container">
                 <div class="row">
                     <div class="copyright__wrapper">
-                        <p class="mb-0 ">Copyright &copy; <span id="year">2026</span> Unicon Hospitality. All rights reserved. | Developed By <a href="https://hsdigitalmedia.com/" target="_blank">HS Digital Media®</a></p>
+                        <p class="mb-0 ">Copyright &copy; <span id="year">2026</span> Unicon Hospitality. All rights reserved. | Developed By <a href="https://hsdigitalmedia.com/" target="_blank" rel="noopener">HS Digital Media®</a></p>
                         <div class="footer__social__link">
                             <a href="#" aria-label="Facebook" class="link__item">Facebook</a>
                             <a href="#" aria-label="Instagram" class="link__item">Instagram</a>
@@ -435,7 +544,7 @@
     <!-- sticky mobile booking bar -->
     <div class="um-mbar" id="umMbar">
         <a href="tel:+919920400267" class="um-mbar__call">Call</a>
-        <a href="#book" class="theme-btn btn-style fill no-border um-mbar__book"><span>Book Now</span></a>
+        <a href="index.html#book" class="theme-btn btn-style fill no-border um-mbar__book"><span>Book Now</span></a>
     </div>
 
     <!-- back to top -->
@@ -446,25 +555,15 @@
         </svg>
     </button>
 
-    <!-- preloader (hidden by the main script) -->
-    <!-- <div class="loader-wrapper">
-        <div class="loader"></div>
-        <div class="loader-section section-left"></div>
-        <div class="loader-section section-right"></div>
-    </div> -->
-
-    <!-- plugins from CDN (plugins.min.js was not supplied) -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/wowjs@1.1.3/dist/wow.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/jarallax@2/dist/jarallax.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/flatpickr@4/dist/flatpickr.min.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr@4/dist/flatpickr.min.css">
-    <!-- custom js -->
+    <!-- shared site script -->
     <script src="assets/js/2026-10-22-unicorn-hospitality-v2-main.js"></script>
-    <script src="assets/js/gdpr.js"></script>
-    <script src="assets/js/main.js"></script>
-    <script src="assets/js/plugins.min.js"></script>
-
+    <!-- about page script -->
+    <script src="assets/js/about.js"></script>
 </body>
 </html>

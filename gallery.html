@@ -1,0 +1,922 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Explore the Unicon Hospitality gallery: luxury rooms and suites, illuminated swimming pool, artisan bar and restaurant, architectural details, and guest moments.">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="Gallery | Unicon Hospitality">
+    <meta property="og:description" content="A visual tour through our luxury suites, vibrant dining spaces, serene pool, and hospitality moments.">
+    <meta property="og:image" content="assets/images/gallery/gallery-hero-hotel-pool-twilight.webp">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="icon" href="assets/images/unicon/logos.jpeg" type="image/x-icon">
+    <title>Gallery | Unicon Hospitality</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <!-- Gallery page dedicated stylesheet -->
+    <link rel="stylesheet" href="assets/css/gallery.css">
+</head>
+
+<body class="gallery-page">
+    <!-- Inline SVG sprite for clean UI icons -->
+    <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+        <defs>
+            <symbol id="i-phone" viewBox="0 0 24 24"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></symbol>
+            <symbol id="i-mail" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></symbol>
+            <symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 21s7-6.2 7-11a7 7 0 0 0-14 0c0 4.8 7 11 7 11z"/><circle cx="12" cy="10" r="2.5"/></symbol>
+            <symbol id="i-play" viewBox="0 0 24 24"><path d="M8 5v14l11-7z" fill="currentColor"/></symbol>
+            <symbol id="i-check" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="m8 12 3 3 5-6"/></symbol>
+            <symbol id="i-zoom" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></symbol>
+            <symbol id="i-close" viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></symbol>
+            <symbol id="i-prev" viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></symbol>
+            <symbol id="i-next" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></symbol>
+            <symbol id="i-arrow-r" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
+            <symbol id="i-insta" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></symbol>
+            <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 3 5 6v6c0 4.5 3 7.5 7 9 4-1.500 7-4.500 7-9V6z"/><path d="m9 12 2 2 4-4"/></symbol>
+            <symbol id="i-wifi" viewBox="0 0 24 24"><path d="M2 9a15 15 0 0 1 20 0M5 12.500a10 10 0 0 1 14 0M8.500 16a5 5 0 0 1 7 0"/><circle cx="12" cy="19" r="1" fill="currentColor"/></symbol>
+            <symbol id="i-cal" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M8 3v4M16 3v4M3 10h18"/></symbol>
+        </defs>
+    </svg>
+
+    <!-- ============ TOP UTILITY BAR ============ -->
+    <div class="header__top um-utility">
+        <div class="container">
+            <div class="um-utility__in">
+                <ul class="um-utility__links">
+                    <li><a class="link__item" href="index.html#book">Find My Reservation</a></li>
+                    <li><a class="link__item" href="index.html#locations">Our Locations</a></li>
+                    <li><a class="link__item" href="index.html#offers">All Offers</a></li>
+                    <li><a class="link__item" href="index.html#meetings">Meetings &amp; Groups</a></li>
+                </ul>
+                <div class="um-utility__right">
+                    <a class="link__item" href="tel:+919920400267"><svg class="gl-ico"><use href="#i-phone"/></svg> Reservations: +91 99204 00267</a>
+                    <label class="um-lang">
+                        <span class="visually-hidden">Language</span>
+                        <select aria-label="Language">
+                            <option>English</option>
+                            <option>हिन्दी</option>
+                            <option>मराठी</option>
+                        </select>
+                    </label>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ============ MAIN HEADER ============ -->
+    <header class="main__header header__function">
+        <div class="container">
+            <div class="row">
+                <div class="main__header__wrapper">
+                    <div class="main__nav">
+                        <div class="navigation d-none d-lg-block">
+                            <nav class="navigation__menu" id="main__menu">
+                                <ul class="list-unstyled">
+                                    <li class="navigation__menu--item has-child has-arrow">
+                                        <a href="index.html#book" class="navigation__menu--item__link">Book</a>
+                                        <div class="has__mega__menu um-mega">
+                                            <div class="um-mega__col">
+                                                <h6>Book</h6>
+                                                <a href="index.html#book">Find My Reservation</a>
+                                                <a href="index.html#locations">Our Locations</a>
+                                                <a href="index.html#offers">All Offers</a>
+                                                <a href="rooms.html">Rooms &amp; Suites</a>
+                                            </div>
+                                            <div class="um-mega__promo">
+                                                <span class="um-mega__tag">Save with bundles</span>
+                                                <p>Combine your room, meals and transfers in one seamless booking.</p>
+                                                <a href="index.html#book" class="theme-btn btn-style sm-btn fill no-border"><span>Book Now</span></a>
+                                            </div>
+                                        </div>
+                                    </li>
+
+                                    <li class="navigation__menu--item has-child has-arrow">
+                                        <a href="rooms.html" class="navigation__menu--item__link">Stay</a>
+                                        <ul class="submenu sub__style" role="menu">
+                                            <li role="menuitem"><a href="rooms.html">Rooms &amp; Suites</a></li>
+                                            <li role="menuitem"><a href="amenities.html">Amenities</a></li>
+                                            <li role="menuitem"><a href="dining.html">Dining</a></li>
+                                            <li role="menuitem"><a href="gallery.html" aria-current="page">Gallery</a></li>
+                                        </ul>
+                                    </li>
+
+                                    <li class="navigation__menu--item">
+                                        <a href="rooms.html" class="navigation__menu--item__link">Rooms</a>
+                                    </li>
+
+                                    <li class="navigation__menu--item">
+                                        <a href="index.html#offers" class="navigation__menu--item__link">Offers</a>
+                                    </li>
+
+                                    <li class="navigation__menu--item">
+                                        <a href="index.html#about" class="navigation__menu--item__link">About</a>
+                                    </li>
+
+                                    <li class="navigation__menu--item">
+                                        <a href="contact.html" class="navigation__menu--item__link">Contact</a>
+                                    </li>
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
+                    <div class="main__logo">
+                        <a href="index.html" class="um-logo" aria-label="Unicon Hospitality home">
+                            <img src="assets/images/unicon/logo.png" alt="Unicon Hospitality">
+                        </a>
+                    </div>
+                    <div class="main__right">
+                        <a href="#" class="theme-btn btn-style sm-btn border d-none d-lg-block" data-bs-toggle="modal" data-bs-target="#loginModal"><span>Sign In</span></a>
+                        <a href="#" class="theme-btn btn-style sm-btn border d-none d-lg-block" data-bs-toggle="modal" data-bs-target="#signupModal"><span>Join Free</span></a>
+                        <a href="index.html#book" class="theme-btn btn-style sm-btn fill"><span>Book Now</span></a>
+                        <button class="theme-btn btn-style sm-btn fill menu__btn d-lg-none" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight" aria-label="Open menu">
+                            <span class="um-burger"><i></i><i></i><i></i></span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main id="top">
+        <!-- ============ SECTION 01: HERO BANNER (Structured like Rooms & Suites) ============ -->
+        <section class="gl-hero" id="glHero">
+            <div class="gl-hero__bg" id="glHeroBg">
+                <img src="assets/images/gallery/gallery-hero-hotel-pool-twilight.webp" alt="Unicon Hospitality illuminated twilight pool and architecture" fetchpriority="high">
+            </div>
+            <span class="gl-orb gl-orb--1" aria-hidden="true"></span>
+            <span class="gl-orb gl-orb--2" aria-hidden="true"></span>
+            <div class="container">
+                <nav class="um-crumb" aria-label="Breadcrumb">
+                    <a href="index.html">Home</a>
+                    <span>/</span>
+                    <a href="rooms.html">Stay</a>
+                    <span>/</span>
+                    <span aria-current="page">Gallery</span>
+                </nav>
+                <span class="gl-eyebrow">Visual Tour &bull; Moments</span>
+                <h1 class="gl-hero__title">A Visual Journey Through Unicon</h1>
+                <p class="gl-hero__lead">Step inside our serene suites, vibrant bar and dining spaces, sun-drenched pool, and refined architecture. Explore every corner before you arrive.</p>
+                <div class="gl-hero__chips" role="group" aria-label="Jump to category">
+                    <a href="#glFilterSection" class="gl-hchip gl-hchip--gold"><span>Browse all photos</span><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-arrow-r"/></svg></a>
+                    <button type="button" class="gl-hchip" data-quick-filter="rooms">Rooms &amp; Suites</button>
+                    <button type="button" class="gl-hchip" data-quick-filter="dining">Bar &amp; Restaurant</button>
+                    <button type="button" class="gl-hchip" data-quick-filter="pool">Pool &amp; Leisure</button>
+                    <button type="button" class="gl-hchip" data-quick-filter="architecture">Architecture</button>
+                </div>
+            </div>
+            <span class="gl-scroll" aria-hidden="true">Scroll</span>
+        </section>
+
+        <!-- ============ GALLERY HIGHLIGHTS (sits over the edge of the hero) ============ -->
+        <section class="gl-hl" aria-label="Gallery highlights">
+            <div class="container">
+                <ul class="gl-hl__box">
+                    <li class="gl-hl__it">
+                        <span class="gl-hl__ico"><svg class="gl-ico"><use href="#i-zoom"/></svg></span>
+                        <span class="gl-hl__t"><b>High-Res Gallery</b><small>13 curated property views</small></span>
+                    </li>
+                    <li class="gl-hl__it">
+                        <span class="gl-hl__ico"><svg class="gl-ico"><use href="#i-play"/></svg></span>
+                        <span class="gl-hl__t"><b>Cinematic Reel</b><small>1-min motion preview</small></span>
+                    </li>
+                    <li class="gl-hl__it">
+                        <span class="gl-hl__ico"><svg class="gl-ico"><use href="#i-shield"/></svg></span>
+                        <span class="gl-hl__t"><b>Curated Spaces</b><small>Suites, dining, pool &amp; lobby</small></span>
+                    </li>
+                    <li class="gl-hl__it">
+                        <span class="gl-hl__ico"><svg class="gl-ico"><use href="#i-insta"/></svg></span>
+                        <span class="gl-hl__t"><b>Guest Perspectives</b><small>#UniconMoments live feed</small></span>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- ============ SECTION 02: INTERACTIVE CATEGORY NAVIGATION ============ -->
+        <nav class="gl-filter-section" id="glFilterSection" aria-label="Gallery categories">
+            <div class="container">
+                <div class="gl-filters" role="tablist">
+                    <button type="button" class="gl-filter-btn active" data-filter="all" role="tab" aria-selected="true" aria-pressed="true">
+                        All Photos <span class="gl-count">13</span>
+                    </button>
+                    <button type="button" class="gl-filter-btn" data-filter="rooms" role="tab" aria-selected="false" aria-pressed="false">
+                        Rooms &amp; Suites <span class="gl-count">3</span>
+                    </button>
+                    <button type="button" class="gl-filter-btn" data-filter="dining" role="tab" aria-selected="false" aria-pressed="false">
+                        Bar &amp; Restaurant <span class="gl-count">5</span>
+                    </button>
+                    <button type="button" class="gl-filter-btn" data-filter="pool" role="tab" aria-selected="false" aria-pressed="false">
+                        Pool &amp; Leisure <span class="gl-count">2</span>
+                    </button>
+                    <button type="button" class="gl-filter-btn" data-filter="architecture" role="tab" aria-selected="false" aria-pressed="false">
+                        Lobby &amp; Architecture <span class="gl-count">3</span>
+                    </button>
+                </div>
+            </div>
+        </nav>
+
+        <!-- ============ SECTION 03: EDITORIAL MASONRY GALLERY GRID ============ -->
+        <section class="gl-gallery-section" id="glGalleryGrid">
+            <div class="container">
+                <div class="gl-grid">
+                    <!-- Item 1: Executive Suite (Rooms) - Wide featured card -->
+                    <article class="gl-item is-wide" tabindex="0" role="button" aria-label="View Executive Luxury Suite"
+                        data-category="rooms"
+                        data-lightbox-src="assets/images/gallery/gallery-room-suite.webp"
+                        data-title="Executive Luxury Suite"
+                        data-caption="Spacious master bedroom, bespoke plush bedding, custom wood accents, and private city-facing balcony."
+                        data-cta-link="rooms.html"
+                        data-cta-text="Explore Rooms &amp; Suites →">
+                        <div class="gl-card">
+                            <div class="gl-card__img-wrap">
+                                <img src="assets/images/gallery/gallery-room-suite.webp" alt="Executive Luxury Suite at Unicon Hospitality" loading="lazy">
+                            </div>
+                            <div class="gl-card__overlay">
+                                <div class="gl-card__badge-row">
+                                    <span class="gl-card__tag">Rooms &amp; Suites</span>
+                                    <span class="gl-card__zoom-ico"><svg class="gl-ico"><use href="#i-zoom"/></svg></span>
+                                </div>
+                                <div class="gl-card__body">
+                                    <h2 class="gl-card__title">Executive Luxury Suite</h2>
+                                    <p class="gl-card__sub">King bed, private balcony &amp; bespoke interiors</p>
+                                    <a href="rooms.html" class="gl-card__action">Explore Rooms →</a>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Item 2: Bar & Lounge (Dining) -->
+                    <article class="gl-item" tabindex="0" role="button" aria-label="View The Bar & Lounge"
+                        data-category="dining"
+                        data-lightbox-src="assets/images/gallery/gallery-bar-restaurant.webp"
+                        data-title="The Bar &amp; Lounge"
+                        data-caption="Artisanal cocktails, premium reserve spirits, curated vintage wines, and intimate mood lighting."
+                        data-cta-link="dining.html"
+                        data-cta-text="Explore Bar &amp; Dining →">
+                        <div class="gl-card">
+                            <div class="gl-card__img-wrap">
+                                <img src="assets/images/gallery/gallery-bar-restaurant.webp" alt="The Bar & Lounge at Unicon Hospitality" loading="lazy">
+                            </div>
+                            <div class="gl-card__overlay">
+                                <div class="gl-card__badge-row">
+                                    <span class="gl-card__tag">Bar &amp; Restaurant</span>
+                                    <span class="gl-card__zoom-ico"><svg class="gl-ico"><use href="#i-zoom"/></svg></span>
+                                </div>
+                                <div class="gl-card__body">
+                                    <h2 class="gl-card__title">The Bar &amp; Lounge</h2>
+                                    <p class="gl-card__sub">Artisanal cocktails &amp; evening spirits</p>
+                                    <a href="dining.html" class="gl-card__action">Explore Dining →</a>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Item 3: Azure Pool (Pool & Leisure) - Tall card -->
+                    <article class="gl-item is-tall" tabindex="0" role="button" aria-label="View Azure Swimming Pool"
+                        data-category="pool"
+                        data-lightbox-src="assets/images/gallery/gallery-pool-leisure.webp"
+                        data-title="Azure Swimming Pool &amp; Cabanas"
+                        data-caption="Temperature-controlled lap pool surrounded by sun loungers, tropical palms, and dedicated poolside beverage service."
+                        data-cta-link="amenities.html"
+                        data-cta-text="View Hotel Amenities →">
+                        <div class="gl-card">
+                            <div class="gl-card__img-wrap">
+                                <img src="assets/images/gallery/gallery-pool-leisure.webp" alt="Azure Swimming Pool and Cabanas" loading="lazy">
+                            </div>
+                            <div class="gl-card__overlay">
+                                <div class="gl-card__badge-row">
+                                    <span class="gl-card__tag">Pool &amp; Leisure</span>
+                                    <span class="gl-card__zoom-ico"><svg class="gl-ico"><use href="#i-zoom"/></svg></span>
+                                </div>
+                                <div class="gl-card__body">
+                                    <h2 class="gl-card__title">Azure Pool &amp; Cabanas</h2>
+                                    <p class="gl-card__sub">Sun-drenched loungers &amp; refreshing lap waters</p>
+                                    <a href="amenities.html" class="gl-card__action">View Amenities →</a>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Item 4: Grand Lobby (Architecture) -->
+                    <article class="gl-item" tabindex="0" role="button" aria-label="View Grand Lobby & Architecture"
+                        data-category="architecture"
+                        data-lightbox-src="assets/images/gallery/gallery-lobby-architecture.webp"
+                        data-title="Grand Lobby &amp; Architecture"
+                        data-caption="Contemporary architectural lines, natural polished marble surfaces, and warm ambient reception welcoming every guest."
+                        data-cta-link="index.html#about"
+                        data-cta-text="Learn About Our Story →">
+                        <div class="gl-card">
+                            <div class="gl-card__img-wrap">
+                                <img src="assets/images/gallery/gallery-lobby-architecture.webp" alt="Grand Lobby and Reception Architecture" loading="lazy">
+                            </div>
+                            <div class="gl-card__overlay">
+                                <div class="gl-card__badge-row">
+                                    <span class="gl-card__tag">Lobby &amp; Architecture</span>
+                                    <span class="gl-card__zoom-ico"><svg class="gl-ico"><use href="#i-zoom"/></svg></span>
+                                </div>
+                                <div class="gl-card__body">
+                                    <h2 class="gl-card__title">Grand Lobby</h2>
+                                    <p class="gl-card__sub">Contemporary architectural elegance</p>
+                                    <a href="index.html#about" class="gl-card__action">About Unicon →</a>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Item 5: Spa Bathroom (Rooms) -->
+                    <article class="gl-item" tabindex="0" role="button" aria-label="View Marble Spa Bathroom"
+                        data-category="rooms"
+                        data-lightbox-src="assets/images/gallery/gallery-room-bathroom.webp"
+                        data-title="Marble Spa Bathroom"
+                        data-caption="Deep freestanding soaking tub, rainforest shower head, luxury vanity mirror, and premium botanical amenities."
+                        data-cta-link="rooms.html"
+                        data-cta-text="Explore Rooms &amp; Suites →">
+                        <div class="gl-card">
+                            <div class="gl-card__img-wrap">
+                                <img src="assets/images/gallery/gallery-room-bathroom.webp" alt="Marble Spa Bathroom in Luxury Suite" loading="lazy">
+                            </div>
+                            <div class="gl-card__overlay">
+                                <div class="gl-card__badge-row">
+                                    <span class="gl-card__tag">Rooms &amp; Suites</span>
+                                    <span class="gl-card__zoom-ico"><svg class="gl-ico"><use href="#i-zoom"/></svg></span>
+                                </div>
+                                <div class="gl-card__body">
+                                    <h2 class="gl-card__title">Marble Spa Bathroom</h2>
+                                    <p class="gl-card__sub">Deep soaking tub &amp; rain shower</p>
+                                    <a href="rooms.html" class="gl-card__action">Explore Rooms →</a>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Item 6: Artisan Breakfast Buffet (Dining) - Wide card -->
+                    <article class="gl-item is-wide" tabindex="0" role="button" aria-label="View Artisan Breakfast Buffet"
+                        data-category="dining"
+                        data-lightbox-src="assets/images/gallery/gallery-breakfast-buffet.webp"
+                        data-title="Artisan Breakfast Buffet"
+                        data-caption="Daily sunrise spread featuring freshly baked viennoiserie, tropical fruits, wholesome grains, and made-to-order morning specialties."
+                        data-cta-link="dining.html"
+                        data-cta-text="View Breakfast &amp; Dining →">
+                        <div class="gl-card">
+                            <div class="gl-card__img-wrap">
+                                <img src="assets/images/gallery/gallery-breakfast-buffet.webp" alt="Artisan Breakfast Buffet spread" loading="lazy">
+                            </div>
+                            <div class="gl-card__overlay">
+                                <div class="gl-card__badge-row">
+                                    <span class="gl-card__tag">Bar &amp; Restaurant</span>
+                                    <span class="gl-card__zoom-ico"><svg class="gl-ico"><use href="#i-zoom"/></svg></span>
+                                </div>
+                                <div class="gl-card__body">
+                                    <h2 class="gl-card__title">Artisan Breakfast Buffet</h2>
+                                    <p class="gl-card__sub">Fresh morning pastries, wholesome bowls &amp; barista roasts</p>
+                                    <a href="dining.html" class="gl-card__action">Explore Dining →</a>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Item 7: Botanical Mixology (Dining) -->
+                    <article class="gl-item" tabindex="0" role="button" aria-label="View Botanical Mixology"
+                        data-category="dining"
+                        data-lightbox-src="assets/images/gallery/gallery-detail-mixology.webp"
+                        data-title="Botanical Mixology &amp; Garnishes"
+                        data-caption="Crafted signature cocktail creations infused with smoked citrus, rosemary stems, and small-batch botanicals."
+                        data-cta-link="dining.html"
+                        data-cta-text="View Cocktail Menu →">
+                        <div class="gl-card">
+                            <div class="gl-card__img-wrap">
+                                <img src="assets/images/gallery/gallery-detail-mixology.webp" alt="Botanical Cocktail Mixology and Garnishes" loading="lazy">
+                            </div>
+                            <div class="gl-card__overlay">
+                                <div class="gl-card__badge-row">
+                                    <span class="gl-card__tag">Bar &amp; Restaurant</span>
+                                    <span class="gl-card__zoom-ico"><svg class="gl-ico"><use href="#i-zoom"/></svg></span>
+                                </div>
+                                <div class="gl-card__body">
+                                    <h2 class="gl-card__title">Botanical Mixology</h2>
+                                    <p class="gl-card__sub">Artisan infusions &amp; signature recipes</p>
+                                    <a href="dining.html" class="gl-card__action">Cocktail List →</a>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Item 8: Bespoke Linens (Rooms) -->
+                    <article class="gl-item" tabindex="0" role="button" aria-label="View Egyptian Cotton Linens"
+                        data-category="rooms"
+                        data-lightbox-src="assets/images/gallery/gallery-detail-linens.webp"
+                        data-title="Pure Egyptian Cotton Linens"
+                        data-caption="Crisp 400-thread-count bed linens, plush hypoallergenic pillows, and tailor-made duvets for restorative sleep."
+                        data-cta-link="rooms.html"
+                        data-cta-text="Explore Rooms &amp; Suites →">
+                        <div class="gl-card">
+                            <div class="gl-card__img-wrap">
+                                <img src="assets/images/gallery/gallery-detail-linens.webp" alt="High thread count bed linens detail" loading="lazy">
+                            </div>
+                            <div class="gl-card__overlay">
+                                <div class="gl-card__badge-row">
+                                    <span class="gl-card__tag">Rooms &amp; Suites</span>
+                                    <span class="gl-card__zoom-ico"><svg class="gl-ico"><use href="#i-zoom"/></svg></span>
+                                </div>
+                                <div class="gl-card__body">
+                                    <h2 class="gl-card__title">Plush Egyptian Cottons</h2>
+                                    <p class="gl-card__sub">400-thread-count bespoke comfort</p>
+                                    <a href="rooms.html" class="gl-card__action">View Suites →</a>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Item 9: Clay Oven & Tandoor (Dining) -->
+                    <article class="gl-item" tabindex="0" role="button" aria-label="View Clay Oven & Tandoor"
+                        data-category="dining"
+                        data-lightbox-src="assets/images/gallery/gallery-detail-signature-dish.webp"
+                        data-title="Clay Oven &amp; Searing Grills"
+                        data-caption="Slow-marinated tandoor kebabs, hand-pulled garlic naans, and rich aromatic sauces created by our master chefs."
+                        data-cta-link="dining.html"
+                        data-cta-text="Explore Dining Menu →">
+                        <div class="gl-card">
+                            <div class="gl-card__img-wrap">
+                                <img src="assets/images/gallery/gallery-detail-signature-dish.webp" alt="Clay oven tandoor dish detail" loading="lazy">
+                            </div>
+                            <div class="gl-card__overlay">
+                                <div class="gl-card__badge-row">
+                                    <span class="gl-card__tag">Bar &amp; Restaurant</span>
+                                    <span class="gl-card__zoom-ico"><svg class="gl-ico"><use href="#i-zoom"/></svg></span>
+                                </div>
+                                <div class="gl-card__body">
+                                    <h2 class="gl-card__title">Clay Oven &amp; Grills</h2>
+                                    <p class="gl-card__sub">Smoked spices and slow-cooked craft</p>
+                                    <a href="dining.html" class="gl-card__action">View Menu →</a>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Item 10: Morning Coffee & Brews (Dining) -->
+                    <article class="gl-item" tabindex="0" role="button" aria-label="View Morning Coffee & Brews"
+                        data-category="dining"
+                        data-lightbox-src="assets/images/gallery/gallery-detail-morning-coffee.webp"
+                        data-title="Morning Espresso &amp; Brews"
+                        data-caption="Barista single-origin pour-overs, velvety flat whites, and crisp pastries served in the courtyard at sunrise."
+                        data-cta-link="dining.html"
+                        data-cta-text="Explore Dining →">
+                        <div class="gl-card">
+                            <div class="gl-card__img-wrap">
+                                <img src="assets/images/gallery/gallery-detail-morning-coffee.webp" alt="Fresh morning barista espresso" loading="lazy">
+                            </div>
+                            <div class="gl-card__overlay">
+                                <div class="gl-card__badge-row">
+                                    <span class="gl-card__tag">Bar &amp; Restaurant</span>
+                                    <span class="gl-card__zoom-ico"><svg class="gl-ico"><use href="#i-zoom"/></svg></span>
+                                </div>
+                                <div class="gl-card__body">
+                                    <h2 class="gl-card__title">Morning Espresso &amp; Brews</h2>
+                                    <p class="gl-card__sub">Barista-crafted single origins at dawn</p>
+                                    <a href="dining.html" class="gl-card__action">Explore Dining →</a>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Item 11: Sunset Sundowners (Pool & Leisure) - Large card -->
+                    <article class="gl-item is-large" tabindex="0" role="button" aria-label="View Sunset Sundowners Poolside"
+                        data-category="pool"
+                        data-lightbox-src="assets/images/gallery/gallery-social-couple-sunset.webp"
+                        data-title="Sunset Sundowners Poolside"
+                        data-caption="Golden hour cocktails and calm reflections by the terrace waters as the sky transitions into dusk."
+                        data-cta-link="dining.html"
+                        data-cta-text="Reserve Sunset Table →">
+                        <div class="gl-card">
+                            <div class="gl-card__img-wrap">
+                                <img src="assets/images/gallery/gallery-social-couple-sunset.webp" alt="Couple enjoying sunset sundowners poolside" loading="lazy">
+                            </div>
+                            <div class="gl-card__overlay">
+                                <div class="gl-card__badge-row">
+                                    <span class="gl-card__tag">Pool &amp; Leisure</span>
+                                    <span class="gl-card__zoom-ico"><svg class="gl-ico"><use href="#i-zoom"/></svg></span>
+                                </div>
+                                <div class="gl-card__body">
+                                    <h2 class="gl-card__title">Sunset Sundowners</h2>
+                                    <p class="gl-card__sub">Golden hour refreshments &amp; serene waters</p>
+                                    <a href="dining.html" class="gl-card__action">Reserve a Table →</a>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Item 12: Celebration & Private Events (Architecture) -->
+                    <article class="gl-item" tabindex="0" role="button" aria-label="View Celebration & Banquet Spaces"
+                        data-category="architecture"
+                        data-lightbox-src="assets/images/gallery/gallery-social-family-celebration.webp"
+                        data-title="Celebration &amp; Gathering Spaces"
+                        data-caption="Sophisticated venue spaces designed for family reunions, milestone anniversaries, and bespoke private dinners."
+                        data-cta-link="contact.html"
+                        data-cta-text="Host Your Gathering →">
+                        <div class="gl-card">
+                            <div class="gl-card__img-wrap">
+                                <img src="assets/images/gallery/gallery-social-family-celebration.webp" alt="Family gathering and celebration dinner" loading="lazy">
+                            </div>
+                            <div class="gl-card__overlay">
+                                <div class="gl-card__badge-row">
+                                    <span class="gl-card__tag">Lobby &amp; Architecture</span>
+                                    <span class="gl-card__zoom-ico"><svg class="gl-ico"><use href="#i-zoom"/></svg></span>
+                                </div>
+                                <div class="gl-card__body">
+                                    <h2 class="gl-card__title">Celebration Spaces</h2>
+                                    <p class="gl-card__sub">Curated for milestones &amp; private dining</p>
+                                    <a href="contact.html" class="gl-card__action">Host an Event →</a>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Item 13: Illuminated Property Facade (Architecture) -->
+                    <article class="gl-item" tabindex="0" role="button" aria-label="View Evening Architectural Facade"
+                        data-category="architecture"
+                        data-lightbox-src="assets/images/unicon/gallery/1.avif"
+                        data-title="Illuminated Evening Facade"
+                        data-caption="Warm ambient lighting accentuates the hotel architecture, framing a welcoming haven after dark."
+                        data-cta-link="index.html#about"
+                        data-cta-text="About Unicon Hospitality →">
+                        <div class="gl-card">
+                            <div class="gl-card__img-wrap">
+                                <img src="assets/images/unicon/gallery/1.avif" alt="Illuminated evening facade of Unicon Hospitality" loading="lazy">
+                            </div>
+                            <div class="gl-card__overlay">
+                                <div class="gl-card__badge-row">
+                                    <span class="gl-card__tag">Lobby &amp; Architecture</span>
+                                    <span class="gl-card__zoom-ico"><svg class="gl-ico"><use href="#i-zoom"/></svg></span>
+                                </div>
+                                <div class="gl-card__body">
+                                    <h2 class="gl-card__title">Illuminated Facade</h2>
+                                    <p class="gl-card__sub">Architectural haven at nightfall</p>
+                                    <a href="index.html#about" class="gl-card__action">Discover More →</a>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============ SECTION 04: CINEMATIC VIDEO EXPERIENCE ============ -->
+        <section class="gl-video-section" id="glVideoSection">
+            <div class="container text-center">
+                <div class="gl-section-head">
+                    <span class="gl-eyebrow-text">MOTION &amp; SOUND</span>
+                    <h2 class="gl-title">Experience the Vibe in Motion</h2>
+                    <p class="gl-desc">Take a cinematic preview of the serene pool, artisan bar craft, and refined hospitality atmosphere that awaits your stay.</p>
+                </div>
+
+                <div class="gl-video-wrapper">
+                    <div class="gl-video-player" id="glVideoPlayerContainer">
+                        <video id="glInlineVideo" class="gl-inline-video" playsinline muted loop preload="metadata" poster="assets/images/gallery/gallery-hero-hotel-pool-twilight.webp">
+                            <source src="assets/images/unicon/banner/unicon_hotel_cinematic_web.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                        
+                        <!-- Floating Glass Control Bar -->
+                        <div class="gl-video-controls" id="glVideoControls">
+                            <button type="button" class="gl-ctrl-btn gl-play-pause-btn" id="glPlayPauseBtn" aria-label="Toggle video playback">
+                                <svg class="gl-ico-pause" viewBox="0 0 24 24" aria-hidden="true" width="16" height="16"><rect x="6" y="4" width="4" height="16" fill="currentColor"/><rect x="14" y="4" width="4" height="16" fill="currentColor"/></svg>
+                                <svg class="gl-ico-play" viewBox="0 0 24 24" aria-hidden="true" width="16" height="16" style="display:none;"><polygon points="5 3 19 12 5 21 5 3" fill="currentColor"/></svg>
+                                <span class="gl-ctrl-label" id="glPlayLabel">Pause</span>
+                            </button>
+
+                            <button type="button" class="gl-ctrl-btn gl-sound-btn" id="glSoundBtn" aria-label="Toggle audio">
+                                <svg class="gl-ico-muted" viewBox="0 0 24 24" aria-hidden="true" width="16" height="16"><path d="M11 5L6 9H2v6h4l5 4V5z" fill="currentColor"/><line x1="23" y1="9" x2="17" y2="15" stroke="currentColor" stroke-width="2"/><line x1="17" y1="9" x2="23" y2="15" stroke="currentColor" stroke-width="2"/></svg>
+                                <svg class="gl-ico-unmuted" viewBox="0 0 24 24" aria-hidden="true" width="16" height="16" style="display:none;"><path d="M11 5L6 9H2v6h4l5 4V5z" fill="currentColor"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07" fill="none" stroke="currentColor" stroke-width="2"/></svg>
+                                <span class="gl-ctrl-label" id="glSoundLabel">Unmute</span>
+                            </button>
+
+                            <button type="button" class="gl-ctrl-btn gl-fullscreen-btn" id="glFullscreenBtn" aria-label="Toggle fullscreen">
+                                <svg viewBox="0 0 24 24" aria-hidden="true" width="16" height="16"><path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                                <span class="gl-ctrl-label">Fullscreen</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============ SECTION 05: THE FINER DETAILS ============ -->
+        <section class="gl-details-section" id="glDetailsSection">
+            <div class="container">
+                <div class="gl-section-head">
+                    <span class="gl-eyebrow-text">SENSORY TOUCHPOINTS</span>
+                    <h2 class="gl-title">The Finer Details</h2>
+                    <p class="gl-desc">Every element at Unicon is considered with quiet craftsmanship, from house botanical infusions to bespoke 400-thread-count bedding.</p>
+                </div>
+
+                <div class="gl-details-grid">
+                    <!-- Detail 1 -->
+                    <div class="gl-detail-card">
+                        <div class="gl-detail-card__img">
+                            <img src="assets/images/gallery/gallery-detail-mixology.webp" alt="Botanical cocktails and garnishes" loading="lazy">
+                        </div>
+                        <div class="gl-detail-card__content">
+                            <span class="gl-detail-card__tag">Mixology</span>
+                            <h3 class="gl-detail-card__title">Handcrafted Botanicals</h3>
+                            <p class="gl-detail-card__desc">Freshly harvested garden herbs, house citrus bitters, and slow cold-drip infusions crafted right at the bar counter.</p>
+                        </div>
+                    </div>
+
+                    <!-- Detail 2 -->
+                    <div class="gl-detail-card">
+                        <div class="gl-detail-card__img">
+                            <img src="assets/images/gallery/gallery-detail-linens.webp" alt="Plush Egyptian cotton linens" loading="lazy">
+                        </div>
+                        <div class="gl-detail-card__content">
+                            <span class="gl-detail-card__tag">Comfort</span>
+                            <h3 class="gl-detail-card__title">Bespoke Linens</h3>
+                            <p class="gl-detail-card__desc">Ultra-soft 400-thread Egyptian cottons, pillow menus tailored to your sleep style, and silent blackout drapery.</p>
+                        </div>
+                    </div>
+
+                    <!-- Detail 3 -->
+                    <div class="gl-detail-card">
+                        <div class="gl-detail-card__img">
+                            <img src="assets/images/gallery/gallery-detail-signature-dish.webp" alt="Tandoor clay oven culinary craft" loading="lazy">
+                        </div>
+                        <div class="gl-detail-card__content">
+                            <span class="gl-detail-card__tag">Gastronomy</span>
+                            <h3 class="gl-detail-card__title">Clay Oven Grills</h3>
+                            <p class="gl-detail-card__desc">Searing charcoal heat locking in tender marinades, smoked whole spices, and farm-sourced ingredients.</p>
+                        </div>
+                    </div>
+
+                    <!-- Detail 4 -->
+                    <div class="gl-detail-card">
+                        <div class="gl-detail-card__img">
+                            <img src="assets/images/gallery/gallery-detail-morning-coffee.webp" alt="Barista espresso and dawn pastries" loading="lazy">
+                        </div>
+                        <div class="gl-detail-card__content">
+                            <span class="gl-detail-card__tag">Awakening</span>
+                            <h3 class="gl-detail-card__title">Dawn Roasted Brews</h3>
+                            <p class="gl-detail-card__desc">Freshly ground specialty arabica beans pulled with precise extraction, served alongside warm flaky croissants.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============ SECTION 06: GUEST LIFESTYLE: #UniconMoments ============ -->
+        <!-- <section class="gl-social-section" id="glSocialSection">
+            <div class="container">
+                <div class="gl-section-head">
+                    <span class="gl-eyebrow-text">GUEST PERSPECTIVES</span>
+                    <h2 class="gl-title">Moments Shared by You</h2>
+                    <p class="gl-desc">Tag <strong style="color:var(--gl-ink);">@UniconHospitality</strong> and <strong style="color:var(--gl-gold);">#UniconMoments</strong> to be featured in our ongoing digital guest book.</p>
+                </div>
+
+                <div class="gl-social-grid">
+                    <div class="gl-social-tile">
+                        <img src="assets/images/gallery/gallery-social-couple-sunset.webp" alt="Sunset drink poolside" loading="lazy">
+                        <div class="gl-social-tile__overlay">
+                            <span class="gl-social-tile__ico"><svg class="gl-ico"><use href="#i-insta"/></svg></span>
+                            <span class="gl-social-tile__caption">Golden hour sundowners</span>
+                        </div>
+                    </div>
+                    <div class="gl-social-tile">
+                        <img src="assets/images/gallery/gallery-social-family-celebration.webp" alt="Family celebration dinner" loading="lazy">
+                        <div class="gl-social-tile__overlay">
+                            <span class="gl-social-tile__ico"><svg class="gl-ico"><use href="#i-insta"/></svg></span>
+                            <span class="gl-social-tile__caption">Reunions &amp; laughter</span>
+                        </div>
+                    </div>
+                    <div class="gl-social-tile">
+                        <img src="assets/images/unicon/gallery/2.avif" alt="Luxury poolside lounging" loading="lazy">
+                        <div class="gl-social-tile__overlay">
+                            <span class="gl-social-tile__ico"><svg class="gl-ico"><use href="#i-insta"/></svg></span>
+                            <span class="gl-social-tile__caption">Morning dip &amp; chill</span>
+                        </div>
+                    </div>
+                    <div class="gl-social-tile">
+                        <img src="assets/images/unicon/gallery/3.jpg" alt="Guest room tranquility" loading="lazy">
+                        <div class="gl-social-tile__overlay">
+                            <span class="gl-social-tile__ico"><svg class="gl-ico"><use href="#i-insta"/></svg></span>
+                            <span class="gl-social-tile__caption">Peaceful wake-ups</span>
+                        </div>
+                    </div>
+                    <div class="gl-social-tile">
+                        <img src="assets/images/unicon/gallery/4.jpg" alt="Dining elegance" loading="lazy">
+                        <div class="gl-social-tile__overlay">
+                            <span class="gl-social-tile__ico"><svg class="gl-ico"><use href="#i-insta"/></svg></span>
+                            <span class="gl-social-tile__caption">Dinner with good company</span>
+                        </div>
+                    </div>
+                    <div class="gl-social-tile">
+                        <img src="assets/images/unicon/gallery/5.jpg" alt="Evening courtyard vibe" loading="lazy">
+                        <div class="gl-social-tile__overlay">
+                            <span class="gl-social-tile__ico"><svg class="gl-ico"><use href="#i-insta"/></svg></span>
+                            <span class="gl-social-tile__caption">Midnight stroll</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section> -->
+
+        <!-- ============ SECTION 07: VISUAL-TO-BOOKING CTA (Integrated Luxury Finish) ============ -->
+        <section class="gl-cta-section" id="glCtaSection">
+            <span class="gl-cta__ring gl-cta__ring--1" aria-hidden="true"></span>
+            <span class="gl-cta__ring gl-cta__ring--2" aria-hidden="true"></span>
+            <div class="container text-center">
+                <span class="gl-eyebrow">Ready When You Are</span>
+                <h2 class="gl-cta__title">Like What You See? Experience It in Person.</h2>
+                <p class="gl-cta__lead">Whether you seek a relaxing weekend escape, a gourmet dining experience, or a celebration venue, Unicon Hospitality is ready to welcome you.</p>
+                <div class="gl-cta__btns">
+                    <a href="rooms.html" class="theme-btn btn-style fill no-border"><span>Book a Room &amp; Suite</span></a>
+                    <a href="dining.html" class="gl-btn-ghost"><span>Reserve a Table at Dining</span></a>
+                </div>
+                <div class="gl-badges-row">
+                    <div class="gl-badge-item">
+                        <svg class="gl-ico"><use href="#i-shield"/></svg>
+                        <span>Best Rate Guarantee</span>
+                    </div>
+                    <div class="gl-badge-item">
+                        <svg class="gl-ico"><use href="#i-wifi"/></svg>
+                        <span>High-Speed Wi-Fi</span>
+                    </div>
+                    <div class="gl-badge-item">
+                        <svg class="gl-ico"><use href="#i-cal"/></svg>
+                        <span>Flexible Cancellation</span>
+                    </div>
+                </div>
+                <div class="gl-cta__press">
+                    <span>Press &amp; Commercial Photography:</span>
+                    <a href="mailto:media@unicornhospitality.example">media@unicornhospitality.example</a>
+                    <span class="sep">&bull;</span>
+                    <a href="tel:+919920400267">+91 99204 00267</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- ============ LIGHTBOX MODAL ============ -->
+    <div class="gl-lightbox" id="glLightbox" role="dialog" aria-modal="true" aria-hidden="true" aria-label="Image Lightbox">
+        <button type="button" class="gl-lightbox__close" aria-label="Close lightbox"><svg class="gl-ico"><use href="#i-close"/></svg></button>
+        <button type="button" class="gl-lightbox__nav-btn gl-lightbox__prev" aria-label="Previous image"><svg class="gl-ico"><use href="#i-prev"/></svg></button>
+        <button type="button" class="gl-lightbox__nav-btn gl-lightbox__next" aria-label="Next image"><svg class="gl-ico"><use href="#i-next"/></svg></button>
+        
+        <div class="gl-lightbox__stage">
+            <img src="" alt="" class="gl-lightbox__img">
+        </div>
+        <div class="gl-lightbox__meta">
+            <div class="gl-lightbox__counter">Image 1 of 13</div>
+            <div class="gl-lightbox__title">Title</div>
+            <div class="gl-lightbox__caption">Caption</div>
+            <a href="#" class="gl-lightbox__cta">Explore Details →</a>
+        </div>
+    </div>
+
+    <!-- ============ VIDEO MODAL ============ -->
+    <div class="gl-video-modal" id="glVideoModal" role="dialog" aria-modal="true" aria-hidden="true" aria-label="Property Video Reel">
+        <div class="gl-video-modal__content">
+            <button type="button" class="gl-video-modal__close" aria-label="Close video player"><svg class="gl-ico"><use href="#i-close"/></svg></button>
+            <video controls preload="metadata" poster="assets/images/gallery/gallery-hero-hotel-pool-twilight.webp">
+                <source src="assets/images/unicon/banner/unicon_hotel_cinematic_web.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+    </div>
+
+    <!-- ============ MOBILE OFFCANVAS MENU ============ -->
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+        <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="offcanvasRightLabel">
+                <img src="assets/images/unicon/logo.png" alt="Unicon Hospitality" style="max-height:48px;">
+            </h5>
+            <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+            <nav class="um-mnav" aria-label="Mobile Navigation">
+                <button class="um-mnav__btn" aria-expanded="false">Book <i></i></button>
+                <div class="um-mnav__panel">
+                    <a href="index.html#book">Find My Reservation</a>
+                    <a href="index.html#locations">Our Locations</a>
+                    <a href="index.html#offers">All Offers</a>
+                    <a href="rooms.html">Rooms &amp; Suites</a>
+                </div>
+                <button class="um-mnav__btn" aria-expanded="true">Stay <i></i></button>
+                <div class="um-mnav__panel" style="display:block;">
+                    <a href="rooms.html">Rooms &amp; Suites</a>
+                    <a href="amenities.html">Amenities</a>
+                    <a href="dining.html">Dining</a>
+                    <a href="gallery.html" aria-current="page" style="color:var(--gl-gold);font-weight:600;">Gallery</a>
+                </div>
+                <a class="um-mnav__link" href="rooms.html">Rooms</a>
+                <a class="um-mnav__link" href="index.html#offers">Offers</a>
+                <a class="um-mnav__link" href="index.html#about">About</a>
+                <a class="um-mnav__link" href="contact.html">Contact</a>
+            </nav>
+            <div class="mt-4 pt-3 border-top">
+                <p class="mb-1 text-muted" style="font-size:0.85rem;">Reservations</p>
+                <a href="tel:+919920400267" class="fw-semibold text-dark text-decoration-none">+91 99204 00267</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- ============ FOOTER (Ramada-style columns like Rooms & Suites) ============ -->
+    <footer class="rts__section rts__footer is__common__footer footer__background has__shape" id="contact">
+        <div class="container">
+            <div class="row">
+                <div class="footer__newsletter">
+                    <span class="h2">Join Our Newsletter</span>
+                    <div class="rts__form">
+                        <form action="#" method="post" id="newsForm" novalidate>
+                            <input type="email" name="email" id="subscription" placeholder="Enter your email" required aria-label="Email">
+                            <button type="submit">Subscribe</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <div class="um-fcols">
+                <div class="um-fcol">
+                    <button class="um-fcol__title" aria-expanded="false">Unicorn Hospitality <i></i></button>
+                    <ul>
+                        <li><a href="index.html#about">About</a></li>
+                        <li><a href="index.html#locations">Locations</a></li>
+                        <li><a href="index.html">Site Map</a></li>
+                        <li><a href="index.html#locations">Travel Guide</a></li>
+                    </ul>
+                </div>
+                <div class="um-fcol">
+                    <button class="um-fcol__title" aria-expanded="false">Contact <i></i></button>
+                    <ul>
+                        <li><a href="tel:+919920400267"><svg class="ico"><use href="#i-phone"/></svg> Reservations: +91 99204 00267</a></li>
+                        <li><a href="mailto:stay@unicornhospitality.example"><svg class="ico"><use href="#i-mail"/></svg> stay@unicornhospitality.example</a></li>
+                        <li><a href="contact.html"><svg class="ico"><use href="#i-pin"/></svg> Your street address, City, State</a></li>
+                        <li><a href="contact.html">Customer Care / Help</a></li>
+                    </ul>
+                </div>
+                <div class="um-fcol">
+                    <button class="um-fcol__title" aria-expanded="false">Hospitality Business <i></i></button>
+                    <ul>
+                        <li><a href="contact.html">Join Our Business Programme</a></li>
+                        <li><a href="index.html#meetings">Projects &amp; Groups</a></li>
+                        <li><a href="contact.html">Corporate Travel</a></li>
+                        <li><a href="contact.html">Travel Advisors</a></li>
+                    </ul>
+                </div>
+                <div class="um-fcol">
+                    <button class="um-fcol__title" aria-expanded="false">Terms &amp; Policies <i></i></button>
+                    <ul>
+                        <li><a href="#">Best Rate Guarantee</a></li>
+                        <li><a href="#">Privacy Notice</a></li>
+                        <li><a href="#">Terms of Use</a></li>
+                        <li><a href="#">Cookie Consent</a></li>
+                    </ul>
+                </div>
+                <div class="um-fcol">
+                    <button class="um-fcol__title" aria-expanded="false">Corporate Resources <i></i></button>
+                    <ul>
+                        <li><a href="#">Media Centre</a></li>
+                        <li><a href="#">Franchise Information</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Social Responsibility</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="copyright__text">
+            <div class="container">
+                <div class="row">
+                    <div class="copyright__wrapper">
+                        <p class="mb-0 ">Copyright &copy; <span id="year">2026</span> Unicorn Hospitality. All rights reserved. | Developed By <a href="https://hsdigitalmedia.com/" target="_blank">HS Digital Media®</a></p>
+                        <div class="footer__social__link">
+                            <a href="#" aria-label="Facebook" class="link__item">Facebook</a>
+                            <a href="#" aria-label="Instagram" class="link__item">Instagram</a>
+                            <a href="#" aria-label="LinkedIn" class="link__item">LinkedIn</a>
+                            <a href="#" aria-label="X" class="link__item">X</a>
+                            <a href="#" aria-label="YouTube" class="link__item">YouTube</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- footer end -->
+
+    <!-- Sticky mobile booking bar -->
+    <div class="um-mbar" id="umMbar">
+        <a href="tel:+919920400267" class="um-mbar__call">Call</a>
+        <a href="rooms.html" class="theme-btn btn-style fill no-border um-mbar__book"><span>Book Room</span></a>
+    </div>
+
+    <!-- Back to top button -->
+    <button type="button" class="rts__back__top" id="rts-back-to-top" aria-label="Back to top">
+        <svg width="20" height="20" viewBox="0 0 13 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M7.30201 1.51317L7.29917 21.3422C7.29912 21.7057 6.97211 21.9993 6.5674 21.9993C6.16269 21.9992 5.83577 21.7055 5.83582 21.342L5.83844 3.10055L1.39753 7.08842C1.11169 7.34511 0.647535 7.34506 0.361762 7.0883C0.0759894 6.83155 0.0760493 6.41464 0.361896 6.15795L6.05367 1.04682C6.26405 0.857899 6.5773 0.802482 6.85167 0.905201C7.12374 1.00792 7.30205 1.24823 7.30201 1.51317Z" fill="#FFF" />
+            <path d="M12.9991 6.6318C12.9991 6.80021 12.9282 6.96861 12.7841 7.09592C12.4983 7.35261 12.0341 7.35256 11.7483 7.0958L6.05118 1.97719C5.76541 1.72043 5.76547 1.30352 6.05131 1.04684C6.33716 0.790152 6.80131 0.790206 7.08709 1.04696L12.7842 6.16557C12.9283 6.29498 12.9991 6.46339 12.9991 6.6318Z" fill="#FFF" />
+        </svg>
+    </button>
+
+    <!-- Global Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/2026-10-22-unicorn-hospitality-v2-main.js"></script>
+    <!-- Gallery script -->
+    <script src="assets/js/gallery.js"></script>
+</body>
+</html>

@@ -1,6 +1,6 @@
 <?php
 /* Unicorn Hospitality - admin dashboard (the page shell; the screens are drawn by assets/admin.js) */
-require __DIR__ . '/includes/bootstrap.php';
+require_once __DIR__ . '/includes/db.php';
 security_headers();
 start_admin_session();
 if (!users_exist()) { header('Location: login.php'); exit; }

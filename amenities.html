@@ -1,0 +1,721 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Amenities at Unicorn Hospitality: swimming pool, fitness centre, daily breakfast, free Wi-Fi, 24-hour security, free parking and airport transfers, with timings and guest tips.">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="Amenities | Unicorn Hospitality">
+    <meta property="og:description" content="Thoughtfully designed spaces, curated dining and attentive 24/7 service. See every amenity, with timings.">
+    <meta property="og:image" content="assets/images/unicon/about/amenities.webp">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="icon" href="assets/images/unicon/logos.jpeg" type="image/x-icon">
+    <title>Amenities | Unicorn Hospitality</title>
+    <script>document.documentElement.classList.add("am-js")</script>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <!-- amenities page only -->
+    <link rel="stylesheet" href="assets/css/amenities.css">
+</head>
+
+<body class="am-page">
+    <!-- icon sprite (replaces the flaticon font, which was not supplied) -->
+    <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+        <defs>
+            <symbol id="i-phone" viewBox="0 0 24 24"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></symbol>
+            <symbol id="i-mail" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></symbol>
+            <symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 21s7-6.2 7-11a7 7 0 0 0-14 0c0 4.8 7 11 7 11z"/><circle cx="12" cy="10" r="2.5"/></symbol>
+            <symbol id="i-cal" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M8 3v4M16 3v4M3 10h18"/></symbol>
+            <symbol id="i-user" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></symbol>
+            <symbol id="i-people" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.5"/><path d="M2 20a7 7 0 0 1 14 0"/><circle cx="17" cy="9" r="2.5"/><path d="M18 14a5 5 0 0 1 4 6"/></symbol>
+            <symbol id="i-area" viewBox="0 0 24 24"><path d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5"/></symbol>
+            <symbol id="i-check" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="m8 12 3 3 5-6"/></symbol>
+            <symbol id="i-star" viewBox="0 0 24 24"><path d="m12 3 2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1L3.2 9.5l6.1-.9z"/></symbol>
+            <symbol id="i-play" viewBox="0 0 24 24"><path d="M8 5v14l11-7z" fill="currentColor"/></symbol>
+            <symbol id="i-bed" viewBox="0 0 24 24"><path d="M3 18V6M3 14h18v4M21 14v-2a3 3 0 0 0-3-3h-7v5"/><circle cx="7" cy="11" r="1.5"/></symbol>
+            <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 3 5 6v6c0 4.5 3 7.5 7 9 4-1.500 7-4.500 7-9V6z"/><path d="m9 12 2 2 4-4"/></symbol>
+            <symbol id="i-gym" viewBox="0 0 24 24"><path d="M6 8v8M18 8v8M3 10v4M21 10v4M6 12h12"/></symbol>
+            <symbol id="i-pool" viewBox="0 0 24 24"><path d="M3 17c2 0 2-1.500 4.500-1.500S10 17 12 17s2.500-1.500 4.500-1.500S19 17 21 17M3 21c2 0 2-1.500 4.500-1.500S10 21 12 21s2.500-1.500 4.500-1.500S19 21 21 21M8 14V6a2 2 0 0 1 4 0M14 14V6a2 2 0 0 1 4 0M8 9h6"/></symbol>
+            <symbol id="i-wifi" viewBox="0 0 24 24"><path d="M2 9a15 15 0 0 1 20 0M5 12.500a10 10 0 0 1 14 0M8.500 16a5 5 0 0 1 7 0"/><circle cx="12" cy="19" r="1" fill="currentColor"/></symbol>
+            <symbol id="i-cup" viewBox="0 0 24 24"><path d="M4 8h13v6a5 5 0 0 1-5 5H9a5 5 0 0 1-5-5zM17 10h2a2 2 0 0 1 0 4h-2M8 3v2M12 3v2"/></symbol>
+            <symbol id="i-car" viewBox="0 0 24 24"><path d="M4 16v-4l2-5h12l2 5v4zM4 16v2M20 16v2M4 12h16"/><circle cx="8" cy="14.500" r="1"/><circle cx="16" cy="14.500" r="1"/></symbol>
+            <symbol id="i-plane" viewBox="0 0 24 24"><path d="M21 3 3 10l7 3 3 7z"/><path d="m10 13 4-4"/></symbol>
+            <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></symbol>
+            <symbol id="i-arrow-l" viewBox="0 0 24 24"><path d="M19 12H5M11 6l-6 6 6 6"/></symbol>
+            <symbol id="i-arrow-r" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
+            <symbol id="i-insta" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.500" cy="6.500" r="1" fill="currentColor"/></symbol>
+          <!-- rooms page extras -->
+            <symbol id="rm-i-heart" viewBox="0 0 24 24"><path d="M12 20.5s-7.5-4.6-7.5-10.4A4.4 4.4 0 0 1 12 7.2a4.4 4.4 0 0 1 7.5 2.9c0 5.800-7.500 10.400-7.500 10.400z"/></symbol>
+            <symbol id="rm-i-grid" viewBox="0 0 24 24"><rect x="4" y="4" width="6.500" height="6.500" rx="1.500"/><rect x="13.500" y="4" width="6.500" height="6.500" rx="1.500"/><rect x="4" y="13.500" width="6.500" height="6.500" rx="1.500"/><rect x="13.500" y="13.500" width="6.500" height="6.500" rx="1.500"/></symbol>
+            <symbol id="rm-i-list" viewBox="0 0 24 24"><path d="M4 6.500h16M4 12h16M4 17.500h16"/></symbol>
+            <symbol id="rm-i-eye" viewBox="0 0 24 24"><path d="M2 12s3.600-7 10-7 10 7 10 7-3.600 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></symbol>
+            <symbol id="rm-i-x" viewBox="0 0 24 24"><path d="M5 5l14 14M19 5 5 19"/></symbol>
+            <symbol id="rm-i-snow" viewBox="0 0 24 24"><path d="M12 2.500v19M3.800 7.250l16.400 9.500M20.200 7.250l-16.400 9.500M9.500 4.500 12 6.800l2.500-2.300M9.500 19.500 12 17.200l2.500 2.300"/></symbol>
+            <symbol id="rm-i-tv" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="12" rx="2"/><path d="M8 21h8M12 17v4"/></symbol>
+            <symbol id="rm-i-lock" viewBox="0 0 24 24"><rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></symbol>
+            <symbol id="rm-i-drop" viewBox="0 0 24 24"><path d="M12 3s6 6.500 6 11a6 6 0 0 1-12 0c0-4.500 6-11 6-11z"/></symbol>
+            <symbol id="rm-i-desk" viewBox="0 0 24 24"><path d="M3 9h18M5 9v10M19 9v10M9 9v5h6V9"/></symbol>
+            <symbol id="rm-i-sofa" viewBox="0 0 24 24"><path d="M5 11V8a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v3M3 13a2 2 0 0 1 4 0v2h10v-2a2 2 0 0 1 4 0v5H3z"/></symbol>
+            <symbol id="rm-i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2.500v2.500M12 19v2.500M2.500 12H5M19 12h2.500M5.300 5.300l1.800 1.800M16.900 16.900l1.800 1.800M5.300 18.700l1.800-1.800M16.900 7.100l1.800-1.800"/></symbol>
+            <symbol id="rm-i-cmp" viewBox="0 0 24 24"><path d="M7 4v16M17 4v16M3 8l4-4 4 4M13 16l4 4 4-4"/></symbol>
+            <symbol id="rm-i-lamp" viewBox="0 0 24 24"><path d="M3 12.500h18c0 4.200-4 7.500-9 7.500s-9-3.300-9-7.500zM12 3.500c1.800 2.200 2.200 3.800 0 5.800-2.200-2-1.800-3.600 0-5.800z"/></symbol>
+            <symbol id="rm-i-flake" viewBox="0 0 24 24"><path d="M12 2v20M3.300 7l17.400 10M3.300 17 20.700 7"/></symbol>
+            <symbol id="rm-i-rain" viewBox="0 0 24 24"><path d="M7 15a4 4 0 1 1 .8-7.900A5 5 0 0 1 17.500 8 3.500 3.500 0 0 1 17 15zM8 18l-1 3M12 18l-1 3M16 18l-1 3"/></symbol>
+            <symbol id="rm-i-bath" viewBox="0 0 24 24"><path d="M4 12h16v3a4 4 0 0 1-4 4H8a4 4 0 0 1-4-4zM6 12V6a2 2 0 0 1 4 0M7 19l-1 2M17 19l1 2"/></symbol>
+            <symbol id="rm-i-iron" viewBox="0 0 24 24"><path d="M3 17h18a0 0 0 0 0 0 0 8 8 0 0 0-8-8H9a4 4 0 0 0-4 4zM8 13V9"/></symbol>
+        </defs>
+    </svg>
+
+    <!-- ============ TOP UTILITY BAR (Ramada-style) ============ -->
+    <div class="header__top um-utility">
+        <div class="container">
+            <div class="um-utility__in">
+                <ul class="um-utility__links">
+                    <li><a class="link__item" href="index.html#book">Find My Reservation</a></li>
+                    <li><a class="link__item" href="index.html#locations">Our Locations</a></li>
+                    <li><a class="link__item" href="index.html#offers">All Offers</a></li>
+                    <li><a class="link__item" href="index.html#meetings">Meetings &amp; Groups</a></li>
+                </ul>
+                <div class="um-utility__right">
+                    <a class="link__item" href="tel:+919920400267"><svg class="ico"><use href="#i-phone"/></svg> Reservations: +91 99204 00267</a>
+                    <label class="um-lang">
+                        <span class="visually-hidden">Language</span>
+                        <select aria-label="Language">
+                            <option>English</option>
+                            <option>हिन्दी</option>
+                            <option>मराठी</option>
+                        </select>
+                    </label>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ============ MAIN HEADER ============ -->
+    <header class="main__header header__function">
+        <div class="container">
+            <div class="row">
+                <div class="main__header__wrapper">
+                    <div class="main__nav">
+                        <div class="navigation d-none d-lg-block">
+                            <nav class="navigation__menu" id="main__menu">
+                                <ul class="list-unstyled">
+                                    <!-- Book (mega menu, like Ramada) -->
+                                    <li class="navigation__menu--item has-child has-arrow">
+                                        <a href="index.html#book" class="navigation__menu--item__link">Book</a>
+                                        <div class="has__mega__menu um-mega">
+                                            <div class="um-mega__col">
+                                                <h6>Book</h6>
+                                                <a href="index.html#book">Find My Reservation</a>
+                                                <a href="index.html#locations">Our Locations</a>
+                                                <a href="index.html#offers">All Offers</a>
+                                                <a href="rooms.html">Rooms &amp; Suites</a>
+                                            </div>
+                                            <div class="um-mega__promo">
+                                                <span class="um-mega__tag">Save with bundles</span>
+                                                <p>Combine your room, meals and transfers in one seamless booking.</p>
+                                                <a href="index.html#book" class="theme-btn btn-style sm-btn fill no-border"><span>Book Now</span></a>
+                                            </div>
+                                        </div>
+                                    </li>
+
+                                    <li class="navigation__menu--item has-child has-arrow">
+                                        <a href="rooms.html" class="navigation__menu--item__link">Stay</a>
+                                        <ul class="submenu sub__style" role="menu">
+                                            <li role="menuitem"><a href="rooms.html">Rooms &amp; Suites</a></li>
+                                            <li role="menuitem"><a href="amenities.html" aria-current="page">Amenities</a></li>
+                                            <li role="menuitem"><a href="dining.html">Dining</a></li>
+                                            <li role="menuitem"><a href="gallery.html">Gallery</a></li>
+                                        </ul>
+                                    </li>
+
+                                    <li class="navigation__menu--item">
+                                        <a href="rooms.html" class="navigation__menu--item__link">Rooms</a>
+                                    </li>
+
+                                    <li class="navigation__menu--item">
+                                        <a href="index.html#offers" class="navigation__menu--item__link">Offers</a>
+                                    </li>
+
+                                    <!-- <li class="navigation__menu--item has-child has-arrow">
+                                        <a href="index.html#meetings" class="navigation__menu--item__link">Meetings &amp; Groups</a>
+                                        <ul class="submenu sub__style" role="menu">
+                                            <li role="menuitem"><a href="index.html#meetings">Meetings</a></li>
+                                            <li role="menuitem"><a href="index.html#meetings">Groups</a></li>
+                                            <li role="menuitem"><a href="index.html#meetings">Weddings &amp; Events</a></li>
+                                        </ul>
+                                    </li> -->
+
+                                    <li class="navigation__menu--item">
+                                        <a href="index.html#about" class="navigation__menu--item__link">About</a>
+                                    </li>
+
+                                    <li class="navigation__menu--item">
+                                        <a href="contact.html" class="navigation__menu--item__link">Contact</a>
+                                    </li>
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
+                    <div class="main__logo">
+                        <a href="index.html" class="um-logo" aria-label="Unicon Hospitality home">
+                            <img src="assets/images/unicon/logo.png" alt="">
+                        </a>
+                    </div>
+                    <div class="main__right">
+                        <a href="#" class="theme-btn btn-style sm-btn border d-none d-lg-block" aria-label="Sign In" data-bs-toggle="modal" data-bs-target="#loginModal"><span>Sign In</span></a>
+                        <a href="#" class="theme-btn btn-style sm-btn border d-none d-lg-block" aria-label="Join" data-bs-toggle="modal" data-bs-target="#signupModal"><span>Join Free</span></a>
+                        <a href="index.html#book" class="theme-btn btn-style sm-btn fill"><span>Book Now</span></a>
+                        <button class="theme-btn btn-style sm-btn fill menu__btn d-lg-none" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight" aria-label="Open menu">
+                            <span class="um-burger"><i></i><i></i><i></i></span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="am-progress" id="amProgress" aria-hidden="true"></div>
+
+    <main id="top">
+
+    <!-- ============ PAGE HERO ============ -->
+    <section class="am-hero" id="amHero">
+        <div class="am-hero__bg" id="amHeroBg"><img src="assets/images/unicon/about/amenities.webp" alt="" width="1344" height="768" fetchpriority="high"></div>
+        <span class="am-orb am-orb--1" aria-hidden="true"></span>
+        <span class="am-orb am-orb--2" aria-hidden="true"></span>
+        <div class="am-bubbles" id="amBubbles" aria-hidden="true"></div>
+        <div class="container">
+            <nav class="um-crumb" aria-label="Breadcrumb"><a href="index.html">Home</a><span>/</span><span aria-current="page">Amenities</span></nav>
+            <span class="am-eyebrow">Guest privileges</span>
+            <h1 data-split>Hotel Amenities &amp; Guest Privileges</h1>
+            <p class="am-hero__lead" data-am style="--d:.7s">Thoughtfully designed spaces, curated dining and attentive 24/7 service. Everything you need for a comfortable stay is already here, and most of it is complimentary.</p>
+            <div class="am-hero__chips" data-am style="--d:.9s" role="group" aria-label="Jump to a section">
+                <a href="#am-facilities" class="am-hchip am-hchip--gold" data-jump="#am-facilities"><span>Explore facilities</span><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-arrow-r"/></svg></a>
+                <a href="#am-day" class="am-hchip" data-jump="#am-day">Opening hours</a>
+                <a href="#am-room" class="am-hchip" data-jump="#am-room">In-room comforts</a>
+                <a href="#am-gallery" class="am-hchip" data-jump="#am-gallery">Photo gallery</a>
+            </div>
+        </div>
+        <span class="am-scroll" aria-hidden="true">Scroll</span>
+    </section>
+
+    <!-- ============ HIGHLIGHTS (sits over the edge of the hero) ============ -->
+    <section class="am-hl" aria-label="Amenity highlights">
+        <div class="container">
+            <ul class="am-hl__box" data-am="scale">
+                <li class="am-hl__it" style="--i:0"><span class="am-hl__ico"><svg class="ico"><use href="#i-pool"/></svg></span><span class="am-hl__t"><b>Pool 6 AM &ndash; 9 PM</b><small>Towels and loungers provided</small></span></li>
+                <li class="am-hl__it" style="--i:1"><span class="am-hl__ico"><svg class="ico"><use href="#i-gym"/></svg></span><span class="am-hl__t"><b>Fitness 24/7</b><small>Open with your room keycard</small></span></li>
+                <li class="am-hl__it" style="--i:2"><span class="am-hl__ico"><svg class="ico"><use href="#i-wifi"/></svg></span><span class="am-hl__t"><b>Free Wi-Fi</b><small>Unlimited devices, whole hotel</small></span></li>
+                <li class="am-hl__it" style="--i:3"><span class="am-hl__ico"><svg class="ico"><use href="#i-car"/></svg></span><span class="am-hl__t"><b>Free parking</b><small>For every staying guest</small></span></li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- marks the end of the page top: the mobile Call / Book bar appears once you scroll past this -->
+    <span id="book" class="am-anchor" aria-hidden="true"></span>
+
+    <!-- ============ CORE FACILITIES ============ -->
+    <section class="am-sec am-sec--tight" id="am-facilities" aria-labelledby="amFacH">
+        <div class="container">
+            <div class="am-sec__head" data-am>
+                <span class="h6 subtitle__icon__three">What we offer</span>
+                <h2 id="amFacH">Eight Facilities, All Under One Roof</h2>
+                <p>Every amenity comes with the practical details you need before you arrive: what it is, when it is open and how to use it.</p>
+            </div>
+
+            <div class="am-chips" data-am role="group" aria-label="Filter amenities">
+                <button type="button" class="am-chip" data-filter="all" aria-pressed="true">All</button>
+                <button type="button" class="am-chip" data-filter="wellness" aria-pressed="false">Wellness</button>
+                <button type="button" class="am-chip" data-filter="dining" aria-pressed="false">Dining</button>
+                <button type="button" class="am-chip" data-filter="comfort" aria-pressed="false">Comfort</button>
+                <button type="button" class="am-chip" data-filter="convenience" aria-pressed="false">Convenience</button>
+            </div>
+
+            <div class="am-grid" id="amGrid">
+                <article class="am-card" data-cat="wellness" data-open="6-21">
+                    <span class="am-card__no" aria-hidden="true">01</span>
+                    <div class="am-card__ico"><svg class="ico"><use href="#i-pool"/></svg></div>
+                    <h3>Swimming Pool</h3>
+                    <p>A crystal-clear outdoor pool surrounded by loungers and tropical greenery. Perfect for morning laps or sunset relaxation.</p>
+                    <ul class="am-card__info">
+                        <li><svg class="ico"><use href="#i-clock"/></svg> Open daily: 6:00 AM &ndash; 9:00 PM</li>
+                        <li><svg class="ico"><use href="#i-check"/></svg> Pool towels and lounger service provided</li>
+                    </ul>
+                </article>
+
+                <article class="am-card" data-cat="wellness" data-open="24">
+                    <span class="am-card__no" aria-hidden="true">02</span>
+                    <div class="am-card__ico"><svg class="ico"><use href="#i-gym"/></svg></div>
+                    <h3>Fitness Centre</h3>
+                    <p>An air-conditioned gym with modern cardio equipment, treadmills, free weights and stretching mats.</p>
+                    <ul class="am-card__info">
+                        <li><svg class="ico"><use href="#i-clock"/></svg> 24/7 guest access</li>
+                        <li><svg class="ico"><use href="#i-check"/></svg> Enter with your room keycard</li>
+                    </ul>
+                </article>
+
+                <article class="am-card" data-cat="dining" data-open="7-10.5">
+                    <span class="am-card__no" aria-hidden="true">03</span>
+                    <div class="am-card__ico"><svg class="ico"><use href="#i-cup"/></svg></div>
+                    <h3>Breakfast &amp; Dining</h3>
+                    <p>A multi-cuisine restaurant with a daily buffet breakfast, all-day dining menu, coffee corner and room service.</p>
+                    <ul class="am-card__info">
+                        <li><svg class="ico"><use href="#i-clock"/></svg> Breakfast: 7:00 AM &ndash; 10:30 AM</li>
+                        <li><svg class="ico"><use href="#i-check"/></svg> 24-hour in-room dining available</li>
+                    </ul>
+                </article>
+
+                <article class="am-card" data-cat="convenience comfort">
+                    <span class="am-card__no" aria-hidden="true">04</span>
+                    <div class="am-card__ico"><svg class="ico"><use href="#i-wifi"/></svg></div>
+                    <h3>High-Speed Free Wi-Fi</h3>
+                    <p>Optical fibre internet in every room, the public lobbies and the pool terrace. Stream, work and video call without a hiccup.</p>
+                    <ul class="am-card__info">
+                        <li><svg class="ico"><use href="#i-check"/></svg> Complimentary for unlimited devices</li>
+                        <li><svg class="ico"><use href="#i-check"/></svg> Covers rooms, lobbies and pool terrace</li>
+                    </ul>
+                </article>
+
+                <article class="am-card" data-cat="comfort" data-open="24">
+                    <span class="am-card__no" aria-hidden="true">05</span>
+                    <div class="am-card__ico"><svg class="ico"><use href="#i-shield"/></svg></div>
+                    <h3>24-Hour Security &amp; Safe</h3>
+                    <p>Trained on-site security personnel, 24/7 CCTV surveillance and electronic digital safes in every room.</p>
+                    <ul class="am-card__info">
+                        <li><svg class="ico"><use href="#i-clock"/></svg> Round-the-clock front desk assistance</li>
+                        <li><svg class="ico"><use href="#i-check"/></svg> In-room digital safe for valuables</li>
+                    </ul>
+                </article>
+
+                <article class="am-card" data-cat="convenience">
+                    <span class="am-card__no" aria-hidden="true">06</span>
+                    <div class="am-card__ico"><svg class="ico"><use href="#i-car"/></svg></div>
+                    <h3>Free On-Site Parking</h3>
+                    <p>A secure, well-lit parking area inside the hotel premises, with valet assistance when you arrive.</p>
+                    <ul class="am-card__info">
+                        <li><svg class="ico"><use href="#i-check"/></svg> Complimentary for all staying guests</li>
+                        <li><svg class="ico"><use href="#i-check"/></svg> Valet assistance on arrival</li>
+                    </ul>
+                </article>
+
+                <article class="am-card" data-cat="convenience">
+                    <span class="am-card__no" aria-hidden="true">07</span>
+                    <div class="am-card__ico"><svg class="ico"><use href="#i-plane"/></svg></div>
+                    <h3>Airport Transfers</h3>
+                    <p>A comfortable, private chauffeur-driven pick-up and drop-off, so your trip starts and ends without stress.</p>
+                    <ul class="am-card__info">
+                        <li><svg class="ico"><use href="#i-phone"/></svg> Arranged on advance request via Concierge</li>
+                        <li><svg class="ico"><use href="#i-check"/></svg> Share your flight details when you book</li>
+                    </ul>
+                </article>
+
+                <article class="am-card" data-cat="comfort">
+                    <span class="am-card__no" aria-hidden="true">08</span>
+                    <div class="am-card__ico"><svg class="ico"><use href="#i-bed"/></svg></div>
+                    <h3>Rooms &amp; Suites</h3>
+                    <p>Soundproofed rooms with custom orthopaedic king or twin beds, a pillow menu and luxury linens for deep, easy sleep.</p>
+                    <ul class="am-card__info">
+                        <li><svg class="ico"><use href="#i-clock"/></svg> Daily housekeeping and turndown service</li>
+                        <li><a href="rooms.html" style="color:var(--um-gold);font-weight:600">See all rooms &rarr;</a></li>
+                    </ul>
+                </article>
+            </div>
+
+            <div class="am-stats" data-am>
+                <div class="am-stat"><b><span data-count="8">0</span></b><span>Core facilities</span></div>
+                <div class="am-stat"><b><span data-count="24">0</span><em>/</em>7</b><span>Front desk &amp; security</span></div>
+                <div class="am-stat"><b><span data-count="15">0</span><em>h</em></b><span>Pool open daily</span></div>
+                <div class="am-stat"><b><span data-count="100">0</span><em>%</em></b><span>Complimentary Wi-Fi &amp; parking</span></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ DAY PLANNER ============ -->
+    <section class="am-sec am-day" id="am-day" aria-labelledby="amDayH">
+        <div class="container">
+            <div class="am-sec__head" data-am>
+                <span class="h6 subtitle__icon__three">Plan your day</span>
+                <h2 id="amDayH">When Everything Is Open</h2>
+                <p>A quick look at the day. The marker shows the time right now, so you can see at a glance what is open.</p>
+            </div>
+
+            <div class="am-tl" id="amTl" data-am="scale">
+                <div class="am-tl__rows-wrap">
+                    <div class="am-tl__scale" aria-hidden="true"><span>12 AM</span><span>3 AM</span><span>6 AM</span><span>9 AM</span><span>12 PM</span><span>3 PM</span><span>6 PM</span><span>9 PM</span></div>
+                    <div class="am-tl__rows">
+                        <div class="am-tl__row"><div class="am-tl__lab"><svg class="ico"><use href="#i-pool"/></svg>Swimming pool</div><div class="am-tl__track"><span class="am-tl__bar" style="--s:6;--w:15;--i:0">6:00 AM &ndash; 9:00 PM</span></div></div>
+                        <div class="am-tl__row"><div class="am-tl__lab"><svg class="ico"><use href="#i-cup"/></svg>Buffet breakfast</div><div class="am-tl__track"><span class="am-tl__bar" style="--s:7;--w:3.5;--i:1">7 &ndash; 10:30</span></div></div>
+                        <div class="am-tl__row"><div class="am-tl__lab"><svg class="ico"><use href="#i-gym"/></svg>Fitness centre</div><div class="am-tl__track"><span class="am-tl__bar am-tl__bar--all" style="--s:0;--w:24;--i:2">Open 24 hours</span></div></div>
+                        <div class="am-tl__row"><div class="am-tl__lab"><svg class="ico"><use href="#i-clock"/></svg>In-room dining</div><div class="am-tl__track"><span class="am-tl__bar am-tl__bar--all" style="--s:0;--w:24;--i:3">Open 24 hours</span></div></div>
+                        <div class="am-tl__row"><div class="am-tl__lab"><svg class="ico"><use href="#i-shield"/></svg>Front desk &amp; security</div><div class="am-tl__track"><span class="am-tl__bar am-tl__bar--all" style="--s:0;--w:24;--i:4">Open 24 hours</span></div></div>
+                    </div>
+                    <div class="am-tl__now" aria-hidden="true"><span>Now</span></div>
+                </div>
+                <p class="am-tl__note">Times follow the clock on your device. Hours may vary on festive days, so ask the front desk if you are unsure.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ IN-ROOM CONVENIENCES ============ -->
+    <section class="am-sec am-room" id="am-room" aria-labelledby="amRoomH">
+        <div class="container">
+            <div class="am-sec__head" data-am>
+                <span class="h6 subtitle__icon__three">In every room</span>
+                <h2 id="amRoomH">In-Room Conveniences</h2>
+                <p>Whichever room you choose, these comforts come as standard, so you know exactly what to expect.</p>
+            </div>
+            <div class="am-room__grid">
+                <div class="am-conv" data-am style="--d:0s"><div class="am-conv__ico"><svg class="ico"><use href="#rm-i-snow"/></svg></div><div><h3>Climate Control</h3><p>Individual remote-controlled air conditioning, so the room is exactly as cool as you like.</p></div></div>
+                <div class="am-conv" data-am style="--d:.08s"><div class="am-conv__ico"><svg class="ico"><use href="#rm-i-tv"/></svg></div><div><h3>Entertainment</h3><p>Smart flat-screen LED TV with cable and streaming support.</p></div></div>
+                <div class="am-conv" data-am style="--d:.16s"><div class="am-conv__ico"><svg class="ico"><use href="#i-cup"/></svg></div><div><h3>Refreshments</h3><p>Electric kettle with complimentary tea, coffee and bottled mineral water.</p></div></div>
+                <div class="am-conv" data-am style="--d:0s"><div class="am-conv__ico"><svg class="ico"><use href="#rm-i-bath"/></svg></div><div><h3>Bath &amp; Body</h3><p>Private en-suite bathroom with rain shower, fresh plush towels and luxury toiletries.</p></div></div>
+                <div class="am-conv" data-am style="--d:.08s"><div class="am-conv__ico"><svg class="ico"><use href="#rm-i-desk"/></svg></div><div><h3>Work &amp; Connectivity</h3><p>A dedicated work desk with ergonomic chair and universal charging ports.</p></div></div>
+                <div class="am-conv" data-am style="--d:.16s"><div class="am-conv__ico"><svg class="ico"><use href="#rm-i-iron"/></svg></div><div><h3>Housekeeping</h3><p>Daily room cleaning, plus dry cleaning and laundry pickup service.</p></div></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ GALLERY ============ -->
+    <section class="am-sec" id="am-gallery" aria-labelledby="amGalH">
+        <div class="container">
+            <div class="am-sec__head" data-am>
+                <span class="h6 subtitle__icon__three">Photo highlights</span>
+                <h2 id="amGalH">A Look Around the Property</h2>
+                <p>Tap any picture to see it larger.</p>
+            </div>
+            <div class="am-bento" data-am>
+                <button type="button" class="am-shot am-shot--w am-shot--t" aria-label="Open picture: Restaurant and food"><img src="assets/images/unicon/dining.webp" alt="Our restaurant and dining area" loading="lazy"><span class="am-shot__zoom"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6.5"/><path d="m16 16 4.500 4.500M11 8.500v5M8.500 11h5"/></svg></span><span class="am-cap"><small>Dining</small><b>Restaurant &amp; Food</b></span></button>
+                <button type="button" class="am-shot" aria-label="Open picture: Suites and lounges"><img src="assets/images/unicon/rooms/unicon.webp" alt="The Unicon Suite" loading="lazy"><span class="am-shot__zoom"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6.5"/><path d="m16 16 4.500 4.500M11 8.500v5M8.500 11h5"/></svg></span><span class="am-cap"><small>Stay</small><b>Suites &amp; Lounges</b></span></button>
+                <button type="button" class="am-shot" aria-label="Open picture: Property exterior"><img src="assets/images/unicon/gallery/3.jpg" alt="Hotel exterior" loading="lazy"><span class="am-shot__zoom"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6.5"/><path d="m16 16 4.500 4.500M11 8.500v5M8.500 11h5"/></svg></span><span class="am-cap"><small>Property</small><b>Architecture &amp; Exteriors</b></span></button>
+                <button type="button" class="am-shot" aria-label="Open picture: Gallery"><img src="assets/images/unicon/gallery/4.jpg" alt="Hotel grounds" loading="lazy"><span class="am-shot__zoom"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6.5"/><path d="m16 16 4.500 4.500M11 8.500v5M8.500 11h5"/></svg></span><span class="am-cap"><small>Property</small><b>Grounds &amp; Gardens</b></span></button>
+                <button type="button" class="am-shot am-shot--t" aria-label="Open picture: Gallery"><img src="assets/images/unicon/gallery/5.jpg" alt="Hotel interiors" loading="lazy"><span class="am-shot__zoom"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6.5"/><path d="m16 16 4.500 4.500M11 8.500v5M8.500 11h5"/></svg></span><span class="am-cap"><small>Interiors</small><b>Lobby &amp; Lounge</b></span></button>
+                <button type="button" class="am-shot am-shot--w" aria-label="Open picture: Gallery"><img src="assets/images/unicon/gallery/6.jpg" alt="Hotel spaces" loading="lazy"><span class="am-shot__zoom"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6.5"/><path d="m16 16 4.500 4.500M11 8.500v5M8.500 11h5"/></svg></span><span class="am-cap"><small>Spaces</small><b>Relax &amp; Unwind</b></span></button>
+                <button type="button" class="am-shot" aria-label="Open picture: Gallery"><img src="assets/images/unicon/gallery/7.jpg" alt="Hotel details" loading="lazy"><span class="am-shot__zoom"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6.5"/><path d="m16 16 4.500 4.500M11 8.500v5M8.500 11h5"/></svg></span><span class="am-cap"><small>Details</small><b>Little Touches</b></span></button>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ FAQ ============ -->
+    <section class="am-sec am-faq" aria-labelledby="amFaqH">
+        <div class="container">
+            <div class="am-sec__head" data-am>
+                <span class="h6 subtitle__icon__three">Good to know</span>
+                <h2 id="amFaqH">Questions Before You Arrive</h2>
+            </div>
+            <div class="um-faq__list" data-am>
+                <details class="um-faq__item">
+                    <summary>What are the swimming pool and gym hours?</summary>
+                    <p>The pool is open daily from 6:00 AM to 9:00 PM, with towels and lounger service provided. The fitness centre is open 24/7 for guests, and you enter with your room keycard.</p>
+                </details>
+                <details class="um-faq__item">
+                    <summary>Is high-speed Wi-Fi included in the room rate?</summary>
+                    <p>Yes. Optical fibre Wi-Fi is complimentary for unlimited devices in all rooms, the public lobbies and the pool terrace.</p>
+                </details>
+                <details class="um-faq__item">
+                    <summary>How do I arrange an airport transfer?</summary>
+                    <p>Transfers are arranged on advance request through our Concierge. Call <a href="tel:+919920400267">+91 99204 00267</a> or use the <a href="contact.html">contact page</a>, and share your flight details so we can plan the pick-up.</p>
+                </details>
+                <details class="um-faq__item">
+                    <summary>Is parking free, and do I need to reserve it?</summary>
+                    <p>Parking inside the hotel premises is complimentary for all staying guests, with valet assistance on arrival. If you are arriving with a larger vehicle or more than one car, let us know in advance so we can keep space ready.</p>
+                </details>
+                <details class="um-faq__item">
+                    <summary>Do you provide extra rollaway beds or baby cots?</summary>
+                    <p>Yes. Extra beds and baby cots can be arranged on request, subject to availability. Please mention it when you book so the room is ready when you arrive.</p>
+                </details>
+                <details class="um-faq__item">
+                    <summary>When is breakfast served, and is room service available?</summary>
+                    <p>Buffet breakfast is served from 7:00 AM to 10:30 AM. In-room dining is available 24 hours a day.</p>
+                </details>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ FINAL CTA ============ -->
+    <section class="am-cta">
+        <span class="am-cta__ring am-cta__ring--1" aria-hidden="true"></span>
+        <span class="am-cta__ring am-cta__ring--2" aria-hidden="true"></span>
+        <div class="container" data-am>
+            <span class="am-eyebrow">Ready when you are</span>
+            <h2>Ready for an Unforgettable Stay?</h2>
+            <p>Choose your room and let us take care of the rest. Prefer to talk? Our concierge is happy to help.</p>
+            <div class="am-cta__btns">
+                <a href="rooms.html" class="theme-btn btn-style fill no-border"><span>Explore Rooms &amp; Suites</span></a>
+                <a href="contact.html" class="am-btn-ghost">Contact Concierge</a>
+            </div>
+        </div>
+    </section>
+
+    </main>
+
+    <!-- ============ LIGHTBOX ============ -->
+    <div class="am-lb" id="amLb" role="dialog" aria-modal="true" aria-label="Photo viewer" aria-hidden="true">
+        <button type="button" class="am-lb__btn am-lb__x" aria-label="Close"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#rm-i-x"/></svg></button>
+        <button type="button" class="am-lb__btn am-lb__prev" aria-label="Previous picture"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-arrow-l"/></svg></button>
+        <button type="button" class="am-lb__btn am-lb__next" aria-label="Next picture"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-arrow-r"/></svg></button>
+        <figure><img id="amLbImg" src="" alt=""><figcaption id="amLbCap"></figcaption></figure>
+    </div>
+
+
+
+    <!-- ============ SIGN IN / JOIN MODALS ============ -->
+    <div class="modal similar__modal fade" id="loginModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="max-content similar__form form__padding">
+                    <div class="d-flex mb-3 align-items-center justify-content-between">
+                        <h6 class="mb-0">Sign In to Unicorn Rewards</h6>
+                        <button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <form action="#" class="d-flex flex-column gap-3 um-demo-form">
+                        <div class="form-group">
+                            <label for="email-popup" class="text-dark mb-3">Your Email</label>
+                            <div class="position-relative"><input type="email" name="email-popup" id="email-popup" placeholder="Enter your email" required></div>
+                        </div>
+                        <div class="form-group">
+                            <label for="password" class="text-dark mb-3">Password</label>
+                            <div class="position-relative"><input type="password" name="password" id="password" placeholder="Enter your password" required></div>
+                        </div>
+                        <div class="d-flex flex-wrap justify-content-between align-items-center">
+                            <div class="form-check d-flex align-items-center gap-2">
+                                <input class="form-check-input mt-0" type="checkbox" value="" id="flexCheckDefault">
+                                <label class="form-check-label mb-0" for="flexCheckDefault">Remember me</label>
+                            </div>
+                            <a href="#" class="forgot__password text-para" data-bs-toggle="modal" data-bs-target="#forgotModal">Forgot Password?</a>
+                        </div>
+                        <div class="form-group my-3">
+                            <button class="theme-btn btn-style sm-btn fill w-100"><span>Sign In</span></button>
+                        </div>
+                    </form>
+                    <span class="d-block text-center">Not a member? <a href="#" data-bs-target="#signupModal" data-bs-toggle="modal" class="text-primary">Join Free</a></span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal similar__modal fade" id="signupModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="max-content similar__form form__padding">
+                    <div class="d-flex mb-3 align-items-center justify-content-between">
+                        <h6 class="mb-0">Join Unicorn Rewards, Free</h6>
+                        <button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <form action="#" class="d-flex flex-column gap-3 um-demo-form">
+                        <div class="form-group">
+                            <label for="sname" class="text-dark mb-3">Your Name</label>
+                            <div class="position-relative"><input type="text" name="sname" id="sname" placeholder="Full name" required></div>
+                        </div>
+                        <div class="form-group">
+                            <label for="signemail" class="text-dark mb-3">Your Email</label>
+                            <div class="position-relative"><input type="email" name="signemail" id="signemail" placeholder="Enter your email" required></div>
+                        </div>
+                        <div class="form-group">
+                            <label for="spassword" class="text-dark mb-3">Password</label>
+                            <div class="position-relative"><input type="password" name="spassword" id="spassword" placeholder="Create a password" required></div>
+                        </div>
+                        <div class="form-group my-3">
+                            <button class="theme-btn btn-style sm-btn fill w-100"><span>Register</span></button>
+                        </div>
+                    </form>
+                    <span class="d-block text-center">Already a member? <a href="#" data-bs-target="#loginModal" data-bs-toggle="modal" class="text-primary">Sign In</a></span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal similar__modal fade" id="forgotModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="max-content similar__form form__padding">
+                    <div class="d-flex mb-3 align-items-center justify-content-between">
+                        <h6 class="mb-0">Forgot Password</h6>
+                        <button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <form action="#" class="d-flex flex-column gap-3 um-demo-form">
+                        <div class="form-group">
+                            <label for="fmail" class="text-dark mb-3">Your Email</label>
+                            <div class="position-relative"><input type="email" name="email" id="fmail" placeholder="Enter your email" required></div>
+                        </div>
+                        <div class="form-group my-3">
+                            <button class="theme-btn btn-style sm-btn fill w-100"><span>Reset Password</span></button>
+                        </div>
+                    </form>
+                    <span class="d-block text-center">Remember your password? <a href="#" data-bs-target="#loginModal" data-bs-toggle="modal" class="text-primary">Sign In</a></span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ============ MOBILE OFF-CANVAS MENU ============ -->
+    <div class="offcanvas offcanvas-start" id="offcanvasRight" tabindex="-1" aria-label="Mobile menu">
+        <div class="rts__btstrp__offcanvase">
+            <div class="offcanvase__wrapper">
+                <div class="left__side mobile__menu">
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                    <div class="offcanvase__top">
+                        <div class="offcanvase__logo">
+                            <a href="index.html" class="um-logo um-logo--light"><span class="um-logo__name">Unicorn</span><span class="um-logo__sub">Hospitality</span></a>
+                        </div>
+                    </div>
+                    <div class="offcanvase__mobile__menu">
+                        <nav class="um-mnav" aria-label="Mobile">
+                            <button class="um-mnav__btn" aria-expanded="false">Book <i></i></button>
+                            <div class="um-mnav__panel">
+                                <a href="index.html#book">Find My Reservation</a>
+                                <a href="index.html#locations">Our Locations</a>
+                                <a href="index.html#offers">All Offers</a>
+                                <a href="rooms.html">Rooms &amp; Suites</a>
+                            </div>
+                            <button class="um-mnav__btn" aria-expanded="false">Stay <i></i></button>
+                            <div class="um-mnav__panel">
+                                <a href="rooms.html">Rooms &amp; Suites</a>
+                                <a href="amenities.html">Amenities</a>
+                                <a href="dining.html">Dining</a>
+                                <a href="gallery.html">Gallery</a>
+                            </div>
+                            <a class="um-mnav__link" href="rooms.html" aria-current="page">Rooms</a>
+                            <a class="um-mnav__link" href="index.html#offers">Offers</a>
+                            <button class="um-mnav__btn" aria-expanded="false">Meetings &amp; Groups <i></i></button>
+                            <div class="um-mnav__panel">
+                                <a href="index.html#meetings">Meetings</a>
+                                <a href="index.html#meetings">Groups</a>
+                                <a href="index.html#meetings">Weddings &amp; Events</a>
+                            </div>
+                            <a class="um-mnav__link" href="index.html#about">About</a>
+                            <a class="um-mnav__link" href="contact.html">Contact</a>
+                            <a class="um-mnav__link" href="#" data-bs-toggle="modal" data-bs-target="#loginModal">Sign In / Join</a>
+                        </nav>
+                    </div>
+                    <div class="offcanvase__bottom">
+                        <div class="offcanvase__address">
+                            <div class="item">
+                                <span class="h6">Reservations</span>
+                                <a href="tel:+919920400267"><svg class="ico"><use href="#i-phone"/></svg> +91 99204 00267</a>
+                            </div>
+                            <div class="item">
+                                <span class="h6">Email</span>
+                                <a href="mailto:stay@unicornhospitality.example"><svg class="ico"><use href="#i-mail"/></svg> stay@unicornhospitality.example</a>
+                            </div>
+                            <div class="item">
+                                <span class="h6">Address</span>
+                                <a href="contact.html"><svg class="ico"><use href="#i-pin"/></svg> Your street address, City, State</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- offcanvas end -->
+
+    <!-- ============ FOOTER (Ramada-style columns) ============ -->
+    <footer class="rts__section rts__footer is__common__footer footer__background has__shape" id="contact">
+        <div class="container">
+            <div class="row">
+                <div class="footer__newsletter">
+                    <span class="h2">Join Our Newsletter</span>
+                    <div class="rts__form">
+                        <form action="#" method="post" id="newsForm" novalidate>
+                            <input type="email" name="email" id="subscription" placeholder="Enter your email" required aria-label="Email">
+                            <button type="submit">Subscribe</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <div class="um-fcols">
+                <div class="um-fcol">
+                    <button class="um-fcol__title" aria-expanded="false">Unicorn Hospitality <i></i></button>
+                    <ul>
+                        <li><a href="index.html#about">About</a></li>
+                        <li><a href="index.html#locations">Locations</a></li>
+                        <li><a href="index.html">Site Map</a></li>
+                        <li><a href="index.html#locations">Travel Guide</a></li>
+                    </ul>
+                </div>
+                <div class="um-fcol">
+                    <button class="um-fcol__title" aria-expanded="false">Contact <i></i></button>
+                    <ul>
+                        <li><a href="tel:+919920400267"><svg class="ico"><use href="#i-phone"/></svg> Reservations: +91 99204 00267</a></li>
+                        <li><a href="mailto:stay@unicornhospitality.example"><svg class="ico"><use href="#i-mail"/></svg> stay@unicornhospitality.example</a></li>
+                        <li><a href="contact.html"><svg class="ico"><use href="#i-pin"/></svg> Your street address, City, State</a></li>
+                        <li><a href="contact.html">Customer Care / Help</a></li>
+                    </ul>
+                </div>
+                <div class="um-fcol">
+                    <button class="um-fcol__title" aria-expanded="false">Hospitality Business <i></i></button>
+                    <ul>
+                        <li><a href="contact.html">Join Our Business Programme</a></li>
+                        <li><a href="index.html#meetings">Projects &amp; Groups</a></li>
+                        <li><a href="contact.html">Corporate Travel</a></li>
+                        <li><a href="contact.html">Travel Advisors</a></li>
+                    </ul>
+                </div>
+                <div class="um-fcol">
+                    <button class="um-fcol__title" aria-expanded="false">Terms &amp; Policies <i></i></button>
+                    <ul>
+                        <li><a href="#">Best Rate Guarantee</a></li>
+                        <li><a href="#">Privacy Notice</a></li>
+                        <li><a href="#">Terms of Use</a></li>
+                        <li><a href="#">Cookie Consent</a></li>
+                    </ul>
+                </div>
+                <div class="um-fcol">
+                    <button class="um-fcol__title" aria-expanded="false">Corporate Resources <i></i></button>
+                    <ul>
+                        <li><a href="#">Media Centre</a></li>
+                        <li><a href="#">Franchise Information</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Social Responsibility</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="copyright__text">
+            <div class="container">
+                <div class="row">
+                    <div class="copyright__wrapper">
+                        <p class="mb-0 ">Copyright &copy; <span id="year">2026</span> Unicorn Hospitality. All rights reserved. | Developed By <a href="https://hsdigitalmedia.com/" target="_blank">HS Digital Media®</a></p>
+                        <div class="footer__social__link">
+                            <a href="#" aria-label="Facebook" class="link__item">Facebook</a>
+                            <a href="#" aria-label="Instagram" class="link__item">Instagram</a>
+                            <a href="#" aria-label="LinkedIn" class="link__item">LinkedIn</a>
+                            <a href="#" aria-label="X" class="link__item">X</a>
+                            <a href="#" aria-label="YouTube" class="link__item">YouTube</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- footer end -->
+
+    <!-- sticky mobile booking bar -->
+    <div class="um-mbar" id="umMbar">
+        <a href="tel:+919920400267" class="um-mbar__call">Call</a>
+        <a href="index.html#book" class="theme-btn btn-style fill no-border um-mbar__book"><span>Book Now</span></a>
+    </div>
+
+    <!-- back to top -->
+    <button type="button" class="rts__back__top" id="rts-back-to-top" aria-label="Back to top">
+        <svg width="20" height="20" viewBox="0 0 13 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M7.30201 1.51317L7.29917 21.3422C7.29912 21.7057 6.97211 21.9993 6.5674 21.9993C6.16269 21.9992 5.83577 21.7055 5.83582 21.342L5.83844 3.10055L1.39753 7.08842C1.11169 7.34511 0.647535 7.34506 0.361762 7.0883C0.0759894 6.83155 0.0760493 6.41464 0.361896 6.15795L6.05367 1.04682C6.26405 0.857899 6.5773 0.802482 6.85167 0.905201C7.12374 1.00792 7.30205 1.24823 7.30201 1.51317Z" fill="#FFF" />
+            <path d="M12.9991 6.6318C12.9991 6.80021 12.9282 6.96861 12.7841 7.09592C12.4983 7.35261 12.0341 7.35256 11.7483 7.0958L6.05118 1.97719C5.76541 1.72043 5.76547 1.30352 6.05131 1.04684C6.33716 0.790152 6.80131 0.790206 7.08709 1.04696L12.7842 6.16557C12.9283 6.29498 12.9991 6.46339 12.9991 6.6318Z" fill="#FFF" />
+        </svg>
+    </button>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/wowjs@1.1.3/dist/wow.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jarallax@2/dist/jarallax.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr@4/dist/flatpickr.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr@4/dist/flatpickr.min.css">
+    <!-- shared site script -->
+    <script src="assets/js/2026-10-22-unicorn-hospitality-v2-main.js"></script>
+    <!-- amenities page script -->
+    <script src="assets/js/amenities.js"></script>
+</body>
+</html>
