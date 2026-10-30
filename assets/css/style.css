@@ -13294,16 +13294,12 @@ html{scroll-behavior:smooth;scroll-padding-top:90px}
 
 
 
-/* offers: stuck screen */
+/* offers: old scroll-pin removed (cards used to stack on each other) */
 #offers{position:relative}
-.um-offers-pin{position:sticky;display:flex;align-items:center;justify-content:center}
-@media (min-width:992px){.um-offers-pin{top:82px}}
-.um-offers-pin > .container{transform-origin:center center}
 body{overflow:visible!important}
 
 
 /* ===== offers: simple icon cards (no photos) ===== */
-#offers .um-offer{will-change:transform,opacity}
 .um-offers-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:10px}
 .um-offer{position:relative;display:flex;flex-direction:column;background:#fff;border:1px solid #e7e1d4;border-top:3px solid #1f3a33;border-radius:6px;padding:34px 30px 28px;text-align:left;transition:box-shadow .3s ease,border-color .3s ease}
 .um-offer:hover{box-shadow:0 22px 44px rgba(44,44,44,.14)}

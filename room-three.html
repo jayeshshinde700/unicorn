@@ -30,163 +30,69 @@
     <link rel="stylesheet" href="assets/css/plugins.min.css">
     <!-- main style custom css -->
     <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/navigation.css">
 </head>
 
 <body>
-    <!-- header area -->
-    <div class="header__top">
-        <div class="container">
-            <div class="row justify-content-between">
-                <div class="col-lg-6 col-md-6">
-                    <div class="social__links">
-                        <a class="link__item gap-10" href="callto:#"><i class="flaticon-phone-flip"></i> +12505550199</a>
-                        <a class="link__item gap-10" href="mailto:#"><i class="flaticon-envelope"></i> moonlit@gmail.com</a>
-                    </div>
-                </div>
-                <div class="col-lg-6 col-md-6">
-                    <div class="location">
-                        <a class="link__item gap-10" href="#"><i class="flaticon-marker"></i>280 Augusta Avenue, M5T 2L9 Toronto, Canada</a>
-                    </div>
-                </div>
-            </div>
+        <!-- ============ NAVIGATION: utility bar + main bar (assets/css/navigation.css, assets/js/navigation.js) ============ -->
+    <div class="un-util">
+        <div class="container un-util__in">
+            <nav aria-label="Explore Unicon Hospitality">
+                <ul class="un-util__links">
+                    <li><a href="event.html#meetings">Meetings &amp; Events</a></li>
+                    <li><a href="event.html#weddings">Weddings</a></li>
+                    <li><a href="activities.html">Local Attractions</a></li>
+                    <li><a href="group-stays.html">Group Stays</a></li>
+                    <li><a href="offers.html">Special Offers</a></li>
+                </ul>
+            </nav>
+            <ul class="un-util__contact">
+                <li><a href="mailto:stay@uniconhospitality.example"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg> stay@uniconhospitality.example</a></li>
+                <li><a href="tel:+919920400267"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></svg> Reservations: +91 99204 00267</a></li>
+            </ul>
         </div>
     </div>
-    <header class="main__header header__function">
-        <div class="container">
-            <div class="row">
-                <div class="main__header__wrapper">
-                    <div class="main__nav">
-                        <div class="navigation d-none d-lg-block">
-                            <nav class="navigation__menu" id="main__menu">
-                                <ul class="list-unstyled">
-                                    <li class="navigation__menu--item has-child has-arrow">
-                                        <a href="#" class="navigation__menu--item__link">Home</a>
-                                        <div class="has__mega__menu">
-                                            <div class="row g-30 row-cols-1 row-cols-md-3 row-cols-lg-5">
 
-                                                <div class="menu__item">
-                                                    <a href="index.html">
-                                                        <img src="assets/images/menu/main.webp" height="250" alt="">
-                                                        <span>Luxury Hotel</span>
-                                                    </a>
-                                                </div>
-                                                <div class="menu__item">
-                                                    <a href="index-2.html">
-                                                        <img src="assets/images/menu/01.webp" height="250" alt="">
-                                                        <span>LuxeVista Hotel</span>
-                                                    </a>
-                                                </div>
+    <header class="un-header" id="unHeader">
+        <div class="container un-header__in">
+            <a class="un-logo" href="index.html" aria-label="Unicon Hospitality - home"><img src="assets/images/unicon/logo.png" alt="Unicon Hospitality"></a>
 
-                                                <div class="menu__item">
-                                                    <a href="index-3.html">
-                                                        <img src="assets/images/menu/03.webp" height="250" alt="">
-                                                        <span>OceanBreeze Resort</span>
-                                                    </a>
-                                                </div>
+            <nav class="un-nav" aria-label="Main">
+                <ul class="un-nav__list">
+                    <li class="un-nav__item"><a class="un-nav__link" href="index.html">Home</a></li>
+                    <li class="un-nav__item has-drop">
+                        <button type="button" class="un-nav__link" aria-expanded="false" aria-haspopup="true" aria-controls="unDropBook">Book <span class="un-nav__chev" aria-hidden="true"></span></button>
+                        <ul class="un-drop" id="unDropBook">
+                            <li><a href="index.html#book">Book a Room</a></li>
+                            <li><a href="contact.html#enquiry">Find My Reservation</a></li>
+                            <li><a href="group-stays.html">Group Reservations</a></li>
+                            <li><a href="offers.html">Special Packages</a></li>
+                        </ul>
+                    </li>
+                    <li class="un-nav__item has-drop">
+                        <button type="button" class="un-nav__link" aria-expanded="false" aria-haspopup="true" aria-controls="unDropStay">Stay <span class="un-nav__chev" aria-hidden="true"></span></button>
+                        <ul class="un-drop" id="unDropStay">
+                            <li><a href="dining.html">Dining</a></li>
+                            <li><a href="amenities.html">Amenities</a></li>
+                            <li><a href="gallery.html">Gallery</a></li>
+                            <li><a href="about.html">About Us</a></li>
+                        </ul>
+                    </li>
+                    <li class="un-nav__item"><a class="un-nav__link" href="rooms.html" aria-current="page">Rooms</a></li>
+                    <li class="un-nav__item"><a class="un-nav__link" href="blog.html">Blog</a></li>
+                    <li class="un-nav__item"><a class="un-nav__link" href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
 
-                                                <div class="menu__item">
-                                                    <a href="index-4.html">
-                                                        <img src="assets/images/menu/04.webp" height="250" alt="">
-                                                        <span>Apartment Hotel</span>
-                                                    </a>
-                                                </div>
-                                                <div class="menu__item">
-                                                    <a href="index-5.html">
-                                                        <img src="assets/images/menu/4.webp" height="250" alt="">
-                                                        <span>Mountain Hotel</span>
-                                                    </a>
-                                                </div>
+            <div class="un-actions">
+                <a href="#loginModal" class="theme-btn btn-style sm-btn border" data-bs-toggle="modal" data-bs-target="#loginModal"><span>Sign In</span></a>
+                <a href="#signupModal" class="theme-btn btn-style sm-btn border" data-bs-toggle="modal" data-bs-target="#signupModal"><span>Join Free</span></a>
+                <a href="index.html#book" class="theme-btn btn-style sm-btn fill un-book"><span>Book Now</span></a>
+            </div>
 
-                                                <div class="menu__item">
-                                                    <a href="index-6.html">
-                                                        <img src="assets/images/menu/5.webp" height="250" alt="">
-                                                        <span>City Hotel</span>
-                                                    </a>
-                                                </div>
-                                                <div class="menu__item">
-                                                    <a href="index-7.html">
-                                                        <img src="assets/images/menu/6.webp" height="250" alt="">
-                                                        <span>Beach Hotel</span>
-                                                    </a>
-                                                </div>
-
-                                                <div class="menu__item">
-                                                    <a href="index-dark.html">
-                                                        <img src="assets/images/menu/hotel-dark.webp" height="250" alt="">
-                                                        <span>Beach Hotel</span>
-                                                    </a>
-                                                </div>
-                                                <div class="menu__item">
-                                                    <a href="index-video.html">
-                                                        <img src="assets/images/menu/08.webp" height="250" alt="">
-                                                        <span>Hotel Seaside</span>
-                                                    </a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </li>
-
-                                    <li class="navigation__menu--item has-child has-arrow">
-                                        <a href="#" class="navigation__menu--item__link">Rooms</a>
-                                        <ul class="submenu sub__style" role="menu">
-                                            <li role="menuitem" class="has-child has-arrow">
-                                                <a href="#">Room Style</a>
-                                                <ul class="sub__style" role="menu">
-                                                    <li role="menuitem"><a href="room-one.html">Room One</a></li>
-                                                    <li role="menuitem"><a href="room-two.html">Room Two</a></li>
-                                                    <li role="menuitem"><a href="room-three.html">Room Three</a></li>
-                                                    <li role="menuitem"><a href="room-four.html">Room Four</a></li>
-                                                </ul>
-                                            </li>
-                                            <li role="menuitem" class="has-child has-arrow">
-                                                <a href="#">Room Details</a>
-                                                <ul class="sub__style" role="menu">
-                                                    <li role="menuitem"><a href="room-details-1.html">Room Details 1</a></li>
-                                                    <li role="menuitem"><a href="room-details-2.html">Room Details 2</a></li>
-                                                </ul>
-                                            </li>
-                                        </ul>
-                                    </li>
-
-                                    <li class="navigation__menu--item has-child has-arrow">
-                                        <a href="#" class="navigation__menu--item__link">Pages</a>
-                                        <ul class="submenu sub__style" role="menu">
-                                            <li role="menuitem"><a href="about.html">About</a></li>
-                                            <li role="menuitem"><a href="resturant.html">Restaurant</a></li>
-                                            <li role="menuitem"><a href="gallery.html">Gallery</a></li>
-                                            <li role="menuitem"><a href="service.html">Service</a></li>
-                                            <li role="menuitem"><a href="event.html">Event</a></li>
-                                            <li role="menuitem"><a href="activities.html">Activities</a></li>
-                                        </ul>
-                                    </li>
-                                    <li class="navigation__menu--item has-child has-arrow">
-                                        <a href="#" class="navigation__menu--item__link">Blog</a>
-                                        <ul class="submenu sub__style" role="menu">
-                                            <li role="menuitem"><a href="blog.html">Blog</a></li>
-                                            <li role="menuitem"><a href="blog-details.html">Blog Details</a></li>
-                                        </ul>
-                                    </li>
-
-                                    <li class="navigation__menu--item">
-                                        <a href="contact.html" class="navigation__menu--item__link">Contact</a>
-                                    </li>
-                                </ul>
-                            </nav>
-                        </div>
-
-                    </div>
-                    <div class="main__logo">
-                        <a href="index.html"><img class="logo__class" src="assets/images/logo/logo.html" alt="moonlit"></a>
-                    </div>
-                    <div class="main__right">
-                        <a href="#" class="theme-btn btn-style sm-btn border d-none d-lg-block" aria-label="Login Button" data-bs-toggle="modal" data-bs-target="#loginModal"><span>Sign In</span></a>
-                        <a href="#" class="theme-btn btn-style sm-btn border d-none d-lg-block" aria-label="Sign Up Button" data-bs-toggle="modal" data-bs-target="#signupModal"><span>Sign Up</span></a>
-                        <a href="room-details-1.html" class="theme-btn btn-style sm-btn fill"><span>Book Now</span></a>
-                        <button class="theme-btn btn-style sm-btn fill menu__btn d-lg-none" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
-                            <span><img src="assets/images/icon/menu-icon.html" alt=""></span>
-                        </button>
-                    </div>
-                </div>
+            <div class="un-mob">
+                <a class="un-iconbtn" href="tel:+919920400267" aria-label="Call reservations +91 99204 00267"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></svg></a>
+                <button type="button" class="un-iconbtn" id="unBurger" aria-label="Open menu" aria-expanded="false" aria-controls="unDrawer"><span class="un-burger" aria-hidden="true"><i></i><i></i><i></i></span></button>
             </div>
         </div>
     </header>

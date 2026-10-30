@@ -1,0 +1,47 @@
+/* Unicon Journal article pages. Load after blog.css. All selectors are .jp- prefixed. */
+.jp-progress{position:fixed;left:0;top:0;right:0;height:4px;z-index:1200;background:transparent;pointer-events:none}
+.jp-progress span{display:block;height:100%;width:0;background:var(--um-gold,#B99A5F)}
+.jp-wrap{max-width:1040px}
+.jp-head{padding:60px 0 34px;background:#fff;border-bottom:1px solid var(--jb-line)}
+.jp-crumb{display:flex;flex-wrap:wrap;gap:8px;font-size:14px;color:#6b6b6b;margin-bottom:22px}
+.jp-crumb a{color:var(--jb-ink);text-decoration:none;font-weight:500}.jp-crumb a:hover{color:#8F6F3C}
+.jp-head h1{font-family:var(--jb-serif);font-size:clamp(32px,5vw,56px);line-height:1.12;color:var(--jb-ink);margin:18px 0 18px;max-width:860px}
+.jp-intro{font-size:clamp(17px,2vw,20px);line-height:1.65;color:#4d4d4d;max-width:760px;margin:0 0 20px}
+.jp-cover{max-width:1200px;margin-top:-1px;padding-top:34px}
+.jp-cover img{width:100%;aspect-ratio:1400/760;object-fit:cover;border-radius:10px;box-shadow:0 24px 54px rgba(20,40,34,.16)}
+.jp-layout{display:grid;grid-template-columns:130px minmax(0,1fr);gap:40px;padding-top:50px;padding-bottom:70px}
+.jp-tools{position:sticky;top:110px;align-self:start;display:flex;flex-direction:column;gap:18px}
+.jp-share{display:flex;flex-direction:column;gap:8px;font-size:13px}
+.jp-share>span{font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:#8F6F3C;font-size:12px}
+.jp-share a,.jp-share button{display:block;text-align:center;padding:9px 10px;border:1px solid var(--jb-line);border-radius:30px;background:#fff;color:var(--jb-ink);font:500 13px/1 var(--jost,Inter,sans-serif);text-decoration:none;cursor:pointer}
+.jp-share a:hover,.jp-share button:hover{border-color:var(--jb-gold)}
+.jp-copied{min-height:18px;margin:0;font-size:12.5px;color:#2b6a4a}
+.jp-body{max-width:720px;font-size:18px;line-height:1.85;color:#333}
+.jp-body h2{font-family:var(--jb-serif);font-size:clamp(25px,3vw,32px);color:var(--jb-ink);margin:44px 0 14px;line-height:1.25;scroll-margin-top:110px}
+.jp-body>p:first-child::first-letter{font-family:var(--jb-serif);font-size:3.4em;float:left;line-height:.85;padding:6px 10px 0 0;color:#8F6F3C}
+.jp-body p{margin:0 0 20px}
+.jp-body a{color:var(--jb-ink);text-decoration:underline;text-decoration-color:var(--jb-gold);text-underline-offset:3px}
+.jp-body ul{margin:0 0 24px;padding:0;list-style:none}
+.jp-body li{position:relative;padding-left:26px;margin-bottom:10px}
+.jp-body li::before{content:"";position:absolute;left:0;top:.8em;width:12px;height:2px;background:var(--jb-gold)}
+.jp-quote{margin:36px 0;padding:6px 0 6px 28px;border-left:4px solid var(--jb-gold)}
+.jp-quote p{font-family:var(--jb-serif);font-size:clamp(22px,2.8vw,29px);line-height:1.4;font-style:italic;color:var(--jb-ink);margin:0}
+.jp-fig{margin:34px 0}
+.jp-fig img{width:100%;aspect-ratio:12/7;object-fit:cover;border-radius:8px}
+.jp-back{margin-top:44px!important;padding-top:24px;border-top:1px solid var(--jb-line);font-weight:600}
+.jp-related{background:#fff}
+.jp-related__grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px}
+.jp-related .jb-card{grid-column:auto}
+@media (max-width:991px){
+  .jp-layout{grid-template-columns:minmax(0,1fr);gap:26px;padding-top:34px}
+  .jp-tools{position:static;flex-direction:row;flex-wrap:wrap;align-items:center;gap:14px 20px;padding-bottom:20px;border-bottom:1px solid var(--jb-line)}
+  .jp-share{flex-direction:row;flex-wrap:wrap;align-items:center}
+  .jp-share a,.jp-share button{padding:9px 14px}
+  .jp-related__grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media (max-width:767px){
+  .jp-head{padding:40px 0 26px}
+  .jp-body{font-size:17px;line-height:1.8}
+  .jp-related__grid{grid-template-columns:minmax(0,1fr)}
+  .jp-cover{padding-top:24px}
+}

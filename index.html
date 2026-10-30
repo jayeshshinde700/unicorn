@@ -22,6 +22,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
     <!-- main stylesheet (Moonlit + Unicon changes in one file): save as assets/css/style.css -->
     <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/navigation.css">
 </head>
 
 <body>
@@ -53,115 +54,70 @@
         </defs>
     </svg>
 
-    <!-- ============ TOP UTILITY BAR (Ramada-style) ============ -->
-    <div class="header__top um-utility">
-        <div class="container">
-            <div class="um-utility__in">
-                <ul class="um-utility__links">
-                    <li><a class="link__item" href="#book">Find My Reservation</a></li>
-                    <li><a class="link__item" href="#locations">Our Locations</a></li>
-                    <li><a class="link__item" href="#offers">All Offers</a></li>
-                    <li><a class="link__item" href="#meetings">Meetings &amp; Groups</a></li>
+    <!-- ============ NAVIGATION: utility bar + main bar (assets/css/navigation.css, assets/js/navigation.js) ============ -->
+    <div class="un-util">
+        <div class="container un-util__in">
+            <nav aria-label="Explore Unicon Hospitality">
+                <ul class="un-util__links">
+                    <li><a href="event.html#meetings">Meetings &amp; Events</a></li>
+                    <li><a href="event.html#weddings">Weddings</a></li>
+                    <li><a href="activities.html">Local Attractions</a></li>
+                    <li><a href="group-stays.html">Group Stays</a></li>
+                    <li><a href="offers.html">Special Offers</a></li>
                 </ul>
-                <div class="um-utility__right">
-                    <a class="link__item" href="tel:+919920400267"><svg class="ico"><use href="#i-phone"/></svg> Reservations: +91 99204 00267</a>
-                    <label class="um-lang">
-                        <span class="visually-hidden">Language</span>
-                        <select aria-label="Language">
-                            <option>English</option>
-                            <option>हिन्दी</option>
-                            <option>मराठी</option>
-                        </select>
-                    </label>
-                </div>
-            </div>
+            </nav>
+            <ul class="un-util__contact">
+                <li><a href="mailto:stay@uniconhospitality.example"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg> stay@uniconhospitality.example</a></li>
+                <li><a href="tel:+919920400267"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></svg> Reservations: +91 99204 00267</a></li>
+            </ul>
         </div>
     </div>
 
-    <!-- ============ MAIN HEADER ============ -->
-    <header class="main__header header__function">
-        <div class="container">
-            <div class="row">
-                <div class="main__header__wrapper">
-                    <div class="main__nav">
-                        <div class="navigation d-none d-lg-block">
-                            <nav class="navigation__menu" id="main__menu">
-                                <ul class="list-unstyled">
-                                    <!-- Book (mega menu, like Ramada) -->
-                                    <li class="navigation__menu--item has-child has-arrow">
-                                        <a href="#book" class="navigation__menu--item__link">Book</a>
-                                        <div class="has__mega__menu um-mega">
-                                            <div class="um-mega__col">
-                                                <h6>Book</h6>
-                                                <a href="#book">Find My Reservation</a>
-                                                <a href="#locations">Our Locations</a>
-                                                <a href="#offers">All Offers</a>
-                                                <a href="rooms.html">Rooms &amp; Suites</a>
-                                            </div>
-                                            <div class="um-mega__promo">
-                                                <span class="um-mega__tag">Save with bundles</span>
-                                                <p>Combine your room, meals and transfers in one seamless booking.</p>
-                                                <a href="#book" class="theme-btn btn-style sm-btn fill no-border"><span>Book Now</span></a>
-                                            </div>
-                                        </div>
-                                    </li>
+    <header class="un-header" id="unHeader">
+        <div class="container un-header__in">
+            <a class="un-logo" href="index.html" aria-label="Unicon Hospitality - home"><img src="assets/images/unicon/logo.png" alt="Unicon Hospitality"></a>
 
-                                    <li class="navigation__menu--item has-child has-arrow">
-                                        <a href="rooms.html" class="navigation__menu--item__link">Stay</a>
-                                        <ul class="submenu sub__style" role="menu">
-                                            <li role="menuitem"><a href="rooms.html">Rooms &amp; Suites</a></li>
-                                            <li role="menuitem"><a href="amenities.html">Amenities</a></li>
-                                            <li role="menuitem"><a href="dining.html">Dining</a></li>
-                                            <li role="menuitem"><a href="gallery.html">Gallery</a></li>
-                                        </ul>
-                                    </li>
+            <nav class="un-nav" aria-label="Main">
+                <ul class="un-nav__list">
+                    <li class="un-nav__item"><a class="un-nav__link" href="index.html" aria-current="page">Home</a></li>
+                    <li class="un-nav__item has-drop">
+                        <button type="button" class="un-nav__link" aria-expanded="false" aria-haspopup="true" aria-controls="unDropBook">Book <span class="un-nav__chev" aria-hidden="true"></span></button>
+                        <ul class="un-drop" id="unDropBook">
+                            <li><a href="index.html#book">Book a Room</a></li>
+                            <li><a href="contact.html#enquiry">Find My Reservation</a></li>
+                            <li><a href="group-stays.html">Group Reservations</a></li>
+                            <li><a href="offers.html">Special Packages</a></li>
+                        </ul>
+                    </li>
+                    <li class="un-nav__item has-drop">
+                        <button type="button" class="un-nav__link" aria-expanded="false" aria-haspopup="true" aria-controls="unDropStay">Stay <span class="un-nav__chev" aria-hidden="true"></span></button>
+                        <ul class="un-drop" id="unDropStay">
+                            <li><a href="dining.html">Dining</a></li>
+                            <li><a href="amenities.html">Amenities</a></li>
+                            <li><a href="gallery.html">Gallery</a></li>
+                            <li><a href="about.html">About Us</a></li>
+                        </ul>
+                    </li>
+                    <li class="un-nav__item"><a class="un-nav__link" href="rooms.html">Rooms</a></li>
+                    <li class="un-nav__item"><a class="un-nav__link" href="blog.html">Blog</a></li>
+                    <li class="un-nav__item"><a class="un-nav__link" href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
 
-                                    <li class="navigation__menu--item">
-                                        <a href="rooms.html" class="navigation__menu--item__link">Rooms</a>
-                                    </li>
+            <div class="un-actions">
+                <a href="#loginModal" class="theme-btn btn-style sm-btn border" data-bs-toggle="modal" data-bs-target="#loginModal"><span>Sign In</span></a>
+                <a href="#signupModal" class="theme-btn btn-style sm-btn border" data-bs-toggle="modal" data-bs-target="#signupModal"><span>Join Free</span></a>
+                <a href="index.html#book" class="theme-btn btn-style sm-btn fill un-book"><span>Book Now</span></a>
+            </div>
 
-                                    <li class="navigation__menu--item">
-                                        <a href="#offers" class="navigation__menu--item__link">Offers</a>
-                                    </li>
-
-                                    <!-- <li class="navigation__menu--item has-child has-arrow">
-                                        <a href="#meetings" class="navigation__menu--item__link">Meetings &amp; Groups</a>
-                                        <ul class="submenu sub__style" role="menu">
-                                            <li role="menuitem"><a href="#meetings">Meetings</a></li>
-                                            <li role="menuitem"><a href="#meetings">Groups</a></li>
-                                            <li role="menuitem"><a href="#meetings">Weddings &amp; Events</a></li>
-                                        </ul>
-                                    </li> -->
-
-                                    <li class="navigation__menu--item">
-                                        <a href="#about" class="navigation__menu--item__link">About</a>
-                                    </li>
-
-                                    <li class="navigation__menu--item">
-                                        <a href="contact.html" class="navigation__menu--item__link">Contact</a>
-                                    </li>
-                                </ul>
-                            </nav>
-                        </div>
-                    </div>
-                    <div class="main__logo">
-                        <a href="#top" class="um-logo" aria-label="Unicon Hospitality home">
-                            <img src="assets/images/unicon/logo.png" alt="">
-                        </a>
-                    </div>
-                    <div class="main__right">
-                        <a href="#" class="theme-btn btn-style sm-btn border d-none d-lg-block" aria-label="Sign In" data-bs-toggle="modal" data-bs-target="#loginModal"><span>Sign In</span></a>
-                        <a href="#" class="theme-btn btn-style sm-btn border d-none d-lg-block" aria-label="Join" data-bs-toggle="modal" data-bs-target="#signupModal"><span>Join Free</span></a>
-                        <a href="#book" class="theme-btn btn-style sm-btn fill"><span>Book Now</span></a>
-                        <button class="theme-btn btn-style sm-btn fill menu__btn d-lg-none" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight" aria-label="Open menu">
-                            <span class="um-burger"><i></i><i></i><i></i></span>
-                        </button>
-                    </div>
-                </div>
+            <div class="un-mob">
+                <a class="un-iconbtn" href="tel:+919920400267" aria-label="Call reservations +91 99204 00267"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></svg></a>
+                <button type="button" class="un-iconbtn" id="unBurger" aria-label="Open menu" aria-expanded="false" aria-controls="unDrawer"><span class="un-burger" aria-hidden="true"><i></i><i></i><i></i></span></button>
             </div>
         </div>
     </header>
     <!-- header area end -->
+
 
     <main id="top">
 
@@ -328,7 +284,10 @@
                         <span class="h6 subtitle__icon__two d-block wow fadeInUp">About Us</span>
                         <h2 class="content__title wow fadeInUp">Welcome To Unicon Hospitality</h2>
                         <p class="content__subtitle wow fadeInUp" data-wow-delay=".3s">You are invited to experience hospitality that feels personal. Whether you are in town for business or exploring somewhere new, our hotels give you comfort, convenience and a team that remembers the small things. From light-filled rooms to a table worth coming back for, every detail is there to make your stay easier and more memorable.</p>
-                        <a href="contact.html" class="theme-btn btn-style fill no-border wow fadeInUp" data-wow-delay=".5s"><span>Plan Your Stay</span></a>
+                        <div class="un-cta">
+                            <a href="contact.html" class="theme-btn btn-style fill no-border wow fadeInUp" data-wow-delay=".5s"><span>Plan Your Stay</span></a>
+                            <a href="about.html" class="theme-btn btn-style un-cta__outline wow fadeInUp" data-wow-delay=".6s"><span>About Us</span></a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -592,8 +551,7 @@
             <li><svg class="ico"><use href="#i-check"/></svg> Late checkout on request</li>
         </ul>
         <div class="um-offer__foot">
-            <div class="um-offer__price"><small>Starting from</small><strong>&#8377;0,000</strong></div>
-            <a href="#book" class="um-offer__link">View offer <svg class="ico"><use href="#i-arrow-r"/></svg></a>
+            <a href="offers.html" class="um-offer__link">View offer <svg class="ico"><use href="#i-arrow-r"/></svg></a>
         </div>
     </div>
 
@@ -609,8 +567,7 @@
             <li><svg class="ico"><use href="#i-check"/></svg> Late checkout</li>
         </ul>
         <div class="um-offer__foot">
-            <div class="um-offer__price"><small>Starting from</small><strong>&#8377;0,000</strong></div>
-            <a href="#book" class="um-offer__link">View offer <svg class="ico"><use href="#i-arrow-r"/></svg></a>
+            <a href="offers.html" class="um-offer__link">View offer <svg class="ico"><use href="#i-arrow-r"/></svg></a>
         </div>
     </div>
 
@@ -626,13 +583,14 @@
             <li><svg class="ico"><use href="#i-check"/></svg> Free Wi-Fi</li>
         </ul>
         <div class="um-offer__foot">
-            <div class="um-offer__price"><small>Starting from</small><strong>&#8377;0,000</strong></div>
-            <a href="#book" class="um-offer__link">View offer <svg class="ico"><use href="#i-arrow-r"/></svg></a>
+            <a href="offers.html" class="um-offer__link">View offer <svg class="ico"><use href="#i-arrow-r"/></svg></a>
         </div>
     </div>
 </div>
 
-           
+            <div class="text-center mt-5">
+                <a href="offers.html" class="theme-btn btn-style fill no-border"><span>View All Offers</span></a>
+            </div>
         </div>
     </div>
     <!-- offers end -->
@@ -788,67 +746,65 @@
         </div>
     </div>
 
-    <!-- ============ MOBILE OFF-CANVAS MENU ============ -->
-    <div class="offcanvas offcanvas-start" id="offcanvasRight" tabindex="-1" aria-label="Mobile menu">
-        <div class="rts__btstrp__offcanvase">
-            <div class="offcanvase__wrapper">
-                <div class="left__side mobile__menu">
-                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-                    <div class="offcanvase__top">
-                        <div class="offcanvase__logo">
-                            <a href="#top" class="um-logo um-logo--light"><span class="um-logo__name">Unicon</span><span class="um-logo__sub">Hospitality</span></a>
-                        </div>
-                    </div>
-                    <div class="offcanvase__mobile__menu">
-                        <nav class="um-mnav" aria-label="Mobile">
-                            <button class="um-mnav__btn" aria-expanded="false">Book <i></i></button>
-                            <div class="um-mnav__panel">
-                                <a href="#book">Find My Reservation</a>
-                                <a href="#locations">Our Locations</a>
-                                <a href="#offers">All Offers</a>
-                                <a href="rooms.html">Rooms &amp; Suites</a>
-                            </div>
-                            <button class="um-mnav__btn" aria-expanded="false">Stay <i></i></button>
-                            <div class="um-mnav__panel">
-                                <a href="rooms.html">Rooms &amp; Suites</a>
-                                <a href="amenities.html">Amenities</a>
-                                <a href="dining.html">Dining</a>
-                                <a href="gallery.html">Gallery</a>
-                            </div>
-                            <a class="um-mnav__link" href="rooms.html">Rooms</a>
-                            <a class="um-mnav__link" href="#offers">Offers</a>
-                            <button class="um-mnav__btn" aria-expanded="false">Meetings &amp; Groups <i></i></button>
-                            <div class="um-mnav__panel">
-                                <a href="#meetings">Meetings</a>
-                                <a href="#meetings">Groups</a>
-                                <a href="#meetings">Weddings &amp; Events</a>
-                            </div>
-                            <a class="um-mnav__link" href="#about">About</a>
-                            <a class="um-mnav__link" href="contact.html">Contact</a>
-                            <a class="um-mnav__link" href="#" data-bs-toggle="modal" data-bs-target="#loginModal">Sign In / Join</a>
-                        </nav>
-                    </div>
-                    <div class="offcanvase__bottom">
-                        <div class="offcanvase__address">
-                            <div class="item">
-                                <span class="h6">Reservations</span>
-                                <a href="tel:+919920400267"><svg class="ico"><use href="#i-phone"/></svg> +91 99204 00267</a>
-                            </div>
-                            <div class="item">
-                                <span class="h6">Email</span>
-                                <a href="mailto:stay@uniconhospitality.example"><svg class="ico"><use href="#i-mail"/></svg> stay@uniconhospitality.example</a>
-                            </div>
-                            <div class="item">
-                                <span class="h6">Address</span>
-                                <a href="contact.html"><svg class="ico"><use href="#i-pin"/></svg> Your street address, City, State</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+    <!-- ============ MOBILE DRAWER ============ -->
+    <div class="un-overlay" id="unOverlay"></div>
+    <aside class="un-drawer" id="unDrawer" aria-label="Site menu" aria-hidden="true">
+        <div class="un-drawer__top">
+            <a class="un-drawer__logo" href="index.html" aria-label="Unicon Hospitality - home"><img src="assets/images/unicon/logo.png" alt="Unicon Hospitality"></a>
+            <button type="button" class="un-iconbtn" id="unDrawerClose" aria-label="Close menu"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
         </div>
-    </div>
-    <!-- offcanvas end -->
+        <div class="un-drawer__body">
+            <nav aria-label="Mobile">
+                <ul class="un-m">
+                    <li><a class="un-m__link" href="index.html" aria-current="page">Home</a></li>
+                    <li class="un-m__item">
+                        <button type="button" class="un-m__btn" aria-expanded="false" aria-controls="unMBook">Book <span class="un-m__chev" aria-hidden="true"></span></button>
+                        <div class="un-m__panel" id="unMBook">
+                            <a href="index.html#book">Book a Room</a>
+                            <a href="contact.html#enquiry">Find My Reservation</a>
+                            <a href="group-stays.html">Group Reservations</a>
+                            <a href="offers.html">Special Packages</a>
+                        </div>
+                    </li>
+                    <li class="un-m__item">
+                        <button type="button" class="un-m__btn" aria-expanded="false" aria-controls="unMStay">Stay <span class="un-m__chev" aria-hidden="true"></span></button>
+                        <div class="un-m__panel" id="unMStay">
+                            <a href="dining.html">Dining</a>
+                            <a href="amenities.html">Amenities</a>
+                            <a href="gallery.html">Gallery</a>
+                            <a href="about.html">About Us</a>
+                        </div>
+                    </li>
+                    <li><a class="un-m__link" href="rooms.html">Rooms</a></li>
+                    <li><a class="un-m__link" href="blog.html">Blog</a></li>
+                    <li><a class="un-m__link" href="contact.html">Contact</a></li>
+                </ul>
+                <div class="un-m__auth">
+                    <a href="#loginModal" class="theme-btn btn-style sm-btn border" data-bs-toggle="modal" data-bs-target="#loginModal"><span>Sign In</span></a>
+                    <a href="#signupModal" class="theme-btn btn-style sm-btn border" data-bs-toggle="modal" data-bs-target="#signupModal"><span>Join Free</span></a>
+                </div>
+                <div class="un-m__cta"><a href="index.html#book" class="theme-btn btn-style sm-btn fill"><span>Book Now</span></a></div>
+                <ul class="un-m un-m__explore">
+                    <li class="un-m__item">
+                        <button type="button" class="un-m__btn" aria-expanded="false" aria-controls="unMExplore">Explore <span class="un-m__chev" aria-hidden="true"></span></button>
+                        <div class="un-m__panel" id="unMExplore">
+                            <a href="event.html#meetings">Meetings &amp; Events</a>
+                            <a href="event.html#weddings">Weddings</a>
+                            <a href="activities.html">Local Attractions</a>
+                            <a href="group-stays.html">Group Stays</a>
+                            <a href="offers.html">Special Offers</a>
+                        </div>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+        <div class="un-drawer__foot">
+            <span>Reservations</span>
+            <a href="tel:+919920400267"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></svg> +91 99204 00267</a>
+            <span>Email</span>
+            <a href="mailto:stay@uniconhospitality.example"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg> stay@uniconhospitality.example</a>
+        </div>
+    </aside>
 
     <!-- ============ FOOTER (Ramada-style columns) ============ -->
     <footer class="rts__section rts__footer is__common__footer footer__background has__shape" id="contact">
@@ -958,5 +914,7 @@
     <script src="assets/js/main.js"></script>
     <script src="assets/js/plugins.min.js"></script>
 
+    <!-- navigation (menus, dropdowns, mobile drawer) -->
+    <script src="assets/js/navigation.js"></script>
 </body>
 </html>

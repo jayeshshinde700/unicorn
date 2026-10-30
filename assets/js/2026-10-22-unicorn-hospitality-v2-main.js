@@ -312,66 +312,7 @@ setInterval(function () {
   /* ---- empty "#" links should not jump to top ---- */
   $$('a[href="#"]').forEach(function (a) { a.addEventListener('click', function (e) { e.preventDefault(); }); });
 
-    /* ---- offers: screen sticks when you reach it; cards merged > spread out while you scroll ---- */
-    /* ---- offers: screen sticks when you reach it; cards merged > spread out while you scroll ---- */
-  (function () {
-    var sec = $('#offers');
-    var box = sec && $('.container', sec), wrap = sec && $('.um-offers-grid', sec);
-    var cards = sec ? $$('.um-offer', sec) : [];
-    if (!sec || !box || !wrap || !cards.length) {
-      console.warn('[offers] not started - found: section=' + !!sec + ', grid=' + !!wrap + ', cards=' + cards.length + '. Check the new Offers HTML.');
-      return;
-    }
-    var pin = document.createElement('div'); pin.className = 'um-offers-pin';
-    box.parentNode.insertBefore(pin, box); pin.appendChild(box);
-    var spacer = document.createElement('div'); sec.appendChild(spacer);
-    var tilt = [-7, 5, -3], items = [], on = false, topOff = 0, extra = 0, fit = 1, padTop = 0;
-    function ease(t) { return 1 - Math.pow(1 - t, 3); }
-    function measure() {
-      on = window.innerWidth >= 992;
-      cards.forEach(function (c) { c.style.transform = 'none'; });
-      box.style.transform = 'none'; fit = 1;
-      var vh = window.innerHeight;
-      padTop = parseFloat(getComputedStyle(sec).paddingTop) || 0;   /* <- the missing line */
-      topOff = on && header ? header.offsetHeight : 0;
-      if (on) {
-        var pinH = vh - topOff;
-        extra = Math.round(vh * 1.1);
-        pin.style.height = pinH + 'px'; spacer.style.height = extra + 'px';
-        var ch = box.scrollHeight;
-        if (ch > pinH - 20) { fit = (pinH - 20) / ch; box.style.transform = 'scale(' + fit + ')'; }
-      } else { pin.style.height = ''; spacer.style.height = '0px'; }
-      var w = wrap.getBoundingClientRect(), cx = w.left + w.width / 2, cy = w.top + w.height / 2;
-      items = cards.map(function (c, i) {
-        var r = c.getBoundingClientRect();
-        return { el: c, dx: (cx - (r.left + r.width / 2)) / fit, dy: (cy - (r.top + r.height / 2)) / fit, rot: tilt[i % tilt.length] };
-      });
-      update();
-    }
-    function update() {
-      var vh = window.innerHeight, p;
-      if (on) {
-        var natural = sec.getBoundingClientRect().top + padTop;
-        p = Math.min(1, Math.max(0, (topOff - natural) / extra / 0.8));
-      } else {
-        var t = sec.getBoundingClientRect().top;
-        p = Math.min(1, Math.max(0, (vh * 0.6 - t) / (vh * 0.5)));
-      }
-      var e = ease(p), k = 1 - e;
-      items.forEach(function (it, i) {
-        it.el.style.transform = 'translate3d(' + (it.dx * k) + 'px,' + (it.dy * k) + 'px,0) rotate(' + (it.rot * k) + 'deg) scale(' + (0.82 + 0.18 * e) + ')';
-        it.el.style.opacity = String(0.35 + 0.65 * Math.min(1, e * 1.6));
-        it.el.style.zIndex = String(10 - i);
-      });
-    }
-    var ticking = false;
-    window.addEventListener('scroll', function () {
-      if (!ticking) { ticking = true; requestAnimationFrame(function () { update(); ticking = false; }); }
-    }, { passive: true });
-    window.addEventListener('resize', measure);
-    window.addEventListener('load', measure);
-    measure();
-  })();
+  /* offers: the old scroll-pin/stacking effect was removed - it stacked the cards on top of each other at 35% opacity (see offers.css) */
 
 
     /* ---- curved section edges: flat when you arrive, bend into a curve as you scroll ---- */
