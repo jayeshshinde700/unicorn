@@ -1703,3 +1703,47 @@
     justify-content: center;
   }
 }
+
+
+/* ======================================================================
+   LIVE BOOKING ADDITIONS (availability from MySQL, validation, mobile summary)
+   ====================================================================== */
+.bk-date-field--sm { min-width: 120px; flex: 0 1 130px; }
+.bk-search-btn { align-self: flex-end; white-space: nowrap; padding: 11px 22px; }
+.bk-date-bar__summary { flex: 1 0 100%; margin: 0; font-size: 13px; color: #6a6a6a; }
+.bk-country { width: auto; max-width: 150px; border-radius: 8px 0 0 8px; border-right: none; padding-right: 26px; background-color: #f2eee6; font-weight: 600; }
+
+/* availability on room cards */
+.bk-card__calc { font-size: 13px; color: #555; margin: -4px 0 10px; font-variant-numeric: tabular-nums; }
+.bk-card__avail { display: inline-block; align-self: flex-start; margin-bottom: 12px; padding: 3px 11px; border-radius: 20px; font-size: 12px; font-weight: 600; background: var(--color-success-bg); color: var(--color-success); }
+.bk-card__avail.is-low { background: #FEF3C7; color: #92400E; }
+.bk-card__avail.is-out { background: #f1efeb; color: #7a756b; }
+.bk-card.is-unavailable { opacity: .72; }
+.bk-card.is-unavailable .bk-card__img { filter: grayscale(.7); }
+.bk-card__select:disabled { background: #cfc9bd; color: #fff; cursor: not-allowed; }
+.bk-card__select:disabled:hover { background: #cfc9bd; }
+
+/* field errors (shown on the group so the message also works for the phone field) */
+.bk-form-group.has-error .bk-error-msg { display: block; }
+.bk-form-group.has-error .bk-input,
+.bk-form-group.has-error .bk-select { border-color: var(--color-danger, #dc2626); }
+
+/* busy button */
+.bk-btn-primary.is-loading { opacity: .8; cursor: progress; pointer-events: none; }
+.bk-btn-primary.is-loading::after { content: ""; width: 15px; height: 15px; margin-left: 10px; border: 2px solid rgba(255,255,255,.5); border-top-color: #fff; border-radius: 50%; animation: bkSpin .7s linear infinite; }
+@keyframes bkSpin { to { transform: rotate(360deg); } }
+.bk-btn-primary:disabled { opacity: .55; cursor: not-allowed; }
+
+/* the summary header is a button now: look the same, and become a tap-to-expand bar on small screens */
+button.bk-summary__head { width: 100%; border: 0; text-align: left; cursor: default; font-family: inherit; gap: 12px; }
+.bk-summary__mini { margin-left: auto; font-weight: 700; color: #ffffff; display: none; }
+.bk-summary__chev { display: none; width: 9px; height: 9px; border-right: 2px solid #fff; border-bottom: 2px solid #fff; transform: rotate(45deg); transition: transform .3s ease; margin-top: -4px; }
+@media (max-width: 992px) {
+  button.bk-summary__head { cursor: pointer; }
+  .bk-summary__mini, .bk-summary__chev { display: inline-block; }
+  #bookingSummaryCard:not(.is-open) .bk-summary__body { display: none; }
+  #bookingSummaryCard.is-open .bk-summary__chev { transform: rotate(-135deg); margin-top: 4px; }
+  #bookingSummaryCard { order: -1; position: sticky; top: 70px; z-index: 5; }
+}
+.bk-search-btn.bk-btn-primary { width: auto; flex: 0 0 auto; }
+@media (max-width: 420px) { .bk-step:not(.is-active) .bk-step__label { display: none; } }

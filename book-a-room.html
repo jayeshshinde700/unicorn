@@ -180,16 +180,17 @@
                                 <label for="filterCheckOut"><svg class="ico"><use href="#i-cal"/></svg> Check-Out Date</label>
                                 <input type="text" id="filterCheckOut" placeholder="Select check-out" readonly>
                             </div>
-                            <div class="bk-date-field">
-                                <label for="filterGuests"><svg class="ico"><use href="#i-user"/></svg> Guests</label>
-                                <select id="filterGuests">
-                                    <option value="1">1 Guest</option>
-                                    <option value="2" selected>2 Guests</option>
-                                    <option value="3">3 Guests</option>
-                                    <option value="4">4 Guests</option>
-                                </select>
+                            <div class="bk-date-field bk-date-field--sm">
+                                <label for="filterAdults"><svg class="ico"><use href="#i-user"/></svg> Adults</label>
+                                <select id="filterAdults"></select>
                             </div>
+                            <div class="bk-date-field bk-date-field--sm">
+                                <label for="filterChildren"><svg class="ico"><use href="#i-people"/></svg> Children</label>
+                                <select id="filterChildren"></select>
+                            </div>
+                            <button type="button" class="bk-btn-primary bk-search-btn" id="btnSearch"><span>Update Availability</span></button>
                         </div>
+                        <p class="bk-date-bar__summary" id="searchSummary" aria-live="polite"></p>
 
                         <!-- Room Type Filter Tabs -->
                         <div class="bk-type-tabs" role="tablist" aria-label="Room Category Filter">
@@ -209,6 +210,11 @@
                     <div id="roomsLoader" class="bk-loader-wrap">
                         <div class="bk-spinner"></div>
                         <p class="bk-loader-text">Loading available rooms &amp; suites...</p>
+                    </div>
+
+                    <div class="bk-alert bk-alert--error" id="roomsError" style="display:none;" role="alert">
+                        <svg class="ico" width="20" height="20" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+                        <span id="roomsErrorText"></span>
                     </div>
 
                     <div class="bk-grid" id="roomsGrid" style="display:none;">
@@ -270,10 +276,10 @@
                                         <div class="bk-form-group">
                                             <label class="bk-label" for="guestPhone">Phone Number <span class="bk-req">*</span></label>
                                             <div class="bk-input-prefix-group">
-                                                <span class="bk-input-prefix">+91</span>
-                                                <input type="tel" id="guestPhone" class="bk-input" placeholder="98765 43210" pattern="[0-9]{10}" required>
+                                                <select id="guestCountry" class="bk-select bk-country" aria-label="Country code"><option value="+91">India (+91)</option></select>
+                                                <input type="tel" id="guestPhone" class="bk-input" placeholder="98765 43210" inputmode="tel" autocomplete="tel-national" required>
                                             </div>
-                                            <span class="bk-error-msg">Please enter a valid 10-digit mobile number.</span>
+                                            <span class="bk-error-msg" id="phoneError">Please enter a valid mobile number.</span>
                                         </div>
                                     </div>
                                 </div>
@@ -299,23 +305,14 @@
                                     <div class="col-md-6">
                                         <div class="bk-form-group">
                                             <label class="bk-label" for="formAdults">Adults</label>
-                                            <select id="formAdults" class="bk-select">
-                                                <option value="1">1 Adult</option>
-                                                <option value="2" selected>2 Adults</option>
-                                                <option value="3">3 Adults</option>
-                                                <option value="4">4 Adults</option>
-                                            </select>
+                                            <select id="formAdults" class="bk-select"></select>
+                                            <span class="bk-error-msg" id="guestsError">This room sleeps fewer guests.</span>
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="bk-form-group">
                                             <label class="bk-label" for="formChildren">Children</label>
-                                            <select id="formChildren" class="bk-select">
-                                                <option value="0" selected>0 Children</option>
-                                                <option value="1">1 Child</option>
-                                                <option value="2">2 Children</option>
-                                                <option value="3">3 Children</option>
-                                            </select>
+                                            <select id="formChildren" class="bk-select"></select>
                                         </div>
                                     </div>
                                 </div>
@@ -340,11 +337,12 @@
 
                         <!-- Sticky Summary Sidebar -->
                         <aside class="bk-summary" id="bookingSummaryCard">
-                            <div class="bk-summary__head">
+                            <button type="button" class="bk-summary__head bk-summary__toggle" id="summaryToggle" aria-expanded="false" aria-controls="summaryBody">
                                 <h4>Reservation Summary</h4>
-                                <span class="badge bg-light text-dark">Step 2 of 3</span>
-                            </div>
-                            <div class="bk-summary__body">
+                                <span class="bk-summary__mini" id="summaryMini"></span>
+                                <span class="bk-summary__chev" aria-hidden="true"></span>
+                            </button>
+                            <div class="bk-summary__body" id="summaryBody">
                                 <div class="bk-summary__room-info">
                                     <img src="assets/images/unicon/rooms/deluxe.jpg" alt="Selected Room" class="bk-summary__room-thumb" id="summaryThumb">
                                     <div class="bk-summary__room-details">
@@ -367,12 +365,16 @@
                                         <span id="summaryNightsText">1 Night</span>
                                     </div>
                                     <div class="bk-summary__row">
+                                        <span>Guests:</span>
+                                        <span id="summaryGuestsText">-</span>
+                                    </div>
+                                    <div class="bk-summary__row">
                                         <span>Room Rate:</span>
                                         <span id="summaryRateCalculation">1 × ₹4,500</span>
                                     </div>
-                                    <div class="bk-summary__row">
-                                        <span>Taxes &amp; Fees:</span>
-                                        <span>Included</span>
+                                    <div class="bk-summary__row" id="summaryTaxRow">
+                                        <span id="summaryTaxLabel">Taxes &amp; Fees:</span>
+                                        <span id="summaryTaxVal">Included</span>
                                     </div>
                                 </div>
 
@@ -467,9 +469,14 @@
                             <div class="bk-notice-box">
                                 <svg class="ico"><use href="#i-shield"/></svg>
                                 <div>
-                                    <strong>Free Cancellation &amp; Guarantee</strong>
-                                    <div>Free cancellation until 48 hours prior to check-in. Check-in is from 2:00 PM and check-out is by 11:00 AM. No immediate advance payment required; payment is collected at the front desk upon check-in.</div>
+                                    <strong>Cancellation &amp; Payment</strong>
+                                    <div id="policyText">Free cancellation until 48 hours prior to check-in. Check-in is from 2:00 PM and check-out is by 11:00 AM. No immediate advance payment required; payment is collected at the front desk upon check-in.</div>
                                 </div>
+                            </div>
+
+                            <div class="bk-alert bk-alert--error mt-3" id="confirmError" style="display:none;" role="alert">
+                                <svg class="ico" width="20" height="20" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+                                <span id="confirmErrorText"></span>
                             </div>
 
                             <div class="d-flex gap-3 mt-4 pt-2">
@@ -505,17 +512,21 @@
                                         <span id="summaryFinalNights">1 Night</span>
                                     </div>
                                     <div class="bk-summary__row">
+                                        <span>Guests:</span>
+                                        <span id="summaryFinalGuests">-</span>
+                                    </div>
+                                    <div class="bk-summary__row">
                                         <span>Room Breakdown:</span>
                                         <span id="summaryFinalBreakdown">1 × ₹4,500</span>
                                     </div>
-                                    <div class="bk-summary__row">
-                                        <span>Taxes &amp; Service:</span>
-                                        <span>Included</span>
+                                    <div class="bk-summary__row" id="summaryFinalTaxRow">
+                                        <span id="summaryFinalTaxLabel">Taxes &amp; Service:</span>
+                                        <span id="summaryFinalTaxVal">Included</span>
                                     </div>
                                 </div>
 
                                 <div class="bk-summary__total-row">
-                                    <span class="bk-summary__total-label">Pay at Hotel:</span>
+                                    <span class="bk-summary__total-label">Total Amount:</span>
                                     <span class="bk-summary__total-val" id="summaryFinalTotal">₹4,500</span>
                                 </div>
 
@@ -566,22 +577,29 @@
                         <strong id="modalDates">20 Nov 2026 – 22 Nov 2026</strong>
                     </div>
                     <div class="bk-modal__detail-item">
-                        <span>Total Due at Hotel:</span>
+                        <span>Status:</span>
+                        <strong id="modalStatus" style="text-transform:capitalize;">Confirmed</strong>
+                    </div>
+                    <div class="bk-modal__detail-item">
+                        <span>Total Amount:</span>
                         <strong id="modalTotal" style="color:var(--brand-gold-dark);">₹9,000</strong>
                     </div>
                 </div>
 
-                <div class="alert alert-light border small text-muted mb-4">
-                    <svg class="ico me-1 text-primary"><use href="#i-mail"/></svg> A full confirmation receipt has been sent to <strong id="modalEmailNote">guest@example.com</strong>.
+                <div class="alert alert-light border small text-muted mb-4" id="modalEmailBox">
+                    <svg class="ico me-1 text-primary"><use href="#i-mail"/></svg> <span id="modalEmailNote"></span>
                 </div>
 
                 <div class="bk-modal__actions">
                     <button type="button" class="bk-btn-secondary" id="btnPrintReceipt">
                         <svg class="ico" width="16" height="16"><use href="#i-shield"/></svg>
-                        <span>Print Receipt</span>
+                        <span>Print Booking</span>
                     </button>
                     <a href="find-my-reservation.html" class="bk-btn-primary" id="btnModalFindRes">
-                        <span>View Reservation</span>
+                        <span>Find My Reservation</span>
+                    </a>
+                    <a href="index.html" class="bk-btn-secondary" id="btnModalHome">
+                        <span>Back to Home</span>
                     </a>
                 </div>
             </div>
@@ -840,787 +858,7 @@
     <script src="assets/js/navigation.js"></script>
 
     <!-- Booking Page Engine -->
-    <script>
-    (function () {
-        'use strict';
-
-        // 5 Fallback rooms matching Unicorn database
-        const FALLBACK_ROOMS = [
-            {
-                id: 'deluxe',
-                name: 'Deluxe Room',
-                category: 'room',
-                price: 4500,
-                size: 32,
-                guests: 2,
-                bed: 'King bed',
-                view: 'City light',
-                badge: { text: 'Most booked', style: 'gold' },
-                tagline: 'Calm, classic comfort',
-                short: 'Calm neutrals',
-                description: 'A quiet, softly lit room in warm neutrals. The king bed has plush bedding, quality linens and a choice of pillows, and tall windows with floor-length drapes let the morning in. Simple, restful and easy to love.',
-                image: 'assets/images/unicon/rooms/deluxe.jpg',
-                amenities: [
-                    { icon: 'wifi', label: 'Free Wi-Fi' },
-                    { icon: 'snow', label: 'Air-conditioning' },
-                    { icon: 'tv', label: 'Flat-screen TV' },
-                    { icon: 'cup', label: 'Tea & coffee maker' },
-                    { icon: 'lock', label: 'In-room safe' },
-                    { icon: 'bed', label: 'Choice of pillows' },
-                    { icon: 'bath', label: 'En-suite bathroom' },
-                    { icon: 'car', label: 'Free parking' }
-                ]
-            },
-            {
-                id: 'executive',
-                name: 'Executive Room',
-                category: 'room',
-                price: 5800,
-                size: 38,
-                guests: 2,
-                bed: 'King bed',
-                view: 'City view',
-                badge: { text: 'City view', style: 'light' },
-                tagline: 'Space to work, room to unwind',
-                short: 'More space, more light and a window onto the city. Made for business trips that deserve a better night.',
-                description: 'More space and more light than our Deluxe, with a tall window onto the city. A work corner keeps the laptop close, the king bed keeps the night long. Made for business trips that deserve a better sleep.',
-                image: 'assets/images/unicon/rooms/executive.jpg',
-                amenities: [
-                    { icon: 'wifi', label: 'Free Wi-Fi' },
-                    { icon: 'desk', label: 'Work corner' },
-                    { icon: 'snow', label: 'Air-conditioning' },
-                    { icon: 'tv', label: 'Flat-screen TV' },
-                    { icon: 'cup', label: 'Tea & coffee maker' },
-                    { icon: 'lock', label: 'In-room safe' },
-                    { icon: 'sun', label: 'City-view window' },
-                    { icon: 'car', label: 'Free parking' }
-                ]
-            },
-            {
-                id: 'family',
-                name: 'Family Suite',
-                category: 'suite',
-                price: 8200,
-                size: 52,
-                guests: 4,
-                bed: '2 twin beds',
-                view: 'Garden side',
-                badge: { text: 'Best for families', style: 'light' },
-                tagline: 'Everyone under one roof',
-                short: 'Room for everyone: twin beds, a separate sleeping area and space to spread out after a long day out.',
-                description: 'Twin beds, a separate sleeping area and plenty of space to spread out after a long day. Wooden wardrobes, a bright bathroom and a calm, airy feel make it easy for the whole family to settle in.',
-                image: 'assets/images/unicon/rooms/family.jpg',
-                amenities: [
-                    { icon: 'bed', label: 'Twin beds' },
-                    { icon: 'sofa', label: 'Extra sleeping space' },
-                    { icon: 'wifi', label: 'Free Wi-Fi' },
-                    { icon: 'snow', label: 'Air-conditioning' },
-                    { icon: 'tv', label: 'Flat-screen TV' },
-                    { icon: 'cup', label: 'Tea & coffee maker' },
-                    { icon: 'lock', label: 'In-room safe' },
-                    { icon: 'bath', label: 'Bathroom with shower' }
-                ]
-            },
-            {
-                id: 'premium',
-                name: 'Premium Suite',
-                category: 'suite',
-                price: 9800,
-                size: 60,
-                guests: 3,
-                bed: 'King bed',
-                view: 'Courtyard',
-                badge: { text: 'Warm & glowing', style: 'light' },
-                tagline: 'Rich, warm and private',
-                short: 'Layered lighting, a statement headboard wall and a table for a quiet dinner in. Rich, warm and private.',
-                description: 'Layered lighting, a statement headboard wall and a small table for a quiet dinner in. The Premium Suite is warm, glowing and generously sized, for guests who like their evenings unhurried.',
-                image: 'assets/images/unicon/rooms/premium.jpg',
-                amenities: [
-                    { icon: 'tv', label: 'Smart TV' },
-                    { icon: 'sofa', label: 'Dining nook' },
-                    { icon: 'drop', label: 'Rain shower' },
-                    { icon: 'wifi', label: 'Free Wi-Fi' },
-                    { icon: 'desk', label: 'Work desk' },
-                    { icon: 'snow', label: 'Air-conditioning' },
-                    { icon: 'lock', label: 'In-room safe' },
-                    { icon: 'cup', label: 'Tea & coffee maker' }
-                ]
-            },
-            {
-                id: 'unicon',
-                name: 'The Unicon Suite',
-                category: 'suite',
-                price: 14500,
-                size: 85,
-                guests: 4,
-                bed: 'King bed + lounge',
-                view: 'Open view',
-                badge: { text: 'Signature', style: 'gold' },
-                tagline: 'Our signature suite',
-                short: 'Our most open, light-filled suite. Wide glass doors, natural timber and airy linen, made for slow mornings.',
-                description: 'Our most open, light-filled suite. Wide glass doors, natural timber and airy linen make mornings feel slow in the best way. A private lounge, a king bed and the most space we offer, all in one calm room.',
-                image: 'assets/images/unicon/rooms/unicon.webp',
-                amenities: [
-                    { icon: 'sun', label: 'Open view' },
-                    { icon: 'sofa', label: 'Private lounge' },
-                    { icon: 'drop', label: 'Rain shower' },
-                    { icon: 'wifi', label: 'Free Wi-Fi' },
-                    { icon: 'desk', label: 'Work desk' },
-                    { icon: 'tv', label: 'Smart TV' },
-                    { icon: 'snow', label: 'Air-conditioning' },
-                    { icon: 'lock', label: 'In-room safe' }
-                ]
-            }
-        ];
-
-        // State
-        const state = {
-            currentStep: 1,
-            rooms: [],
-            selectedRoom: null,
-            filterCategory: 'all',
-            filterGuests: 2,
-            checkInDate: '',
-            checkOutDate: '',
-            nights: 1,
-            guest: {
-                firstName: '',
-                lastName: '',
-                email: '',
-                phone: '',
-                adults: 2,
-                children: 0,
-                requests: ''
-            },
-            fpIn1: null,
-            fpOut1: null,
-            fpIn2: null,
-            fpOut2: null
-        };
-
-        // DOM elements
-        const stepsNav = document.getElementById('bkStepsNav');
-        const roomsLoader = document.getElementById('roomsLoader');
-        const roomsGrid = document.getElementById('roomsGrid');
-        const roomSelectionAlert = document.getElementById('roomSelectionAlert');
-        const filterCategoryBtns = document.querySelectorAll('.bk-type-btn');
-        const filterGuestsSelect = document.getElementById('filterGuests');
-        const btnProceedToDetails = document.getElementById('btnProceedToDetails');
-        const actionRoomTitle = document.getElementById('actionRoomTitle');
-        const actionRoomSub = document.getElementById('actionRoomSub');
-        const guestForm = document.getElementById('guestDetailsForm');
-        const btnBackToRooms = document.getElementById('btnBackToRooms');
-        const btnSummaryProceed = document.getElementById('btnSummaryProceed');
-        const btnBackToDetails = document.getElementById('btnBackToDetails');
-        const btnFinalConfirm = document.getElementById('btnFinalConfirm');
-        const btnFinalConfirmSidebar = document.getElementById('btnFinalConfirmSidebar');
-        const btnEditRoom = document.getElementById('btnEditRoom');
-        const btnEditGuests = document.getElementById('btnEditGuests');
-        const successModal = document.getElementById('bkSuccessModal');
-        const btnPrintReceipt = document.getElementById('btnPrintReceipt');
-
-        // Currency formatter
-        function formatINR(val) {
-            return '₹' + Number(val).toLocaleString('en-IN');
-        }
-
-        // Date Display Formatter (DD MMM YYYY)
-        function formatDateDisplay(dateStr) {
-            if (!dateStr) return '';
-            const d = new Date(dateStr);
-            if (isNaN(d.getTime())) return dateStr;
-            const months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
-            const day = String(d.getDate()).padStart(2, '0');
-            return `${day} ${months[d.getMonth()]} ${d.getFullYear()}`;
-        }
-
-        // Calculate nights between two YYYY-MM-DD
-        function calculateNights(start, end) {
-            if (!start || !end) return 1;
-            const d1 = new Date(start);
-            const d2 = new Date(end);
-            const diffTime = d2.getTime() - d1.getTime();
-            const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
-            return diffDays > 0 ? diffDays : 1;
-        }
-
-        // Initialize flatpickr instances
-        function initDatePickers() {
-            const today = new Date();
-            const tomorrow = new Date();
-            tomorrow.setDate(today.getDate() + 1);
-
-            const toISO = d => d.toISOString().split('T')[0];
-            state.checkInDate = toISO(today);
-            state.checkOutDate = toISO(tomorrow);
-            state.nights = 1;
-
-            const fpConfig = {
-                minDate: 'today',
-                dateFormat: 'Y-m-d',
-                altInput: true,
-                altFormat: 'd M Y'
-            };
-
-            // Step 1 Check-In
-            state.fpIn1 = flatpickr('#filterCheckIn', Object.assign({}, fpConfig, {
-                defaultDate: state.checkInDate,
-                onChange: function (selectedDates, dateStr) {
-                    state.checkInDate = dateStr;
-                    syncDates('checkIn', dateStr);
-                }
-            }));
-
-            // Step 1 Check-Out
-            state.fpOut1 = flatpickr('#filterCheckOut', Object.assign({}, fpConfig, {
-                defaultDate: state.checkOutDate,
-                minDate: tomorrow,
-                onChange: function (selectedDates, dateStr) {
-                    state.checkOutDate = dateStr;
-                    syncDates('checkOut', dateStr);
-                }
-            }));
-
-            // Step 2 Check-In (synced)
-            state.fpIn2 = flatpickr('#formCheckIn', Object.assign({}, fpConfig, {
-                defaultDate: state.checkInDate,
-                onChange: function (selectedDates, dateStr) {
-                    state.checkInDate = dateStr;
-                    syncDates('checkIn', dateStr);
-                }
-            }));
-
-            // Step 2 Check-Out (synced)
-            state.fpOut2 = flatpickr('#formCheckOut', Object.assign({}, fpConfig, {
-                defaultDate: state.checkOutDate,
-                minDate: tomorrow,
-                onChange: function (selectedDates, dateStr) {
-                    state.checkOutDate = dateStr;
-                    syncDates('checkOut', dateStr);
-                }
-            }));
-        }
-
-        // Synchronize check-in and check-out across flatpickr pickers
-        function syncDates(changedField, val) {
-            if (changedField === 'checkIn') {
-                const nextDay = new Date(val);
-                nextDay.setDate(nextDay.getDate() + 1);
-                const nextDayStr = nextDay.toISOString().split('T')[0];
-
-                state.fpOut1.set('minDate', nextDayStr);
-                state.fpOut2.set('minDate', nextDayStr);
-
-                if (new Date(state.checkOutDate) <= new Date(val)) {
-                    state.checkOutDate = nextDayStr;
-                    state.fpOut1.setDate(nextDayStr);
-                    state.fpOut2.setDate(nextDayStr);
-                }
-
-                state.fpIn1.setDate(val);
-                state.fpIn2.setDate(val);
-            } else if (changedField === 'checkOut') {
-                state.fpOut1.setDate(val);
-                state.fpOut2.setDate(val);
-            }
-
-            state.nights = calculateNights(state.checkInDate, state.checkOutDate);
-            updateSummaryCards();
-        }
-
-        // Fetch rooms from api/rooms.php with fallback
-        async function loadRooms() {
-            try {
-                const response = await fetch('api/rooms.php', { cache: 'no-cache' });
-                if (!response.ok) throw new Error('Network error loading rooms');
-                const data = await response.json();
-                if (data && data.ok && Array.isArray(data.rooms) && data.rooms.length > 0) {
-                    state.rooms = data.rooms;
-                } else {
-                    state.rooms = FALLBACK_ROOMS;
-                }
-            } catch (err) {
-                console.warn('api/rooms.php fetch error, using fallback rooms:', err);
-                state.rooms = FALLBACK_ROOMS;
-            } finally {
-                renderRooms();
-                checkUrlRoomParam();
-            }
-        }
-
-        // If URL has ?room=... auto select it
-        function checkUrlRoomParam() {
-            const params = new URLSearchParams(window.location.search);
-            const rId = params.get('room');
-            if (rId) {
-                const match = state.rooms.find(r => r.id.toLowerCase() === rId.toLowerCase());
-                if (match) {
-                    selectRoom(match);
-                }
-            }
-        }
-
-        // Render Room Cards in Grid
-        function renderRooms() {
-            roomsLoader.style.display = 'none';
-            roomsGrid.style.display = 'grid';
-            roomsGrid.innerHTML = '';
-
-            const filtered = state.rooms.filter(room => {
-                const catMatch = state.filterCategory === 'all' || (room.category && room.category.toLowerCase() === state.filterCategory);
-                return catMatch;
-            });
-
-            if (filtered.length === 0) {
-                roomsGrid.innerHTML = `
-                    <div class="col-12 text-center py-5">
-                        <h4>No rooms match this category.</h4>
-                        <p class="text-muted">Please switch category or adjust your filters.</p>
-                    </div>`;
-                return;
-            }
-
-            filtered.forEach(room => {
-                const isSel = state.selectedRoom && state.selectedRoom.id === room.id;
-                const card = document.createElement('article');
-                card.className = `bk-card ${isSel ? 'is-selected' : ''}`;
-                card.dataset.roomId = room.id;
-
-                const badgeText = (room.badge && room.badge.text) ? room.badge.text : '';
-                const badgeStyle = (room.badge && room.badge.style === 'gold') ? 'bk-card__badge--gold' : '';
-                const displayPrice = formatINR(room.price || 0);
-
-                // Amenity icons slice (first 4)
-                let amenitiesHtml = '';
-                if (Array.isArray(room.amenities)) {
-                    amenitiesHtml = room.amenities.slice(0, 4).map(a => `
-                        <span class="bk-amenity-chip">
-                            <svg class="ico"><use href="#i-${a.icon || 'star'}"/></svg>
-                            <span>${a.label || ''}</span>
-                        </span>
-                    `).join('');
-                }
-
-                card.innerHTML = `
-                    <span class="bk-card__selected-pill">
-                        <svg class="ico" width="14" height="14"><use href="#i-check"/></svg> Selected
-                    </span>
-                    <div class="bk-card__img-wrap">
-                        <img src="${room.image || 'assets/images/unicon/rooms/deluxe.jpg'}" alt="${room.imageAlt || room.name}" class="bk-card__img" loading="lazy">
-                        ${badgeText ? `<span class="bk-card__badge ${badgeStyle}">${badgeText}</span>` : ''}
-                    </div>
-                    <div class="bk-card__body">
-                        <div class="bk-card__header">
-                            <h3 class="bk-card__name">${room.name}</h3>
-                            <p class="bk-card__tagline">${room.tagline || room.short || ''}</p>
-                        </div>
-
-                        <div class="bk-card__price-wrap">
-                            <span class="bk-card__price">${displayPrice}</span>
-                            <span class="bk-card__per-night">/ night + taxes</span>
-                        </div>
-
-                        <div class="bk-card__specs">
-                            <span class="bk-card__spec" title="Room Size">
-                                <svg class="ico"><use href="#i-area"/></svg> ${room.size || 30} m²
-                            </span>
-                            <span class="bk-card__spec" title="Max Guests">
-                                <svg class="ico"><use href="#i-user"/></svg> Up to ${room.guests || 2} Guests
-                            </span>
-                            <span class="bk-card__spec" title="Bed Configuration">
-                                <svg class="ico"><use href="#i-bed"/></svg> ${room.bed || 'King Bed'}
-                            </span>
-                        </div>
-
-                        <div class="bk-card__amenities">
-                            ${amenitiesHtml}
-                        </div>
-
-                        <div class="bk-card__actions">
-                            <button type="button" class="bk-card__select" data-room-id="${room.id}">
-                                ${isSel ? '✓ Selected' : 'Select Room'}
-                            </button>
-                            <button type="button" class="bk-card__toggle" data-room-toggle="${room.id}">
-                                View Details
-                            </button>
-                        </div>
-                    </div>
-                    <div class="bk-card__details" id="details-${room.id}">
-                        <h6>About This Stay</h6>
-                        <p>${room.description || room.short || 'Thoughtfully designed space with premium bedding, luxurious linens and serene interiors.'}</p>
-                        ${room.notes ? `<h6>Policies &amp; Notes</h6><p>${room.notes}</p>` : ''}
-                    </div>
-                `;
-
-                // Handle select button click
-                card.querySelector('.bk-card__select').addEventListener('click', function (e) {
-                    e.stopPropagation();
-                    selectRoom(room);
-                });
-
-                // Handle View Details toggle
-                card.querySelector('.bk-card__toggle').addEventListener('click', function (e) {
-                    e.stopPropagation();
-                    const det = card.querySelector('.bk-card__details');
-                    det.classList.toggle('is-open');
-                    this.textContent = det.classList.contains('is-open') ? 'Hide Details' : 'View Details';
-                });
-
-                // Also allow clicking card to select
-                card.addEventListener('click', function (e) {
-                    if (e.target.closest('.bk-card__toggle') || e.target.closest('.bk-card__details')) return;
-                    selectRoom(room);
-                });
-
-                roomsGrid.appendChild(card);
-            });
-        }
-
-        // Room selection handler
-        function selectRoom(room) {
-            state.selectedRoom = room;
-            roomSelectionAlert.style.display = 'none';
-
-            // Update card states
-            document.querySelectorAll('.bk-card').forEach(el => {
-                const isTarget = el.dataset.roomId === room.id;
-                el.classList.toggle('is-selected', isTarget);
-                const selBtn = el.querySelector('.bk-card__select');
-                if (selBtn) {
-                    selBtn.textContent = isTarget ? '✓ Selected' : 'Select Room';
-                }
-            });
-
-            // Update Bottom action bar
-            actionRoomTitle.textContent = room.name;
-            actionRoomSub.textContent = `${formatINR(room.price)} / night · ${state.nights} Night${state.nights > 1 ? 's' : ''} = ${formatINR(room.price * state.nights)}`;
-
-            updateSummaryCards();
-        }
-
-        // Update Summary Cards in Steps 2 & 3
-        function updateSummaryCards() {
-            if (!state.selectedRoom) return;
-
-            const room = state.selectedRoom;
-            const nights = state.nights;
-            const subtotal = room.price * nights;
-            const formattedTotal = formatINR(subtotal);
-            const dateRangeStr = `${formatDateDisplay(state.checkInDate)} – ${formatDateDisplay(state.checkOutDate)}`;
-
-            // Step 2 Summary Elements
-            const sThumb = document.getElementById('summaryThumb');
-            const sName = document.getElementById('summaryRoomName');
-            const sRate = document.getElementById('summaryRoomRate');
-            const sCheckIn = document.getElementById('summaryCheckInText');
-            const sCheckOut = document.getElementById('summaryCheckOutText');
-            const sNights = document.getElementById('summaryNightsText');
-            const sCalc = document.getElementById('summaryRateCalculation');
-            const sTotal = document.getElementById('summaryTotalPrice');
-
-            if (sThumb) sThumb.src = room.image || 'assets/images/unicon/rooms/deluxe.jpg';
-            if (sName) sName.textContent = room.name;
-            if (sRate) sRate.textContent = `${formatINR(room.price)} / night`;
-            if (sCheckIn) sCheckIn.textContent = formatDateDisplay(state.checkInDate);
-            if (sCheckOut) sCheckOut.textContent = formatDateDisplay(state.checkOutDate);
-            if (sNights) sNights.textContent = `${nights} Night${nights > 1 ? 's' : ''}`;
-            if (sCalc) sCalc.textContent = `${nights} × ${formatINR(room.price)}`;
-            if (sTotal) sTotal.textContent = formattedTotal;
-
-            // Step 3 Review Elements
-            const revRoom = document.getElementById('revRoomName');
-            const revDates = document.getElementById('revDates');
-            const revNights = document.getElementById('revNights');
-            const revGuests = document.getElementById('revGuests');
-            const revName = document.getElementById('revGuestName');
-            const revEmail = document.getElementById('revGuestEmail');
-            const revPhone = document.getElementById('revGuestPhone');
-            const revReq = document.getElementById('revSpecialRequests');
-
-            if (revRoom) revRoom.textContent = room.name;
-            if (revDates) revDates.textContent = dateRangeStr;
-            if (revNights) revNights.textContent = `${nights} Night${nights > 1 ? 's' : ''}`;
-            if (revGuests) {
-                const a = state.guest.adults || 2;
-                const c = state.guest.children || 0;
-                revGuests.textContent = `${a} Adult${a > 1 ? 's' : ''}${c > 0 ? `, ${c} Child${c > 1 ? 'ren' : ''}` : ''}`;
-            }
-            if (revName) revName.textContent = `${state.guest.firstName} ${state.guest.lastName}`.trim() || '-';
-            if (revEmail) revEmail.textContent = state.guest.email || '-';
-            if (revPhone) revPhone.textContent = state.guest.phone ? `+91 ${state.guest.phone}` : '-';
-            if (revReq) revReq.textContent = state.guest.requests.trim() || 'No special requests';
-
-            // Step 3 Sidebar
-            const sfThumb = document.getElementById('summaryFinalThumb');
-            const sfName = document.getElementById('summaryFinalRoomName');
-            const sfRate = document.getElementById('summaryFinalRoomRate');
-            const sfNights = document.getElementById('summaryFinalNights');
-            const sfBreakdown = document.getElementById('summaryFinalBreakdown');
-            const sfTotal = document.getElementById('summaryFinalTotal');
-
-            if (sfThumb) sfThumb.src = room.image || 'assets/images/unicon/rooms/deluxe.jpg';
-            if (sfName) sfName.textContent = room.name;
-            if (sfRate) sfRate.textContent = `${formatINR(room.price)} / night`;
-            if (sfNights) sfNights.textContent = `${nights} Night${nights > 1 ? 's' : ''}`;
-            if (sfBreakdown) sfBreakdown.textContent = `${nights} × ${formatINR(room.price)}`;
-            if (sfTotal) sfTotal.textContent = formattedTotal;
-        }
-
-        // Wizard Navigation: Go to Step (1, 2, 3)
-        function goToStep(stepNum) {
-            if (stepNum === 2 || stepNum === 3) {
-                if (!state.selectedRoom) {
-                    roomSelectionAlert.style.display = 'flex';
-                    window.scrollTo({ top: roomSelectionAlert.offsetTop - 120, behavior: 'smooth' });
-                    return;
-                }
-            }
-
-            if (stepNum === 3) {
-                if (!validateGuestForm()) {
-                    return;
-                }
-            }
-
-            state.currentStep = stepNum;
-
-            // Update Progress Bar
-            document.querySelectorAll('.bk-step').forEach(btn => {
-                const s = parseInt(btn.dataset.step, 10);
-                btn.classList.remove('is-active', 'is-completed', 'is-clickable');
-                if (s === stepNum) {
-                    btn.classList.add('is-active');
-                } else if (s < stepNum) {
-                    btn.classList.add('is-completed', 'is-clickable');
-                }
-            });
-
-            // Update Panels
-            document.querySelectorAll('.bk-step-panel').forEach(panel => {
-                panel.classList.remove('is-active');
-            });
-            const targetPanel = document.getElementById(`stepPanel-${stepNum}`);
-            if (targetPanel) {
-                targetPanel.classList.add('is-active');
-            }
-
-            updateSummaryCards();
-            window.scrollTo({ top: document.querySelector('.bk-steps-wrap').offsetTop - 30, behavior: 'smooth' });
-        }
-
-        // Validate Step 2 Form
-        function validateGuestForm() {
-            let isValid = true;
-
-            const fn = document.getElementById('guestFirstName');
-            const ln = document.getElementById('guestLastName');
-            const em = document.getElementById('guestEmail');
-            const ph = document.getElementById('guestPhone');
-
-            // First Name
-            if (!fn.value.trim()) {
-                fn.classList.add('is-invalid');
-                isValid = false;
-            } else {
-                fn.classList.remove('is-invalid');
-            }
-
-            // Last Name
-            if (!ln.value.trim()) {
-                ln.classList.add('is-invalid');
-                isValid = false;
-            } else {
-                ln.classList.remove('is-invalid');
-            }
-
-            // Email
-            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-            if (!em.value.trim() || !emailRegex.test(em.value.trim())) {
-                em.classList.add('is-invalid');
-                isValid = false;
-            } else {
-                em.classList.remove('is-invalid');
-            }
-
-            // Phone (10 digits)
-            const cleanPhone = ph.value.trim().replace(/\D/g, '');
-            if (!cleanPhone || cleanPhone.length < 10) {
-                ph.classList.add('is-invalid');
-                isValid = false;
-            } else {
-                ph.classList.remove('is-invalid');
-            }
-
-            if (isValid) {
-                state.guest.firstName = fn.value.trim();
-                state.guest.lastName = ln.value.trim();
-                state.guest.email = em.value.trim();
-                state.guest.phone = cleanPhone;
-                state.guest.adults = parseInt(document.getElementById('formAdults').value, 10);
-                state.guest.children = parseInt(document.getElementById('formChildren').value, 10);
-                state.guest.requests = document.getElementById('guestSpecialRequests').value;
-            }
-
-            return isValid;
-        }
-
-        // Finish booking: Generate booking ID and open modal
-        function confirmBooking() {
-            // Generate random 6-digit booking ID
-            const randomDigits = Math.floor(100000 + Math.random() * 900000);
-            const bookingId = `UCH-${randomDigits}`;
-
-            const bookingPayload = {
-                bookingId: bookingId,
-                status: 'Confirmed',
-                createdAt: new Date().toISOString(),
-                room: {
-                    id: state.selectedRoom.id,
-                    name: state.selectedRoom.name,
-                    price: state.selectedRoom.price,
-                    category: state.selectedRoom.category
-                },
-                stay: {
-                    checkIn: state.checkInDate,
-                    checkOut: state.checkOutDate,
-                    nights: state.nights,
-                    adults: state.guest.adults,
-                    children: state.guest.children
-                },
-                guest: state.guest,
-                totalAmount: state.selectedRoom.price * state.nights
-            };
-
-            // Log details to console as required
-            console.log('Booking Confirmed:', bookingPayload);
-
-            // Populate Modal
-            document.getElementById('modalBookingId').textContent = bookingId;
-            document.getElementById('modalGuestName').textContent = `${state.guest.firstName} ${state.guest.lastName}`;
-            document.getElementById('modalRoomName').textContent = state.selectedRoom.name;
-            document.getElementById('modalDates').textContent = `${formatDateDisplay(state.checkInDate)} – ${formatDateDisplay(state.checkOutDate)} (${state.nights}N)`;
-            document.getElementById('modalTotal').textContent = formatINR(bookingPayload.totalAmount);
-            document.getElementById('modalEmailNote').textContent = state.guest.email;
-
-            // Update link to Find My Reservation with query params
-            const findResLink = document.getElementById('btnModalFindRes');
-            if (findResLink) {
-                findResLink.href = `find-my-reservation.html?id=${encodeURIComponent(bookingId)}&email=${encodeURIComponent(state.guest.email)}`;
-            }
-
-            // Save to sessionStorage/localStorage for seamless lookup demo
-            try {
-                localStorage.setItem(`res_${bookingId}`, JSON.stringify(bookingPayload));
-                localStorage.setItem('latest_reservation', JSON.stringify(bookingPayload));
-            } catch (e) {}
-
-            // Open Modal
-            successModal.classList.add('is-open');
-        }
-
-        // Event Listeners
-        function setupEventListeners() {
-            // Category filter buttons
-            filterCategoryBtns.forEach(btn => {
-                btn.addEventListener('click', function () {
-                    filterCategoryBtns.forEach(b => b.classList.remove('is-active'));
-                    this.classList.add('is-active');
-                    state.filterCategory = this.dataset.cat;
-                    renderRooms();
-                });
-            });
-
-            // Guests selector filter
-            if (filterGuestsSelect) {
-                filterGuestsSelect.addEventListener('change', function () {
-                    const guestsCount = parseInt(this.value, 10);
-                    state.filterGuests = guestsCount;
-                    const formAdults = document.getElementById('formAdults');
-                    if (formAdults) formAdults.value = guestsCount;
-                    state.guest.adults = guestsCount;
-                    updateSummaryCards();
-                });
-            }
-
-            // Step navigation clicks
-            stepsNav.addEventListener('click', function (e) {
-                const stepBtn = e.target.closest('.bk-step');
-                if (!stepBtn || !stepBtn.classList.contains('is-clickable')) return;
-                const targetStep = parseInt(stepBtn.dataset.step, 10);
-                goToStep(targetStep);
-            });
-
-            // Step 1 Proceed button
-            btnProceedToDetails.addEventListener('click', function () {
-                goToStep(2);
-            });
-
-            // Step 2 Back to rooms
-            btnBackToRooms.addEventListener('click', function () {
-                goToStep(1);
-            });
-
-            // Step 2 Submit & Summary proceed
-            guestForm.addEventListener('submit', function (e) {
-                e.preventDefault();
-                goToStep(3);
-            });
-
-            btnSummaryProceed.addEventListener('click', function () {
-                goToStep(3);
-            });
-
-            // Step 3 Back to details
-            btnBackToDetails.addEventListener('click', function () {
-                goToStep(2);
-            });
-
-            // Step 3 Confirm buttons
-            btnFinalConfirm.addEventListener('click', confirmBooking);
-            btnFinalConfirmSidebar.addEventListener('click', confirmBooking);
-
-            // Step 3 Edit buttons
-            btnEditRoom.addEventListener('click', function () {
-                goToStep(1);
-            });
-
-            btnEditGuests.addEventListener('click', function () {
-                goToStep(2);
-            });
-
-            // Form input blur validation
-            ['guestFirstName', 'guestLastName', 'guestEmail', 'guestPhone'].forEach(id => {
-                const el = document.getElementById(id);
-                if (el) {
-                    el.addEventListener('blur', function () {
-                        if (this.value.trim()) this.classList.remove('is-invalid');
-                    });
-                }
-            });
-
-            // Print button
-            if (btnPrintReceipt) {
-                btnPrintReceipt.addEventListener('click', function () {
-                    window.print();
-                });
-            }
-
-            // Close modal on outside click
-            successModal.addEventListener('click', function (e) {
-                if (e.target === successModal) {
-                    successModal.classList.remove('is-open');
-                }
-            });
-        }
-
-        // Initialize Everything
-        document.addEventListener('DOMContentLoaded', function () {
-            initDatePickers();
-            setupEventListeners();
-            loadRooms();
-        });
-
-    })();
-    </script>
+    <script src="assets/js/booking-api.js"></script>
+    <script src="assets/js/booking.js"></script>
 </body>
 </html>

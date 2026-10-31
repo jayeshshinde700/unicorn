@@ -1,0 +1,78 @@
+/* ==========================================================================
+   Unicorn Hospitality - Find My Reservation (find-my-reservation.html only)
+   Loads AFTER booking.css, which already holds the .fr-* look. This file only adds the live-lookup pieces.
+   ========================================================================== */
+
+.fr-btn:disabled { opacity: .5; cursor: not-allowed; }
+.fr-btn:disabled:hover { background: transparent; }
+#btnLookup { display: inline-flex; align-items: center; justify-content: center; }
+#btnLookup.is-loading { opacity: .85; pointer-events: none; }
+#btnLookup.is-loading::after { content: ""; width: 16px; height: 16px; margin-left: 10px; border: 2px solid rgba(255,255,255,.5); border-top-color: #fff; border-radius: 50%; animation: rsvSpin .7s linear infinite; }
+@keyframes rsvSpin { to { transform: rotate(360deg); } }
+.fr-card .bk-form-group.has-error .bk-error-msg { display: block; }
+.fr-card .bk-form-group.has-error .bk-input { border-color: var(--color-danger, #dc2626); }
+
+/* status colours */
+.fr-res-status.is-cancelled { background: #FEE2E2; color: #B91C1C; }
+.fr-res-status.is-pending { background: #FEF3C7; color: #92400E; }
+.fr-res-room-details p { margin: 0 0 2px; }
+.fr-res-grid { grid-template-columns: repeat(3, 1fr); }
+.fr-res-item p { overflow-wrap: anywhere; }
+
+/* notes inside the reservation card */
+.rsv-note { display: flex; flex-direction: column; gap: 3px; margin: 0 0 14px; padding: 13px 16px; border-radius: 10px; background: #faf8f4; border: 1px solid #efe8da; font-size: 14px; line-height: 1.55; color: #4a4a4a; overflow-wrap: anywhere; }
+.rsv-note strong { font-size: 12px; text-transform: uppercase; letter-spacing: .06em; color: #777; }
+.rsv-note--info { background: #f4f8f6; border-color: #dcebe3; }
+.rsv-note--warn { background: #FFFBEB; border-color: #FDE68A; color: #92400E; }
+.rsv-contact { margin: 18px 0 0; font-size: 14px; color: #666; }
+.rsv-contact a { color: var(--brand-gold-dark); font-weight: 600; }
+.fr-actions { margin-top: 6px; }
+.fr-btn--danger:disabled:hover { background: transparent; border-color: #fca5a5; }
+
+/* modals */
+.rsv-modal { position: fixed; inset: 0; z-index: 1600; display: flex; align-items: center; justify-content: center; padding: 20px; background: rgba(20,20,20,.62); backdrop-filter: blur(3px); opacity: 0; visibility: hidden; transition: opacity .3s ease, visibility 0s .3s; overflow-y: auto; }
+.rsv-modal.is-open { opacity: 1; visibility: visible; transition: opacity .3s ease; }
+.rsv-modal__box { position: relative; width: 100%; max-width: 640px; margin: auto; padding: 32px 30px 26px; border-radius: 18px; background: #fff; box-shadow: 0 30px 80px rgba(0,0,0,.35); transform: translateY(18px) scale(.97); transition: transform .4s cubic-bezier(.16,1,.3,1); }
+.rsv-modal__box--sm { max-width: 480px; }
+.rsv-modal.is-open .rsv-modal__box { transform: none; }
+.rsv-modal__x { position: absolute; right: 14px; top: 10px; width: 38px; height: 38px; border: 0; border-radius: 50%; background: #f2eee6; color: #333; font-size: 24px; line-height: 1; cursor: pointer; }
+.rsv-modal__x:hover { background: var(--brand-dark); color: #fff; }
+.rsv-modal__box h3 { font-size: 26px; margin: 0 0 4px; padding-right: 40px; }
+.rsv-modal__sub { margin: 0 0 20px; color: #6a6a6a; font-size: 14px; }
+.rsv-grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 0 16px; }
+.rsv-span2 { grid-column: 1 / -1; }
+.rsv-modal__fixed { font-size: 13px; color: #777; margin: 0 0 12px; }
+.rsv-modal__fixed a { color: var(--brand-gold-dark); font-weight: 600; }
+.rsv-quote { margin: 0 0 14px; padding: 14px 16px; border-radius: 10px; background: #faf8f4; border: 1px dashed var(--brand-gold-border); font-size: 14px; color: #444; min-height: 22px; }
+.rsv-quote b { color: var(--brand-dark); }
+.rsv-quote.is-bad { background: #FEF2F2; border-color: #FCA5A5; color: #B91C1C; }
+.rsv-modal__err { margin: 0 0 14px; padding: 12px 16px; border-radius: 10px; background: #FEF2F2; border: 1px solid #FCA5A5; color: #B91C1C; font-size: 14px; }
+.rsv-modal__btns { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 8px; }
+.rsv-modal__btns > * { flex: 1 1 160px; justify-content: center; }
+.rsv-danger-btn { padding: 12px 20px; border: 0; border-radius: 8px; background: #B91C1C; color: #fff; font-weight: 600; font-family: var(--jost); cursor: pointer; transition: background .25s ease; }
+.rsv-danger-btn:hover { background: #7f1414; }
+.rsv-danger-btn:disabled { background: #cfc9bd; cursor: not-allowed; }
+.rsv-cancel-sum { display: grid; gap: 8px; margin: 0 0 14px; padding: 14px 16px; border-radius: 10px; background: #faf8f4; font-size: 14px; }
+.rsv-cancel-sum div { display: flex; justify-content: space-between; gap: 12px; }
+.rsv-cancel-sum span { color: #777; }
+.rsv-modal .bk-btn-primary.is-loading, .rsv-danger-btn.is-loading { opacity: .8; pointer-events: none; }
+.rsv-modal .bk-form-group.has-error .bk-error-msg { display: block; }
+.rsv-modal .bk-form-group.has-error .bk-input, .rsv-modal .bk-form-group.has-error .bk-select { border-color: var(--color-danger, #dc2626); }
+.rsv-modal .bk-input-prefix-group .bk-input { flex: 1 1 auto; min-width: 0; }
+
+.rsv-toast { position: fixed; left: 50%; bottom: 28px; z-index: 1700; max-width: calc(100% - 32px); padding: 13px 22px; border-radius: 40px; background: #2c2c2c; color: #fff; font-size: 14px; box-shadow: 0 16px 40px rgba(0,0,0,.3); transform: translate(-50%, 30px); opacity: 0; pointer-events: none; transition: transform .5s cubic-bezier(.16,1,.3,1), opacity .3s ease; }
+.rsv-toast.is-on { transform: translate(-50%, 0); opacity: 1; }
+
+@media (max-width: 767px) {
+  .fr-res-grid { grid-template-columns: repeat(2, 1fr); }
+  .rsv-grid2 { grid-template-columns: 1fr; }
+  .rsv-modal__box { padding: 26px 18px 20px; }
+}
+@media (max-width: 420px) {
+  .fr-res-grid { grid-template-columns: 1fr; }
+  .fr-tooltip-box { white-space: normal; width: 210px; }
+}
+@media print {
+  .un-util, .un-header, .fr-hero, #lookupCard, .fr-actions, .rsv-contact, footer, .rts__back__top, .rsv-modal, .rsv-toast { display: none !important; }
+  .fr-main-wrap { padding: 0; }
+}
