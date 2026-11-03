@@ -10,8 +10,35 @@ function booking_ensure_schema(PDO $pdo): void {
     foreach (array_filter(array_map('trim', preg_split('/;\s*[\r\n]+/', (string)$sql))) as $stmt) {
         if (stripos($stmt, 'CREATE TABLE') === 0) $pdo->exec($stmt);
     }
+    /* Installs made before payments existed already have a `bookings` table: add the new columns once (CREATE TABLE IF NOT EXISTS cannot do that). */
+    $have = array_column($pdo->query('SHOW COLUMNS FROM bookings')->fetchAll(), 'Field');
+    $new = [
+        'cancel_reason' => 'VARCHAR(30) NULL', 'coupon_code' => 'VARCHAR(40) NULL', 'discount_amount' => 'DECIMAL(12,2) NOT NULL DEFAULT 0.00',
+        'payment_status' => "VARCHAR(16) NOT NULL DEFAULT 'unpaid'", 'payment_method' => 'VARCHAR(12) NULL',
+        'razorpay_order_id' => 'VARCHAR(40) NULL', 'razorpay_payment_id' => 'VARCHAR(40) NULL', 'paid_amount' => 'DECIMAL(12,2) NULL', 'paid_at' => 'DATETIME NULL',
+        'refund_id' => 'VARCHAR(40) NULL', 'refunded_amount' => 'DECIMAL(12,2) NOT NULL DEFAULT 0.00', 'refunded_at' => 'DATETIME NULL', 'admin_notes' => 'TEXT NULL',
+    ];
+    foreach ($new as $col => $def) if (!in_array($col, $have, true)) $pdo->exec("ALTER TABLE bookings ADD COLUMN `$col` $def");
     $done = true;
 }
+
+/* ---------- reservation history (shown in the admin dashboard). actor: 'guest', 'system', 'razorpay' or 'admin:<username>' ---------- */
+function booking_log_event(PDO $pdo, string $bookingId, string $actor, string $event, string $detail = ''): void {
+    try {
+        $pdo->prepare('INSERT INTO booking_events (booking_id, created_at, actor, event, detail) VALUES (?,?,?,?,?)')
+            ->execute([$bookingId, date('Y-m-d H:i:s'), mb_substr($actor, 0, 60), mb_substr($event, 0, 30), mb_substr($detail, 0, 255)]);
+    } catch (Throwable $e) { /* history must never break a booking */ }
+}
+
+/* Unpaid holds that ran out of time become "abandoned" (cancelled, reason hold_expired). The room is free again. */
+function booking_expire_holds(PDO $pdo): void {
+    $now = date('Y-m-d H:i:s');
+    $pdo->prepare("UPDATE bookings SET booking_status = 'cancelled', cancel_reason = 'hold_expired', cancelled_at = ?, updated_at = ?
+                   WHERE booking_status = 'pending' AND hold_expires_at IS NOT NULL AND hold_expires_at < ?")->execute([$now, $now, $now]);
+}
+
+/* cancel_reason values for bookings that were never paid (guest left the payment window). They are not real reservations. */
+const BOOKING_ABANDONED = ['hold_expired', 'replaced', 'payment_error'];
 
 /* ---------- booking ID: UCH-XXXXXXXX from a cryptographically secure source ---------- */
 function booking_new_id(): string {
@@ -64,6 +91,7 @@ function booking_authorize(PDO $pdo, array $in): ?array {
     $ok = false;
     if ($emailIn !== '') $ok = hash_equals(strtolower($dummy), $emailIn);
     elseif ($token !== '') $ok = booking_token_ok($token, $id);
+    if ($row && ($row['booking_status'] === 'pending' || in_array($row['cancel_reason'] ?? '', BOOKING_ABANDONED, true))) return null;   /* never paid = not a reservation */
     return ($row && $ok) ? $row : null;
 }
 
@@ -119,8 +147,13 @@ function booking_public(PDO $pdo, array $row, bool $withToken = false): array {
             'phoneCountry' => $row['phone_country'], 'phone' => $row['phone'], 'specialRequests' => (string)$row['special_requests'],
         ],
         'pricing' => [
-            'pricePerNight' => (float)$row['price_per_night'], 'subtotal' => (float)$row['subtotal'], 'taxPercent' => (float)$row['tax_percent'],
+            'pricePerNight' => (float)$row['price_per_night'], 'subtotal' => (float)$row['subtotal'], 'discount' => (float)$row['discount_amount'], 'couponCode' => $row['coupon_code'] ?: null, 'taxPercent' => (float)$row['tax_percent'],
             'taxAmount' => (float)$row['tax_amount'], 'total' => (float)$row['total_amount'],
+        ],
+        'payment' => [
+            'status' => $row['payment_status'], 'method' => $row['payment_method'], 'paymentId' => $row['razorpay_payment_id'],
+            'paidAmount' => $row['paid_amount'] === null ? null : (float)$row['paid_amount'], 'paidAt' => $row['paid_at'] ? date('c', strtotime($row['paid_at'])) : null,
+            'refundedAmount' => (float)$row['refunded_amount'],
         ],
         'canCancel' => $cancel, 'cancelNote' => $cancelWhy, 'canModify' => $modify, 'modifyNote' => $modifyWhy,
         'policy' => ['cancellation' => $cfg['cancellation']['text'], 'payment' => $cfg['payment_note']],

@@ -1,3 +1,72 @@
+# Unicorn Hospitality: Booking, Payments, Coupons and Admin
+
+(Read this first. The older sections further down still describe the booking tables and rules.)
+
+## What happens when a guest books
+
+```
+book-a-room.html  (assets/js/booking.js)
+ 1. api/bookings/create.php   checks everything, applies the coupon, HOLDS the room for 30 min, creates a Razorpay order
+ 2. Razorpay payment window   guest pays (UPI / card / netbanking)
+ 3. api/payments/verify.php   checks Razorpay's signature AND asks Razorpay if the money arrived -> reservation CONFIRMED
+ 4. e-mail to the guest (+ a copy to the hotel)   written in api/lib/mailer.php
+ safety net: api/payments/webhook.php  (Razorpay calls it, so a booking is still confirmed if the guest closes the tab after paying)
+```
+
+A reservation exists **only after payment**. Until then it is a 30 minute hold (status "Awaiting payment"); if nobody pays, the hold is released and shown in the admin as "Abandoned".
+If a guest pays after the room was taken by someone else, the money is refunded automatically and they are told.
+
+## One-time setup
+
+1. **Razorpay keys** (free account at razorpay.com, use the *Test* keys first)
+   * Copy `api/settings.example.php` to `api/storage/settings.php` and fill in `UCH_RAZORPAY_KEY_ID` and `UCH_RAZORPAY_KEY_SECRET`.
+   * Test payments: Razorpay's test card `4111 1111 1111 1111`, any future expiry, any CVV; or UPI `success@razorpay`.
+   * Going live: replace with the `rzp_live_...` keys. The site must be on https.
+2. **Webhook** (recommended, live site only): Razorpay Dashboard -> Webhooks -> URL `https://YOUR-DOMAIN/api/payments/webhook.php`, events `payment.captured`, `order.paid`, `payment.failed`, `refund.processed`. Put the secret you choose in `UCH_RAZORPAY_WEBHOOK_SECRET`.
+3. **E-mail** (XAMPP cannot send mail by itself): in the same `settings.php` fill the `UCH_SMTP_*` lines. For Gmail turn on 2-step verification, create an *App password* and use it as `UCH_SMTP_PASS`.
+   * If the log (`api/storage/logs/booking-*.log`) says it could not start TLS on XAMPP, set `'verify_tls' => false` in `api/booking-config.php` for local testing only.
+4. Without keys the booking page shows "Online booking is not switched on yet". Nothing else breaks.
+
+`api/storage/` is blocked from the web and ignored by git, so your keys never leave the server.
+
+## Admin dashboard (`/admin`)
+
+| Screen | What you can do |
+|---|---|
+| **Reservations** | See every booking, search (name, Booking ID, e-mail, phone, payment ID), filter (upcoming, arrivals today, awaiting payment, cancelled, abandoned, needs attention). Click a booking to edit guest details, dates and guests, add private notes, **Mark as paid** (cash/transfer), **Refund** (full or part, through Razorpay), **Cancel** (optionally with refund), **Resend e-mail**. Every change is written to the booking's **History**. "Download CSV" exports everything for Excel. |
+| **Coupons** | Create, edit, switch on/off, copy and delete coupons. They appear on `coupons.html` automatically. |
+| Rooms, Activity, Backup, Account | as before. Reservation and coupon actions also appear in Activity. |
+
+Moving a reservation's dates in the admin keeps the booked nightly rate and recalculates the total. If the guest already paid and the total changes, History tells you to settle the difference yourself.
+
+## Coupons
+
+Created in **Admin -> Coupons**. Options: percentage or fixed amount (with an optional cap for percentages), minimum booking amount, minimum nights, rooms / suites / both, booking window, stay-date window, total uses, uses per guest e-mail, switched on/off, and "show on Coupons page" (untick for a private code you hand out yourself).
+Guests copy a code on `coupons.html` ("Book with this code" pre-fills it) and press **Apply** on the last booking step. The server checks it again when they pay. Usage is counted from the bookings table, so a cancelled booking gives its coupon use back.
+The old "Group Stays" page is now **Coupons** everywhere in the menus; `group-stays.html` just redirects.
+
+## Refunds and cancellations
+
+* Guest cancels online within the free-cancellation window -> automatic full refund (5-7 working days to the guest's account).
+* Guests can change dates online only if the number of nights stays the same (the paid price must not change). Anything else: contact reservations, or change it in the admin.
+* A failed refund is marked "Refund failed" and shown under **Needs attention**; refund it from the Razorpay dashboard.
+
+## Where to change things
+
+| I want to change | Edit |
+|---|---|
+| E-mail wording | `booking_email_body()` in `api/lib/mailer.php` |
+| Hold time, tax %, cancellation window, contact details | `api/booking-config.php` |
+| Razorpay / e-mail secrets | `api/storage/settings.php` |
+| How the booking page behaves | `assets/js/booking.js` (`confirmBooking`, `openPayment`, `verifyPayment`, `applyCoupon`) |
+| Coupon rules | `api/lib/coupons.php` (`coupon_evaluate`) |
+| Payment confirmation / refunds | `api/lib/payments.php` |
+| Admin Reservations / Coupons screens | `admin/assets/admin-bookings.js` (+ `.css`) and `admin/includes/bookings-admin.php` |
+
+Database tables: `bookings` (now with coupon, payment and refund columns), `booking_events` (history), `coupons`. They are created / upgraded automatically on the first request, or import `api/sql/booking-migration.sql`.
+
+---
+
 # Unicorn Hospitality: Booking System
 
 Real room booking on PHP + MySQL (PDO). No framework, no localStorage database.
@@ -118,4 +187,4 @@ All responses: `{"success": true|false, "message": "...", "data": {...}}` (error
 
 ## Not included (on purpose)
 
-No payment gateway (guests pay at the hotel, as the existing page says), no multi-room bookings, no seasonal/extra-bed pricing (the base nightly price is used), no PDF library (the confirmation is a print-friendly page).
+No multi-room bookings, no seasonal/extra-bed pricing (the base nightly price is used), no PDF library (the confirmation is a print-friendly page).

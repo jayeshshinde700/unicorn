@@ -307,11 +307,12 @@
     state.adults = adultEl ? parseInt(adultEl.value, 10) || 1 : 2; state.children = childEl ? parseInt(childEl.value, 10) || 0 : 0;
   }
   function reserveUrl(id) {
-    var q = ['room=' + encodeURIComponent(roomName(id))];
-    if (state.checkIn) q.push('checkin=' + iso(state.checkIn));
-    if (state.checkOut) q.push('checkout=' + iso(state.checkOut));
+    /* Reserve opens the booking page with this room chosen: it goes straight to the guest-details step */
+    var q = ['room=' + encodeURIComponent(id)];
+    if (state.checkIn) q.push('check_in=' + iso(state.checkIn));
+    if (state.checkOut) q.push('check_out=' + iso(state.checkOut));
     q.push('adults=' + state.adults, 'children=' + state.children);
-    return CONTACT_PAGE + '?' + q.join('&') + '#enquiry';
+    return 'book-a-room.html?' + q.join('&');
   }
   var shownTotals = {};
   function refreshStay() {
@@ -690,7 +691,7 @@
           '<ul class="rm-meta"><li>' + svg('area', 'ico') + ' ' + (+r.size) + ' sqm</li><li>' + svg('user', 'ico') + ' ' + (+r.guests) + ' guests</li><li>' + svg('bed', 'ico') + ' ' + bed + '</li></ul>' +
           '<div class="rm-card__foot"><div class="rm-price"><small>' + esc(plabel || 'From') + '</small><strong>&#8377;<span data-amt>' + inr(price) + '</span> <sub>/ night</sub></strong><em data-total></em></div>' +
             '<div class="rm-card__act"><label class="rm-cmp"><input type="checkbox" data-cmp="' + esc(r.id) + '"><i></i> Compare</label>' +
-            '<a class="theme-btn btn-style sm-btn fill no-border" href="' + CONTACT_PAGE + '#enquiry" data-reserve="' + esc(r.id) + '"><span>Reserve</span></a></div></div></div>' +
+            '<a class="theme-btn btn-style sm-btn fill no-border" href="book-a-room.html?room=' + encodeURIComponent(r.id) + '" data-reserve="' + esc(r.id) + '"><span>Reserve</span></a></div></div></div>' +
       '</article></div>';
   }
 

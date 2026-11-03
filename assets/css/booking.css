@@ -627,7 +627,8 @@
 }
 
 /* Proceed bar / sticky footer on step 1 */
-.bk-step-action-bar {
+.bk-step-action-bar { display: none !important; }   /* choosing a room now continues straight to guest details */
+.bk-step-action-bar--unused {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -1747,3 +1748,12 @@ button.bk-summary__head { width: 100%; border: 0; text-align: left; cursor: defa
 }
 .bk-search-btn.bk-btn-primary { width: auto; flex: 0 0 auto; }
 @media (max-width: 420px) { .bk-step:not(.is-active) .bk-step__label { display: none; } }
+
+/* ---- coupon box (step 3) ---- */
+.bk-coupon { display: flex; gap: 10px; flex-wrap: wrap; }
+.bk-coupon__input { flex: 1 1 200px; min-height: 46px; padding: 10px 14px; border: 1px solid var(--bk-border, #e4ded0); border-radius: 8px; font-family: ui-monospace, Consolas, monospace; letter-spacing: .08em; text-transform: uppercase; background: #fff; }
+.bk-coupon__input:focus { outline: 2px solid var(--brand-gold, #b9995f); outline-offset: 1px; }
+.bk-coupon__input:disabled { background: #f5f1e4; }
+.bk-coupon__msg { margin: 8px 0 0; font-size: 14px; min-height: 1.2em; }
+.bk-coupon__msg.is-ok { color: #17603d; }
+.bk-coupon__msg.is-bad { color: #9a2a1f; }

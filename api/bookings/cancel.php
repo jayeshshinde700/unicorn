@@ -21,18 +21,19 @@ api_run(function () {
         [$can, $why] = booking_can_cancel($row);
         if (!$can) { $pdo->rollBack(); api_fail($why, 403); }
         $now = date('Y-m-d H:i:s');
-        $pdo->prepare("UPDATE bookings SET booking_status = 'cancelled', cancelled_at = ?, updated_at = ?, hold_expires_at = NULL WHERE booking_id = ?")->execute([$now, $now, $row['booking_id']]);
+        $pdo->prepare("UPDATE bookings SET booking_status = 'cancelled', cancel_reason = 'guest', cancelled_at = ?, updated_at = ?, hold_expires_at = NULL WHERE booking_id = ?")->execute([$now, $now, $row['booking_id']]);
         $pdo->commit();
     } catch (Throwable $e) {
         if ($pdo->inTransaction()) $pdo->rollBack();
         throw $e;
     }
 
-    $s = $pdo->prepare('SELECT * FROM bookings WHERE booking_id = ?');
-    $s->execute([$row0['booking_id']]);
-    $done = $s->fetch();
-    $mail = booking_send_email(booking_public($pdo, $done), 'cancelled');
-    $pdo->prepare('UPDATE bookings SET email_status = ? WHERE booking_id = ?')->execute([$mail, $done['booking_id']]);
-    $done['email_status'] = $mail;
+    booking_log_event($pdo, $row0['booking_id'], 'guest', 'cancelled', 'Cancelled online by the guest');
+    /* cancelled inside the free-cancellation window (checked above) = full refund of what was paid online */
+    if ($row0['payment_method'] === 'razorpay' && $row0['payment_status'] === 'paid') {
+        booking_refund($pdo, booking_fetch($pdo, $row0['booking_id']), null, 'system');
+    }
+    booking_notify($pdo, $row0['booking_id'], 'cancelled', false);
+    $done = booking_fetch($pdo, $row0['booking_id']);
     api_ok('Your reservation has been cancelled', booking_public($pdo, $done, true));
 }, 'cancel');

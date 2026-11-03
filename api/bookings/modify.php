@@ -42,6 +42,13 @@ api_run(function () {
             api_fail($msg, 409, ['checkIn' => $msg]);
         }
         $p = $st['quote'];
+        /* The guest has already paid. Online changes may not change the price (e.g. same number of nights); a different price needs the hotel. */
+        if ($row['payment_status'] === 'paid' && abs($p['subtotal'] - (float)$row['subtotal']) > 0.009) {
+            $pdo->rollBack();
+            api_fail('This change would alter the price of your paid booking. Please keep the same number of nights, or contact our reservations team to change it.', 409, ['checkIn' => 'The number of nights must stay the same.']);
+        }
+        /* keep the paid price, coupon discount and tax exactly as they were */
+        $p = ['pricePerNight' => (float)$row['price_per_night'], 'nights' => $p['nights'], 'subtotal' => (float)$row['subtotal'], 'taxPercent' => (float)$row['tax_percent'], 'taxAmount' => (float)$row['tax_amount'], 'total' => (float)$row['total_amount']];
 
         if ($preview) {
             $pdo->rollBack();
@@ -59,11 +66,8 @@ api_run(function () {
         throw $e;
     }
 
-    $s = $pdo->prepare('SELECT * FROM bookings WHERE booking_id = ?');
-    $s->execute([$row0['booking_id']]);
-    $updated = $s->fetch();
-    $mail = booking_send_email(booking_public($pdo, $updated), 'modified');
-    $pdo->prepare('UPDATE bookings SET email_status = ? WHERE booking_id = ?')->execute([$mail, $updated['booking_id']]);
-    $updated['email_status'] = $mail;
+    booking_log_event($pdo, $row0['booking_id'], 'guest', 'modified', 'Changed online: ' . $stay['checkIn'] . ' to ' . $stay['checkOut'] . ', ' . $stay['adults'] . ' adults, ' . $stay['children'] . ' children');
+    booking_notify($pdo, $row0['booking_id'], 'modified', false);
+    $updated = booking_fetch($pdo, $row0['booking_id']);
     api_ok('Your reservation has been updated', booking_public($pdo, $updated, true));
 }, 'modify');

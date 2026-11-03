@@ -7,6 +7,9 @@ require_once __DIR__ . '/validation.php';
 require_once __DIR__ . '/availability.php';
 require_once __DIR__ . '/booking-functions.php';
 require_once __DIR__ . '/mailer.php';
+require_once __DIR__ . '/razorpay.php';
+require_once __DIR__ . '/coupons.php';
+require_once __DIR__ . '/payments.php';
 
 function booking_config(): array {
     static $cfg = null;

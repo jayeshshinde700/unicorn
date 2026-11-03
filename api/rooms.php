@@ -45,7 +45,7 @@ api_run(function () {
             'paymentNote' => $cfg['payment_note'], 'cancellationText' => $cfg['cancellation']['text'], 'maxNights' => (int)$cfg['max_nights'],
             'maxAdults' => (int)$cfg['max_adults'], 'maxChildren' => (int)$cfg['max_children'], 'maxAdvanceDays' => (int)$cfg['max_advance_days'],
             'checkInTime' => $cfg['check_in_time'], 'checkOutTime' => $cfg['check_out_time'],
-            'countryCodes' => $cfg['country_codes'], 'contact' => $cfg['contact'], 'defaultStatus' => $cfg['default_status'],
+            'countryCodes' => $cfg['country_codes'], 'contact' => $cfg['contact'],
         ],
     ];
     /* rooms/count/updated are repeated at the top level because rooms.html (assets/js/rooms.js) reads them there */

@@ -9,7 +9,7 @@ if (!$user) json_out(['ok' => false, 'error' => 'Your session has ended. Please 
 
 $action = (string)($_GET['a'] ?? '');
 $method = $_SERVER['REQUEST_METHOD'];
-$readOnly = ['bootstrap', 'media', 'activity', 'export'];
+$readOnly = ['bootstrap', 'media', 'activity', 'export', 'reservations', 'reservation', 'reservations_export', 'coupons'];   /* Reservations + Coupons: see includes/bookings-admin.php */
 if (!in_array($action, $readOnly, true)) {
     if ($method !== 'POST') json_out(['ok' => false, 'error' => 'Use POST for this action.'], 405);
     if (!csrf_ok($_SERVER['HTTP_X_CSRF_TOKEN'] ?? null)) json_out(['ok' => false, 'error' => 'Security check failed. Please reload the page.'], 403);
@@ -35,6 +35,8 @@ function purge_unused_uploads(array $gone, array $remaining): void {
     }
 }
 function fail_fields(array $errors): void { json_out(['ok' => false, 'error' => 'Please check the highlighted fields.', 'errors' => $errors], 422); }
+
+require_once __DIR__ . '/includes/bookings-admin.php';
 
 switch ($action) {
 

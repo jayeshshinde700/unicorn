@@ -10,7 +10,7 @@
   var state = {
     step: 1, rooms: [], settings: null, selectedId: null, category: 'all',
     checkIn: '', checkOut: '', adults: 2, children: 0,
-    requestToken: null, submitting: false, seq: 0, loadError: false, fp: {}
+    requestToken: null, coupon: null, couponTried: false, submitting: false, paying: false, seq: 0, loadError: false, fp: {}
   };
 
   /* ---------- small helpers ---------- */
@@ -56,6 +56,13 @@
   function initDates() {
     var today = new Date(), tomorrow = new Date(); tomorrow.setDate(today.getDate() + 1);
     state.checkIn = A.iso(today); state.checkOut = A.iso(tomorrow);
+    var qs = new URLSearchParams(location.search), qi = qs.get('check_in'), qo = qs.get('check_out'), iso = /^\d{4}-\d{2}-\d{2}$/;
+    if (qi && qo && iso.test(qi) && iso.test(qo) && qi >= state.checkIn && qo > qi) { state.checkIn = qi; state.checkOut = qo; }
+    var qa = parseInt(qs.get('adults'), 10), qc = parseInt(qs.get('children'), 10);
+    if (qa >= 1 && qa <= 12) state.adults = qa;
+    if (qc >= 0 && qc <= 10) state.children = qc;
+    ['filterAdults', 'formAdults'].forEach(function (id) { if ($(id)) $(id).value = state.adults; });
+    ['filterChildren', 'formChildren'].forEach(function (id) { if ($(id)) $(id).value = state.children; });
     var cfg = { minDate: 'today', dateFormat: 'Y-m-d', altInput: true, altFormat: 'd M Y', disableMobile: true };
     function make(id, def, minDate, onChange) { return flatpickr('#' + id, Object.assign({}, cfg, { defaultDate: def, minDate: minDate }, { onChange: function (d, str) { onChange(str); } })); }
     state.fp.in1 = make('filterCheckIn', state.checkIn, 'today', function (v) { setDates('in', v); });
@@ -172,7 +179,7 @@
             '<span class="bk-card__spec"><svg class="ico"><use href="#i-user"/></svg> Up to ' + (room.guests || 2) + ' Guests</span>' +
             '<span class="bk-card__spec"><svg class="ico"><use href="#i-bed"/></svg> ' + A.esc(room.bed || 'King bed') + '</span></div>' +
           '<div class="bk-card__amenities">' + amen + '</div>' +
-          '<div class="bk-card__actions"><button type="button" class="bk-card__select" data-select="' + A.esc(room.id) + '"' + (av.bookable ? '' : ' disabled') + '>' + (isSel ? '✓ Selected' : (av.bookable ? 'Select This Room' : 'Not available')) + '</button>' +
+          '<div class="bk-card__actions"><button type="button" class="bk-card__select" data-select="' + A.esc(room.id) + '"' + (av.bookable ? '' : ' disabled') + '>' + (isSel ? '✓ Selected' : (av.bookable ? 'Select & Continue' : 'Not available')) + '</button>' +
           '<button type="button" class="bk-card__toggle" data-toggle="' + A.esc(room.id) + '">View Details</button></div>' +
         '</div>' +
         '<div class="bk-card__details"><h6>About This Stay</h6><p>' + A.esc(room.description || room.short || 'Thoughtfully designed space with premium bedding and serene interiors.') + '</p>' +
@@ -187,6 +194,7 @@
     state.selectedId = id;
     show($('roomSelectionAlert'), false);
     renderRooms(); renderSummaries(); updateActionBar();
+    goToStep(2);
   }
 
   function updateActionBar() {
@@ -201,10 +209,48 @@
     btn.disabled = state.loadError;
   }
 
+  /* ---------- coupon: the server calculates the discount; here we only show it and send the code with the booking ---------- */
+  function couponKey() { return [state.selectedId, state.checkIn, state.checkOut].join('|'); }
+  function couponMsg(text, bad) { var m = $('couponMsg'); if (!m) return; m.textContent = text || ''; m.className = 'bk-coupon__msg' + (text ? (bad ? ' is-bad' : ' is-ok') : ''); }
+  function clearCoupon(silent) {
+    if (!state.coupon) return;
+    state.coupon = null; resetRequestToken();
+    $('couponCode').value = ''; show($('btnRemoveCoupon'), false); show($('btnApplyCoupon'), true); $('couponCode').disabled = false;
+    couponMsg(silent ? '' : 'Coupon removed.', false);
+  }
+  function applyCoupon() {
+    var r = selected(), code = $('couponCode').value.trim();
+    if (!r) return;
+    if (!code) return couponMsg('Please enter a coupon code.', true);
+    var btn = $('btnApplyCoupon'); btn.disabled = true; couponMsg('Checking...', false);
+    A.post('api/coupons/apply.php', { roomId: r.id, checkIn: state.checkIn, checkOut: state.checkOut, adults: state.adults, children: state.children, couponCode: code, email: readGuest().email })
+      .then(function (res) {
+        btn.disabled = false;
+        if (!res.body.success) { couponMsg(res.body.message || 'This coupon cannot be used.', true); return; }
+        var d = res.body.data;
+        state.coupon = { code: d.code, pricing: d.pricing, key: couponKey() };
+        resetRequestToken();                     /* a different price must never reuse an earlier payment hold */
+        $('couponCode').value = d.code; $('couponCode').disabled = true; show($('btnRemoveCoupon'), true); show($('btnApplyCoupon'), false);
+        couponMsg(d.code + ' applied: ' + d.headline + '. You save ' + money(d.pricing.discount) + '.', false);
+        renderSummaries();
+      }, function () { btn.disabled = false; couponMsg('Could not reach the server. Please try again.', true); });
+  }
+
+  /* price shown to the guest: the room quote, or the quote with the coupon applied */
+  function activeQuote(r) {
+    if (state.coupon && state.coupon.key !== couponKey()) { clearCoupon(true); couponMsg('Your coupon was removed because your stay changed. Please apply it again.', true); }
+    return state.coupon ? state.coupon.pricing : r.availability.quote;
+  }
+
   /* ---------- summaries (steps 2 and 3, desktop sidebar + compact mobile bar) ---------- */
   function renderSummaries() {
     var r = selected(); if (!r || !r.availability) return;
-    var q = r.availability.quote, s = state.settings || {}, n = q.nights;
+    var q = activeQuote(r), s = state.settings || {}, n = q.nights;
+    var hasDisc = q.discount > 0;
+    ['summary', 'summaryFinal'].forEach(function (p) {
+      show($(p + 'DiscountRow'), hasDisc);
+      if (hasDisc) { setText(p + 'DiscountLabel', 'Coupon ' + state.coupon.code + ':'); setText(p + 'DiscountVal', '- ' + money(q.discount)); }
+    });
     var img = r.image || 'assets/images/unicon/rooms/deluxe.jpg';
     var taxLabel = q.taxAmount > 0 ? (s.taxLabel || 'Taxes') + ' (' + q.taxPercent + '%):' : 'Taxes & Fees:';
     var taxVal = q.taxAmount > 0 ? money(q.taxAmount) : (s.taxNote || 'Included');
@@ -273,6 +319,7 @@
   function goToStep(n, silent) {
     if (n >= 2 && !selected()) { alertRoom('Please select a room to proceed with your booking.'); window.scrollTo({ top: $('roomSelectionAlert').getBoundingClientRect().top + window.pageYOffset - 140, behavior: 'smooth' }); return; }
     if (n === 3 && !validateGuestForm()) return;
+    if (n < 3) resetRequestToken();      /* the guest is editing: a later payment must be for what they see then */
     state.step = n;
     $$('.bk-step').forEach(function (b) {
       var s = +b.dataset.step; b.classList.remove('is-active', 'is-completed', 'is-clickable');
@@ -282,24 +329,32 @@
     $('stepPanel-' + n).classList.add('is-active');
     show($('confirmError'), false);
     renderSummaries();
+    if (n === 3 && !state.coupon && !state.couponTried && $('couponCode').value.trim()) { state.couponTried = true; applyCoupon(); }   /* a code arriving from coupons.html (?coupon=CODE) */
     if (!silent) window.scrollTo({ top: document.querySelector('.bk-steps-wrap').getBoundingClientRect().top + window.pageYOffset - 30, behavior: 'smooth' });
   }
 
-  /* ---------- confirm: the server validates again, checks availability, saves in MySQL and returns the real booking ---------- */
+  /* ---------- confirm = 2 steps. 1) create.php holds the room and returns a Razorpay order  2) after payment, verify.php confirms it ----------
+     The reservation only exists after step 2 succeeds (the server asks Razorpay itself whether the money arrived). */
   function confirmBooking() {
     if (state.submitting) return;
     var r = selected(); if (!r) return goToStep(1);
     var g = readGuest();
-    state.submitting = true; setBusy(true); show($('confirmError'), false);
+    state.submitting = true; setBusy(true, 'Preparing payment...'); show($('confirmError'), false);
     A.post('api/bookings/create.php', {
       roomId: r.id, checkIn: state.checkIn, checkOut: state.checkOut, adults: state.adults, children: state.children,
       firstName: g.firstName, lastName: g.lastName, email: g.email, phoneCountry: g.phoneCountry, phone: g.phone, specialRequests: g.specialRequests,
-      requestToken: requestToken()
+      couponCode: state.coupon ? state.coupon.code : '', requestToken: requestToken()
     }).then(function (res) {
+      if (res.body.success) {
+        var d = res.body.data;
+        if (d.checkout) return openPayment(d);          /* normal case: pay now */
+        state.submitting = false; setBusy(false);
+        return bookingSaved(d);                          /* coupon covered everything, or already paid */
+      }
       state.submitting = false; setBusy(false);
-      if (res.body.success) return bookingSaved(res.body.data);
       var errs = res.body.errors || {};
       if (res.status === 422) {
+        if (errs.couponCode) { clearCoupon(true); couponMsg(errs.couponCode, true); return confirmFailed(errs.couponCode); }
         goToStep(2, true);
         Object.keys(errs).forEach(function (k) {
           var map = { firstName: 'guestFirstName', lastName: 'guestLastName', email: 'guestEmail', phone: 'guestPhone', phoneCountry: 'guestPhone' };
@@ -309,18 +364,51 @@
         if (other) { if (other === 'requestToken') resetRequestToken(); alertRoom(errs[other]); goToStep(1, true); }
         return;
       }
-      confirmFailed(res.body.message || 'We could not complete your booking.');
+      confirmFailed(res.body.message || 'We could not start your booking.');
       if (res.status === 409) loadRooms();      /* refresh availability so the guest sees what is left */
     }, function () {
       state.submitting = false; setBusy(false);
-      confirmFailed('We could not reach the reservation system, so your booking was NOT confirmed. Please check your connection and try again. Pressing Confirm again is safe: it will not create a duplicate.');
+      confirmFailed('We could not reach the reservation system, so nothing was charged. Please check your connection and try again.');
     });
   }
+
+  function openPayment(d) {
+    var c = d.checkout;
+    if (!window.Razorpay) { state.submitting = false; setBusy(false); return confirmFailed('The secure payment window could not load. Please check your connection (or ad blocker) and try again.'); }
+    state.paying = false;
+    var rz = new Razorpay({
+      key: c.keyId, order_id: c.orderId, amount: c.amount, currency: c.currency, name: c.name, description: c.description,
+      prefill: c.prefill, theme: { color: c.themeColor }, notes: { booking_id: d.bookingId },
+      handler: function (resp) { state.paying = true; verifyPayment(d.bookingId, resp); },
+      modal: { escape: false, ondismiss: function () {
+        if (state.paying) return;
+        state.submitting = false; setBusy(false);
+        var until = c.holdExpiresAt ? new Date(c.holdExpiresAt).toLocaleTimeString('en-IN', { hour: '2-digit', minute: '2-digit' }) : '';
+        confirmFailed('The payment was not completed, so no reservation has been made.' + (until ? ' We are holding your room until ' + until + '.' : '') + ' Press "Pay & Confirm" to try again.');
+      } }
+    });
+    rz.on('payment.failed', function (f) { confirmFailed(((f.error && f.error.description) || 'The payment failed.') + ' You can try again in the payment window.'); });
+    setBusy(true, 'Waiting for payment...');
+    rz.open();
+  }
+
+  function verifyPayment(bookingId, resp) {
+    setBusy(true, 'Confirming your payment...');
+    A.post('api/payments/verify.php', { bookingId: bookingId, razorpay_order_id: resp.razorpay_order_id, razorpay_payment_id: resp.razorpay_payment_id, razorpay_signature: resp.razorpay_signature })
+      .then(function (res) {
+        state.submitting = false; state.paying = false; setBusy(false);
+        if (res.body.success) return bookingSaved(res.body.data);
+        confirmFailed((res.body.message || 'We could not confirm your payment.') + ' Please do not pay again. Your Booking ID is ' + bookingId + '.');
+      }, function () {
+        state.submitting = false; state.paying = false; setBusy(false);
+        confirmFailed('Your payment went through but we lost connection while confirming it. Please do not pay again: your booking will be confirmed automatically and e-mailed to you. Booking ID: ' + bookingId + '.');
+      });
+  }
   function confirmFailed(msg) { setText('confirmErrorText', msg); var e = $('confirmError'); e.style.display = 'flex'; e.scrollIntoView({ behavior: 'smooth', block: 'center' }); }
-  function setBusy(on) {
+  function setBusy(on, label) {
     ['btnFinalConfirm', 'btnFinalConfirmSidebar'].forEach(function (id) {
       var b = $(id); b.disabled = on; b.classList.toggle('is-loading', on);
-      var s = b.querySelector('span'); if (s) s.textContent = on ? 'Saving your booking...' : 'Confirm Booking';
+      var s = b.querySelector('span'); if (s) s.textContent = on ? (label || 'Please wait...') : 'Pay & Confirm';
     });
   }
 
@@ -333,6 +421,8 @@
     setText('modalDates', A.date(b.stay.checkIn) + ' – ' + A.date(b.stay.checkOut) + ' (' + b.stay.nights + 'N)');
     setText('modalTotal', money(b.pricing.total));
     setText('modalStatus', b.status);
+    setText('modalPayment', b.payment && b.payment.method === 'free' ? 'Covered by coupon' : b.payment && b.payment.paidAmount ? 'Paid online ' + money(b.payment.paidAmount) : 'Paid');
+    state.coupon = null; $('couponCode').value = ''; $('couponCode').disabled = false; show($('btnRemoveCoupon'), false); show($('btnApplyCoupon'), true); couponMsg('', false);
     setText('bkModalTitle', b.status === 'pending' ? 'Request Received' : 'Booking Confirmed!');
     var note = { sent: 'A confirmation email has been sent to ' + b.guest.email + '.', failed: 'Your booking is saved, but we could not send the confirmation email. Please keep your Booking ID.', disabled: 'Email confirmations are switched off. Please keep your Booking ID.' }[b.emailStatus] || 'Please keep your Booking ID.';
     setText('modalEmailNote', note);
@@ -368,6 +458,10 @@
     $('btnEditRoom').addEventListener('click', function () { goToStep(1); });
     $('btnEditGuests').addEventListener('click', function () { goToStep(2); });
     $('btnFinalConfirm').addEventListener('click', confirmBooking);
+    $('btnApplyCoupon').addEventListener('click', applyCoupon);
+    $('btnRemoveCoupon').addEventListener('click', function () { clearCoupon(false); renderSummaries(); });
+    $('couponCode').addEventListener('keydown', function (e) { if (e.key === 'Enter') { e.preventDefault(); applyCoupon(); } });
+    $('couponCode').addEventListener('input', function () { this.value = this.value.toUpperCase(); });
     $('btnFinalConfirmSidebar').addEventListener('click', confirmBooking);
     Object.keys(RULES).forEach(function (id) {
       var el = $(id);
@@ -386,6 +480,9 @@
   }
 
   document.addEventListener('DOMContentLoaded', function () {
-    fillCountSelects(); initDates(); bind(); loadRooms();
+    fillCountSelects(); initDates(); bind();
+    var pre = (new URLSearchParams(location.search).get('coupon') || '').replace(/[^A-Za-z0-9_-]/g, '').toUpperCase().slice(0, 40);
+    if (pre) { $('couponCode').value = pre; couponMsg('Code ' + pre + ' will be applied once you choose a room.', false); }
+    loadRooms();
   });
 })();

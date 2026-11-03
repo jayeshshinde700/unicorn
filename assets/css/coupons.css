@@ -1,0 +1,46 @@
+/* coupons.html. Colours follow the rest of the site (gold #B9995F, deep green #1F3A33). */
+.cp-hero.um-phero { background-image: url(../images/unicon/banner/1.jpg); background-size: cover; background-position: center; padding: 90px 0 120px; position: relative; }
+.cp-hero.um-phero::before { content: ""; position: absolute; inset: 0; background: linear-gradient(100deg, rgba(14, 28, 24, .88) 0%, rgba(14, 28, 24, .62) 55%, rgba(14, 28, 24, .35) 100%); }
+.cp-hero .container { position: relative; }
+
+.cp-list { display: grid; gap: 22px; max-width: 960px; margin: 0 auto; }
+.cp-status { text-align: center; color: #5b6660; }
+.cp-card { display: grid; grid-template-columns: 1fr 260px; background: #fff; border: 1px solid #e8e2d2; border-radius: 16px; overflow: hidden; box-shadow: 0 10px 30px rgba(31, 58, 51, .07); position: relative;
+  transition: transform .3s ease, box-shadow .3s ease; }
+.cp-card:hover { transform: translateY(-3px); box-shadow: 0 16px 38px rgba(31, 58, 51, .12); }
+.cp-card::before { content: ""; position: absolute; left: 0; top: 0; bottom: 0; width: 5px; background: #b9995f; }
+.cp-card__main { padding: 28px 30px 28px 34px; }
+.cp-card__tag { display: inline-block; font-size: 12px; letter-spacing: .12em; text-transform: uppercase; font-weight: 600; color: #8a6a25; background: #f6ecd4; padding: 4px 12px; border-radius: 20px; }
+.cp-card h2 { font-family: "Playfair Display", serif; font-size: 28px; margin: 12px 0 4px; color: #1f3a33; }
+.cp-card__off { font-size: 20px; font-weight: 600; color: #8a6a25; margin: 0 0 8px; }
+.cp-card__desc { color: #4d5852; margin: 0 0 10px; }
+.cp-card__terms { list-style: none; padding: 0; margin: 12px 0 0; display: flex; flex-wrap: wrap; gap: 6px 18px; font-size: 13.5px; color: #5b6660; }
+.cp-card__terms li::before { content: "\2713"; color: #b9995f; margin-right: 6px; font-weight: 700; }
+.cp-card__side { border-left: 2px dashed #d9cfb4; padding: 26px 22px; display: flex; flex-direction: column; justify-content: center; gap: 10px; background: #fbf8ef; text-align: center; }
+.cp-card__label { font-size: 11.5px; letter-spacing: .16em; text-transform: uppercase; color: #6b7570; font-weight: 600; }
+.cp-card__code { font-family: ui-monospace, Consolas, monospace; font-size: 22px; font-weight: 700; letter-spacing: .1em; color: #1f3a33; padding: 8px 10px; border: 1.5px dashed #b9995f; border-radius: 8px; background: #fff; word-break: break-all; }
+.cp-btn { display: block; padding: 11px 14px; border-radius: 8px; border: 1.5px solid #1f3a33; background: transparent; color: #1f3a33; font-weight: 600; font-size: 14.5px; text-align: center; text-decoration: none; cursor: pointer; transition: background .25s, color .25s; }
+.cp-btn:hover { background: #1f3a33; color: #fff; }
+.cp-btn--gold { background: #b9995f; border-color: #b9995f; color: #14231e; }
+.cp-btn--gold:hover { background: #a3854c; border-color: #a3854c; color: #fff; }
+.cp-card.is-soon { opacity: .85; }
+.cp-empty { text-align: center; padding: 50px 20px; border: 1px dashed #d9cfb4; border-radius: 16px; background: #fbf8ef; }
+.cp-empty h2 { font-family: "Playfair Display", serif; font-size: 26px; color: #1f3a33; }
+
+.cp-how { max-width: 960px; margin: 48px auto 0; padding: 28px 32px; background: #1f3a33; color: #e9e4d6; border-radius: 16px; }
+.cp-how h2 { font-family: "Playfair Display", serif; color: #fff; font-size: 24px; margin-bottom: 12px; }
+.cp-how ol { margin: 0 0 12px 18px; padding: 0; display: grid; gap: 6px; }
+.cp-how b { color: #e3c98f; }
+.cp-how p { margin: 0; font-size: 14px; opacity: .85; }
+
+@media (max-width: 767px) {
+  .cp-card { grid-template-columns: 1fr; }
+  .cp-card__side { border-left: 0; border-top: 2px dashed #d9cfb4; }
+  .cp-card__main { padding: 24px 22px 20px 26px; }
+  .cp-card h2 { font-size: 24px; }
+  .cp-hero.um-phero { padding: 60px 0 80px; }
+}
+@media (prefers-reduced-motion: reduce) { .cp-card, .cp-card:hover { transition: none; transform: none; } }
+
+/* the section sits on a light cream background, like the Offers page */
+#coupons.rts__section { background: linear-gradient(180deg, #f7f3ea 0, #fff 60%); padding: 80px 0 100px; }

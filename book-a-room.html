@@ -64,7 +64,7 @@
                     <li><a href="event.html#meetings">Meetings &amp; Events</a></li>
                     <li><a href="event.html#weddings">Weddings</a></li>
                     <li><a href="activities.html">Local Attractions</a></li>
-                    <li><a href="group-stays.html">Group Stays</a></li>
+                    <li><a href="coupons.html">Coupons</a></li>
                     <li><a href="offers.html">Special Offers</a></li>
                 </ul>
             </nav>
@@ -87,7 +87,7 @@
                         <ul class="un-drop" id="unDropBook">
                             <li><a href="book-a-room.html" aria-current="page">Book a Room</a></li>
                             <li><a href="find-my-reservation.html">Find My Reservation</a></li>
-                            <li><a href="group-stays.html">Group Reservations</a></li>
+                            <li><a href="coupons.html">Coupons</a></li>
                             <li><a href="offers.html">Special Packages</a></li>
                         </ul>
                     </li>
@@ -372,6 +372,10 @@
                                         <span>Room Rate:</span>
                                         <span id="summaryRateCalculation">1 × ₹4,500</span>
                                     </div>
+                                    <div class="bk-summary__row" id="summaryDiscountRow" style="display:none">
+                                        <span id="summaryDiscountLabel">Coupon:</span>
+                                        <span id="summaryDiscountVal" style="color:#17603d;font-weight:600"></span>
+                                    </div>
                                     <div class="bk-summary__row" id="summaryTaxRow">
                                         <span id="summaryTaxLabel">Taxes &amp; Fees:</span>
                                         <span id="summaryTaxVal">Included</span>
@@ -465,12 +469,26 @@
                                 </div>
                             </div>
 
+                            <!-- Coupon -->
+                            <div class="bk-confirm-section">
+                                <div class="bk-confirm-section__head">
+                                    <h4 class="bk-confirm-section__title">Have a coupon?</h4>
+                                    <a class="bk-confirm-edit-btn" href="coupons.html" target="_blank" rel="noopener">View available coupons</a>
+                                </div>
+                                <div class="bk-coupon">
+                                    <input type="text" id="couponCode" class="bk-coupon__input" placeholder="Enter coupon code" maxlength="40" autocomplete="off" spellcheck="false" aria-label="Coupon code">
+                                    <button type="button" class="bk-btn-secondary" id="btnApplyCoupon"><span>Apply</span></button>
+                                    <button type="button" class="bk-btn-secondary" id="btnRemoveCoupon" style="display:none"><span>Remove</span></button>
+                                </div>
+                                <p class="bk-coupon__msg" id="couponMsg" role="status" aria-live="polite"></p>
+                            </div>
+
                             <!-- Policies & Guarantee -->
                             <div class="bk-notice-box">
                                 <svg class="ico"><use href="#i-shield"/></svg>
                                 <div>
                                     <strong>Cancellation &amp; Payment</strong>
-                                    <div id="policyText">Free cancellation until 48 hours prior to check-in. Check-in is from 2:00 PM and check-out is by 11:00 AM. No immediate advance payment required; payment is collected at the front desk upon check-in.</div>
+                                    <div id="policyText">Free cancellation until 48 hours prior to check-in. Check-in is from 2:00 PM and check-out is by 11:00 AM. Your reservation is confirmed once the online payment (Razorpay) is successful.</div>
                                 </div>
                             </div>
 
@@ -486,7 +504,7 @@
                                 </button>
                                 <button type="button" class="bk-btn-primary" id="btnFinalConfirm">
                                     <svg class="ico" width="16" height="16"><use href="#i-check"/></svg>
-                                    <span>Confirm Booking</span>
+                                    <span>Pay &amp; Confirm</span>
                                 </button>
                             </div>
                         </div>
@@ -519,6 +537,10 @@
                                         <span>Room Breakdown:</span>
                                         <span id="summaryFinalBreakdown">1 × ₹4,500</span>
                                     </div>
+                                    <div class="bk-summary__row" id="summaryFinalDiscountRow" style="display:none">
+                                        <span id="summaryFinalDiscountLabel">Coupon:</span>
+                                        <span id="summaryFinalDiscountVal" style="color:#17603d;font-weight:600"></span>
+                                    </div>
                                     <div class="bk-summary__row" id="summaryFinalTaxRow">
                                         <span id="summaryFinalTaxLabel">Taxes &amp; Service:</span>
                                         <span id="summaryFinalTaxVal">Included</span>
@@ -533,7 +555,7 @@
                                 <div class="bk-summary__btns">
                                     <button type="button" class="bk-btn-primary" id="btnFinalConfirmSidebar">
                                         <svg class="ico" width="16" height="16"><use href="#i-check"/></svg>
-                                        <span>Confirm Booking</span>
+                                        <span>Pay &amp; Confirm</span>
                                     </button>
                                 </div>
                             </div>
@@ -579,6 +601,10 @@
                     <div class="bk-modal__detail-item">
                         <span>Status:</span>
                         <strong id="modalStatus" style="text-transform:capitalize;">Confirmed</strong>
+                    </div>
+                    <div class="bk-modal__detail-item">
+                        <span>Payment:</span>
+                        <strong id="modalPayment">Paid online</strong>
                     </div>
                     <div class="bk-modal__detail-item">
                         <span>Total Amount:</span>
@@ -711,7 +737,7 @@
                         <div class="un-m__panel" id="unMBook">
                             <a href="book-a-room.html" aria-current="page">Book a Room</a>
                             <a href="find-my-reservation.html">Find My Reservation</a>
-                            <a href="group-stays.html">Group Reservations</a>
+                            <a href="coupons.html">Coupons</a>
                             <a href="offers.html">Special Packages</a>
                         </div>
                     </li>
@@ -740,7 +766,7 @@
                             <a href="event.html#meetings">Meetings &amp; Events</a>
                             <a href="event.html#weddings">Weddings</a>
                             <a href="activities.html">Local Attractions</a>
-                            <a href="group-stays.html">Group Stays</a>
+                            <a href="coupons.html">Coupons</a>
                             <a href="offers.html">Special Offers</a>
                         </div>
                     </li>
@@ -858,6 +884,7 @@
     <script src="assets/js/navigation.js"></script>
 
     <!-- Booking Page Engine -->
+    <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
     <script src="assets/js/booking-api.js"></script>
     <script src="assets/js/booking.js"></script>
 </body>

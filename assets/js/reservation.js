@@ -70,7 +70,8 @@
     setText('resCheckOut', A.date(b.stay.checkOut) + ' · by ' + b.stay.checkOutTime);
     setText('resNights', String(b.stay.nights));
     setText('resGuests', guestsText(b.stay.adults, b.stay.children));
-    setText('resTotal', money(b.pricing.total) + (b.pricing.taxAmount > 0 ? ' (incl. ' + money(b.pricing.taxAmount) + ' tax)' : ''));
+    setText('resTotal', money(b.pricing.total) + (b.pricing.taxAmount > 0 ? ' (incl. ' + money(b.pricing.taxAmount) + ' tax)' : '') + (b.pricing.discount > 0 ? ' · coupon ' + b.pricing.couponCode + ' saved ' + money(b.pricing.discount) : ''));
+    setText('resPayment', paymentText(b));
     setText('resCreated', new Date(b.createdAt).toLocaleDateString('en-GB', { day: '2-digit', month: 'short', year: 'numeric' }));
     setText('resRequests', b.guest.specialRequests || 'None');
     setText('resPolicy', b.policy.cancellation + ' ' + b.policy.payment);
@@ -148,6 +149,14 @@
     $$('#modifyForm .bk-form-group').forEach(function (g) { g.classList.remove('has-error'); });
     Object.keys(errs || {}).forEach(function (k) { if (map[k]) { var g = $(map[k]).closest('.bk-form-group'); g.classList.add('has-error'); var m = g.querySelector('.bk-error-msg'); if (m) m.textContent = errs[k]; } });
   }
+  /* what the guest sees in the "Payment" box */
+  function paymentText(b) {
+    var p = b.payment || {};
+    if (p.status === 'refunded') return 'Refunded ' + money(p.refundedAmount) + ' (5-7 working days to reach your account)';
+    if (p.status === 'partial_refund') return 'Paid ' + money(p.paidAmount) + ', refunded ' + money(p.refundedAmount);
+    if (p.status === 'paid') return p.method === 'free' ? 'Covered by coupon' : p.method === 'manual' ? 'Paid ' + money(p.paidAmount) : 'Paid online ' + money(p.paidAmount) + (p.paymentId ? ' · ref ' + p.paymentId : '');
+    return 'Pay at the hotel';
+  }
   var previewSoon = (function () { var t; return function () { clearTimeout(t); t = setTimeout(preview, 350); }; })();
   function preview() {
     var seq = ++state.previewSeq, q = $('mdQuote');
@@ -204,7 +213,8 @@
     var b = state.booking; if (!b || !b.canCancel) return;
     setText('cnId', b.bookingId);
     $('cnSummary').innerHTML = '<div><span>Room</span><strong>' + A.esc(b.room.name) + '</strong></div><div><span>Dates</span><strong>' + A.esc(A.date(b.stay.checkIn) + ' – ' + A.date(b.stay.checkOut)) + '</strong></div><div><span>Total</span><strong>' + A.esc(money(b.pricing.total)) + '</strong></div>';
-    setText('cnPolicy', b.policy.cancellation + ' Once cancelled, the room is released and this cannot be undone.');
+    var refundable = b.payment && b.payment.status === 'paid' && b.payment.method === 'razorpay';
+    setText('cnPolicy', b.policy.cancellation + ' Once cancelled, the room is released and this cannot be undone.' + (refundable ? ' Your payment of ' + money(b.payment.paidAmount) + ' will be refunded to your original payment method within 5-7 working days.' : ''));
     $('cnError').style.display = 'none'; $('cnConfirm').disabled = false;
     openModal('cancelModal');
   });

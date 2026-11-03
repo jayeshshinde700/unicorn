@@ -20,6 +20,7 @@ $initial = mb_strtoupper(mb_substr($user['name'] ?: $user['username'], 0, 1));
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../assets/css/style.css">
     <link rel="stylesheet" href="assets/admin.css">
+    <link rel="stylesheet" href="assets/admin-bookings.css">
 </head>
 <body class="ad-body">
 
@@ -83,6 +84,8 @@ $initial = mb_strtoupper(mb_substr($user['name'] ?: $user['username'], 0, 1));
         <a class="ad__brand" href="#/rooms"><span class="n">Unicorn</span><span class="s">Admin Studio</span></a>
         <nav class="ad__nav" id="nav">
             <a href="#/rooms" data-nav="rooms"><svg class="i"><use href="#ic-bed"/></svg><span>Rooms &amp; Suites</span><em class="pill" id="navCount">&ndash;</em></a>
+            <a href="#/reservations" data-nav="reservations"><svg class="i"><use href="#ic-people"/></svg><span>Reservations</span><em class="pill" id="navResCount" hidden></em></a>
+            <a href="#/coupons" data-nav="coupons"><svg class="i"><use href="#ic-star"/></svg><span>Coupons</span></a>
             <a href="#/activity" data-nav="activity"><svg class="i"><use href="#ic-clock"/></svg><span>Activity</span></a>
             <a href="#/backup" data-nav="backup"><svg class="i"><use href="#ic-layers"/></svg><span>Backup &amp; website link</span></a>
             <a href="#/account" data-nav="account"><svg class="i"><use href="#ic-key"/></svg><span>My account</span></a>
@@ -113,5 +116,6 @@ $initial = mb_strtoupper(mb_substr($user['name'] ?: $user['username'], 0, 1));
 <div class="toasts" id="toasts" aria-live="polite" aria-atomic="false"></div>
 <noscript><p style="padding:24px">This dashboard needs JavaScript. Please turn it on in your browser.</p></noscript>
 <script src="assets/admin.js"></script>
+<script src="assets/admin-bookings.js"></script>
 </body>
 </html>

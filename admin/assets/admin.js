@@ -423,7 +423,7 @@
         return { name: "edit", id: decodeURIComponent(p[2]) };
       return { name: "rooms" };
     }
-    if (["activity", "backup", "account"].indexOf(p[0]) > -1)
+    if (["activity", "backup", "account", "reservations", "coupons"].indexOf(p[0]) > -1)
       return { name: p[0] };
     return { name: "rooms" };
   }
@@ -501,6 +501,9 @@
       activity: viewActivity,
       backup: viewBackup,
       account: viewAccount,
+      /* drawn by admin-bookings.js */
+      reservations: function () { S.edit = null; window.UchAdminExt.reservations(); },
+      coupons: function () { S.edit = null; window.UchAdminExt.coupons(); },
     })[r.name]();
   }
 
@@ -2154,6 +2157,15 @@
     "password-changed": ["Password changed", "key", "warn"],
     exported: ["Backup downloaded", "download", ""],
     imported: ["Rooms imported", "upload", "gold"],
+    "reservation-edited": ["Reservation edited", "edit", ""],
+    "reservation-cancelled": ["Reservation cancelled", "x", "bad"],
+    "reservation-paid": ["Marked as paid", "check", "ok"],
+    "reservation-refunded": ["Refund started", "rupee", "warn"],
+    "coupon-created": ["Coupon created", "plus", "gold"],
+    "coupon-updated": ["Coupon updated", "edit", ""],
+    "coupon-on": ["Coupon switched on", "eye", "ok"],
+    "coupon-off": ["Coupon switched off", "eye", "warn"],
+    "coupon-deleted": ["Coupon deleted", "trash", "bad"],
   };
   function viewActivity() {
     S.edit = null;
@@ -2493,6 +2505,9 @@
   $("#nav").addEventListener("click", function () {
     $("#ad").classList.remove("is-open");
   });
+
+  /* the tools admin-bookings.js needs (it draws the Reservations and Coupons screens) */
+  window.UchAdmin = { call: call, toast: toast, modal: modal, confirmBox: confirmBox, busy: busy, setHead: setHead, esc: esc, ic: ic, inr: inr, view: view, S: S, A: A, debounce: debounce };
 
   call("bootstrap")
     .then(function (r) {

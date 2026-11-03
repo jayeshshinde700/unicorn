@@ -1,0 +1,62 @@
+/* Admin Studio: Reservations + Coupons screens (used by admin-bookings.js). Uses the colours/fonts of admin.css. */
+
+/* ---- reservation list ---- */
+.bk-table { background: #fff; border: 1px solid var(--rts-border); border-radius: 14px; overflow: hidden; }
+.bk-head, .bk-row { display: grid; grid-template-columns: 1.3fr 1.5fr 1.2fr 1.3fr .8fr 1.3fr; gap: 14px; align-items: center; padding: 14px 20px; }
+.bk-head { font-size: 11.5px; letter-spacing: .14em; text-transform: uppercase; font-weight: 600; color: var(--rts-para); background: #faf8f2; border-bottom: 1px solid var(--rts-border); }
+.bk-row { width: 100%; text-align: left; border: 0; border-bottom: 1px solid var(--rts-border); background: #fff; transition: background .2s ease; }
+.bk-row:last-child { border-bottom: 0; }
+.bk-row:hover, .bk-row:focus-visible { background: #fbf8ef; outline: 0; }
+.bk-c { display: flex; flex-direction: column; gap: 3px; min-width: 0; }
+.bk-c b { font-weight: 600; color: var(--um-ink); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.bk-c small { color: var(--rts-para); font-size: 12.5px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.bk-id b { font-family: ui-monospace, Consolas, monospace; font-size: 13.5px; }
+.bk-c .badge { align-self: flex-start; }
+.bk-c small .badge { font-size: 11px; }
+.bk-bad { background: #fbe6e3; color: #9a2a1f; }
+
+/* ---- one reservation (pop-up) ---- */
+.bk-badges { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 8px; }
+.bk-detail { display: grid; grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr); gap: 26px; }
+.bk-detail form > .grid2, .bk-detail form > .fl { margin-bottom: 12px; }
+.bk-h { font-family: var(--glida); font-size: 17px; margin: 18px 0 10px; color: var(--um-ink); }
+.bk-h:first-child { margin-top: 0; }
+.bk-h small { font-family: var(--jost); font-weight: 400; font-size: 12.5px; color: var(--rts-para); margin-left: 6px; }
+.bk-sub { font-size: 13px; color: var(--rts-para); margin: 10px 0 6px; font-weight: 600; }
+.bk-box { border: 1px solid var(--rts-border); border-radius: 12px; padding: 16px 18px; margin-bottom: 14px; background: #fcfbf7; }
+.bk-box .kv dd code { font-size: 12px; word-break: break-all; }
+.bk-btns { display: flex; flex-wrap: wrap; gap: 8px; }
+.bk-warn { margin-top: 12px; font-size: 13px; color: #9a2a1f; }
+.bk-check { display: flex; align-items: flex-start; gap: 9px; font-size: 14px; margin: 8px 0; cursor: pointer; }
+.bk-check input { margin-top: 4px; accent-color: var(--um-gold); }
+.bk-actions { margin-top: 14px; }
+.bk-tl { max-height: 280px; overflow: auto; }
+.bk-ev { padding: 8px 0 8px 14px; border-left: 2px solid var(--um-gold); margin-left: 4px; position: relative; display: flex; flex-direction: column; gap: 1px; }
+.bk-ev b { font-size: 13.5px; }
+.bk-ev span { font-size: 13px; color: var(--rts-heading); }
+.bk-ev small { font-size: 11.5px; color: var(--rts-para); }
+textarea.in { min-height: 70px; resize: vertical; }
+
+/* ---- coupons ---- */
+.cp-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 18px; }
+.cp { background: #fff; border: 1px solid var(--rts-border); border-radius: 14px; padding: 20px; display: flex; flex-direction: column; gap: 6px; position: relative; overflow: hidden;
+  box-shadow: 0 1px 2px rgba(20, 40, 34, .05); animation: cpIn .45s ease both; animation-delay: calc(var(--i, 0) * 50ms); }
+.cp::before { content: ""; position: absolute; left: 0; top: 0; bottom: 0; width: 4px; background: var(--um-gold); }
+@keyframes cpIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
+.cp__top { display: flex; justify-content: space-between; align-items: center; gap: 10px; }
+.cp__code { font-family: ui-monospace, Consolas, monospace; font-weight: 700; letter-spacing: .08em; font-size: 15px; padding: 4px 10px; border: 1.5px dashed var(--um-gold); border-radius: 6px; color: var(--um-ink); background: #fbf6e8; }
+.cp h3 { font-size: 19px; margin-top: 6px; }
+.cp__off { font-weight: 600; color: #8a6a25; }
+.cp__d { color: var(--rts-para); font-size: 14px; }
+.cp__meta { display: grid; grid-template-columns: auto 1fr; gap: 3px 12px; font-size: 13px; margin: 8px 0 4px; }
+.cp__meta dt { color: var(--rts-para); }
+.cp__meta dd { margin: 0; }
+.cp__btns { display: flex; gap: 8px; flex-wrap: wrap; align-items: center; margin-top: auto; padding-top: 10px; }
+.cp__btns .icon-btn { margin-left: auto; }
+
+@media (max-width: 900px) {
+  .bk-head { display: none; }
+  .bk-row { grid-template-columns: 1fr 1fr; gap: 10px 14px; }
+  .bk-detail { grid-template-columns: 1fr; }
+}
+@media (prefers-reduced-motion: reduce) { .cp { animation: none; } }

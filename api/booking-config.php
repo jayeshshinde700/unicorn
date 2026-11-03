@@ -7,22 +7,41 @@
    ====================================================================== */
 if (!defined('UCH_BOOKING')) { http_response_code(403); exit; }
 
+/* Secrets (Razorpay keys, e-mail password) are NOT written in this file.
+   Put them in api/storage/settings.php (copy api/settings.example.php) or in server environment variables.
+   api/storage is blocked from the web and ignored by git. */
+$local = is_file(__DIR__ . '/storage/settings.php') ? (require __DIR__ . '/storage/settings.php') : [];
+$setting = function (string $key, $default = '') use ($local) {
+    $env = getenv($key);
+    if ($env !== false && $env !== '') return $env;
+    return $local[$key] ?? $default;
+};
+
 return [
     /* ---- Booking ID: PREFIX-XXXXXXXX (letters/numbers, no look-alike characters) ---- */
     'booking_id_prefix' => 'UCH',
     'booking_id_length' => 8,
 
-    /* ---- Status given to a new booking: 'confirmed' or 'pending'.
-          'pending' holds the room for pending_hold_minutes and then releases it automatically. ---- */
-    'default_status'       => 'confirmed',
+    /* ---- A reservation exists only AFTER the Razorpay payment succeeds.
+          While the guest is paying, the room is held for pending_hold_minutes and then released automatically. ---- */
     'pending_hold_minutes' => 30,
+
+    /* ---- Razorpay (https://dashboard.razorpay.com). Keys come from api/storage/settings.php or environment variables.
+          Use the TEST keys (rzp_test_...) while you are building, the LIVE keys (rzp_live_...) when you go public. ---- */
+    'razorpay' => [
+        'key_id'         => $setting('UCH_RAZORPAY_KEY_ID'),
+        'key_secret'     => $setting('UCH_RAZORPAY_KEY_SECRET'),
+        'webhook_secret' => $setting('UCH_RAZORPAY_WEBHOOK_SECRET'),   /* optional but recommended: a safety net if the guest closes the tab after paying */
+        'theme_color'    => '#B9995F',
+        'api_base'       => $setting('UCH_RAZORPAY_API_BASE', 'https://api.razorpay.com/v1'),   /* leave as is. Only changed for automated tests */
+    ],
 
     /* ---- Money ---- */
     'currency_symbol' => "\u{20B9}",
     'tax_percent'     => 0.0,            /* e.g. 12 for 12% GST. 0 = no tax line is added to the total */
     'tax_label'       => 'Taxes & fees',
     'tax_note'        => 'Included',     /* text shown in the summary while tax_percent is 0 */
-    'payment_note'    => 'No advance payment is required. Payment is collected at the front desk on check-in.',
+    'payment_note'    => 'Your reservation is confirmed once the online payment (Razorpay) is successful. You will receive a confirmation e-mail with the payment receipt.',
 
     /* ---- Stay limits ---- */
     'max_nights'       => 30,
@@ -74,17 +93,20 @@ return [
 
     /* ---- Confirmation email ----
        Without PHPMailer the system uses PHP mail() (needs a working mail setup).
-       To use SMTP: composer require phpmailer/phpmailer in the project root, then set the UCH_SMTP_* environment variables. */
+       Set the UCH_SMTP_* values in api/storage/settings.php and a built-in SMTP sender is used (no extra software needed).
+       Gmail: host smtp.gmail.com, port 587, secure tls, user = your Gmail, pass = a Google "App password". */
     'email' => [
         'enabled'   => true,
-        'from'      => 'stay@uniconhospitality.example',
+        'from'      => $setting('UCH_MAIL_FROM', 'stay@uniconhospitality.example'),   /* with Gmail this must be the same Gmail address */
         'from_name' => 'Unicorn Hospitality Reservations',
+        'notify_admin' => $setting('UCH_ADMIN_EMAIL'),   /* the hotel gets a copy of every new paid booking here. Leave empty to turn off */
         'smtp' => [
-            'host'   => getenv('UCH_SMTP_HOST') ?: '',
-            'port'   => (int)(getenv('UCH_SMTP_PORT') ?: 587),
-            'user'   => getenv('UCH_SMTP_USER') ?: '',
-            'pass'   => getenv('UCH_SMTP_PASS') ?: '',
-            'secure' => getenv('UCH_SMTP_SECURE') ?: 'tls',
+            'host'   => $setting('UCH_SMTP_HOST'),
+            'port'   => (int)$setting('UCH_SMTP_PORT', 587),
+            'user'   => $setting('UCH_SMTP_USER'),
+            'pass'   => $setting('UCH_SMTP_PASS'),
+            'secure' => $setting('UCH_SMTP_SECURE', 'tls') === 'none' ? '' : $setting('UCH_SMTP_SECURE', 'tls'),   /* 'tls' (port 587), 'ssl' (port 465) or 'none' */
+            'verify_tls' => true,                              /* set false only on a local XAMPP that has no CA certificates (see README-BOOKING.md) */
         ],
     ],
 
