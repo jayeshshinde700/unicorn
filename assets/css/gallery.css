@@ -1378,3 +1378,8 @@ body.gallery-page {
         scroll-behavior: auto !important;
     }
 }
+
+/* footer curve matches the dark CTA section above it */
+.gallery-page #contact > .um-edge path {
+    fill: var(--gl-ink, #14231e) !important;
+}

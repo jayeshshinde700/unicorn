@@ -1,0 +1,136 @@
+/* =====================================================================
+   Unicon Hospitality - shared inner-page hero (.uh-page-hero)
+   Reference: offers.html (.um-phero.of-hero). Load AFTER style.css and the page's own stylesheet.
+
+   Markup contract
+     <section class="<page>-hero uh-page-hero [uh-page-hero--plain]">
+       <img|div class="...__bg">          page photograph (absolute, kept as is)
+       <div class="container [uh-hero__in]">
+         [<div class="uh-hero__in">]       content column: breadcrumb, eyebrow, h1, lead, optional CTA row
+
+   --plain  = pages with no floating card strip under the hero (shorter bottom padding).
+   Only the hero itself (background + overlay) gets the slanted bottom edge; the floating
+   strips are siblings that overlap it by --uh-overlap and are never clipped.
+   ===================================================================== */
+
+:root {
+    --uh-slant: clamp(30px, 5vw, 70px);
+    --uh-overlap: 84px;
+    --uh-pt: 90px;
+    --uh-pb: 170px;
+    --uh-min: 550px;
+}
+
+section.uh-page-hero {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+    box-sizing: border-box;
+    display: block;
+    min-height: var(--uh-min);
+    padding: var(--uh-pt) 0 var(--uh-pb);
+    text-align: left;
+    color: #fff;
+    clip-path: polygon(0 0, 100% 0, 100% calc(100% - var(--uh-slant)), 0 100%);
+}
+section.uh-page-hero--plain {
+    --uh-pb: 120px;
+    --uh-min: 470px;
+}
+
+/* photograph stays page-specific; overlay is identical everywhere */
+section.uh-page-hero > [class*="__bg"] { z-index: -2; }
+section.uh-page-hero > [class*="__bg"]::after,
+section.uh-page-hero > .at-hero__shade,
+section.uh-page-hero::after { display: none; }
+section.uh-page-hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+    background: linear-gradient(100deg, rgba(14, 28, 24, .88) 0%, rgba(14, 28, 24, .62) 55%, rgba(14, 28, 24, .35) 100%);
+}
+
+/* content column */
+.uh-page-hero .uh-hero__in { position: relative; z-index: 1; }
+.uh-page-hero .uh-hero__in:not(.container) { max-width: 760px; margin: 0; }
+.uh-page-hero .uh-hero__in > nav {
+    display: flex; flex-wrap: wrap; justify-content: flex-start; align-items: center;
+    gap: 10px; margin: 0 0 26px; font-size: 14px;
+}
+.uh-page-hero .uh-hero__in > span:not([class*="orb"]) { display: inline-block; margin: 0; text-align: left; }
+.uh-page-hero .uh-hero__in > h1 {
+    max-width: 760px; margin: 10px 0 16px; text-align: left; overflow-wrap: break-word;
+    font-size: clamp(34px, 5vw, 58px); line-height: 1.1;
+}
+.uh-page-hero .uh-hero__in > p {
+    max-width: 560px; margin: 0; text-align: left;
+    font-size: clamp(16px, 1.5vw, 17px); line-height: 1.7; color: rgba(255, 255, 255, .86);
+}
+.uh-page-hero .uh-hero__in > div {
+    display: flex; flex-wrap: wrap; justify-content: flex-start; gap: 12px; margin-top: 28px;
+}
+.uh-page-hero .wd-eyebrow::after { display: none; }
+
+/* heroes with a floating strip: height follows the content, so the gap from the CTA row to the cards is the
+   same on every page (gap = padding-bottom - overlap). min-height is dropped because it padded short heroes. */
+section.ev-hero.uh-page-hero,
+section.wd-hero.uh-page-hero,
+section.at-hero.uh-page-hero,
+section.about-hero.uh-page-hero {
+    --uh-pb: calc(var(--uh-overlap) + 36px);
+    --uh-min: 0px;
+}
+
+/* floating highlight strips: same overlap everywhere */
+.ev-strip, .wd-strip, .uc-strip, .at-highlights, .jb-hl-wrap, .rm-hl { margin-top: calc(var(--uh-overlap) * -1); }
+
+@media (max-width: 991px) {
+    :root { --uh-overlap: 72px; --uh-pt: 72px; --uh-pb: 152px; --uh-min: 480px; }
+    section.uh-page-hero--plain { --uh-pb: 100px; --uh-min: 420px; }
+}
+@media (max-width: 767px) {
+    :root { --uh-slant: clamp(18px, 4.5vw, 30px); --uh-overlap: 64px; --uh-pt: 52px; --uh-pb: 126px; --uh-min: 0px; }
+    section.uh-page-hero--plain { --uh-pb: 84px; }
+    .uh-page-hero .uh-hero__in > nav { margin-bottom: 20px; }
+    .uh-page-hero .uh-hero__in > div { margin-top: 24px; }
+}
+@media (max-width: 480px) {
+    .uh-page-hero .uh-hero__in > div > a,
+    .uh-page-hero .uh-hero__in > div > button { flex: 1 1 100%; justify-content: center; text-align: center; }
+}
+
+/* ---- hero CTA buttons: same look as the Offers chips (.of-chip / .of-chip--gold) ---- */
+.ev-cta .theme-btn, .wd-cta .theme-btn, .at-hero__cta .at-btn {
+    display: inline-flex; align-items: center; justify-content: center; gap: 9px;
+    min-height: 0; height: auto; padding: 11px 20px; margin: 0;
+    border: 1px solid rgba(255, 255, 255, .32); border-radius: 40px;
+    background: rgba(255, 255, 255, .1); -webkit-backdrop-filter: blur(8px); backdrop-filter: blur(8px);
+    color: #fff; font: 500 14px/1.1 Inter, sans-serif; letter-spacing: 0; text-transform: none; text-decoration: none;
+    box-shadow: none; overflow: visible;
+    transition: background .3s, color .3s, border-color .3s, transform .45s cubic-bezier(.16, 1, .3, 1), box-shadow .3s;
+}
+.ev-cta .theme-btn::before, .ev-cta .theme-btn::after,
+.wd-cta .theme-btn::before, .wd-cta .theme-btn::after { display: none; }
+.ev-cta .theme-btn span, .wd-cta .theme-btn span { color: inherit !important; mix-blend-mode: normal; position: static; font: inherit; }
+.ev-cta .theme-btn:hover, .wd-cta .theme-btn:hover, .at-hero__cta .at-btn:hover,
+.ev-cta .theme-btn:focus-visible, .wd-cta .theme-btn:focus-visible, .at-hero__cta .at-btn:focus-visible {
+    background: rgba(255, 255, 255, .22); border-color: rgba(255, 255, 255, .55); color: #fff;
+    transform: translateY(-3px); box-shadow: 0 12px 26px rgba(0, 0, 0, .25); outline: none;
+}
+/* primary */
+.ev-cta .theme-btn.fill, .wd-cta .theme-btn.fill, .at-hero__cta .at-btn--gold {
+    background: #B99A5F; border-color: #B99A5F; color: #14231e; font-weight: 600; -webkit-backdrop-filter: none; backdrop-filter: none;
+}
+.ev-cta .theme-btn.fill:hover, .wd-cta .theme-btn.fill:hover, .at-hero__cta .at-btn--gold:hover,
+.ev-cta .theme-btn.fill:focus-visible, .wd-cta .theme-btn.fill:focus-visible, .at-hero__cta .at-btn--gold:focus-visible {
+    background: #a5864d; border-color: #a5864d; color: #14231e;
+}
+@media (max-width: 575px) { .ev-cta .theme-btn, .wd-cta .theme-btn, .at-hero__cta .at-btn { padding: 10px 16px; } }
+.ev-cta .theme-btn.ev-btn-light, .wd-cta .theme-btn.wd-btn-light { border-color: rgba(255, 255, 255, .32) !important; }
+.ev-cta .theme-btn.ev-btn-light:hover, .wd-cta .theme-btn.wd-btn-light:hover { border-color: rgba(255, 255, 255, .55) !important; }
+.ev-cta .theme-btn.fill, .wd-cta .theme-btn.fill { border-color: #B99A5F !important; }
+.ev-cta .theme-btn.fill:hover, .wd-cta .theme-btn.fill:hover { border-color: #a5864d !important; }
+.ev-hero .ev-cta .theme-btn.fill span, .wd-hero .wd-cta .theme-btn.fill span { color: #14231e !important; }
+.ev-cta .theme-btn, .wd-cta .theme-btn, .at-hero__cta .at-btn { padding-top: 12px; padding-bottom: 12px; }

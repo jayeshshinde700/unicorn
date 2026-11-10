@@ -1,5 +1,5 @@
 /* Offers & Packages page. Load after assets/css/style.css and navigation.css. All selectors are .of- prefixed. */
-.of-hero.um-phero{background-image:url(../images/unicon/banner/1.jpg);background-size:cover;background-position:center;padding:90px 0 150px}
+.of-hero.um-phero{background-image:url(../images/gallery/stone-arch-banner.png);background-size:cover;background-position:center;padding:90px 0 150px}
 .of-hero.um-phero::before{background:linear-gradient(100deg,rgba(14,28,24,.88) 0%,rgba(14,28,24,.62) 55%,rgba(14,28,24,.35) 100%)}
 .of-hero .um-crumb a{color:var(--um-gold,#B99A5F)}
 .of-hero .h6{text-transform:uppercase;letter-spacing:.2em}

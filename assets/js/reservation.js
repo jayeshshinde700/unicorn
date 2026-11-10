@@ -62,7 +62,7 @@
     var st = $('resStatus'); st.classList.toggle('is-cancelled', b.status === 'cancelled'); st.classList.toggle('is-pending', b.status === 'pending');
     setText('resStatusText', b.status.charAt(0).toUpperCase() + b.status.slice(1));
     setText('resBookingId', b.bookingId);
-    $('resThumb').src = b.room.image || 'assets/images/unicon/rooms/deluxe.jpg'; $('resThumb').alt = b.room.name;
+    $('resThumb').src = b.room.image || 'assets/images/unicon/rooms/uni-deluxe.png'; $('resThumb').alt = b.room.name;
     setText('resRoomName', b.room.name);
     setText('resRoomMeta', [b.room.bed, b.room.size ? b.room.size + ' m²' : ''].filter(Boolean).join(' · '));
     setText('resGuestName', 'Guest: ' + b.guest.firstName + ' ' + b.guest.lastName);

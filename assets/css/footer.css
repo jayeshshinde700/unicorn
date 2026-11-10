@@ -1,0 +1,90 @@
+/* Unicon Hospitality - site footer (shared by every page; markup lives in each page's <footer id="contact">).
+   Colours: forest green + gold + ivory. Background photo is the existing banner image under an ivory overlay. */
+.uf{
+  --uf-green:#203D33; --uf-gold:#B89554; --uf-gold-dk:#8f7036; --uf-ivory:#FBF8F1;
+  --uf-text:#4a524e; --uf-line:rgba(32,61,51,.16);
+  position:relative;
+  background:#F0ECE0 url("../images/unicon/banner/1.jpg") center/cover no-repeat;
+  color:var(--uf-text);
+  font-family:var(--jost,"Inter",Arial,sans-serif);
+  padding:calc(clamp(44px,7vw,100px) + 26px) 0 0;
+  overflow:hidden;
+}
+.uf::before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(251,248,241,.93),rgba(246,241,229,.95));pointer-events:none}
+.uf > *{position:relative;z-index:1}
+.uf > .um-edge{position:absolute;z-index:2}
+.uf a{text-decoration:none}
+.uf__wrap{width:100%;max-width:1240px;margin:0 auto;padding:0 20px}
+
+/* newsletter */
+.uf__news{display:flex;align-items:center;justify-content:space-between;gap:28px 48px;padding-bottom:32px;margin-bottom:34px;border-bottom:1px solid var(--uf-line)}
+.uf__news-text h2{font-family:var(--glida,"Playfair Display",Georgia,serif);font-size:clamp(26px,3vw,34px);font-weight:500;color:var(--uf-green);margin:0 0 6px;line-height:1.15}
+.uf__news-text p{margin:0;font-size:15px;max-width:460px}
+.uf__news-form{flex:0 1 480px;width:100%}
+.uf__news-row{display:flex;gap:10px}
+.uf__news-row input{flex:1;min-width:0;height:50px;padding:0 18px;border:1px solid var(--uf-line);border-radius:4px;background:#fff;color:var(--uf-green);font:inherit;font-size:15px}
+.uf__news-row input:focus{outline:2px solid var(--uf-gold);outline-offset:1px;border-color:var(--uf-gold)}
+.uf__news-row button{height:50px;padding:0 28px;border:0;border-radius:4px;background:var(--uf-green);color:var(--uf-ivory);font:inherit;font-size:14px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;cursor:pointer;transition:background .25s}
+.uf__news-row button:hover{background:var(--uf-gold-dk)}
+.uf__news-msg{margin:8px 0 0;font-size:13px;min-height:0;color:var(--uf-green)}
+.uf__news-msg:empty{display:none}
+.uf__news-msg.is-err{color:#a33b2d}
+
+/* columns */
+.uf__cols{display:grid;grid-template-columns:1.25fr 1fr 1.3fr 1fr;gap:36px 48px;padding-bottom:34px}
+.uf__logo img{display:block;width:92px;height:auto;margin-bottom:14px}
+.uf__about{margin:0 0 14px;font-size:14.5px;line-height:1.6;max-width:290px}
+.uf__title{font-family:var(--glida,"Playfair Display",Georgia,serif);font-size:19px;font-weight:500;color:var(--uf-green);margin:0 0 14px;padding-bottom:10px;position:relative}
+.uf__title::after{content:"";position:absolute;left:0;bottom:0;width:30px;height:2px;background:var(--uf-gold)}
+.uf__list{list-style:none;margin:0;padding:0}
+.uf__list li{margin:0}
+.uf__list a{display:inline-block;padding:5px 0;color:var(--uf-text);font-size:14.5px;line-height:1.5;transition:color .25s,transform .25s}
+.uf__list a:hover,.uf__list a:focus-visible{color:var(--uf-gold-dk);transform:translateX(4px)}
+.uf__list--contact li{display:flex;gap:9px;align-items:flex-start}
+.uf__list--contact .ico{flex:0 0 17px;width:17px;height:17px;margin-top:8px;color:var(--uf-gold);stroke:currentColor;fill:none;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+.uf__list--contact li small{display:block;font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--uf-gold-dk);line-height:1.2;margin-top:6px}
+.uf__list--contact li a,.uf__list--contact li span.uf__val{padding:2px 0 4px}
+.uf__list--contact li span.uf__val{display:block;font-size:14.5px;line-height:1.5}
+.uf__list li[hidden]{display:none}
+
+/* social */
+.uf__follow{margin-top:18px}
+.uf__follow .uf__sub{display:block;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--uf-green);font-weight:600;margin-bottom:10px}
+.uf__social{display:flex;flex-wrap:wrap;gap:10px;list-style:none;margin:0;padding:0}
+.uf__social a{display:flex;align-items:center;justify-content:center;width:40px;height:40px;border-radius:50%;border:1px solid var(--uf-line);color:var(--uf-green);background:rgba(255,255,255,.6);transition:transform .25s,background .25s,color .25s,border-color .25s}
+.uf__social a:hover,.uf__social a:focus-visible{transform:translateY(-3px);background:var(--uf-gold);border-color:var(--uf-gold);color:#fff}
+.uf__social svg{width:18px;height:18px;fill:currentColor}
+
+/* bottom bar */
+.uf__bar{border-top:1px solid var(--uf-line)}
+.uf__bar .uf__wrap{display:flex;justify-content:space-between;align-items:center;gap:8px 24px;padding-top:16px;padding-bottom:16px;font-size:13.5px}
+.uf__bar p{margin:0}
+.uf__bar a{color:var(--uf-green);font-weight:600;transition:color .25s}
+.uf__bar a:hover{color:var(--uf-gold-dk)}
+
+@media (max-width:1199px){.uf__cols{grid-template-columns:repeat(2,1fr);gap:30px 40px}.uf__about{max-width:none}}
+@media (max-width:767px){
+  .uf__news{flex-direction:column;align-items:stretch;gap:18px}
+  .uf__news-form{flex:none}
+  .uf__bar .uf__wrap{flex-direction:column;text-align:center}
+}
+@media (max-width:575px){
+  .uf__cols{gap:26px 20px}
+  .uf__col--brand{grid-column:1 / -1}
+  .uf__news-row{flex-direction:column}
+  .uf__news-row button{width:100%}
+  .uf__cols > :nth-child(3){grid-column:1 / -1;order:3}
+  .uf__col--brand .uf__list{columns:2;column-gap:20px}
+  .uf__list a{padding:5px 0}
+  .uf__bar .uf__wrap{padding-top:12px;padding-bottom:12px}
+  .uf__news{padding-bottom:24px;margin-bottom:26px}
+  .uf__title{margin-bottom:10px}
+  .uf__social{gap:6px;max-width:80px}
+  .uf__social a{width:37px;height:37px}
+  .uf__social svg{width:16px;height:16px}
+  .uf__col{min-width:0}
+  .uf__list a,.uf__val{overflow-wrap:anywhere}
+  .uf{padding-bottom:70px}   /* clear of the sticky Call / Book bar */
+}
+
+@media (prefers-reduced-motion:reduce){.uf a,.uf button{transition:none!important}.uf__social a:hover{transform:none}}

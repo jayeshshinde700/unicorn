@@ -2,42 +2,10 @@
 (function () {
   'use strict';
 
-  /* Verified property details. Fill these in once the business confirms them:
-     address  - full postal address shown on the page
-     mapQuery - address or "lat,lng" used for the embedded map and Get Directions
-     email    - verified company email (leave '' to keep the one in the page markup) */
-  var PROPERTY = { address: '', mapQuery: '', email: '' };
+  /* Property address, map and directions come from assets/js/property.js (shared with about.html). */
 
   var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   function $all(sel, root) { return Array.prototype.slice.call((root || document).querySelectorAll(sel)); }
-
-  /* ---------- property details, map and directions ---------- */
-  function setupProperty() {
-    if (PROPERTY.email) {
-      $all('[data-uc="email"]').forEach(function (el) { el.textContent = PROPERTY.email; });
-      $all('[data-uc="email-link"]').forEach(function (el) { el.href = 'mailto:' + PROPERTY.email; });
-    }
-    if (PROPERTY.address) $all('[data-uc="address"]').forEach(function (el) { el.textContent = PROPERTY.address; });
-
-    var dirs = $all('[data-uc="directions"]');
-    if (PROPERTY.mapQuery) {
-      var q = encodeURIComponent(PROPERTY.mapQuery);
-      dirs.forEach(function (a) { a.href = 'https://www.google.com/maps/dir/?api=1&destination=' + q; a.target = '_blank'; a.rel = 'noopener'; });
-      var box = document.getElementById('ucMap');
-      if (box) {
-        box.innerHTML = '<iframe title="Unicon Hospitality on the map" src="https://www.google.com/maps?q=' + q + '&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>';
-      }
-    } else {
-      dirs.forEach(function (a) {
-        if (a.classList.contains('uc-link')) a.setAttribute('aria-disabled', 'true');
-        a.addEventListener('click', function (e) {
-          e.preventDefault();
-          var note = document.getElementById('ucDirNote');
-          if (note) note.textContent = 'Directions will be available once our property address is confirmed. Please call +91 99204 00267 for help finding us.';
-        });
-      });
-    }
-  }
 
   /* ---------- scroll reveal ---------- */
   function setupReveal() {
@@ -205,7 +173,6 @@
     });
   }
 
-  setupProperty();
   setupReveal();
   setupTriggers();
   setupForm();

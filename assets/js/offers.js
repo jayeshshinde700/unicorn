@@ -54,7 +54,7 @@
         ['diwali', 'Diwali', 'The festival of lights', 'Celebrate the festival of lights with a stay that feels like a homecoming.', 'gallery/3.jpg', '#a8630c'],
         ['navratri', 'Navratri', 'Nine nights of colour', 'Nine nights of music, dance and colour, with a comfortable stay to return to.', 'gallery/1.avif', '#9b2c5b'],
         ['dussehra', 'Dussehra', 'Victory of good over evil', 'A festive break around Dussehra for family outings and get-togethers.', 'about/2.jpg', '#a33a1c'],
-        ['bhai-dooj', 'Bhai Dooj', 'Siblings together', 'Bring siblings and families together for a relaxed celebration.', 'rooms/family.jpg', '#7c5a14'],
+        ['bhai-dooj', 'Bhai Dooj', 'Siblings together', 'Bring siblings and families together for a relaxed celebration.', 'rooms/uni-family.png', '#7c5a14'],
         ['chhath-puja', 'Chhath Puja', 'Sunrise and gratitude', 'A calm stay for families travelling for Chhath Puja.', 'gallery/6.jpg', '#b3641a']
       ] },
     { id: 'winter', name: 'Winter & New Year', range: 'Mid-November to February', img: 'dining/rooftop-bar.webp', hue: '#1d3d5c',
@@ -65,21 +65,21 @@
         ['makar-sankranti', 'Makar Sankranti', 'Harvest and kites', 'A cheerful break to mark the start of the harvest season.', 'gallery/4.jpg', '#b4741a'],
         ['pongal', 'Pongal', 'Harvest thanksgiving', 'Celebrate the harvest festival with family in comfort.', 'gallery/5.jpg', '#8a5a14'],
         ['republic-day', 'Republic Day', 'A long weekend away', 'Make the most of the Republic Day holiday with a restful escape.', 'about/11.jpg', '#1f5a3a'],
-        ['valentines-day', "Valentine's Day", 'For two', 'A romantic stay and a table for two.', 'rooms/premium.jpg', '#9c2346']
+        ['valentines-day', "Valentine's Day", 'For two', 'A romantic stay and a table for two.', 'rooms/uni-premium.png', '#9c2346']
       ] },
     { id: 'summer', name: 'Summer Staycation', range: 'March to May', img: 'gallery/7.jpg', hue: '#c0801c',
       lead: 'Colour, school holidays and long, unhurried days.',
       items: [
         ['holi', 'Holi', 'The festival of colours', 'Celebrate Holi with family and friends, then unwind in comfort.', 'gallery/2.avif', '#b02e6e'],
-        ['easter', 'Easter', 'A spring weekend', 'A relaxed Easter break for families and friends.', 'rooms/deluxe.jpg', '#5a7a38'],
+        ['easter', 'Easter', 'A spring weekend', 'A relaxed Easter break for families and friends.', 'rooms/uni-deluxe.png', '#5a7a38'],
         ['summer-holidays', 'Summer Holidays', 'Time off, together', 'A staycation for the school-holiday season with space for everyone.', 'about/amenities.webp', '#cf8a10'],
-        ['family-vacations', 'Family Vacations', 'Room for everyone', 'Plan a family vacation with rooms and dining that suit all ages.', 'rooms/executive.jpg', '#2f6b7a']
+        ['family-vacations', 'Family Vacations', 'Room for everyone', 'Plan a family vacation with rooms and dining that suit all ages.', 'rooms/uni-executive.png', '#2f6b7a']
       ] },
     { id: 'monsoon', name: 'Monsoon Escape', range: 'June to September', img: 'about/1.avif', hue: '#1f5a4a',
       lead: 'Rain-fresh getaways and a calendar full of festivals.',
       items: [
         ['independence-day', 'Independence Day', 'A holiday to enjoy', 'Spend the Independence Day holiday in a restful, relaxed setting.', 'banner/1.jpg', '#d1741a'],
-        ['raksha-bandhan', 'Raksha Bandhan', 'The bond of siblings', 'A warm celebration for siblings and families.', 'rooms/unicon.webp', '#a8366a'],
+        ['raksha-bandhan', 'Raksha Bandhan', 'The bond of siblings', 'A warm celebration for siblings and families.', 'rooms/uni-unicon.png', '#a8366a'],
         ['janmashtami', 'Janmashtami', 'Midnight celebrations', 'A comfortable stay for families celebrating Janmashtami.', 'dining/bites.webp', '#2d4d8a'],
         ['onam', 'Onam', 'A feast of flavours', 'Mark Onam with family and a table to remember.', 'dining.webp', '#bf8f12'],
         ['ganesh-chaturthi', 'Ganesh Chaturthi', 'Welcoming Ganpati', 'A festive stay around Ganesh Chaturthi for families and groups.', 'gallery/1.avif', '#b8501a'],

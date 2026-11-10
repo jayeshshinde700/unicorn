@@ -1,5 +1,5 @@
 /* coupons.html. Colours follow the rest of the site (gold #B9995F, deep green #1F3A33). */
-.cp-hero.um-phero { background-image: url(../images/unicon/banner/1.jpg); background-size: cover; background-position: center; padding: 90px 0 120px; position: relative; }
+.cp-hero.um-phero { background-image: url(../images/unicon/coupon/hero.png); background-size: cover; background-position: center; padding: 90px 0 120px; position: relative; }
 .cp-hero.um-phero::before { content: ""; position: absolute; inset: 0; background: linear-gradient(100deg, rgba(14, 28, 24, .88) 0%, rgba(14, 28, 24, .62) 55%, rgba(14, 28, 24, .35) 100%); }
 .cp-hero .container { position: relative; }
 

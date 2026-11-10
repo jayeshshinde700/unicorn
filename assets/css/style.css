@@ -13080,28 +13080,7 @@ body{overflow-x:hidden}
 .um-mnav__link:hover,.um-mnav__btn:hover,.um-mnav__panel a:hover{color:var(--btn-1)}
 .offcanvase__address .item a .ico{color:var(--btn-1)}
 
-/* ---------- footer (Ramada-style columns; footer background is the theme's light grey) ---------- */
-.um-fcols{display:grid;grid-template-columns:repeat(4,1fr);gap:30px;margin-bottom:50px;position:relative;z-index:1}
-.um-fcol__title{display:block;width:100%;background:none;border:0;padding:0;margin-bottom:18px;text-align:left;font-family:var(--glida);font-size:22px;color:var(--rts-heading);cursor:default}
-.um-fcol__title i{display:none}
-.um-fcol ul{list-style:none;margin:0;padding:0}
-.um-fcol li a{display:block;padding:6px 0;color:var(--rts-para);font-size:15px;transition:all .3s}
-.um-fcol li a:hover{color:#8f6b31;padding-left:5px}
-.um-fcol li .ico{color:var(--btn-1);margin-right:4px}
-.footer__social__link{display:flex;flex-wrap:wrap;gap:8px 22px}
-@media (max-width:991px){
-  .um-fcols{grid-template-columns:1fr;gap:0;margin-bottom:30px}
-  .um-fcol{border-bottom:1px solid var(--rts-border)}
-  .um-fcol__title{display:flex;justify-content:space-between;align-items:center;padding:18px 0;margin:0;cursor:pointer;font-size:20px}
-  .um-fcol__title i{display:block;width:9px;height:9px;border-right:2px solid var(--btn-1);border-bottom:2px solid var(--btn-1);transform:rotate(45deg);transition:transform .3s;margin-right:6px}
-  .um-fcol__title[aria-expanded="true"] i{transform:rotate(225deg)}
-  .um-fcol ul{max-height:0;overflow:hidden;transition:max-height .35s ease}
-  .um-fcol[data-open] ul{padding-bottom:12px}
-  .footer__newsletter{margin-bottom:40px}
-  .footer__newsletter form{min-width:0!important;width:100%}
-  .copyright__wrapper{flex-direction:column;gap:12px;text-align:center}
-}
-@media (min-width:992px) and (max-width:1199px){.um-fcols{grid-template-columns:repeat(3,1fr)}}
+/* footer styles live in assets/css/footer.css */
 
 /* ---------- sticky mobile booking bar ---------- */
 .um-mbar{position:fixed;left:0;right:0;bottom:0;z-index:998;display:none;gap:10px;padding:10px 14px calc(10px + env(safe-area-inset-bottom));background:#fff;box-shadow:0 -6px 20px rgba(0,0,0,.14);transform:translateY(110%);transition:transform .35s}
@@ -13130,7 +13109,6 @@ html{scroll-behavior:smooth;scroll-padding-top:90px}
 #offcanvasRight .um-mnav__btn .ico,#offcanvasRight .btn-close,#offcanvasRight .close__icon{color:#D9BE8C}
 #offcanvasRight .um-mnav__panel a{border-left-color:#D9BE8C}
 .um-rewards,.um-perks{--btn-1:#D9BE8C}
-.footer__area .um-fcol__title,.footer__area h6{color:var(--rts-heading)}
 @media (max-width:1599px){.navigation__menu--item{margin-right:18px}.navigation__menu--item__link{font-size:15px}}
 #offcanvasRight .um-mnav__btn i{border-color:#D9BE8C}
 #offcanvasRight .um-mnav__link:hover,#offcanvasRight .um-mnav__btn:hover,#offcanvasRight .um-mnav__panel a:hover{color:#D9BE8C}
@@ -13321,17 +13299,7 @@ body{overflow:visible!important}
 @media (max-width:991px){.um-offers-grid{grid-template-columns:1fr}}
 
 
-/* ===== Footer: background photo + mobile fixes ===== */
-#contact.rts__footer{position:relative;background:#F0ECE0 url("../images/unicon/banner/1.jpg") center/cover no-repeat}
-#contact.rts__footer::before{content:"";position:absolute;inset:0;background:rgba(224, 240, 238, 0.815);pointer-events:none}   /* .88 = how much cream covers the photo; lower it to show more photo */
-#contact.rts__footer > *{position:relative;z-index:1}
-@media (max-width:576px){
-  #contact.rts__footer{padding-bottom:70px}   /* keeps the copyright clear of the sticky Call / Book bar */
-  .copyright__text{padding:30px 0}
-  .copyright__wrapper{justify-content:center;text-align:center}
-  .footer__social__link{flex-wrap:wrap;justify-content:center;gap:8px 22px}
-  .footer__social__link a:not(:last-child){border-right:0;padding-right:0}
-}
+/* footer styles live in assets/css/footer.css */
 
 /* ===== Mobile: stop sideways scroll (Dining row had negative margins) ===== */
 #dining .row{margin-left:0;margin-right:0}
@@ -13368,9 +13336,7 @@ body{overflow:visible!important}
 .um-edge--smile{top:-1px}
 
 /* ===== Curve fixes: footer shape position + breathing room under the curves ===== */
-#contact.rts__footer > .um-edge{position:absolute;z-index:2}
 #amenities.py-90{padding-top:calc(clamp(44px,7vw,100px) + 56px)!important}
-#contact.rts__footer{padding-top:calc(clamp(44px,7vw,100px) + 50px)}
 
 
 /* ===== Rewards band: more breathing room around the diagonal edges ===== */
@@ -13491,9 +13457,6 @@ a.um-cc__card:hover{transform:translateY(-6px);box-shadow:0 22px 50px rgba(20,40
   .um-faq__item p{padding:0 18px 20px}
 }
 
-.um-fcol__title img{
-  height: 100px;
-}
 
 
 
@@ -13574,3 +13537,44 @@ a.um-cc__card:hover{transform:translateY(-6px);box-shadow:0 22px 50px rgba(20,40
 @media (prefers-reduced-motion:reduce){
   .banner__slider.hero-fx *,.banner__slider.hero-fx .banner__slide__content::after{transition-delay:0s!important}
 }
+
+/* ===== HOME: DISCOVER NAVI MUMBAI (replaces homepage gallery) ===== */
+.um-disc{background:#FBF8F1;padding:48px 0 44px}
+.um-disc__head{max-width:720px;margin:0 auto 20px}
+.um-disc__head h2{margin:4px 0 6px;font-size:clamp(30px,3.6vw,42px);line-height:1.15;color:var(--um-ink)}
+.um-disc__head p{margin:0;color:var(--rts-para)}
+.um-disc__grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;max-width:1040px;margin:0 auto}
+.um-disc__card{display:block;text-decoration:none;background:#fff;border-radius:10px;overflow:hidden;box-shadow:0 6px 22px rgba(31,58,51,.09);transition:transform .35s ease,box-shadow .35s ease}
+.um-disc__card:hover{transform:translateY(-4px);box-shadow:0 14px 32px rgba(31,58,51,.16)}
+.um-disc__img{display:block;aspect-ratio:16/10;overflow:hidden;background:var(--rts-gray)}
+.um-disc__img img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .7s ease}
+.um-disc__card:hover .um-disc__img img{transform:scale(1.07)}
+.um-disc__body{display:block;padding:14px 18px 16px;border-top:3px solid var(--um-gold)}
+.um-disc__name{display:block;font-family:var(--glida);font-size:20px;line-height:1.25;color:var(--um-ink)}
+.um-disc__meta{display:block;margin-top:3px;font-size:13px;letter-spacing:.02em;color:var(--rts-para)}
+.um-disc__cta{margin-top:24px}
+@media (max-width:991px){.um-disc{padding:56px 0 52px}.um-disc__grid{gap:14px}.um-disc__name{font-size:18px}.um-disc__body{padding:12px 14px 14px}}
+@media (max-width:640px){
+  .um-disc__grid{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;gap:14px;margin:0 -12px;padding:4px 12px 14px;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+  .um-disc__grid::-webkit-scrollbar{display:none}
+  .um-disc__card{flex:0 0 76%;scroll-snap-align:center}
+}
+@media (prefers-reduced-motion:reduce){.um-disc__card,.um-disc__img img{transition:none}}
+
+/* ---- Dining video popup ---- */
+.um-vpop{position:fixed;inset:0;z-index:99999;display:flex;align-items:center;justify-content:center;padding:20px;background:rgba(10,8,6,.82);opacity:0;visibility:hidden;transition:opacity .35s ease,visibility 0s linear .35s}
+.um-vpop.is-open{opacity:1;visibility:visible;transition:opacity .35s ease}
+.um-vpop__box{position:relative;width:min(380px,100%);max-height:90vh;transform:scale(.88);opacity:0;transition:transform .35s cubic-bezier(.2,.8,.2,1),opacity .35s ease}
+.um-vpop.is-open .um-vpop__box{transform:scale(1);opacity:1}
+.um-vpop__video{display:block;width:100%;max-height:85vh;background:#000;border-radius:14px;box-shadow:0 24px 70px rgba(0,0,0,.55);object-fit:contain}
+.um-vpop__close{position:absolute;top:-14px;right:-14px;width:36px;height:36px;border:0;border-radius:50%;background:var(--btn-1,#AE8B57);color:#fff;font-size:22px;line-height:1;cursor:pointer;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 14px rgba(0,0,0,.4);transition:transform .25s ease,background .25s ease;z-index:2}
+.um-vpop__close:hover{background:#c29e68;transform:rotate(90deg)}
+.um-vpop__close:focus-visible{outline:2px solid #fff;outline-offset:2px}
+body.um-vpop-lock{overflow:hidden}
+@media (max-width:575px){.um-vpop{padding:14px}.um-vpop__box{width:min(340px,100%)}.um-vpop__close{top:-12px;right:-6px}}
+@media (min-width:768px) and (max-width:1024px){.um-vpop__box{width:min(400px,100%)}}
+@media (prefers-reduced-motion:reduce){.um-vpop,.um-vpop__box{transition:none}}
+
+/* home page rooms carousel: keep each meta item (size / guests / bed) on one line, wrap between items on narrow cards */
+.main__room__slider .room__slide__box .room__content__meta{flex-wrap:wrap;gap:6px 14px}
+.main__room__slider .room__slide__box .room__content__meta span{white-space:nowrap}

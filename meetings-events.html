@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Corporate meetings, conferences, private celebrations and business gatherings at Unicon Hospitality. Share your requirements and our events team will reply.">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="Meetings &amp; Events | Unicon Hospitality">
+    <meta property="og:description" content="Corporate meetings, conferences, private celebrations and business gatherings at Unicon Hospitality. Share your requirements and our events team will reply.">
+    <meta property="og:image" content="assets/images/events/events-hero.webp">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="icon" href="assets/images/unicon/logos.jpeg" type="image/x-icon">
+    <title>Meetings &amp; Events | Unicon Hospitality</title>
+    <link rel="preload" as="image" href="assets/images/events/events-hero.webp" fetchpriority="high">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/navigation.css">
+    <link rel="stylesheet" href="assets/css/events.css?v=2">
+    <link rel="stylesheet" href="assets/css/hero-system.css?v=5">
+    <link rel="stylesheet" href="assets/css/footer.css?v=1">
+</head>
+
+<body>
+    <!-- icon sprite (replaces the flaticon font, which was not supplied) -->
+    <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+        <defs>
+            <symbol id="i-phone" viewBox="0 0 24 24"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></symbol>
+            <symbol id="i-mail" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></symbol>
+            <symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 21s7-6.2 7-11a7 7 0 0 0-14 0c0 4.8 7 11 7 11z"/><circle cx="12" cy="10" r="2.5"/></symbol>
+            <symbol id="i-cal" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M8 3v4M16 3v4M3 10h18"/></symbol>
+            <symbol id="i-user" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></symbol>
+            <symbol id="i-people" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.5"/><path d="M2 20a7 7 0 0 1 14 0"/><circle cx="17" cy="9" r="2.5"/><path d="M18 14a5 5 0 0 1 4 6"/></symbol>
+            <symbol id="i-area" viewBox="0 0 24 24"><path d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5"/></symbol>
+            <symbol id="i-check" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="m8 12 3 3 5-6"/></symbol>
+            <symbol id="i-star" viewBox="0 0 24 24"><path d="m12 3 2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1L3.2 9.5l6.1-.9z"/></symbol>
+            <symbol id="i-play" viewBox="0 0 24 24"><path d="M8 5v14l11-7z" fill="currentColor"/></symbol>
+            <symbol id="i-bed" viewBox="0 0 24 24"><path d="M3 18V6M3 14h18v4M21 14v-2a3 3 0 0 0-3-3h-7v5"/><circle cx="7" cy="11" r="1.5"/></symbol>
+            <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 3 5 6v6c0 4.5 3 7.5 7 9 4-1.500 7-4.500 7-9V6z"/><path d="m9 12 2 2 4-4"/></symbol>
+            <symbol id="i-gym" viewBox="0 0 24 24"><path d="M6 8v8M18 8v8M3 10v4M21 10v4M6 12h12"/></symbol>
+            <symbol id="i-pool" viewBox="0 0 24 24"><path d="M3 17c2 0 2-1.500 4.500-1.500S10 17 12 17s2.500-1.500 4.500-1.500S19 17 21 17M3 21c2 0 2-1.500 4.500-1.500S10 21 12 21s2.500-1.500 4.500-1.500S19 21 21 21M8 14V6a2 2 0 0 1 4 0M14 14V6a2 2 0 0 1 4 0M8 9h6"/></symbol>
+            <symbol id="i-wifi" viewBox="0 0 24 24"><path d="M2 9a15 15 0 0 1 20 0M5 12.500a10 10 0 0 1 14 0M8.500 16a5 5 0 0 1 7 0"/><circle cx="12" cy="19" r="1" fill="currentColor"/></symbol>
+            <symbol id="i-cup" viewBox="0 0 24 24"><path d="M4 8h13v6a5 5 0 0 1-5 5H9a5 5 0 0 1-5-5zM17 10h2a2 2 0 0 1 0 4h-2M8 3v2M12 3v2"/></symbol>
+            <symbol id="i-car" viewBox="0 0 24 24"><path d="M4 16v-4l2-5h12l2 5v4zM4 16v2M20 16v2M4 12h16"/><circle cx="8" cy="14.500" r="1"/><circle cx="16" cy="14.500" r="1"/></symbol>
+            <symbol id="i-plane" viewBox="0 0 24 24"><path d="M21 3 3 10l7 3 3 7z"/><path d="m10 13 4-4"/></symbol>
+            <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></symbol>
+            <symbol id="i-arrow-l" viewBox="0 0 24 24"><path d="M19 12H5M11 6l-6 6 6 6"/></symbol>
+            <symbol id="i-arrow-r" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
+            <symbol id="i-insta" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.500" cy="6.500" r="1" fill="currentColor"/></symbol>
+        </defs>
+    </svg>
+
+    <!-- ============ NAVIGATION: utility bar + main bar (assets/css/navigation.css, assets/js/navigation.js) ============ -->
+    <div class="un-util">
+        <div class="container un-util__in">
+            <nav aria-label="Explore Unicon Hospitality">
+                <ul class="un-util__links">
+                    <li><a href="meetings-events.html" aria-current="page">Meetings &amp; Events</a></li>
+                    <li><a href="weddings.html">Weddings</a></li>
+                    <li><a href="activities.html">Local Attractions</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="offers.html">Special Offers</a></li>
+                </ul>
+            </nav>
+            <ul class="un-util__contact">
+                <li><a href="mailto:stay@uniconhospitality.example"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg> stay@uniconhospitality.example</a></li>
+                <li><a href="tel:+919920400267"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></svg> Reservations: +91 99204 00267</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <header class="un-header" id="unHeader">
+        <div class="container un-header__in">
+            <a class="un-logo" href="index.html" aria-label="Unicon Hospitality - home"><img src="assets/images/unicon/logo.png" alt="Unicon Hospitality"></a>
+
+            <nav class="un-nav" aria-label="Main">
+                <ul class="un-nav__list">
+                    <li class="un-nav__item"><a class="un-nav__link" href="index.html">Home</a></li>
+                    <li class="un-nav__item has-drop">
+                        <button type="button" class="un-nav__link" aria-expanded="false" aria-haspopup="true" aria-controls="unDropBook">Book <span class="un-nav__chev" aria-hidden="true"></span></button>
+                        <ul class="un-drop" id="unDropBook">
+                            <li><a href="book-a-room.html">Book a Room</a></li>
+                            <li><a href="find-my-reservation.html">Find My Reservation</a></li>
+                            <li><a href="coupons.html">Coupons</a></li>
+                            <li><a href="offers.html">Special Packages</a></li>
+                        </ul>
+                    </li>
+                    <li class="un-nav__item has-drop">
+                        <button type="button" class="un-nav__link" aria-expanded="false" aria-haspopup="true" aria-controls="unDropStay">Stay <span class="un-nav__chev" aria-hidden="true"></span></button>
+                        <ul class="un-drop" id="unDropStay">
+                            <li><a href="dining.html">Dining</a></li>
+                            <li><a href="amenities.html">Amenities</a></li>
+                            <li><a href="gallery.html">Gallery</a></li>
+                        </ul>
+                    </li>
+                    <li class="un-nav__item"><a class="un-nav__link" href="rooms.html">Rooms</a></li>
+                    <li class="un-nav__item"><a class="un-nav__link" href="blog.html">Blog</a></li>
+                    <li class="un-nav__item"><a class="un-nav__link" href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+
+            <div class="un-actions">
+                <a href="#loginModal" class="theme-btn btn-style sm-btn border" data-bs-toggle="modal" data-bs-target="#loginModal"><span>Sign In</span></a>
+                <a href="#signupModal" class="theme-btn btn-style sm-btn border" data-bs-toggle="modal" data-bs-target="#signupModal"><span>Join Free</span></a>
+                <a href="index.html#book" class="theme-btn btn-style sm-btn fill un-book"><span>Book Now</span></a>
+            </div>
+
+            <div class="un-mob">
+                <a class="un-iconbtn" href="tel:+919920400267" aria-label="Call reservations +91 99204 00267"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></svg></a>
+                <button type="button" class="un-iconbtn" id="unBurger" aria-label="Open menu" aria-expanded="false" aria-controls="unDrawer"><span class="un-burger" aria-hidden="true"><i></i><i></i><i></i></span></button>
+            </div>
+        </div>
+    </header>
+    <!-- header area end -->
+
+
+
+        <main id="top" class="ev-page">
+
+    <!-- ============ 1. HERO ============ -->
+    <section class="ev-hero uh-page-hero" aria-labelledby="evH1">
+        <img class="ev-hero__bg" src="assets/images/events/events-hero.webp" alt="" width="1920" height="1280" fetchpriority="high" decoding="async">
+        <div class="container">
+            <div class="ev-hero__in uh-hero__in">
+                <nav class="ev-crumb ev-rise" aria-label="Breadcrumb"><a href="index.html">Home</a><span aria-hidden="true">/</span><span aria-current="page">Meetings &amp; Events</span></nav>
+                <span class="ev-eyebrow ev-rise">Meetings &amp; Events</span>
+                <h1 class="ev-rise" id="evH1">Where Business Meets Exceptional Hospitality.</h1>
+                <!-- <p class="ev-hero__lead ev-rise">From productive meetings to memorable gatherings, discover event experiences designed around your needs.</p> -->
+                <div class="ev-cta ev-rise">
+                    <a href="#spaces" class="theme-btn btn-style fill no-border" data-ev-scroll="spaces"><span>Explore Event Spaces</span></a>
+                    <a href="#enquiry" class="theme-btn btn-style border ev-btn-light" data-ev-enquire><span>Enquire About an Event</span></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ 2. FLOATING HIGHLIGHTS ============ -->
+    <section class="ev-strip" aria-label="Event highlights">
+        <div class="container">
+            <div class="ev-strip__grid">
+                <article class="ev-hl ev-reveal">
+                    <span class="ev-hl__ico"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M9 7V5a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v2M3 13h18"/></svg></span>
+                    <h3>Corporate Meetings</h3>
+                    <p>Professional business gatherings.</p>
+                </article>
+                <article class="ev-hl ev-reveal" style="--d:.08s">
+                    <span class="ev-hl__ico"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="11" rx="1"/><path d="M12 15v5M8 20h8M7 11l3-3 3 2 4-4"/></svg></span>
+                    <h3>Conferences</h3>
+                    <p>Spaces for conferences and seminars.</p>
+                </article>
+                <article class="ev-hl ev-reveal" style="--d:.16s">
+                    <span class="ev-hl__ico"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 3h8l-1 7a3 3 0 0 1-6 0zM12 13v8M8 21h8"/></svg></span>
+                    <h3>Private Events</h3>
+                    <p>Special occasions and social gatherings.</p>
+                </article>
+                <article class="ev-hl ev-reveal" style="--d:.24s">
+                    <span class="ev-hl__ico"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 3v8M5 3v5a2 2 0 0 0 4 0V3M7 11v10M17 3c-2 2-3 5-3 8h3v10"/></svg></span>
+                    <h3>Event Dining</h3>
+                    <p>Dining and catering experiences.</p>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ 3. EVENT EXPERIENCES (+ food & dining feature) ============ -->
+    <section class="ev-sec ev-sec--tight" id="experiences" aria-labelledby="evExpH">
+        <div class="container">
+            <div class="ev-head ev-head--center ev-reveal">
+                <span class="ev-eyebrow ev-eyebrow--dark">What We Host</span>
+                <h2 id="evExpH">Our Event Experiences</h2>
+                <p>Whatever the occasion, tell us what you have in mind and our team will help shape it around your guests.</p>
+            </div>
+
+            <div class="ev-cards">
+                <article class="ev-card ev-reveal">
+                    <div class="ev-card__media"><img src="assets/images/events/corporate-meeting.webp" width="1400" height="933" loading="lazy" decoding="async" alt="Business colleagues seated around a boardroom table (illustrative stock photograph)"></div>
+                    <div class="ev-card__body">
+                        <h3>Corporate Meetings</h3>
+                        <p>Board discussions, team off-sites and client meetings in a setting that keeps the focus on the work.</p>
+                        <a class="ev-link" href="#enquiry" data-ev-enquire data-ev-type="corporate-meeting">Enquire Now <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-arrow-r"/></svg></a>
+                    </div>
+                </article>
+                <article class="ev-card ev-reveal" style="--d:.08s">
+                    <div class="ev-card__media"><img src="assets/images/events/conference-hall.webp" width="1400" height="933" loading="lazy" decoding="async" alt="A speaker presenting at a lectern to a seated audience (illustrative stock photograph)"></div>
+                    <div class="ev-card__body">
+                        <h3>Conferences &amp; Seminars</h3>
+                        <p>Presentations, training days and seminars for larger groups. Share your format and we will suggest what suits.</p>
+                        <a class="ev-link" href="#enquiry" data-ev-enquire data-ev-type="conference">Enquire Now <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-arrow-r"/></svg></a>
+                    </div>
+                </article>
+                <article class="ev-card ev-reveal" style="--d:.16s">
+                    <div class="ev-card__media"><img src="assets/images/events/banquet-chandeliers.webp" width="1000" height="1333" loading="lazy" decoding="async" alt="A banquet hall with chandeliers and round tables laid for an event (illustrative stock photograph)"></div>
+                    <div class="ev-card__body">
+                        <h3>Private Celebrations</h3>
+                        <p>Birthdays, anniversaries, reunions and family occasions, with the details looked after.</p>
+                        <a class="ev-link" href="#enquiry" data-ev-enquire data-ev-type="private-celebration">Enquire Now <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-arrow-r"/></svg></a>
+                    </div>
+                </article>
+                <article class="ev-card ev-reveal" style="--d:.24s">
+                    <div class="ev-card__media"><img src="assets/images/events/business-gathering.webp" width="1400" height="933" loading="lazy" decoding="async" alt="Delegates seated in a conference room (illustrative stock photograph)" style="object-position:30% 50%"></div>
+                    <div class="ev-card__body">
+                        <h3>Business Gatherings</h3>
+                        <p>Networking evenings, launches, award functions and company get-togethers.</p>
+                        <a class="ev-link" href="#enquiry" data-ev-enquire data-ev-type="business-gathering">Enquire Now <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-arrow-r"/></svg></a>
+                    </div>
+                </article>
+            </div>
+
+            <!-- CONTENT TO BE CONFIRMED BY UNICON: confirmed event menus, catering formats and dining arrangements. Copy below only invites an enquiry. -->
+            <div class="ev-dine ev-reveal" id="dining">
+                <div class="ev-dine__pics">
+                    <img src="assets/images/events/dining-room.webp" width="1400" height="933" loading="lazy" decoding="async" alt="An elegantly set hotel dining room (illustrative stock photograph)">
+                    <img src="assets/images/events/dining-appetizers.webp" width="1400" height="934" loading="lazy" decoding="async" alt="Appetisers served in small glasses at an event (illustrative stock photograph)">
+                </div>
+                <div class="ev-dine__txt">
+                    <span class="ev-eyebrow ev-eyebrow--dark">Food &amp; Dining</span>
+                    <h3>Good Food Makes a Good Event</h3>
+                    <p>Meals and refreshments shape how an event is remembered. Tell us about your event and our team will talk you through the dining and catering options available for it.</p>
+                    <ul class="ev-dine__topics">
+                        <li><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-check"/></svg> Menu planning</li>
+                        <li><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-check"/></svg> Dietary requirements</li>
+                        <li><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-check"/></svg> Refreshment breaks</li>
+                        <li><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-check"/></svg> Service style</li>
+                    </ul>
+                    <a class="ev-link" href="#enquiry" data-ev-enquire>Enquire About Event Dining <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-arrow-r"/></svg></a>
+                    <p class="ev-note"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-check"/></svg><span>Topics to discuss with our team. Menus and formats are confirmed at enquiry.</span></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ 4. EVENT SPACES + GALLERY (merged) ============ -->
+    <!-- CONTENT TO BE CONFIRMED BY UNICON: real venue names, capacities, seating arrangements, areas, facilities and venue photographs.
+         The cards below are rendered from the VENUES list at the top of assets/js/events.js. Entries with verified:false show an approval flag. -->
+    <section class="ev-sec ev-sec--ivory ev-sec--tight" id="spaces" aria-labelledby="evSpH">
+        <div class="container">
+            <div class="ev-head ev-head--center ev-reveal">
+                <span class="ev-eyebrow ev-eyebrow--dark">Venues &amp; Gallery</span>
+                <h2 id="evSpH">Discover Our Event Spaces &amp; Experiences</h2>
+                <p>Capacity, seating arrangements and facilities for each space are shared by our events team, so you always get confirmed information.</p>
+            </div>
+            <div class="ev-venues" id="evVenues" data-ev-venues></div>
+            <noscript><p class="ev-note">Our event spaces are listed here with JavaScript enabled. Please <a href="contact.html">contact us</a> or call +91 99204 00267 for venue details.</p></noscript>
+
+            <div class="ev-head ev-head--center ev-head--gal ev-reveal" id="event-gallery">
+                <span class="ev-eyebrow ev-eyebrow--dark">A Closer Look</span>
+                <h3 class="ev-head__h" id="evGlH">Inside Our Event Experiences.</h3>
+                <p>Explore inspiring event settings, meeting spaces and dining arrangements. Share your ideas with our team to discuss suitable arrangements.</p>
+            </div>
+            <div class="ev-mosaic ev-reveal" aria-labelledby="evGlH" role="group">
+                <button type="button" class="ev-shot" data-ev-lb="assets/images/events/events-hero.webp" data-cap="Conference Setup"><img src="assets/images/events/events-hero.webp" width="1920" height="1280" loading="lazy" decoding="async" alt="Conference hall with rows of chairs facing a screen (illustrative stock photograph)"><span class="ev-shot__cap">Conference Setup</span></button>
+                <button type="button" class="ev-shot" data-ev-lb="assets/images/events/banquet-setup.webp" data-cap="Banquet Arrangements"><img src="assets/images/events/banquet-setup.webp" width="1400" height="935" loading="lazy" decoding="async" alt="Banquet hall with round tables and uplighting (illustrative stock photograph)"><span class="ev-shot__cap">Banquet Arrangements</span></button>
+                <button type="button" class="ev-shot" data-ev-lb="assets/images/events/seminar-setup.webp" data-cap="Seminar Seating"><img src="assets/images/events/seminar-setup.webp" width="1400" height="933" loading="lazy" decoding="async" alt="Classroom-style seminar seating (illustrative stock photograph)"><span class="ev-shot__cap">Seminar Seating</span></button>
+                <button type="button" class="ev-shot" data-ev-lb="assets/images/events/banquet-classic.webp" data-cap="Event Ambience"><img src="assets/images/events/banquet-classic.webp" width="1400" height="933" loading="lazy" decoding="async" alt="Classic banquet hall with chandeliers (illustrative stock photograph)"><span class="ev-shot__cap">Event Ambience</span></button>
+                <button type="button" class="ev-shot" data-ev-lb="assets/images/events/round-table-setup.webp" data-cap="Dining Arrangements"><img src="assets/images/events/round-table-setup.webp" width="1400" height="933" loading="lazy" decoding="async" alt="Round tables dressed with blue and gold chair bows (illustrative stock photograph)"><span class="ev-shot__cap">Dining Arrangements</span></button>
+                <button type="button" class="ev-shot" data-ev-lb="assets/images/events/private-celebration.webp" data-cap="Private Celebrations"><img src="assets/images/events/private-celebration.webp" width="1400" height="933" loading="lazy" decoding="async" alt="A banquet room dressed with red flowers and gold chairs (illustrative stock photograph)"><span class="ev-shot__cap">Private Celebrations</span></button>
+                <button type="button" class="ev-shot" data-ev-lb="assets/images/events/corporate-meeting.webp" data-cap="Meeting Spaces"><img src="assets/images/events/corporate-meeting.webp" width="1400" height="933" loading="lazy" decoding="async" alt="A boardroom meeting in progress (illustrative stock photograph)"><span class="ev-shot__cap">Meeting Spaces</span></button>
+            </div>
+            <p class="ev-note"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-check"/></svg><span>Venue details marked &ldquo;pending approval&rdquo; are placeholders. All photographs are illustrative stock images and do not show Unicon Hospitality spaces; our own photographs will replace them once supplied.</span></p>
+        </div>
+    </section>
+
+    <!-- ============ 8. ENQUIRY FORM ============ -->
+    <!-- <section class="ev-enq" id="enquiry" aria-labelledby="evEnqH">
+        <div class="container">
+            <div class="ev-enq__grid ev-reveal">
+                <div class="ev-enq__aside">
+                    <span class="ev-eyebrow">Corporate Event Enquiry</span>
+                    <h2 id="evEnqH">Let&rsquo;s Plan Your Next Event.</h2>
+                    <p>Share a few details and our events team will get back to you with available options.</p>
+                    <ul class="ev-enq__contact">
+                        <li><a href="tel:+919920400267"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-phone"/></svg> +91 99204 00267</a></li>
+                        <li><a href="contact.html"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-mail"/></svg> Other ways to reach us</a></li>
+                        <li><a href="group-stays.html"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-bed"/></svg> Group stays for attendees</a></li>
+                    </ul>
+                </div>
+                <form class="ev-form" id="evForm" action="api/event-enquiry.php" method="post" novalidate>
+                    <input type="hidden" name="form_kind" value="events">
+                    <p class="ev-prefill" id="evPrefill" role="status" aria-live="polite"></p>
+                    <div class="ev-form__grid">
+                        <div class="ev-field"><label for="ev-name">Full Name <b aria-hidden="true">*</b></label><input id="ev-name" name="name" type="text" autocomplete="name" required maxlength="100"><span class="ev-field__err" id="ev-name-err">Please enter your name.</span></div>
+                        <div class="ev-field"><label for="ev-company">Company / Organisation <b aria-hidden="true">*</b></label><input id="ev-company" name="company" type="text" autocomplete="organization" required maxlength="120"><span class="ev-field__err" id="ev-company-err">Please enter your company or organisation.</span></div>
+                        <div class="ev-field"><label for="ev-email">Email <b aria-hidden="true">*</b></label><input id="ev-email" name="email" type="email" autocomplete="email" required maxlength="150"><span class="ev-field__err" id="ev-email-err">Please enter a valid email address.</span></div>
+                        <div class="ev-field"><label for="ev-phone">Phone Number <b aria-hidden="true">*</b></label><input id="ev-phone" name="phone" type="tel" autocomplete="tel" inputmode="tel" required maxlength="20"><span class="ev-field__err" id="ev-phone-err">Please enter a valid phone number.</span></div>
+                        <div class="ev-field"><label for="ev-type">Event Type <b aria-hidden="true">*</b></label>
+                            <select id="ev-type" name="event_type" required>
+                                <option value="">Select an event type</option>
+                                <option value="corporate-meeting">Corporate Meeting</option>
+                                <option value="conference">Conference / Seminar</option>
+                                <option value="private-celebration">Private Celebration</option>
+                                <option value="business-gathering">Business Gathering</option>
+                                <option value="other">Other</option>
+                            </select><span class="ev-field__err" id="ev-type-err">Please choose an event type.</span></div>
+                        <div class="ev-field"><label for="ev-date">Preferred Event Date <b aria-hidden="true">*</b></label><input id="ev-date" name="event_date" type="date" required><span class="ev-field__err" id="ev-date-err">Please choose a date that is today or later.</span></div>
+                        <div class="ev-field"><label for="ev-guests">Number of Attendees <b aria-hidden="true">*</b></label><input id="ev-guests" name="attendees" type="number" inputmode="numeric" min="1" max="1000" required><span class="ev-field__err" id="ev-guests-err">Enter a number between 1 and 1000.</span></div>
+                        <div class="ev-field"><label for="ev-venue">Venue Preference <small>(if applicable)</small></label>
+                            <select id="ev-venue" name="venue"><option value="">No preference / not sure</option></select></div>
+                        <div class="ev-field ev-field--full"><label for="ev-msg">Additional Requirements</label><textarea id="ev-msg" name="message" maxlength="1500" placeholder="Tell us about the format, timings, catering or anything else that helps."></textarea></div>
+                        <div class="ev-field ev-field--full">
+                            <label class="ev-check"><input type="checkbox" id="ev-ok" name="consent" value="1" required> <span>I agree to be contacted about this enquiry. <b aria-hidden="true" style="color:#b3261e">*</b></span></label>
+                            <span class="ev-field__err" id="ev-ok-err">Your consent is needed so we can reply.</span>
+                        </div>
+                        <div class="ev-hp" aria-hidden="true"><label>Leave this empty <input type="text" name="website" tabindex="-1" autocomplete="off"></label></div>
+                    </div>
+                    <div class="ev-form__foot">
+                        <button type="submit" class="theme-btn btn-style fill no-border ev-submit"><span>Send Event Enquiry</span></button>
+                        <p class="ev-msg" id="evMsg" role="status" aria-live="polite"></p>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section> -->
+
+    <!-- ============ 9. FAQ ============ -->
+    <!-- CONTENT TO BE CONFIRMED BY UNICON: booking lead times, deposits, availability rules, catering and accommodation policies. Answers below only point to the enquiry process. -->
+    <section class="ev-sec" id="faq" aria-labelledby="evFqH">
+        <div class="container">
+            <div class="ev-head ev-head--center ev-reveal">
+                <span class="ev-eyebrow ev-eyebrow--dark">FAQs</span>
+                <h2 id="evFqH">Event FAQs</h2>
+            </div>
+            <div class="ev-faq" data-ev-accordion>
+                <div class="ev-acc"><h3><button type="button" id="evq1" aria-expanded="false" aria-controls="evp1">How can I enquire about hosting an event?</button></h3><div class="ev-acc__p" id="evp1" role="region" aria-labelledby="evq1"><div><p>Complete the enquiry form on this page or call us on +91 99204 00267. Tell us the occasion, date and number of guests and our team will reply.</p></div></div></div>
+                <div class="ev-acc"><h3><button type="button" id="evq2" aria-expanded="false" aria-controls="evp2">What types of events can I enquire about?</button></h3><div class="ev-acc__p" id="evp2" role="region" aria-labelledby="evq2"><div><p>You can enquire about corporate meetings, conferences and seminars, private celebrations and business gatherings. If your event is something else, choose &ldquo;Other&rdquo; and describe it.</p></div></div></div>
+                <div class="ev-acc"><h3><button type="button" id="evq3" aria-expanded="false" aria-controls="evp3">How can I check venue availability?</button></h3><div class="ev-acc__p" id="evp3" role="region" aria-labelledby="evq3"><div><p>Send your preferred date, venue preference and number of attendees through the form. Our team will confirm what is available for those dates.</p></div></div></div>
+                <div class="ev-acc"><h3><button type="button" id="evq4" aria-expanded="false" aria-controls="evp4">Can I enquire about catering?</button></h3><div class="ev-acc__p" id="evp4" role="region" aria-labelledby="evq4"><div><p>Yes. Mention your catering requirements in the Additional Requirements box and our team will talk you through the options.</p></div></div></div>
+                <div class="ev-acc"><h3><button type="button" id="evq5" aria-expanded="false" aria-controls="evp5">Can accommodation be arranged for attendees?</button></h3><div class="ev-acc__p" id="evp5" role="region" aria-labelledby="evq5"><div><p>You can ask about rooms for your attendees in the same enquiry. You can also see our <a href="rooms.html">rooms and suites</a> and <a href="group-stays.html">group stays</a> pages.</p></div></div></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ 10. CLOSING CTA ============ -->
+    <section class="ev-close" aria-labelledby="evClH">
+        <img class="ev-close__bg" src="assets/images/events/banquet-classic.webp" alt="" width="1400" height="933" loading="lazy" decoding="async">
+        <div class="container ev-reveal">
+            <h2 id="evClH">Let&rsquo;s Make Your Next Gathering Memorable.</h2>
+            <p>Start planning your event with Unicon Hospitality.</p>
+            <div class="ev-cta ev-cta--center">
+                <a href="rooms.html" class="theme-btn btn-style fill no-border"><span>Explore Rooms</span></a>
+                <a href="contact.html" class="theme-btn btn-style border ev-btn-light"><span>Contact Us</span></a>
+            </div>
+        </div>
+    </section>
+
+    </main>
+
+
+    <!-- ============ SIGN IN / JOIN MODALS ============ -->
+    <div class="modal similar__modal fade" id="loginModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="max-content similar__form form__padding">
+                    <div class="d-flex mb-3 align-items-center justify-content-between">
+                        <h6 class="mb-0">Sign In to Unicorn Rewards</h6>
+                        <button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <form action="#" class="d-flex flex-column gap-3 um-demo-form">
+                        <div class="form-group">
+                            <label for="email-popup" class="text-dark mb-3">Your Email</label>
+                            <div class="position-relative"><input type="email" name="email-popup" id="email-popup" placeholder="Enter your email" required></div>
+                        </div>
+                        <div class="form-group">
+                            <label for="password" class="text-dark mb-3">Password</label>
+                            <div class="position-relative"><input type="password" name="password" id="password" placeholder="Enter your password" required></div>
+                        </div>
+                        <div class="d-flex flex-wrap justify-content-between align-items-center">
+                            <div class="form-check d-flex align-items-center gap-2">
+                                <input class="form-check-input mt-0" type="checkbox" value="" id="flexCheckDefault">
+                                <label class="form-check-label mb-0" for="flexCheckDefault">Remember me</label>
+                            </div>
+                            <a href="#" class="forgot__password text-para" data-bs-toggle="modal" data-bs-target="#forgotModal">Forgot Password?</a>
+                        </div>
+                        <div class="form-group my-3">
+                            <button class="theme-btn btn-style sm-btn fill w-100"><span>Sign In</span></button>
+                        </div>
+                    </form>
+                    <span class="d-block text-center">Not a member? <a href="#" data-bs-target="#signupModal" data-bs-toggle="modal" class="text-primary">Join Free</a></span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal similar__modal fade" id="signupModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="max-content similar__form form__padding">
+                    <div class="d-flex mb-3 align-items-center justify-content-between">
+                        <h6 class="mb-0">Join Unicorn Rewards, Free</h6>
+                        <button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <form action="#" class="d-flex flex-column gap-3 um-demo-form">
+                        <div class="form-group">
+                            <label for="sname" class="text-dark mb-3">Your Name</label>
+                            <div class="position-relative"><input type="text" name="sname" id="sname" placeholder="Full name" required></div>
+                        </div>
+                        <div class="form-group">
+                            <label for="signemail" class="text-dark mb-3">Your Email</label>
+                            <div class="position-relative"><input type="email" name="signemail" id="signemail" placeholder="Enter your email" required></div>
+                        </div>
+                        <div class="form-group">
+                            <label for="spassword" class="text-dark mb-3">Password</label>
+                            <div class="position-relative"><input type="password" name="spassword" id="spassword" placeholder="Create a password" required></div>
+                        </div>
+                        <div class="form-group my-3">
+                            <button class="theme-btn btn-style sm-btn fill w-100"><span>Register</span></button>
+                        </div>
+                    </form>
+                    <span class="d-block text-center">Already a member? <a href="#" data-bs-target="#loginModal" data-bs-toggle="modal" class="text-primary">Sign In</a></span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal similar__modal fade" id="forgotModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="max-content similar__form form__padding">
+                    <div class="d-flex mb-3 align-items-center justify-content-between">
+                        <h6 class="mb-0">Forgot Password</h6>
+                        <button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <form action="#" class="d-flex flex-column gap-3 um-demo-form">
+                        <div class="form-group">
+                            <label for="fmail" class="text-dark mb-3">Your Email</label>
+                            <div class="position-relative"><input type="email" name="email" id="fmail" placeholder="Enter your email" required></div>
+                        </div>
+                        <div class="form-group my-3">
+                            <button class="theme-btn btn-style sm-btn fill w-100"><span>Reset Password</span></button>
+                        </div>
+                    </form>
+                    <span class="d-block text-center">Remember your password? <a href="#" data-bs-target="#loginModal" data-bs-toggle="modal" class="text-primary">Sign In</a></span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ============ MOBILE DRAWER ============ -->
+    <div class="un-overlay" id="unOverlay"></div>
+    <aside class="un-drawer" id="unDrawer" aria-label="Site menu" aria-hidden="true">
+        <div class="un-drawer__top">
+            <a class="un-drawer__logo" href="index.html" aria-label="Unicon Hospitality - home"><img src="assets/images/unicon/logo.png" alt="Unicon Hospitality"></a>
+            <button type="button" class="un-iconbtn" id="unDrawerClose" aria-label="Close menu"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
+        </div>
+        <div class="un-drawer__body">
+            <nav aria-label="Mobile">
+                <ul class="un-m">
+                    <li><a class="un-m__link" href="index.html">Home</a></li>
+                    <li class="un-m__item">
+                        <button type="button" class="un-m__btn" aria-expanded="false" aria-controls="unMBook">Book <span class="un-m__chev" aria-hidden="true"></span></button>
+                        <div class="un-m__panel" id="unMBook">
+                            <a href="book-a-room.html">Book a Room</a>
+                            <a href="find-my-reservation.html">Find My Reservation</a>
+                            <a href="coupons.html">Coupons</a>
+                            <a href="offers.html">Special Packages</a>
+                        </div>
+                    </li>
+                    <li class="un-m__item">
+                        <button type="button" class="un-m__btn" aria-expanded="false" aria-controls="unMStay">Stay <span class="un-m__chev" aria-hidden="true"></span></button>
+                        <div class="un-m__panel" id="unMStay">
+                            <a href="dining.html">Dining</a>
+                            <a href="amenities.html">Amenities</a>
+                            <a href="gallery.html">Gallery</a>
+                        </div>
+                    </li>
+                    <li><a class="un-m__link" href="rooms.html">Rooms</a></li>
+                    <li><a class="un-m__link" href="blog.html">Blog</a></li>
+                    <li><a class="un-m__link" href="contact.html">Contact</a></li>
+                </ul>
+                <div class="un-m__auth">
+                    <a href="#loginModal" class="theme-btn btn-style sm-btn border" data-bs-toggle="modal" data-bs-target="#loginModal"><span>Sign In</span></a>
+                    <a href="#signupModal" class="theme-btn btn-style sm-btn border" data-bs-toggle="modal" data-bs-target="#signupModal"><span>Join Free</span></a>
+                </div>
+                <div class="un-m__cta"><a href="index.html#book" class="theme-btn btn-style sm-btn fill"><span>Book Now</span></a></div>
+                <ul class="un-m un-m__explore">
+                    <li class="un-m__item">
+                        <button type="button" class="un-m__btn" aria-expanded="false" aria-controls="unMExplore">Explore <span class="un-m__chev" aria-hidden="true"></span></button>
+                        <div class="un-m__panel" id="unMExplore">
+                            <a href="meetings-events.html" aria-current="page">Meetings &amp; Events</a>
+                            <a href="weddings.html">Weddings</a>
+                            <a href="activities.html">Local Attractions</a>
+                            <a href="about.html">About Us</a>
+                            <a href="offers.html">Special Offers</a>
+                        </div>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+        <div class="un-drawer__foot">
+            <span>Reservations</span>
+            <a href="tel:+919920400267"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></svg> +91 99204 00267</a>
+            <span>Email</span>
+            <a href="mailto:stay@uniconhospitality.example"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg> stay@uniconhospitality.example</a>
+        </div>
+    </aside>
+
+    <!-- ============ FOOTER (Ramada-style columns) ============ -->
+    <footer class="uf" id="contact">
+        <div class="uf__wrap">
+            <div class="uf__news">
+                <div class="uf__news-text">
+                    <h2>Join Our Newsletter</h2>
+                    <p>Discover special offers, seasonal escapes and memorable experiences.</p>
+                </div>
+                <form class="uf__news-form" id="newsForm" action="#" method="post" novalidate>
+                    <div class="uf__news-row">
+                        <input type="email" name="email" id="subscription" placeholder="Enter your email" autocomplete="email" required aria-label="Email address">
+                        <button type="submit">Subscribe</button>
+                    </div>
+                    <p class="uf__news-msg" id="newsMsg" role="status" aria-live="polite"></p>
+                </form>
+            </div>
+
+            <div class="uf__cols">
+                <div class="uf__col uf__col--brand">
+                    <a class="uf__logo" href="index.html" aria-label="Unicon Hospitality home"><img src="assets/images/unicon/logoc.png" alt="Unicon Hospitality" width="92" height="66" loading="lazy"></a>
+                    <p class="uf__about">Experience comfort, thoughtful service and memorable stays at Unicon Hospitality.</p>
+                    <ul class="uf__list">
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="rooms.html">Rooms &amp; Suites</a></li>
+                        <li><a href="dining.html">Dining</a></li>
+                        <li><a href="amenities.html">Amenities</a></li>
+                        <li><a href="gallery.html">Gallery</a></li>
+                    </ul>
+                </div>
+                <div class="uf__col">
+                    <h3 class="uf__title">Explore Experiences</h3>
+                    <ul class="uf__list">
+                        <li><a href="meetings-events.html">Meetings &amp; Events</a></li>
+                        <li><a href="weddings.html">Weddings</a></li>
+                        <li><a href="activities.html">Local Attractions</a></li>
+                        <li><a href="offers.html">Special Offers</a></li>
+                        <li><a href="coupons.html">Coupons</a></li>
+                        <li><a href="about.html#guest-reviews">Guest Reviews</a></li>
+                    </ul>
+                </div>
+                <div class="uf__col">
+                    <h3 class="uf__title">Reservations &amp; Contact</h3>
+                    <ul class="uf__list uf__list--contact">
+                        <li><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></svg><span><small>Reservations</small><a href="tel:+919920400267">+91 99204 00267</a></span></li>
+                        <li data-uf="email" hidden><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg><span><small>Email Us</small><a href="#"></a></span></li>
+                        <li><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s7-6.2 7-11a7 7 0 0 0-14 0c0 4.8 7 11 7 11z"/><circle cx="12" cy="10" r="2.5"/></svg><span><small>Visit Us</small><span class="uf__val" data-uc="address">MIDC Rd, Digha Gaon, Dighe, The Stone Arch, Navi Mumbai, Mumbai, India, 400708</span></span></li>
+                        <li><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 3 3 10l7 3 3 7z"/></svg><a href="https://www.google.com/maps/dir/?api=1&amp;destination=19.1759967%2C72.9991538" target="_blank" rel="noopener noreferrer" data-uc="directions">Get Directions</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                        <li><a href="contact.html#faq">FAQs</a></li>
+                    </ul>
+                </div>
+                <div class="uf__col">
+                    <h3 class="uf__title">Guest Information</h3>
+                    <ul class="uf__list">
+                        <li><a href="book-a-room.html">Book a Room</a></li>
+                        <li><a href="find-my-reservation.html">Find My Reservation</a></li>
+                        <li><a href="blog.html">The Unicon Journal</a></li>
+                    </ul>
+                    <div class="uf__follow">
+                        <span class="uf__sub">Follow Us</span>
+                        <ul class="uf__social">
+                            <li><a href="https://www.instagram.com/uniconhospitality/" target="_blank" rel="noopener noreferrer" aria-label="Instagram" title="Instagram"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M7.8 2h8.4A5.8 5.8 0 0 1 22 7.8v8.4a5.8 5.8 0 0 1-5.8 5.8H7.8A5.8 5.8 0 0 1 2 16.2V7.8A5.8 5.8 0 0 1 7.8 2zm-.2 1.8A3.8 3.8 0 0 0 3.8 7.6v8.8a3.8 3.8 0 0 0 3.8 3.8h8.8a3.8 3.8 0 0 0 3.8-3.8V7.6a3.8 3.8 0 0 0-3.8-3.8zm9.6 1.4a1.3 1.3 0 1 1 0 2.6 1.3 1.3 0 0 1 0-2.6zM12 6.9a5.1 5.1 0 1 1 0 10.2 5.1 5.1 0 0 1 0-10.2zm0 1.8a3.3 3.3 0 1 0 0 6.6 3.3 3.3 0 0 0 0-6.6z"/></svg></a></li>
+                            <li><a href="https://www.facebook.com/profile.php?id=61595734749884" target="_blank" rel="noopener noreferrer" aria-label="Facebook" title="Facebook"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M13.6 22v-8.6h2.9l.5-3.4h-3.4V7.9c0-1 .3-1.7 1.7-1.7H17V3.2c-.3 0-1.4-.2-2.6-.2-2.6 0-4.3 1.6-4.3 4.4V10H7.2v3.4h2.9V22z"/></svg></a></li>
+                            <li><a href="https://www.youtube.com/@UniconHospitality" target="_blank" rel="noopener noreferrer" aria-label="YouTube" title="YouTube"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M21.6 7.2a2.5 2.5 0 0 0-1.8-1.8C18.2 5 12 5 12 5s-6.2 0-7.8.4A2.5 2.5 0 0 0 2.4 7.2C2 8.8 2 12 2 12s0 3.2.4 4.8a2.5 2.5 0 0 0 1.8 1.8C5.8 19 12 19 12 19s6.2 0 7.8-.4a2.5 2.5 0 0 0 1.8-1.8c.4-1.6.4-4.8.4-4.8s0-3.2-.4-4.8zM10 15V9l5.2 3z"/></svg></a></li>
+                            <li><a href="https://www.linkedin.com/in/unicon-hospitality-079518447/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" title="LinkedIn"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20.4 20.4h-3.6v-5.6c0-1.3 0-3-1.8-3s-2.1 1.4-2.1 2.9v5.7H9.4V9h3.4v1.6h.1c.5-.9 1.6-1.8 3.4-1.8 3.6 0 4.3 2.4 4.3 5.5zM5.3 7.4a2.1 2.1 0 1 1 0-4.2 2.1 2.1 0 0 1 0 4.2zM7.1 20.4H3.6V9h3.5z"/></svg></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="uf__bar">
+            <div class="uf__wrap">
+                <p>&copy; 2026 Unicon Hospitality. All rights reserved.</p>
+                <p>Designed &amp; Developed by <a href="https://hsdigitalmedia.com/" target="_blank" rel="noopener noreferrer">HS Digital Media&reg;</a></p>
+            </div>
+        </div>
+    </footer>
+    <!-- footer end -->
+
+    <!-- sticky mobile booking bar -->
+    <div class="um-mbar" id="umMbar">
+        <a href="tel:+919920400267" class="um-mbar__call">Call</a>
+        <a href="index.html#book" class="theme-btn btn-style fill no-border um-mbar__book"><span>Book Now</span></a>
+    </div>
+
+    <!-- back to top -->
+    <button type="button" class="rts__back__top" id="rts-back-to-top" aria-label="Back to top">
+        <svg width="20" height="20" viewBox="0 0 13 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M7.30201 1.51317L7.29917 21.3422C7.29912 21.7057 6.97211 21.9993 6.5674 21.9993C6.16269 21.9992 5.83577 21.7055 5.83582 21.342L5.83844 3.10055L1.39753 7.08842C1.11169 7.34511 0.647535 7.34506 0.361762 7.0883C0.0759894 6.83155 0.0760493 6.41464 0.361896 6.15795L6.05367 1.04682C6.26405 0.857899 6.5773 0.802482 6.85167 0.905201C7.12374 1.00792 7.30205 1.24823 7.30201 1.51317Z" fill="#FFF" />
+            <path d="M12.9991 6.6318C12.9991 6.80021 12.9282 6.96861 12.7841 7.09592C12.4983 7.35261 12.0341 7.35256 11.7483 7.0958L6.05118 1.97719C5.76541 1.72043 5.76547 1.30352 6.05131 1.04684C6.33716 0.790152 6.80131 0.790206 7.08709 1.04696L12.7842 6.16557C12.9283 6.29498 12.9991 6.46339 12.9991 6.6318Z" fill="#FFF" />
+        </svg>
+    </button>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/wowjs@1.1.3/dist/wow.min.js"></script>
+    <!-- shared site script -->
+    <script src="assets/js/2026-10-22-unicorn-hospitality-v2-main.js"></script>
+    <!-- page script -->
+    <script src="assets/js/events.js"></script>
+    <!-- navigation (menus, dropdowns, mobile drawer) -->
+    <script src="assets/js/navigation.js"></script>
+    <script src="assets/js/property.js?v=2"></script>
+    <script src="assets/js/footer.js?v=1"></script>
+</body>
+</html>

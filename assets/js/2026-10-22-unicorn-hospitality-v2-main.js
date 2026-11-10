@@ -266,13 +266,7 @@ setInterval(function () {
   $$('.um-demo-form').forEach(function (f) {
     f.addEventListener('submit', function (e) { e.preventDefault(); alert('Demo form: connect your member system to make this live.'); });
   });
-  var nf = $('#newsForm');
-  if (nf) nf.addEventListener('submit', function (e) {
-    e.preventDefault();
-    var i = $('#subscription');
-    if (!/^\S+@\S+\.\S+$/.test(i.value)) { alert('Please enter a valid email address.'); return; }
-    alert('Thanks for subscribing!'); nf.reset();
-  });
+  /* newsletter form: handled in footer.js */
 
   /* ---- accordions: mobile menu + footer columns ---- */
   function accordion(btnSel, panelOf, onToggle) {
@@ -322,8 +316,8 @@ setInterval(function () {
       { sel: '#amenities', mode: 'smile', fill: '#fff' },      /* white About section bulges down */
       { sel: '#rooms',     mode: 'arch',  fill: '#fff' },      /* these rise up into the section above */
             { sel: '#rewards',   mode: 'slant', fill: (getComputedStyle(document.documentElement).getPropertyValue('--um-ink').trim() || '#1F3A33') },   /* follows --um-ink in the CSS */
-            { sel: '#gallery',   mode: 'slant', fill: '#fff' },
-      { sel: '#contact',   mode: 'smile', fill: '#fff' }
+            { sel: '#discover',   mode: 'slant', fill: '#FBF8F1' },
+      { sel: '#contact',   mode: 'smile', fill: '#FBF8F1' }
     ];
     var items = [];
     edges.forEach(function (e) {
@@ -369,3 +363,44 @@ setInterval(function () {
 })();
 
 
+/* Dining video popup */
+(function () {
+  var trigger = document.querySelector('[data-video-popup]');
+  if (!trigger) return;
+  var src = trigger.getAttribute('href');
+  var pop = document.createElement('div');
+  pop.className = 'um-vpop';
+  pop.setAttribute('role', 'dialog');
+  pop.setAttribute('aria-modal', 'true');
+  pop.setAttribute('aria-label', 'Dining video');
+  pop.innerHTML = '<div class="um-vpop__box"><button type="button" class="um-vpop__close" aria-label="Close video">&times;</button>' +
+    '<video class="um-vpop__video" controls playsinline preload="none" controlsList="nodownload"></video></div>';
+  document.body.appendChild(pop);
+  var video = pop.querySelector('video');
+  var box = pop.querySelector('.um-vpop__box');
+  var closeBtn = pop.querySelector('.um-vpop__close');
+  var closeTimer;
+
+  function open(e) {
+    e.preventDefault();
+    clearTimeout(closeTimer);
+    if (!video.getAttribute('src')) video.src = src;
+    document.body.classList.add('um-vpop-lock');
+    pop.classList.add('is-open');
+    var p = video.play();
+    if (p && p.catch) p.catch(function () {});
+    closeBtn.focus({ preventScroll: true });
+  }
+  function close() {
+    if (!pop.classList.contains('is-open')) return;
+    pop.classList.remove('is-open');
+    video.pause();
+    try { video.currentTime = 0; } catch (err) {}
+    closeTimer = setTimeout(function () { document.body.classList.remove('um-vpop-lock'); }, 350);
+    trigger.focus({ preventScroll: true });
+  }
+  trigger.addEventListener('click', open);
+  closeBtn.addEventListener('click', close);
+  pop.addEventListener('click', function (e) { if (!box.contains(e.target)) close(); });
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape') close(); });
+})();

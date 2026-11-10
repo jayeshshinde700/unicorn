@@ -169,7 +169,7 @@
       var calc = nts + ' night' + (nts === 1 ? '' : 's') + ' × ' + money(room.price) + ' = ' + money(q.subtotal);
       card.innerHTML =
         '<span class="bk-card__selected-pill"><svg class="ico" width="14" height="14"><use href="#i-check"/></svg> Selected</span>' +
-        '<div class="bk-card__img-wrap"><img src="' + A.esc(room.image || 'assets/images/unicon/rooms/deluxe.jpg') + '" alt="' + A.esc(room.imageAlt || room.name) + '" class="bk-card__img" loading="lazy">' + badge + '</div>' +
+        '<div class="bk-card__img-wrap"><img src="' + A.esc(room.image || 'assets/images/unicon/rooms/uni-deluxe.png') + '" alt="' + A.esc(room.imageAlt || room.name) + '" class="bk-card__img" loading="lazy">' + badge + '</div>' +
         '<div class="bk-card__body">' +
           '<div class="bk-card__header"><h3 class="bk-card__name">' + A.esc(room.name) + '</h3><p class="bk-card__tagline">' + A.esc(room.tagline || room.short || '') + '</p></div>' +
           '<div class="bk-card__price-wrap"><span class="bk-card__price">' + money(room.price) + '</span><span class="bk-card__per-night">/ night' + (state.settings && state.settings.taxPercent > 0 ? ' + taxes' : '') + '</span></div>' +
@@ -251,7 +251,7 @@
       show($(p + 'DiscountRow'), hasDisc);
       if (hasDisc) { setText(p + 'DiscountLabel', 'Coupon ' + state.coupon.code + ':'); setText(p + 'DiscountVal', '- ' + money(q.discount)); }
     });
-    var img = r.image || 'assets/images/unicon/rooms/deluxe.jpg';
+    var img = r.image || 'assets/images/unicon/rooms/uni-deluxe.png';
     var taxLabel = q.taxAmount > 0 ? (s.taxLabel || 'Taxes') + ' (' + q.taxPercent + '%):' : 'Taxes & Fees:';
     var taxVal = q.taxAmount > 0 ? money(q.taxAmount) : (s.taxNote || 'Included');
     $('summaryThumb').src = img; $('summaryFinalThumb').src = img;

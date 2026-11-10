@@ -3,8 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Places to visit and things to do near Unicon Hospitality.">
+    <meta name="description" content="Discover parks, hills, a historic fort, a grand temple and waterfront spots across Navi Mumbai, with directions and local help from Unicon Hospitality.">
     <meta name="robots" content="index, follow">
+    <meta property="og:image" content="assets/images/activities/hero.webp">
+    <link rel="preload" as="image" href="assets/images/activities/hero.webp" fetchpriority="high">
     <link rel="icon" href="assets/images/unicon/logos.jpeg" type="image/x-icon">
     <title>Local Attractions | Unicon Hospitality</title>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
@@ -12,6 +14,10 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/navigation.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.css">
+    <link rel="stylesheet" href="assets/css/activities.css">
+    <link rel="stylesheet" href="assets/css/hero-system.css?v=5">
+    <link rel="stylesheet" href="assets/css/footer.css?v=1">
 </head>
 
 <body>
@@ -48,10 +54,10 @@
         <div class="container un-util__in">
             <nav aria-label="Explore Unicon Hospitality">
                 <ul class="un-util__links">
-                    <li><a href="event.html#meetings">Meetings &amp; Events</a></li>
-                    <li><a href="event.html#weddings">Weddings</a></li>
+                    <li><a href="meetings-events.html">Meetings &amp; Events</a></li>
+                    <li><a href="weddings.html">Weddings</a></li>
                     <li><a href="activities.html" aria-current="page">Local Attractions</a></li>
-                    <li><a href="coupons.html">Coupons</a></li>
+                    <li><a href="about.html">About Us</a></li>
                     <li><a href="offers.html">Special Offers</a></li>
                 </ul>
             </nav>
@@ -84,7 +90,6 @@
                             <li><a href="dining.html">Dining</a></li>
                             <li><a href="amenities.html">Amenities</a></li>
                             <li><a href="gallery.html">Gallery</a></li>
-                            <li><a href="about.html">About Us</a></li>
                         </ul>
                     </li>
                     <li class="un-nav__item"><a class="un-nav__link" href="rooms.html">Rooms</a></li>
@@ -96,7 +101,7 @@
             <div class="un-actions">
                 <a href="#loginModal" class="theme-btn btn-style sm-btn border" data-bs-toggle="modal" data-bs-target="#loginModal"><span>Sign In</span></a>
                 <a href="#signupModal" class="theme-btn btn-style sm-btn border" data-bs-toggle="modal" data-bs-target="#signupModal"><span>Join Free</span></a>
-                <a href="book-a-room.html" class="theme-btn btn-style sm-btn fill un-book"><span>Book Now</span></a>
+                <a href="index.html#book" class="theme-btn btn-style sm-btn fill un-book"><span>Book Now</span></a>
             </div>
 
             <div class="un-mob">
@@ -108,23 +113,386 @@
     <!-- header area end -->
 
     <main id="top">
-    <section class="um-phero">
-        <div class="container">
-            <nav class="um-crumb" aria-label="Breadcrumb"><a href="index.html">Home</a><span>/</span><span aria-current="page">Local Attractions</span></nav>
-            <span class="h6 subtitle__icon__three">Local Attractions</span>
-            <h1>Local Attractions</h1>
-            <p>Make the most of your stay. Our front desk is happy to suggest places to see and help with local travel.</p>
+    <!-- ============ 1. HERO ============ -->
+    <section class="at-hero uh-page-hero" aria-labelledby="atH1">
+        <img class="at-hero__bg" src="assets/images/activities/hero.webp" alt="Aerial view of Navi Mumbai's towers beside green hills and the creek" width="1920" height="1276" fetchpriority="high" decoding="async">
+        <div class="at-hero__shade" aria-hidden="true"></div>
+        <div class="container at-hero__in uh-hero__in">
+            <nav class="at-crumb" aria-label="Breadcrumb"><a href="index.html">Home</a><span aria-hidden="true">/</span><span aria-current="page">Local Attractions</span></nav>
+            <span class="at-eyebrow">Local Attractions &middot; Navi Mumbai</span>
+            <h1 id="atH1">Explore Beyond Your Stay</h1>
+            <!-- <p class="at-hero__lead">Discover beautiful parks, local attractions, waterfront experiences and exciting destinations across Navi Mumbai.</p> -->
+            <div class="at-hero__cta">
+                <a href="#attractions" class="at-btn at-btn--gold">Explore Attractions</a>
+                <a href="contact.html?type=attractions#enquiry" class="at-btn at-btn--ghost">Ask Our Team</a>
+            </div>
         </div>
     </section>
 
-    <section class="rts__section section__padding" id="attractions">
+    <!-- ============ 2. FLOATING HIGHLIGHTS ============ -->
+    <section class="at-highlights" aria-label="Browse by interest">
         <div class="container">
-            <div class="row justify-content-center"><div class="col-lg-8 text-center">
-                <span class="h6 subtitle__icon__three d-block">Around Us</span>
-                <h2 class="section__title">Explore the Area</h2>
-                <p>Ask our team for current recommendations, directions and transport for your visit.</p>
-                <a href="contact.html#enquiry" class="theme-btn btn-style fill"><span>Ask Our Team</span></a>
-            </div></div>
+            <ul class="at-hl">
+                <li><a class="at-hl__card" href="#attractions" data-at-jump="family">
+                    <span class="at-hl__ic"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="8" cy="7" r="2.5"/><circle cx="16.5" cy="9" r="2"/><path d="M3.5 20v-5a4.5 4.5 0 0 1 9 0v5M14 20v-3.500a3 3 0 0 1 5.500-1.700V20"/></svg></span>
+                    <strong>Family Attractions</strong><span class="at-hl__sub">Parks and play for all ages</span></a></li>
+                <li><a class="at-hl__card" href="#attractions" data-at-jump="nature">
+                    <span class="at-hl__ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 6 12h3l-4 6h14l-4-6h3z"/><path d="M12 18v3"/></svg></span>
+                    <strong>Nature &amp; Outdoors</strong><span class="at-hl__sub">Hills, greenery and wetlands</span></a></li>
+                <li><a class="at-hl__card" href="#attractions" data-at-jump="heritage">
+                    <span class="at-hl__ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 21h18M5 21V10l7-6 7 6v11M9 21v-5a3 3 0 0 1 6 0v5"/></svg></span>
+                    <strong>Heritage &amp; Culture</strong><span class="at-hl__sub">A fort and a grand temple</span></a></li>
+                <li><a class="at-hl__card" href="#attractions" data-at-jump="waterfront">
+                    <span class="at-hl__ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 15c2 0 2-1.500 4.500-1.500S10 15 12 15s2.500-1.500 4.500-1.500S19 15 21 15M3 19.500c2 0 2-1.500 4.500-1.500S10 19.500 12 19.500s2.500-1.500 4.500-1.500 2.500 1.500 4.500 1.500M12 4v6M9 7l3-3 3 3"/></svg></span>
+                    <strong>Waterfront Experiences</strong><span class="at-hl__sub">Lakes, creeks and sunsets</span></a></li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- ============ 3 + 4. ATTRACTIONS + FILTERS ============ -->
+    <section class="at-sec" id="attractions" aria-labelledby="atH2">
+        <div class="container">
+            <header class="at-head">
+                <span class="at-eyebrow at-eyebrow--dark">Around Us</span>
+                <h2 id="atH2">Discover Navi Mumbai</h2>
+                <p>Parks, hills, a historic fort, a grand temple and waterfront spots, all within Navi Mumbai.</p>
+            </header>
+
+            <div class="at-filters" role="group" aria-label="Filter attractions by category">
+                <div class="at-filters__row">
+                    <button type="button" class="at-chip is-active" data-filter="all" aria-pressed="true">All</button>
+                    <button type="button" class="at-chip" data-filter="family" aria-pressed="false">Family</button>
+                    <button type="button" class="at-chip" data-filter="nature" aria-pressed="false">Nature</button>
+                    <button type="button" class="at-chip" data-filter="heritage" aria-pressed="false">Heritage</button>
+                    <button type="button" class="at-chip" data-filter="waterfront" aria-pressed="false">Waterfront</button>
+                    <button type="button" class="at-chip" data-filter="shopping" aria-pressed="false">Shopping &amp; Dining</button>
+                </div>
+            </div>
+            <p class="at-status" id="atStatus" role="status" aria-live="polite" hidden></p>
+
+            <div class="at-grid" id="atGrid">
+                <!-- 1. Featured Attraction: Wonders Park, Nerul -->
+                <article class="at-card at-card--featured" id="wonders-park" data-cats="family" data-lat="19.0230" data-lng="73.0148" data-name="Wonders Park" data-place="Sector 19A, Nerul" data-dir="Wonders Park, Nerul, Navi Mumbai">
+                    <div class="at-card__feat-media">
+                        <img src="assets/images/activities/Rainbow Entrance at Wonders Park.png" alt="Entrance plaza of Wonders Park in Nerul" width="1200" height="900" loading="lazy" decoding="async">
+                        <div class="at-card__feat-overlay" aria-hidden="true"></div>
+                        <div class="at-card__feat-badges">
+                            <span class="at-tag at-tag--gold">Featured Attraction</span>
+                            <span class="at-tag at-tag--glass">Family</span>
+                        </div>
+                    </div>
+                    <div class="at-card__body at-card__body--featured">
+                        <p class="at-loc"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s7-6.200 7-11a7 7 0 0 0-14 0c0 4.800 7 11 7 11z"/><circle cx="12" cy="10" r="2.500"/></svg>Nerul</p>
+                        <h3>Wonders Park</h3>
+                        <p class="at-card__desc">A park maintained by the Navi Mumbai Municipal Corporation, where replicas of famous world monuments are gathered in one place.</p>
+                        <div class="at-card__act at-card__act--featured">
+                            <button type="button" class="at-btn at-btn--gold at-btn--sm at-btn-detail" data-detail="wonders-park">View Details</button>
+                            <a class="at-btn at-btn--ghost at-btn--sm" href="https://www.google.com/maps/dir/?api=1&destination=Wonders%20Park%2C%20Nerul%2C%20Navi%20Mumbai&travelmode=driving" data-dir target="_blank" rel="noopener noreferrer">Get Directions</a>
+                        </div>
+                        <p class="at-credit">Photo: Hexatron93 &middot; <a href="https://commons.wikimedia.org/wiki/File:Wonders_Park,_Navi_Mumbai.jpg" target="_blank" rel="noopener">CC BY-SA 4.0</a></p>
+                    </div>
+                </article>
+
+                <!-- 2. Central Park, Kharghar -->
+                <article class="at-card" id="central-park" data-cats="family nature" data-lat="19.0581" data-lng="73.0678" data-name="Central Park" data-place="Sector 23, Kharghar" data-dir="Central Park, Kharghar, Navi Mumbai">
+                    <div class="at-card__img">
+                        <img src="assets/images/activities/central-park.webp" alt="Water and walkway at Central Park, Kharghar, with hills beyond" width="1200" height="900" loading="lazy" decoding="async">
+                        <span class="at-tag">Family &middot; Nature</span>
+                    </div>
+                    <div class="at-card__body">
+                        <p class="at-loc"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s7-6.200 7-11a7 7 0 0 0-14 0c0 4.800 7 11 7 11z"/><circle cx="12" cy="10" r="2.500"/></svg>Kharghar</p>
+                        <h3>Central Park</h3>
+                        <p class="at-card__desc">A large landscaped public park in Kharghar with open lawns, water features and views toward the surrounding hills.</p>
+                        <div class="at-card__act">
+                            <button type="button" class="at-btn at-btn--green at-btn--sm at-btn-detail" data-detail="central-park">View Details</button>
+                            <a class="at-card__dir-link" href="https://www.google.com/maps/dir/?api=1&destination=Central%20Park%2C%20Kharghar%2C%20Navi%20Mumbai&travelmode=driving" data-dir target="_blank" rel="noopener noreferrer">
+                                <span>Get Directions</span>
+                                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                            </a>
+                        </div>
+                        <p class="at-credit">Photo: &#1582;&#1608;&#1588;&#1576;&#1608; &middot; <a href="https://commons.wikimedia.org/wiki/File:Central_Park_of_Kharghar,_Navi_Mumbai.jpg" target="_blank" rel="noopener">CC BY-SA 4.0</a></p>
+                    </div>
+                </article>
+
+                <!-- 3. Jewel of Navi Mumbai -->
+                <article class="at-card" id="jewel" data-cats="waterfront family" data-lat="19.0260" data-lng="73.0102" data-name="Jewel of Navi Mumbai" data-place="Nerul" data-dir="Jewel of Navi Mumbai, Nerul, Navi Mumbai">
+                    <div class="at-card__img">
+                        <img src="assets/images/activities/jewel-of-navi-mumbai.webp" alt="The lake at the Jewel of Navi Mumbai in Nerul with city towers across the water" width="960" height="720" loading="lazy" decoding="async">
+                        <span class="at-tag">Waterfront</span>
+                    </div>
+                    <div class="at-card__body">
+                        <p class="at-loc"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s7-6.200 7-11a7 7 0 0 0-14 0c0 4.800 7 11 7 11z"/><circle cx="12" cy="10" r="2.500"/></svg>Nerul</p>
+                        <h3>Jewel of Navi Mumbai</h3>
+                        <p class="at-card__desc">A lakeside park and walking promenade in Nerul, with views across the water to the city's towers.</p>
+                        <div class="at-card__act">
+                            <button type="button" class="at-btn at-btn--green at-btn--sm at-btn-detail" data-detail="jewel">View Details</button>
+                            <a class="at-card__dir-link" href="https://www.google.com/maps/dir/?api=1&destination=Jewel%20of%20Navi%20Mumbai%2C%20Nerul%2C%20Navi%20Mumbai&travelmode=driving" data-dir target="_blank" rel="noopener noreferrer">
+                                <span>Get Directions</span>
+                                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                            </a>
+                        </div>
+                        <p class="at-credit">Photo: Balajishinde65 &middot; <a href="https://commons.wikimedia.org/wiki/File:Nerul_talav.jpg" target="_blank" rel="noopener">CC BY-SA 4.0</a></p>
+                    </div>
+                </article>
+
+                <!-- 4. Kharghar Hills -->
+                <article class="at-card" id="kharghar-hills" data-cats="nature" data-lat="19.0512" data-lng="73.0447" data-name="Kharghar Hills" data-place="Kharghar" data-dir="Kharghar Hills Viewing Platform, Kharghar, Navi Mumbai">
+                    <div class="at-card__img">
+                        <img src="assets/images/activities/kharghar-hills.webp" alt="Road winding between rocky hillsides at Kharghar Hills" width="1200" height="674" loading="lazy" decoding="async">
+                        <span class="at-tag">Nature</span>
+                    </div>
+                    <div class="at-card__body">
+                        <p class="at-loc"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s7-6.200 7-11a7 7 0 0 0-14 0c0 4.800 7 11 7 11z"/><circle cx="12" cy="10" r="2.500"/></svg>Kharghar</p>
+                        <h3>Kharghar Hills</h3>
+                        <p class="at-card__desc">Rocky green hills on the edge of Kharghar, with a viewing platform and a road that winds up through the hillside.</p>
+                        <div class="at-card__act">
+                            <button type="button" class="at-btn at-btn--green at-btn--sm at-btn-detail" data-detail="kharghar-hills">View Details</button>
+                            <a class="at-card__dir-link" href="https://www.google.com/maps/dir/?api=1&destination=Kharghar%20Hills%20Viewing%20Platform%2C%20Kharghar%2C%20Navi%20Mumbai&travelmode=driving" data-dir target="_blank" rel="noopener noreferrer">
+                                <span>Get Directions</span>
+                                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                            </a>
+                        </div>
+                        <p class="at-credit">Photo: Dinesh Valke &middot; <a href="https://commons.wikimedia.org/wiki/File:Kharghar_Hills_(4353469810).jpg" target="_blank" rel="noopener">CC BY-SA 2.0</a></p>
+                    </div>
+                </article>
+
+                <!-- 5. Belapur Fort -->
+                <article class="at-card" id="belapur-fort" data-cats="heritage" data-lat="19.0052" data-lng="73.0283" data-name="Belapur Fort" data-place="Belapur Village" data-dir="Belapur Fort, Belapur, Navi Mumbai">
+                    <div class="at-card__img">
+                        <img src="assets/images/activities/belapur-fort.webp" alt="Stone bastion of Belapur Fort covered in greenery" width="1200" height="900" loading="lazy" decoding="async">
+                        <span class="at-tag">Heritage</span>
+                    </div>
+                    <div class="at-card__body">
+                        <p class="at-loc"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s7-6.200 7-11a7 7 0 0 0-14 0c0 4.800 7 11 7 11z"/><circle cx="12" cy="10" r="2.500"/></svg>Belapur</p>
+                        <h3>Belapur Fort</h3>
+                        <p class="at-card__desc">A historic hilltop fort overlooking Panvel Creek and the Mumbai harbour, with old bastions and walls to explore.</p>
+                        <div class="at-card__act">
+                            <button type="button" class="at-btn at-btn--green at-btn--sm at-btn-detail" data-detail="belapur-fort">View Details</button>
+                            <a class="at-card__dir-link" href="https://www.google.com/maps/dir/?api=1&destination=Belapur%20Fort%2C%20Belapur%2C%20Navi%20Mumbai&travelmode=driving" data-dir target="_blank" rel="noopener noreferrer">
+                                <span>Get Directions</span>
+                                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                            </a>
+                        </div>
+                        <p class="at-credit">Photo: Nicholas (Nichalp) &middot; <a href="https://commons.wikimedia.org/wiki/File:Belapur_fort_1.jpg" target="_blank" rel="noopener">CC BY-SA 3.0</a></p>
+                    </div>
+                </article>
+
+                <!-- 6. ISKCON Navi Mumbai -->
+                <article class="at-card" id="iskcon" data-cats="heritage" data-lat="19.0520" data-lng="73.0640" data-approx="1" data-name="ISKCON Navi Mumbai" data-place="Sector 23, Kharghar" data-dir="ISKCON Temple, Kharghar, Navi Mumbai">
+                    <div class="at-card__img">
+                        <img src="assets/images/activities/iskcon-kharghar.webp" alt="White carved terraces of the ISKCON temple in Kharghar with hills behind" width="1200" height="675" loading="lazy" decoding="async">
+                        <span class="at-tag">Heritage &amp; Culture</span>
+                    </div>
+                    <div class="at-card__body">
+                        <p class="at-loc"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s7-6.200 7-11a7 7 0 0 0-14 0c0 4.800 7 11 7 11z"/><circle cx="12" cy="10" r="2.500"/></svg>Kharghar</p>
+                        <h3>ISKCON Navi Mumbai</h3>
+                        <p class="at-card__desc">The Sri Sri Radha Madan Mohanji Temple in Kharghar, a large white temple complex set against the hills. Please check visiting hours with the temple.</p>
+                        <div class="at-card__act">
+                            <button type="button" class="at-btn at-btn--green at-btn--sm at-btn-detail" data-detail="iskcon">View Details</button>
+                            <a class="at-card__dir-link" href="https://www.google.com/maps/dir/?api=1&destination=ISKCON%20Temple%2C%20Kharghar%2C%20Navi%20Mumbai&travelmode=driving" data-dir target="_blank" rel="noopener noreferrer">
+                                <span>Get Directions</span>
+                                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                            </a>
+                        </div>
+                        <p class="at-credit">Photo: AmanAgrahari01 &middot; <a href="https://commons.wikimedia.org/wiki/File:Indian_Folk_Cultural_Center_(30).jpg" target="_blank" rel="noopener">CC BY-SA 4.0</a></p>
+                    </div>
+                </article>
+
+                <!-- 7. Sagar Vihar -->
+                <article class="at-card" id="sagar-vihar" data-cats="waterfront family" data-lat="19.0756" data-lng="72.9842" data-name="Sagar Vihar" data-place="Vashi" data-dir="Sagar Vihar, Vashi, Navi Mumbai">
+                    <div class="at-card__img">
+                        <img src="assets/images/activities/sagar-vihar.webp" alt="Paddle boats on the water at Sagar Vihar, Vashi, at sunset" width="1200" height="900" loading="lazy" decoding="async">
+                        <span class="at-tag">Waterfront</span>
+                    </div>
+                    <div class="at-card__body">
+                        <p class="at-loc"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s7-6.200 7-11a7 7 0 0 0-14 0c0 4.800 7 11 7 11z"/><circle cx="12" cy="10" r="2.500"/></svg>Vashi</p>
+                        <h3>Sagar Vihar</h3>
+                        <p class="at-card__desc">A waterfront park on the Vashi shoreline, known for paddle boating and sunset views over the water.</p>
+                        <div class="at-card__act">
+                            <button type="button" class="at-btn at-btn--green at-btn--sm at-btn-detail" data-detail="sagar-vihar">View Details</button>
+                            <a class="at-card__dir-link" href="https://www.google.com/maps/dir/?api=1&destination=Sagar%20Vihar%2C%20Vashi%2C%20Navi%20Mumbai&travelmode=driving" data-dir target="_blank" rel="noopener noreferrer">
+                                <span>Get Directions</span>
+                                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                            </a>
+                        </div>
+                        <p class="at-credit">Photo: Pradeep717 &middot; <a href="https://commons.wikimedia.org/wiki/File:Paddle_Boating_Vashi.JPG" target="_blank" rel="noopener">CC BY-SA 3.0</a></p>
+                    </div>
+                </article>
+
+                <!-- 8. Seawoods Flamingo Point -->
+                <article class="at-card" id="flamingo-point" data-cats="nature waterfront" data-lat="19.0068" data-lng="73.0196" data-name="Seawoods Flamingo Point" data-place="Seawoods" data-dir="Flamingo Point, Seawoods, Navi Mumbai">
+                    <div class="at-card__img">
+                        <img src="assets/images/activities/flamingo-point.webp" alt="Flamingos wading in shallow water at the Nerul wetlands" width="1200" height="849" loading="lazy" decoding="async">
+                        <span class="at-tag">Nature &middot; Waterfront</span>
+                    </div>
+                    <div class="at-card__body">
+                        <p class="at-loc"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s7-6.200 7-11a7 7 0 0 0-14 0c0 4.800 7 11 7 11z"/><circle cx="12" cy="10" r="2.500"/></svg>Seawoods</p>
+                        <h3>Seawoods Flamingo Point</h3>
+                        <p class="at-card__desc">A bird-watching spot beside the Seawoods wetlands, where flamingos gather in the season. Sightings vary through the year.</p>
+                        <div class="at-card__act">
+                            <button type="button" class="at-btn at-btn--green at-btn--sm at-btn-detail" data-detail="flamingo-point">View Details</button>
+                            <a class="at-card__dir-link" href="https://www.google.com/maps/dir/?api=1&destination=Flamingo%20Point%2C%20Seawoods%2C%20Navi%20Mumbai&travelmode=driving" data-dir target="_blank" rel="noopener noreferrer">
+                                <span>Get Directions</span>
+                                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                            </a>
+                        </div>
+                        <p class="at-credit">Photo: Wander-earth &middot; <a href="https://commons.wikimedia.org/wiki/File:Greater_Flamingo_in_Mumbai_Nerul_Mangroves_01.jpg" target="_blank" rel="noopener">CC BY-SA 4.0</a></p>
+                    </div>
+                </article>
+
+                <!-- 9. Nexus Seawoods -->
+                <article class="at-card" id="nexus-seawoods" data-cats="shopping family" data-lat="19.0212" data-lng="73.0180" data-name="Nexus Seawoods" data-place="Seawoods" data-dir="Nexus Seawoods, Seawoods, Navi Mumbai">
+                    <div class="at-card__img">
+                        <img src="assets/images/activities/nexus-seawoods.webp" alt="Entrance of the Nexus Seawoods shopping mall" width="1200" height="675" loading="lazy" decoding="async">
+                        <span class="at-tag">Shopping &amp; Dining</span>
+                    </div>
+                    <div class="at-card__body">
+                        <p class="at-loc"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s7-6.200 7-11a7 7 0 0 0-14 0c0 4.800 7 11 7 11z"/><circle cx="12" cy="10" r="2.500"/></svg>Seawoods</p>
+                        <h3>Nexus Seawoods</h3>
+                        <p class="at-card__desc">A shopping and dining mall at Seawoods, also known as Seawoods Grand Central, a convenient stop for a family day out.</p>
+                        <div class="at-card__act">
+                            <button type="button" class="at-btn at-btn--green at-btn--sm at-btn-detail" data-detail="nexus-seawoods">View Details</button>
+                            <a class="at-card__dir-link" href="https://www.google.com/maps/dir/?api=1&destination=Nexus%20Seawoods%2C%20Seawoods%2C%20Navi%20Mumbai&travelmode=driving" data-dir target="_blank" rel="noopener noreferrer">
+                                <span>Get Directions</span>
+                                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                            </a>
+                        </div>
+                        <p class="at-credit">Photo: Sntshkumar750 &middot; <a href="https://commons.wikimedia.org/wiki/File:Seawoods_Grand_Central_Mall.jpg" target="_blank" rel="noopener">CC BY-SA 4.0</a></p>
+                    </div>
+                </article>
+            </div>
+            <p class="at-empty" id="atEmpty" hidden>No attractions match this category yet. <button type="button" class="at-link" data-filter="all">Show all</button></p>
+            <p class="at-note">Opening hours, entry fees and access rules are set by each venue and can change, so please confirm them before you travel. Our team is happy to help.</p>
+
+            <!-- Attraction Details Modal -->
+            <div class="modal fade at-modal" id="atDetailModal" tabindex="-1" aria-labelledby="atDetailTitle" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered modal-lg">
+                    <div class="modal-content at-modal__content">
+                        <div class="at-modal__media">
+                            <img id="atDetailImg" src="assets/images/activities/wonders-park.webp" alt="Attraction photograph" width="1200" height="800">
+                            <div class="at-modal__overlay" aria-hidden="true"></div>
+                            <span class="at-tag at-tag--gold" id="atDetailBadge">Category</span>
+                            <button type="button" class="at-modal__close" data-bs-dismiss="modal" aria-label="Close">
+                                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg>
+                            </button>
+                        </div>
+                        <div class="at-modal__body">
+                            <p class="at-loc" id="atDetailLoc">
+                                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s7-6.200 7-11a7 7 0 0 0-14 0c0 4.800 7 11 7 11z"/><circle cx="12" cy="10" r="2.500"/></svg>
+                                <span>Locality</span>
+                            </p>
+                            <h3 class="at-modal__title" id="atDetailTitle">Attraction Name</h3>
+                            <p class="at-modal__desc" id="atDetailDesc"></p>
+                            <div class="at-modal__actions">
+                                <a class="at-btn at-btn--green" id="atDetailDirBtn" href="https://www.google.com/maps/dir/?api=1&destination=Wonders%20Park%2C%20Nerul%2C%20Navi%20Mumbai&travelmode=driving" target="_blank" rel="noopener noreferrer">
+                                    <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="margin-right:8px;"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+                                    Get Directions
+                                </a>
+                                <button type="button" class="at-btn at-btn--gold" id="atDetailMapBtn" data-view-map>
+                                    <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="margin-right:8px;"><path d="M12 21s7-6.200 7-11a7 7 0 0 0-14 0c0 4.800 7 11 7 11z"/><circle cx="12" cy="10" r="2.500"/></svg>
+                                    View on Map
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ 5. MAP ============ -->
+    <section class="at-sec at-sec--tint" id="map" aria-labelledby="atH3">
+        <div class="container">
+            <header class="at-head">
+                <span class="at-eyebrow at-eyebrow--dark">Find Your Way</span>
+                <h2 id="atH3">Navi Mumbai Attractions Map</h2>
+                <p>Select a marker to see the destination and open directions. The map follows the category you choose above.</p>
+            </header>
+            <div class="at-map" id="atMap" role="region" aria-label="Map of Navi Mumbai attractions"></div>
+            <p class="at-note at-note--left">Map data &copy; OpenStreetMap contributors. Marker positions are approximate; the ISKCON pin marks the Sector 23 Kharghar area. Directions open in Google Maps and start from your current location.</p>
+        </div>
+    </section>
+
+    <!-- ============ 6. SUGGESTED EXPERIENCES ============ -->
+    <section class="at-sec" id="experiences" aria-labelledby="atH4">
+        <div class="container">
+            <header class="at-head">
+                <span class="at-eyebrow at-eyebrow--dark">Plan a Day</span>
+                <h2 id="atH4">Suggested Experiences</h2>
+                <p>Combine nearby places into a day that suits your group.</p>
+            </header>
+            <div class="at-exp">
+                <article class="at-exp__card">
+                    <img src="assets/images/activities/Rainbow Entrance at Wonders Park.png" alt="Wonders Park entrance plaza" width="1200" height="900" loading="lazy" decoding="async">
+                    <div class="at-exp__body"><h3>Family Fun Day</h3><p>Wonders Park and Nexus Seawoods</p><span>Parks for the children, then shopping and dining at the mall.</span>
+                    <button type="button" class="at-btn at-btn--gold at-btn--sm" data-exp="wonders-park,nexus-seawoods" data-exp-title="Family Fun Day">Explore</button></div>
+                </article>
+                <article class="at-exp__card">
+                    <img src="assets/images/activities/central-park.webp" alt="Central Park, Kharghar" width="1200" height="900" loading="lazy" decoding="async">
+                    <div class="at-exp__body"><h3>Green Escape</h3><p>Central Park and Kharghar Hills</p><span>Open lawns, water and hillside views in Kharghar.</span>
+                    <button type="button" class="at-btn at-btn--gold at-btn--sm" data-exp="central-park,kharghar-hills" data-exp-title="Green Escape">Explore</button></div>
+                </article>
+                <article class="at-exp__card">
+                    <img src="assets/images/activities/belapur-fort.webp" alt="Belapur Fort bastion" width="1200" height="900" loading="lazy" decoding="async">
+                    <div class="at-exp__body"><h3>Heritage &amp; Culture</h3><p>Belapur Fort and ISKCON</p><span>A historic fort and a grand temple complex.</span>
+                    <button type="button" class="at-btn at-btn--gold at-btn--sm" data-exp="belapur-fort,iskcon" data-exp-title="Heritage &amp; Culture">Explore</button></div>
+                </article>
+                <article class="at-exp__card">
+                    <img src="assets/images/activities/sagar-vihar.webp" alt="Sagar Vihar at sunset" width="1200" height="900" loading="lazy" decoding="async">
+                    <div class="at-exp__body"><h3>Evening Waterfront</h3><p>Jewel of Navi Mumbai and Sagar Vihar</p><span>Lakeside and shoreline views as the day winds down.</span>
+                    <button type="button" class="at-btn at-btn--gold at-btn--sm" data-exp="jewel,sagar-vihar" data-exp-title="Evening Waterfront">Explore</button></div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ 7. ASK OUR TEAM ============ -->
+    <!-- <section class="at-help" aria-labelledby="atH5">
+        <div class="container at-help__in">
+            <div>
+                <span class="at-eyebrow">Ask Our Team</span>
+                <h2 id="atH5">Need Help Planning Your Visit?</h2>
+                <p>Our team can help you discover local attractions and plan your visit.</p>
+            </div>
+            <div class="at-help__cta">
+                <a href="contact.html?type=attractions#enquiry" class="at-btn at-btn--gold">Contact Our Team</a>
+                <a href="tel:+919920400267" class="at-btn at-btn--ghost">Call Reservations</a>
+            </div>
+        </div>
+    </section> -->
+
+    <!-- ============ 8. FAQ ============ -->
+    <section class="at-sec at-sec--ivory at-faqsec" id="faq" aria-labelledby="atH6">
+        <div class="container at-faqwrap">
+            <div class="at-faqintro">
+                <span class="at-eyebrow at-eyebrow--dark">Good to Know</span>
+                <h2 id="atH6">Everything You Need to Know</h2>
+                <p>A few helpful answers before you explore Navi Mumbai.</p>
+                <aside class="at-concierge" aria-label="Concierge assistance">
+                    <span class="at-concierge__ic" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 18v-5a8 8 0 0 1 16 0v5"/><rect x="3" y="14" width="4" height="6" rx="1.500"/><rect x="17" y="14" width="4" height="6" rx="1.500"/></svg></span>
+                    <h3>Still have a question?</h3>
+                    <p>Our team is happy to help you plan your visit.</p>
+                    <a href="contact.html?type=attractions#enquiry" class="at-btn at-btn--green at-btn--sm">Ask Our Team</a>
+                </aside>
+            </div>
+            <div class="at-faq">
+                <div class="at-acc"><h3><button type="button" id="atq1" aria-expanded="false" aria-controls="ata1">What are the popular attractions in Navi Mumbai?<i aria-hidden="true"></i></button></h3><div class="at-acc__p" id="ata1" role="region" aria-labelledby="atq1"><div><p>This page features Wonders Park in Nerul, Central Park and Kharghar Hills in Kharghar, the Jewel of Navi Mumbai, Belapur Fort, the ISKCON temple in Kharghar, Sagar Vihar in Vashi, Seawoods Flamingo Point and Nexus Seawoods.</p></div></div></div>
+                <div class="at-acc"><h3><button type="button" id="atq2" aria-expanded="false" aria-controls="ata2">Which places are family-friendly?<i aria-hidden="true"></i></button></h3><div class="at-acc__p" id="ata2" role="region" aria-labelledby="atq2"><div><p>Wonders Park, Central Park, the Jewel of Navi Mumbai, Sagar Vihar and Nexus Seawoods suit family outings. Use the Family filter above to see them together.</p></div></div></div>
+                <div class="at-acc"><h3><button type="button" id="atq3" aria-expanded="false" aria-controls="ata3">How do I get directions?<i aria-hidden="true"></i></button></h3><div class="at-acc__p" id="ata3" role="region" aria-labelledby="atq3"><div><p>Press <strong>Get Directions</strong> on any card or map marker. It opens Google Maps with the destination filled in, starting from your current location. Our front desk can also help with directions.</p></div></div></div>
+                <div class="at-acc"><h3><button type="button" id="atq4" aria-expanded="false" aria-controls="ata4">How do I travel around Navi Mumbai?<i aria-hidden="true"></i></button></h3><div class="at-acc__p" id="ata4" role="region" aria-labelledby="atq4"><div><p>Navi Mumbai is served by Harbour Line railway stations, including Vashi, Nerul, Seawoods&ndash;Darave, CBD Belapur and Kharghar, along with city buses, the Navi Mumbai Metro, autorickshaws and taxis. Our concierge can help you plan local travel; call <a href="tel:+919920400267">+91 99204 00267</a>.</p></div></div></div>
+                <div class="at-acc"><h3><button type="button" id="atq5" aria-expanded="false" aria-controls="ata5">What are the opening hours and entry fees?<i aria-hidden="true"></i></button></h3><div class="at-acc__p" id="ata5" role="region" aria-labelledby="atq5"><div><p>Hours and fees are set by each venue or operator and can change, so we do not list them here. Please confirm with the venue before you go, or ask our team to check for you.</p></div></div></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ 9. FINAL CTA ============ -->
+    <section class="at-final" aria-labelledby="atH7">
+        <div class="container">
+            <h2 id="atH7">Explore More. Experience More. Enjoy Your Stay.</h2>
+            <div class="at-final__cta">
+                <a href="rooms.html" class="at-btn at-btn--gold">Explore Rooms</a>
+                <a href="contact.html" class="at-btn at-btn--ghost">Contact Us</a>
+            </div>
         </div>
     </section>
     </main>
@@ -244,7 +612,6 @@
                             <a href="dining.html">Dining</a>
                             <a href="amenities.html">Amenities</a>
                             <a href="gallery.html">Gallery</a>
-                            <a href="about.html">About Us</a>
                         </div>
                     </li>
                     <li><a class="un-m__link" href="rooms.html">Rooms</a></li>
@@ -255,15 +622,15 @@
                     <a href="#loginModal" class="theme-btn btn-style sm-btn border" data-bs-toggle="modal" data-bs-target="#loginModal"><span>Sign In</span></a>
                     <a href="#signupModal" class="theme-btn btn-style sm-btn border" data-bs-toggle="modal" data-bs-target="#signupModal"><span>Join Free</span></a>
                 </div>
-                <div class="un-m__cta"><a href="book-a-room.html" class="theme-btn btn-style sm-btn fill"><span>Book Now</span></a></div>
+                <div class="un-m__cta"><a href="index.html#book" class="theme-btn btn-style sm-btn fill"><span>Book Now</span></a></div>
                 <ul class="un-m un-m__explore">
                     <li class="un-m__item is-current">
                         <button type="button" class="un-m__btn" aria-expanded="false" aria-controls="unMExplore">Explore <span class="un-m__chev" aria-hidden="true"></span></button>
                         <div class="un-m__panel" id="unMExplore">
-                            <a href="event.html#meetings">Meetings &amp; Events</a>
-                            <a href="event.html#weddings">Weddings</a>
+                            <a href="meetings-events.html">Meetings &amp; Events</a>
+                            <a href="weddings.html">Weddings</a>
                             <a href="activities.html" aria-current="page">Local Attractions</a>
-                            <a href="coupons.html">Coupons</a>
+                            <a href="about.html">About Us</a>
                             <a href="offers.html">Special Offers</a>
                         </div>
                     </li>
@@ -279,82 +646,79 @@
     </aside>
 
     <!-- ============ FOOTER (Ramada-style columns) ============ -->
-    <footer class="rts__section rts__footer is__common__footer footer__background has__shape" id="contact">
-        <div class="container">
-            <div class="row">
-                <div class="footer__newsletter">
-                    <span class="h2">Join Our Newsletter</span>
-                    <div class="rts__form">
-                        <form action="#" method="post" id="newsForm" novalidate>
-                            <input type="email" name="email" id="subscription" placeholder="Enter your email" required aria-label="Email">
-                            <button type="submit">Subscribe</button>
-                        </form>
-                    </div>
+    <footer class="uf" id="contact">
+        <div class="uf__wrap">
+            <div class="uf__news">
+                <div class="uf__news-text">
+                    <h2>Join Our Newsletter</h2>
+                    <p>Discover special offers, seasonal escapes and memorable experiences.</p>
                 </div>
+                <form class="uf__news-form" id="newsForm" action="#" method="post" novalidate>
+                    <div class="uf__news-row">
+                        <input type="email" name="email" id="subscription" placeholder="Enter your email" autocomplete="email" required aria-label="Email address">
+                        <button type="submit">Subscribe</button>
+                    </div>
+                    <p class="uf__news-msg" id="newsMsg" role="status" aria-live="polite"></p>
+                </form>
             </div>
 
-            <div class="um-fcols">
-                <div class="um-fcol">
-                    <button class="um-fcol__title" aria-expanded="false">Unicorn Hospitality <i></i></button>
-                    <ul>
-                        <li><a href="index.html#about">About</a></li>
-                        <li><a href="index.html#locations">Locations</a></li>
-                        <li><a href="index.html">Site Map</a></li>
-                        <li><a href="index.html#locations">Travel Guide</a></li>
+            <div class="uf__cols">
+                <div class="uf__col uf__col--brand">
+                    <a class="uf__logo" href="index.html" aria-label="Unicon Hospitality home"><img src="assets/images/unicon/logoc.png" alt="Unicon Hospitality" width="92" height="66" loading="lazy"></a>
+                    <p class="uf__about">Experience comfort, thoughtful service and memorable stays at Unicon Hospitality.</p>
+                    <ul class="uf__list">
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="rooms.html">Rooms &amp; Suites</a></li>
+                        <li><a href="dining.html">Dining</a></li>
+                        <li><a href="amenities.html">Amenities</a></li>
+                        <li><a href="gallery.html">Gallery</a></li>
                     </ul>
                 </div>
-                <div class="um-fcol">
-                    <button class="um-fcol__title" aria-expanded="false">Contact <i></i></button>
-                    <ul>
-                        <li><a href="tel:+919920400267"><svg class="ico"><use href="#i-phone"/></svg> Reservations: +91 99204 00267</a></li>
-                        <li><a href="mailto:stay@unicornhospitality.example"><svg class="ico"><use href="#i-mail"/></svg> stay@unicornhospitality.example</a></li>
-                        <li><a href="contact.html"><svg class="ico"><use href="#i-pin"/></svg> Your street address, City, State</a></li>
-                        <li><a href="contact.html">Customer Care / Help</a></li>
+                <div class="uf__col">
+                    <h3 class="uf__title">Explore Experiences</h3>
+                    <ul class="uf__list">
+                        <li><a href="meetings-events.html">Meetings &amp; Events</a></li>
+                        <li><a href="weddings.html">Weddings</a></li>
+                        <li><a href="activities.html">Local Attractions</a></li>
+                        <li><a href="offers.html">Special Offers</a></li>
+                        <li><a href="coupons.html">Coupons</a></li>
+                        <li><a href="about.html#guest-reviews">Guest Reviews</a></li>
                     </ul>
                 </div>
-                <div class="um-fcol">
-                    <button class="um-fcol__title" aria-expanded="false">Hospitality Business <i></i></button>
-                    <ul>
-                        <li><a href="contact.html">Join Our Business Programme</a></li>
-                        <li><a href="index.html#meetings">Projects &amp; Groups</a></li>
-                        <li><a href="contact.html">Corporate Travel</a></li>
-                        <li><a href="contact.html">Travel Advisors</a></li>
+                <div class="uf__col">
+                    <h3 class="uf__title">Reservations &amp; Contact</h3>
+                    <ul class="uf__list uf__list--contact">
+                        <li><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></svg><span><small>Reservations</small><a href="tel:+919920400267">+91 99204 00267</a></span></li>
+                        <li data-uf="email" hidden><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg><span><small>Email Us</small><a href="#"></a></span></li>
+                        <li><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s7-6.2 7-11a7 7 0 0 0-14 0c0 4.8 7 11 7 11z"/><circle cx="12" cy="10" r="2.5"/></svg><span><small>Visit Us</small><span class="uf__val" data-uc="address">MIDC Rd, Digha Gaon, Dighe, The Stone Arch, Navi Mumbai, Mumbai, India, 400708</span></span></li>
+                        <li><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 3 3 10l7 3 3 7z"/></svg><a href="https://www.google.com/maps/dir/?api=1&amp;destination=19.1759967%2C72.9991538" target="_blank" rel="noopener noreferrer" data-uc="directions">Get Directions</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                        <li><a href="contact.html#faq">FAQs</a></li>
                     </ul>
                 </div>
-                <div class="um-fcol">
-                    <button class="um-fcol__title" aria-expanded="false">Terms &amp; Policies <i></i></button>
-                    <ul>
-                        <li><a href="#">Best Rate Guarantee</a></li>
-                        <li><a href="#">Privacy Notice</a></li>
-                        <li><a href="#">Terms of Use</a></li>
-                        <li><a href="#">Cookie Consent</a></li>
+                <div class="uf__col">
+                    <h3 class="uf__title">Guest Information</h3>
+                    <ul class="uf__list">
+                        <li><a href="book-a-room.html">Book a Room</a></li>
+                        <li><a href="find-my-reservation.html">Find My Reservation</a></li>
+                        <li><a href="blog.html">The Unicon Journal</a></li>
                     </ul>
-                </div>
-                <div class="um-fcol">
-                    <button class="um-fcol__title" aria-expanded="false">Corporate Resources <i></i></button>
-                    <ul>
-                        <li><a href="#">Media Centre</a></li>
-                        <li><a href="#">Franchise Information</a></li>
-                        <li><a href="#">Careers</a></li>
-                        <li><a href="#">Social Responsibility</a></li>
-                    </ul>
+                    <div class="uf__follow">
+                        <span class="uf__sub">Follow Us</span>
+                        <ul class="uf__social">
+                            <li><a href="https://www.instagram.com/uniconhospitality/" target="_blank" rel="noopener noreferrer" aria-label="Instagram" title="Instagram"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M7.8 2h8.4A5.8 5.8 0 0 1 22 7.8v8.4a5.8 5.8 0 0 1-5.8 5.8H7.8A5.8 5.8 0 0 1 2 16.2V7.8A5.8 5.8 0 0 1 7.8 2zm-.2 1.8A3.8 3.8 0 0 0 3.8 7.6v8.8a3.8 3.8 0 0 0 3.8 3.8h8.8a3.8 3.8 0 0 0 3.8-3.8V7.6a3.8 3.8 0 0 0-3.8-3.8zm9.6 1.4a1.3 1.3 0 1 1 0 2.6 1.3 1.3 0 0 1 0-2.6zM12 6.9a5.1 5.1 0 1 1 0 10.2 5.1 5.1 0 0 1 0-10.2zm0 1.8a3.3 3.3 0 1 0 0 6.6 3.3 3.3 0 0 0 0-6.6z"/></svg></a></li>
+                            <li><a href="https://www.facebook.com/profile.php?id=61595734749884" target="_blank" rel="noopener noreferrer" aria-label="Facebook" title="Facebook"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M13.6 22v-8.6h2.9l.5-3.4h-3.4V7.9c0-1 .3-1.7 1.7-1.7H17V3.2c-.3 0-1.4-.2-2.6-.2-2.6 0-4.3 1.6-4.3 4.4V10H7.2v3.4h2.9V22z"/></svg></a></li>
+                            <li><a href="https://www.youtube.com/@UniconHospitality" target="_blank" rel="noopener noreferrer" aria-label="YouTube" title="YouTube"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M21.6 7.2a2.5 2.5 0 0 0-1.8-1.8C18.2 5 12 5 12 5s-6.2 0-7.8.4A2.5 2.5 0 0 0 2.4 7.2C2 8.8 2 12 2 12s0 3.2.4 4.8a2.5 2.5 0 0 0 1.8 1.8C5.8 19 12 19 12 19s6.2 0 7.8-.4a2.5 2.5 0 0 0 1.8-1.8c.4-1.6.4-4.8.4-4.8s0-3.2-.4-4.8zM10 15V9l5.2 3z"/></svg></a></li>
+                            <li><a href="https://www.linkedin.com/in/unicon-hospitality-079518447/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" title="LinkedIn"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20.4 20.4h-3.6v-5.6c0-1.3 0-3-1.8-3s-2.1 1.4-2.1 2.9v5.7H9.4V9h3.4v1.6h.1c.5-.9 1.6-1.8 3.4-1.8 3.6 0 4.3 2.4 4.3 5.5zM5.3 7.4a2.1 2.1 0 1 1 0-4.2 2.1 2.1 0 0 1 0 4.2zM7.1 20.4H3.6V9h3.5z"/></svg></a></li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>
-        <div class="copyright__text">
-            <div class="container">
-                <div class="row">
-                    <div class="copyright__wrapper">
-                        <p class="mb-0 ">Copyright &copy; <span id="year">2026</span> Unicorn Hospitality. All rights reserved. | Developed By <a href="https://hsdigitalmedia.com/" target="_blank">HS Digital Media®</a></p>
-                        <div class="footer__social__link">
-                            <a href="#" aria-label="Facebook" class="link__item">Facebook</a>
-                            <a href="#" aria-label="Instagram" class="link__item">Instagram</a>
-                            <a href="#" aria-label="LinkedIn" class="link__item">LinkedIn</a>
-                            <a href="#" aria-label="X" class="link__item">X</a>
-                            <a href="#" aria-label="YouTube" class="link__item">YouTube</a>
-                        </div>
-                    </div>
-                </div>
+        <div class="uf__bar">
+            <div class="uf__wrap">
+                <p>&copy; 2026 Unicon Hospitality. All rights reserved.</p>
+                <p>Designed &amp; Developed by <a href="https://hsdigitalmedia.com/" target="_blank" rel="noopener noreferrer">HS Digital Media&reg;</a></p>
             </div>
         </div>
     </footer>
@@ -363,7 +727,7 @@
     <!-- sticky mobile booking bar -->
     <div class="um-mbar" id="umMbar">
         <a href="tel:+919920400267" class="um-mbar__call">Call</a>
-        <a href="book-a-room.html" class="theme-btn btn-style fill no-border um-mbar__book"><span>Book Now</span></a>
+        <a href="index.html#book" class="theme-btn btn-style fill no-border um-mbar__book"><span>Book Now</span></a>
     </div>
 
     <!-- back to top -->
@@ -389,5 +753,9 @@
     <script src="assets/js/2026-10-22-unicorn-hospitality-v2-main.js"></script>
     <!-- navigation (menus, dropdowns, mobile drawer) -->
     <script src="assets/js/navigation.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="assets/js/activities.js"></script>
+    <script src="assets/js/property.js?v=2"></script>
+    <script src="assets/js/footer.js?v=1"></script>
 </body>
 </html>

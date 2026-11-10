@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/navigation.css">
     <link rel="stylesheet" href="assets/css/offers.css">
+    <link rel="stylesheet" href="assets/css/footer.css?v=1">
 </head>
 
 <body class="of-page">
@@ -49,10 +50,10 @@
         <div class="container un-util__in">
             <nav aria-label="Explore Unicon Hospitality">
                 <ul class="un-util__links">
-                    <li><a href="event.html#meetings">Meetings &amp; Events</a></li>
+                    <li><a href="meetings-events.html">Meetings &amp; Events</a></li>
                     <li><a href="event.html#weddings">Weddings</a></li>
                     <li><a href="activities.html">Local Attractions</a></li>
-                    <li><a href="coupons.html">Coupons</a></li>
+                    <li><a href="about.html">About Us</a></li>
                     <li><a href="offers.html" aria-current="page">Special Offers</a></li>
                 </ul>
             </nav>
@@ -85,7 +86,6 @@
                             <li><a href="dining.html">Dining</a></li>
                             <li><a href="amenities.html">Amenities</a></li>
                             <li><a href="gallery.html">Gallery</a></li>
-                            <li><a href="about.html">About Us</a></li>
                         </ul>
                     </li>
                     <li class="un-nav__item"><a class="un-nav__link" href="rooms.html">Rooms</a></li>
@@ -347,7 +347,6 @@
                             <a href="dining.html">Dining</a>
                             <a href="amenities.html">Amenities</a>
                             <a href="gallery.html">Gallery</a>
-                            <a href="about.html">About Us</a>
                         </div>
                     </li>
                     <li><a class="un-m__link" href="rooms.html">Rooms</a></li>
@@ -363,10 +362,10 @@
                     <li class="un-m__item is-current">
                         <button type="button" class="un-m__btn" aria-expanded="false" aria-controls="unMExplore">Explore <span class="un-m__chev" aria-hidden="true"></span></button>
                         <div class="un-m__panel" id="unMExplore">
-                            <a href="event.html#meetings">Meetings &amp; Events</a>
+                            <a href="meetings-events.html">Meetings &amp; Events</a>
                             <a href="event.html#weddings">Weddings</a>
                             <a href="activities.html">Local Attractions</a>
-                            <a href="coupons.html">Coupons</a>
+                            <a href="about.html">About Us</a>
                             <a href="offers.html" aria-current="page">Special Offers</a>
                         </div>
                     </li>
@@ -382,82 +381,79 @@
     </aside>
 
     <!-- ============ FOOTER (Ramada-style columns) ============ -->
-    <footer class="rts__section rts__footer is__common__footer footer__background has__shape" id="contact">
-        <div class="container">
-            <div class="row">
-                <div class="footer__newsletter">
-                    <span class="h2">Join Our Newsletter</span>
-                    <div class="rts__form">
-                        <form action="#" method="post" id="newsForm" novalidate>
-                            <input type="email" name="email" id="subscription" placeholder="Enter your email" required aria-label="Email">
-                            <button type="submit">Subscribe</button>
-                        </form>
-                    </div>
+    <footer class="uf" id="contact">
+        <div class="uf__wrap">
+            <div class="uf__news">
+                <div class="uf__news-text">
+                    <h2>Join Our Newsletter</h2>
+                    <p>Discover special offers, seasonal escapes and memorable experiences.</p>
                 </div>
+                <form class="uf__news-form" id="newsForm" action="#" method="post" novalidate>
+                    <div class="uf__news-row">
+                        <input type="email" name="email" id="subscription" placeholder="Enter your email" autocomplete="email" required aria-label="Email address">
+                        <button type="submit">Subscribe</button>
+                    </div>
+                    <p class="uf__news-msg" id="newsMsg" role="status" aria-live="polite"></p>
+                </form>
             </div>
 
-            <div class="um-fcols">
-                <div class="um-fcol">
-                    <button class="um-fcol__title" aria-expanded="false">Unicorn Hospitality <i></i></button>
-                    <ul>
-                        <li><a href="index.html#about">About</a></li>
-                        <li><a href="index.html#locations">Locations</a></li>
-                        <li><a href="index.html">Site Map</a></li>
-                        <li><a href="index.html#locations">Travel Guide</a></li>
+            <div class="uf__cols">
+                <div class="uf__col uf__col--brand">
+                    <a class="uf__logo" href="index.html" aria-label="Unicon Hospitality home"><img src="assets/images/unicon/logoc.png" alt="Unicon Hospitality" width="92" height="66" loading="lazy"></a>
+                    <p class="uf__about">Experience comfort, thoughtful service and memorable stays at Unicon Hospitality.</p>
+                    <ul class="uf__list">
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="rooms.html">Rooms &amp; Suites</a></li>
+                        <li><a href="dining.html">Dining</a></li>
+                        <li><a href="amenities.html">Amenities</a></li>
+                        <li><a href="gallery.html">Gallery</a></li>
                     </ul>
                 </div>
-                <div class="um-fcol">
-                    <button class="um-fcol__title" aria-expanded="false">Contact <i></i></button>
-                    <ul>
-                        <li><a href="tel:+919920400267"><svg class="ico"><use href="#i-phone"/></svg> Reservations: +91 99204 00267</a></li>
-                        <li><a href="mailto:stay@unicornhospitality.example"><svg class="ico"><use href="#i-mail"/></svg> stay@unicornhospitality.example</a></li>
-                        <li><a href="contact.html"><svg class="ico"><use href="#i-pin"/></svg> Your street address, City, State</a></li>
-                        <li><a href="contact.html">Customer Care / Help</a></li>
+                <div class="uf__col">
+                    <h3 class="uf__title">Explore Experiences</h3>
+                    <ul class="uf__list">
+                        <li><a href="meetings-events.html">Meetings &amp; Events</a></li>
+                        <li><a href="weddings.html">Weddings</a></li>
+                        <li><a href="activities.html">Local Attractions</a></li>
+                        <li><a href="offers.html">Special Offers</a></li>
+                        <li><a href="coupons.html">Coupons</a></li>
+                        <li><a href="about.html#guest-reviews">Guest Reviews</a></li>
                     </ul>
                 </div>
-                <div class="um-fcol">
-                    <button class="um-fcol__title" aria-expanded="false">Hospitality Business <i></i></button>
-                    <ul>
-                        <li><a href="contact.html">Join Our Business Programme</a></li>
-                        <li><a href="index.html#meetings">Projects &amp; Groups</a></li>
-                        <li><a href="contact.html">Corporate Travel</a></li>
-                        <li><a href="contact.html">Travel Advisors</a></li>
+                <div class="uf__col">
+                    <h3 class="uf__title">Reservations &amp; Contact</h3>
+                    <ul class="uf__list uf__list--contact">
+                        <li><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></svg><span><small>Reservations</small><a href="tel:+919920400267">+91 99204 00267</a></span></li>
+                        <li data-uf="email" hidden><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg><span><small>Email Us</small><a href="#"></a></span></li>
+                        <li><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s7-6.2 7-11a7 7 0 0 0-14 0c0 4.8 7 11 7 11z"/><circle cx="12" cy="10" r="2.5"/></svg><span><small>Visit Us</small><span class="uf__val" data-uc="address">MIDC Rd, Digha Gaon, Dighe, The Stone Arch, Navi Mumbai, Mumbai, India, 400708</span></span></li>
+                        <li><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 3 3 10l7 3 3 7z"/></svg><a href="https://www.google.com/maps/dir/?api=1&amp;destination=19.1759967%2C72.9991538" target="_blank" rel="noopener noreferrer" data-uc="directions">Get Directions</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                        <li><a href="contact.html#faq">FAQs</a></li>
                     </ul>
                 </div>
-                <div class="um-fcol">
-                    <button class="um-fcol__title" aria-expanded="false">Terms &amp; Policies <i></i></button>
-                    <ul>
-                        <li><a href="#">Best Rate Guarantee</a></li>
-                        <li><a href="#">Privacy Notice</a></li>
-                        <li><a href="#">Terms of Use</a></li>
-                        <li><a href="#">Cookie Consent</a></li>
+                <div class="uf__col">
+                    <h3 class="uf__title">Guest Information</h3>
+                    <ul class="uf__list">
+                        <li><a href="book-a-room.html">Book a Room</a></li>
+                        <li><a href="find-my-reservation.html">Find My Reservation</a></li>
+                        <li><a href="blog.html">The Unicon Journal</a></li>
                     </ul>
-                </div>
-                <div class="um-fcol">
-                    <button class="um-fcol__title" aria-expanded="false">Corporate Resources <i></i></button>
-                    <ul>
-                        <li><a href="#">Media Centre</a></li>
-                        <li><a href="#">Franchise Information</a></li>
-                        <li><a href="#">Careers</a></li>
-                        <li><a href="#">Social Responsibility</a></li>
-                    </ul>
+                    <div class="uf__follow">
+                        <span class="uf__sub">Follow Us</span>
+                        <ul class="uf__social">
+                            <li><a href="https://www.instagram.com/uniconhospitality/" target="_blank" rel="noopener noreferrer" aria-label="Instagram" title="Instagram"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M7.8 2h8.4A5.8 5.8 0 0 1 22 7.8v8.4a5.8 5.8 0 0 1-5.8 5.8H7.8A5.8 5.8 0 0 1 2 16.2V7.8A5.8 5.8 0 0 1 7.8 2zm-.2 1.8A3.8 3.8 0 0 0 3.8 7.6v8.8a3.8 3.8 0 0 0 3.8 3.8h8.8a3.8 3.8 0 0 0 3.8-3.8V7.6a3.8 3.8 0 0 0-3.8-3.8zm9.6 1.4a1.3 1.3 0 1 1 0 2.6 1.3 1.3 0 0 1 0-2.6zM12 6.9a5.1 5.1 0 1 1 0 10.2 5.1 5.1 0 0 1 0-10.2zm0 1.8a3.3 3.3 0 1 0 0 6.6 3.3 3.3 0 0 0 0-6.6z"/></svg></a></li>
+                            <li><a href="https://www.facebook.com/profile.php?id=61595734749884" target="_blank" rel="noopener noreferrer" aria-label="Facebook" title="Facebook"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M13.6 22v-8.6h2.9l.5-3.4h-3.4V7.9c0-1 .3-1.7 1.7-1.7H17V3.2c-.3 0-1.4-.2-2.6-.2-2.6 0-4.3 1.6-4.3 4.4V10H7.2v3.4h2.9V22z"/></svg></a></li>
+                            <li><a href="https://www.youtube.com/@UniconHospitality" target="_blank" rel="noopener noreferrer" aria-label="YouTube" title="YouTube"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M21.6 7.2a2.5 2.5 0 0 0-1.8-1.8C18.2 5 12 5 12 5s-6.2 0-7.8.4A2.5 2.5 0 0 0 2.4 7.2C2 8.8 2 12 2 12s0 3.2.4 4.8a2.5 2.5 0 0 0 1.8 1.8C5.8 19 12 19 12 19s6.2 0 7.8-.4a2.5 2.5 0 0 0 1.8-1.8c.4-1.6.4-4.8.4-4.8s0-3.2-.4-4.8zM10 15V9l5.2 3z"/></svg></a></li>
+                            <li><a href="https://www.linkedin.com/in/unicon-hospitality-079518447/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" title="LinkedIn"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20.4 20.4h-3.6v-5.6c0-1.3 0-3-1.8-3s-2.1 1.4-2.1 2.9v5.7H9.4V9h3.4v1.6h.1c.5-.9 1.6-1.8 3.4-1.8 3.6 0 4.3 2.4 4.3 5.5zM5.3 7.4a2.1 2.1 0 1 1 0-4.2 2.1 2.1 0 0 1 0 4.2zM7.1 20.4H3.6V9h3.5z"/></svg></a></li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>
-        <div class="copyright__text">
-            <div class="container">
-                <div class="row">
-                    <div class="copyright__wrapper">
-                        <p class="mb-0 ">Copyright &copy; <span id="year">2026</span> Unicorn Hospitality. All rights reserved. | Developed By <a href="https://hsdigitalmedia.com/" target="_blank">HS Digital Media®</a></p>
-                        <div class="footer__social__link">
-                            <a href="#" aria-label="Facebook" class="link__item">Facebook</a>
-                            <a href="#" aria-label="Instagram" class="link__item">Instagram</a>
-                            <a href="#" aria-label="LinkedIn" class="link__item">LinkedIn</a>
-                            <a href="#" aria-label="X" class="link__item">X</a>
-                            <a href="#" aria-label="YouTube" class="link__item">YouTube</a>
-                        </div>
-                    </div>
-                </div>
+        <div class="uf__bar">
+            <div class="uf__wrap">
+                <p>&copy; 2026 Unicon Hospitality. All rights reserved.</p>
+                <p>Designed &amp; Developed by <a href="https://hsdigitalmedia.com/" target="_blank" rel="noopener noreferrer">HS Digital Media&reg;</a></p>
             </div>
         </div>
     </footer>
@@ -493,5 +489,7 @@
     <!-- navigation (menus, dropdowns, mobile drawer) -->
     <script src="assets/js/navigation.js"></script>
     <script src="assets/js/offers.js"></script>
+    <script src="assets/js/property.js?v=2"></script>
+    <script src="assets/js/footer.js?v=1"></script>
 </body>
 </html>
